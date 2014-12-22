@@ -1,0 +1,62 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * ship
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-22 18:41+0000\n"
+"PO-Revision-Date: 2014-12-22 18:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ship
+#: view:ship:ship.ship_filter
+#: field:ship,address_id:0
+msgid "Address"
+msgstr "Dirección"
+
+#. module: ship
+#: view:ship:ship.ship_filter
+#: field:ship,partner_id:0
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: ship
+#: field:ship,insepctor:0
+msgid "Inspector"
+msgstr "Inspector"
+
+#. module: ship
+#: view:ship:ship.ship_form
+#: field:ship,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: ship
+#: view:ship:ship.ship_filter
+#: view:ship:ship.ship_form
+msgid "Ship"
+msgstr "Buque"
+
+#. module: ship
+#: model:ir.actions.act_window,name:ship.action_ship_tree
+#: view:ship:ship.ship_tree
+msgid "Ships"
+msgstr "Buques"
+
+#. module: ship
+#: view:ship:ship.ship_filter
+msgid "group by..."
+msgstr "Agrupar por..."
+
+#. module: ship
+#: model:ir.ui.menu,name:ship.view_ships
+msgid "ships"
+msgstr "Buques"
+
