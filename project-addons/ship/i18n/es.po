@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-22 18:41+0000\n"
-"PO-Revision-Date: 2014-12-22 18:41+0000\n"
+"POT-Creation-Date: 2014-12-23 09:38+0000\n"
+"PO-Revision-Date: 2014-12-23 09:38+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -39,8 +39,20 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: ship
+#: model:ir.model,name:ship.model_stock_picking
+msgid "Picking List"
+msgstr "Albarán"
+
+#. module: ship
+#: model:ir.model,name:ship.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: ship
+#: field:sale.order,ship_id:0
 #: view:ship:ship.ship_filter
 #: view:ship:ship.ship_form
+#: field:stock.picking,ship_id:0
 msgid "Ship"
 msgstr "Buque"
 
@@ -54,9 +66,4 @@ msgstr "Buques"
 #: view:ship:ship.ship_filter
 msgid "group by..."
 msgstr "Agrupar por..."
-
-#. module: ship
-#: model:ir.ui.menu,name:ship.view_ships
-msgid "ships"
-msgstr "Buques"
 

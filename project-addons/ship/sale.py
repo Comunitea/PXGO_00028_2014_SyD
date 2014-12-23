@@ -18,14 +18,26 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields
+from openerp import models, fields, api
 
 
-class Ship(models.Model):
+class SaleOrder(models.Model):
 
-    _name = 'ship'
+    _inherit = 'sale.order'
 
-    name = fields.Char('Name', required=True)
-    partner_id = fields.Many2one('res.partner', 'Customer')
-    address_id = fields.Many2one('res.partner', 'Address')
-    insepctor = fields.Text('Inspector')
+    ship_id = fields.Many2one('ship', 'Ship')
+
+    @api.multi
+    def action_ship_create(self):
+        res = super(SaleOrder, self).action_ship_create()
+        for order in self:
+            if not order.ship_id:
+                continue
+            pickings = self.env['stock.picking']
+            for line in order.order_line:
+                for procurement in line.procurement_ids:
+                    for move in procurement.move_ids:
+                        if move.picking_id not in pickings:
+                            pickings += move.picking_id
+            pickings.write({'ship_id': order.ship_id.id})
+        return res

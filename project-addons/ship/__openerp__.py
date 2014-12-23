@@ -26,7 +26,7 @@
     'description': """""",
     'author': 'Pexego',
     'website': '',
-    "depends": ['base', 'product'],
-    "data": ['ship_view.xml', 'security/ir.model.access.csv'],
+    "depends": ['base', 'product', 'sale'],
+    "data": ['ship_view.xml', 'sale_view.xml', 'stock_view.xml', 'security/ir.model.access.csv'],
     "installable": True
 }

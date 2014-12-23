@@ -21,11 +21,8 @@
 from openerp import models, fields
 
 
-class Ship(models.Model):
+class StockPicking(models.Model):
 
-    _name = 'ship'
+    _inherit = 'stock.picking'
 
-    name = fields.Char('Name', required=True)
-    partner_id = fields.Many2one('res.partner', 'Customer')
-    address_id = fields.Many2one('res.partner', 'Address')
-    insepctor = fields.Text('Inspector')
+    ship_id = fields.Many2one('ship', 'Ship')
