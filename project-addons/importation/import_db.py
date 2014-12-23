@@ -277,6 +277,11 @@ class SyDImport:
         suppliers = self.search('res.partner', [('supplier', '=', True),('name', '=', partner_name.strip(' ')),('active', 'in', [True,False])])
         return suppliers and suppliers[0] or False
 
+    def _get_customer_by_ref(self, partner_code):
+        """Obtiene un proveedor por nombre"""
+        customers = self.search('res.partner', [('customer', '=', True),('ref', '=', partner_code.strip(' ')),('active', 'in', [True,False])])
+        return customers and customers[0] or False
+
     def import_country_states(self, cr):
         """Importamos provincias nuevas"""
         cr.execute("select count(*) as count from Z_SYSTEM_PC_PROVINCIAS where xnombre not like 'Desconocid%'")
@@ -706,6 +711,62 @@ class SyDImport:
         print "Procesados %s de %s registros en PRODUCTOS." % (imported_rows, num_rows)
         return str(imported_rows) + " de " + str(num_rows)
 
+    def import_ships(self, cr):
+        """Importamos los buques"""
+        cr.execute("select count(*) as count from Z_SYSTEM_A_BUQUES")
+        row_count = cr.fetchone()
+        print "Número de buques: ", (row_count[0])
+        num_rows = row_count[0]
+
+        #nos traemos todos los registros
+        cr.execute("""select BUQUE, CLIENTE, DIRECCION, POBLACION, TELEFONO, INSPECTOR, NOMBRE
+                        from Z_SYSTEM_A_BUQUES""")
+        rows = cr.fetchall()
+
+        #recorremos los registros
+        imported_rows = 0
+        for row in rows:
+            try:
+                customer_id = self._get_customer_by_ref(row[1])
+                ship_vals = {
+                    "name": row[0].strip(' '),
+                    "partner_id": customer_id or False,
+                    "inspector": row[5] or ''
+                }
+                if row[2] and row[6] and customer_id:
+                    address_vals = {
+                        "name": row[6].strip(' '),
+                        "street": row[2].strip(' '),
+                        "city": row[3] and row[3].strip(' ') or '',
+                        "phone": row[2] and row[2].strip(' ') or '',
+                        "parent_id": customer_id,
+                        "customer": False,
+                        "type": "other"
+                    }
+                    address_ids = self.search("res.partner", [('parent_id', '=', customer_id),('type', '=', 'other'),('street', '=', address_vals["street"])])
+                    if address_ids:
+                        address_id = address_ids[0]
+                    else:
+                        address_id = self.create("res.partner", address_vals)
+
+                    ship_vals["address_id"] = address_id
+
+                ship_ids = self.search("ship", [('partner_id', '=', customer_id),('name', '=', ship_vals["name"])])
+                if ship_ids:
+                    self.write("ship", [ship_ids[0]], ship_vals)
+                else:
+                    self.create("ship", ship_vals)
+
+                imported_rows += 1
+                print "%s de %s" % (imported_rows, num_rows)
+            except Exception, ex:
+                exceptionType, exceptionValue, exceptionTraceback = sys.exc_info()
+                traceback.print_exception(exceptionType, exceptionValue, exceptionTraceback,limit=2, file=sys.stdout)
+                self.exception_handler(u"Error importando BUQUES: %s en Access %s" % (repr(ex), repr(row)))
+
+        print "Procesados %s de %s registros en BUQUES." % (imported_rows, num_rows)
+        return str(imported_rows) + " de " + str(num_rows)
+
     def process_data(self):
         """
         Importa la bbdd
@@ -732,6 +793,8 @@ class SyDImport:
             print "Importando Productos"
             result = self.import_products(cr)
             self.file.write("INFO: Importados PRODUCTOS, resultado: %s\n\n\n" % result)
+            print "Importando Buques"
+            result = self.import_ships(cr)
 
             #cerramos el fichero
             cr.close()

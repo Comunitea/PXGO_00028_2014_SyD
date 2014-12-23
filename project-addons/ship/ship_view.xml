@@ -31,10 +31,10 @@
                         <group>
                             <group colspan="4">
                                 <field name="partner_id"/>
-                                <field name="address_id"/>
+                                <field name="address_id" domain="[('parent_id', '=', partner_id)]" context="{'default_parent_id': partner_id, 'default_type': 'other', 'default_customer': False}"/>
                             </group>
                             <newline/>
-                                <field name="insepctor"/>
+                                <field name="inspector"/>
                         </group>
                     </sheet>
                 </form>
