@@ -28,4 +28,4 @@ class Ship(models.Model):
     name = fields.Char('Name', required=True)
     partner_id = fields.Many2one('res.partner', 'Customer')
     address_id = fields.Many2one('res.partner', 'Address')
-    insepctor = fields.Text('Inspector')
+    inspector = fields.Text('Inspector')
