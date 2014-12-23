@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="ship_tree" model="ir.ui.view">
+            <field name="name">ship.tree</field>
+            <field name="model">ship</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Ships">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="address_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ship_form" model="ir.ui.view">
+            <field name="name">ship.form</field>
+            <field name="model">ship</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Ship">
+                    <sheet>
+                        <div class="oe_left" style="width: 500px;">
+                            <div class="oe_title" style="width: 390px;">
+                                <label class="oe_edit_only" for="name" string="Name"/>
+                                <h1><field name="name" class="oe_inline"/></h1>
+                            </div>
+                        </div>
+                        <group>
+                            <group colspan="4">
+                                <field name="partner_id"/>
+                                <field name="address_id"/>
+                            </group>
+                            <newline/>
+                                <field name="insepctor"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="ship_filter" model="ir.ui.view">
+            <field name="name">ship.search</field>
+            <field name="model">ship</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Ship">
+                   <field name="name"/>
+                   <field name="partner_id"/>
+                   <field name="address_id"/>
+                   <group string="group by...">
+                        <filter string='Customer' name="partner_id" domain="[]" context="{'group_by' : 'partner_id'}"/>
+                        <filter string='Address' name="address_id" domain="[]" context="{'group_by' : 'address_id'}"/>
+                   </group>
+               </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_ship_tree">
+            <field name="name">Ships</field>
+            <field name="res_model">ship</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="ship_tree"/>
+            <field name="search_view_id" ref="ship_filter"/>
+        </record>
+
+        <!--menuitem name="ships" parent="base.menu_product" action="action_ship_tree" id="view_ships"/-->
+    </data>
+</openerp>
