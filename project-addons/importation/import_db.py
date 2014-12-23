@@ -57,7 +57,7 @@ class SyDImport:
 
         self.url_template = "http://%s:%s/xmlrpc/%s"
         self.server = "localhost"
-        self.port = 9069
+        self.port = 8069
         self.dbname = dbname
         self.user_name = user
         self.user_passwd = passwd
@@ -634,7 +634,7 @@ class SyDImport:
             product_ids = self.search(u"product.product", [('default_code', '=', product_vals['default_code'])])
             if product_ids:
                 print "Ya existente"
-                #self.write(u"product.product", [product_ids[0]], product_vals)
+                self.write(u"product.product", [product_ids[0]], product_vals)
                 product_id = product_ids[0]
             else:
                 print "No existe, se crea"
@@ -723,10 +723,10 @@ class SyDImport:
             cr = conn.cursor()
 
             self.file.write("Iniciamos la Importación\n\n")
-            #print "Importando provincias"
-            #result = self.import_country_states(cr)
-            #print "Importando Clientes"
-            #result = self.import_customers(cr)
+            print "Importando provincias"
+            result = self.import_country_states(cr)
+            print "Importando Clientes"
+            result = self.import_customers(cr)
             print "Importando Proveedores"
             result = self.import_suppliers(cr)
             print "Importando Productos"
