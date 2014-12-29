@@ -18,14 +18,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields
 
-
-class Ship(models.Model):
-
-    _name = 'ship'
-
-    name = fields.Char('Name', required=True)
-    partner_id = fields.Many2one('res.partner', 'Customer')
-    address_id = fields.Many2one('res.partner', 'Address')
-    inspector = fields.Text('Inspector')
+{
+    'name': "Picking with services",
+    'version': '1.0',
+    'category': 'stock',
+    'description': """Adds sale services in the picking""",
+    'author': 'Pexego',
+    'website': '',
+    "depends": ['sale', 'stock', 'sale_stock'],
+    "data": ['stock_view.xml', 'security/ir.model.access.csv'],
+    "installable": True
+}
