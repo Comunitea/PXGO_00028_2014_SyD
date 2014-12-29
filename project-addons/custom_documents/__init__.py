@@ -18,14 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields
-
-
-class Ship(models.Model):
-
-    _name = 'ship'
-
-    name = fields.Char('Name', required=True)
-    partner_id = fields.Many2one('res.partner', 'Customer')
-    address_id = fields.Many2one('res.partner', 'Address')
-    inspector = fields.Text('Inspector')
+from . import stock

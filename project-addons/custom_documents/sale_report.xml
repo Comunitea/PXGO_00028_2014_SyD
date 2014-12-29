@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+            id="report_proforma_order"
+            string="Proforma"
+            model="sale.order"
+            report_type="qweb-pdf"
+            file="custom_documents.report_proforma"
+            name="custom_documents.report_proforma"
+        />
+    </data>
+</openerp>
