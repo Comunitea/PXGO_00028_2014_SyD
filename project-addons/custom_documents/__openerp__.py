@@ -26,11 +26,12 @@
     'description': """""",
     'author': 'Pexego',
     'website': '',
-    "depends": ['report', 'sale', 'stock', 'sale_stock', 'picking_services'],
+    "depends": ['report', 'sale', 'stock', 'sale_stock', 'picking_services',
+                'delivery'],
     "data": ['views/report_proforma.xml', 'views/report_saleorder.xml','sale_report.xml',
              'views/report_stockpicking.xml',
              'views/valued_picking_report.xml', 'stock_report.xml',
              'views/report_header.xml', 'sale_view.xml',
-             'data/paperformat_data.xml'],
+             'data/paperformat_data.xml', 'res_partner_view.xml'],
     "installable": True
 }
