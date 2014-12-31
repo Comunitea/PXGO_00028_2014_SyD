@@ -20,6 +20,11 @@ msgstr ""
 msgid "Aceptance quotation Nº"
 msgstr "Aceptación presupuesto Nº"
 
+#. module: sale
+#: view:website:sale.report_saleorder_document
+msgid "Aceptance quotation Nº"
+msgstr "Aceptación presupuesto Nº"
+
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
 msgid "Carrier"
@@ -43,7 +48,7 @@ msgstr "Conformidad cliente:"
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
 msgid "Date Ordered:"
-msgstr "Fecha pedida:"
+msgstr "Fecha pedido:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
