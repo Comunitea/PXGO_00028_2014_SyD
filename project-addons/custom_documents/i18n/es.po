@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-29 16:49+0000\n"
-"PO-Revision-Date: 2014-12-29 16:49+0000\n"
+"POT-Creation-Date: 2014-12-31 11:36+0000\n"
+"PO-Revision-Date: 2014-12-31 11:36+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,26 +16,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: custom_documents
-#: field:stock.move,percent_margin:0
-#: field:stock.move.service,percent_margin:0
-msgid "% margin"
-msgstr "% margen"
+#: view:website:custom_documents.report_proforma_
+msgid "Aceptance quotation Nº"
+msgstr "Aceptación presupuesto Nº"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
-msgid "Commitment Date"
-msgstr "Fecha compromiso"
-
-#. module: custom_documents
-#: model:ir.model,name:custom_documents.model_res_company
-msgid "Companies"
-msgstr "Compañías"
-
-#. module: custom_documents
-#: field:stock.move,cost_subtotal:0
-#: field:stock.move.service,cost_subtotal:0
-msgid "Cost subtotal"
-msgstr "Coste subtotal"
+msgid "Carrier"
+msgstr "Transportista"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
@@ -43,9 +31,24 @@ msgid "Customer Address:"
 msgstr "Dirección de cliente:"
 
 #. module: custom_documents
+#: field:res.partner,customer_code:0
+msgid "Customer code"
+msgstr "Código cliente"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_proforma_
+msgid "Customer conformity:"
+msgstr "Conformidad cliente:"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_proforma_
 msgid "Date Ordered:"
 msgstr "Fecha pedida:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_proforma_
+msgid "Date:"
+msgstr "Fecha:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
@@ -63,22 +66,6 @@ msgid "Disc.(%)"
 msgstr "Desc.(%)"
 
 #. module: custom_documents
-#: view:website:custom_documents.report_proforma_
-msgid "Invoice address:"
-msgstr "Dirección de facturación:"
-
-#. module: custom_documents
-#: view:website:custom_documents.report_proforma_
-msgid "Invoice and shipping address:"
-msgstr "Dirección de facturación y de envío:"
-
-#. module: custom_documents
-#: field:stock.move,margin:0
-#: field:stock.move.service,margin:0
-msgid "Margin"
-msgstr "Margen"
-
-#. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
 msgid "Order (Origin)"
 msgstr "Pedido (Origen)"
@@ -87,6 +74,11 @@ msgstr "Pedido (Origen)"
 #: view:website:custom_documents.report_proforma_
 msgid "PROFORMA"
 msgstr "PROFORMA"
+
+#. module: custom_documents
+#: model:ir.model,name:custom_documents.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
@@ -104,11 +96,9 @@ msgid "Price"
 msgstr "Precio"
 
 #. module: custom_documents
-#: field:stock.move,order_price_unit:0
-#: field:stock.move.service,order_price_unit:0
 #: view:website:custom_documents.report_valued_picking
 msgid "Price unit"
-msgstr "Price unit"
+msgstr "Precio unitario"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
@@ -132,11 +122,6 @@ msgid "Quotation Date:"
 msgstr "Fecha de presupuesto:"
 
 #. module: custom_documents
-#: field:stock.picking,amount_discounted:0
-msgid "Sale price"
-msgstr "Sale price"
-
-#. module: custom_documents
 #: model:ir.model,name:custom_documents.model_sale_order
 msgid "Sales Order"
 msgstr "Pedido de venta"
@@ -145,16 +130,6 @@ msgstr "Pedido de venta"
 #: view:website:custom_documents.report_proforma_
 msgid "Salesperson:"
 msgstr "Comercial:"
-
-#. module: custom_documents
-#: view:website:custom_documents.report_valued_picking
-msgid "Scheduled Date"
-msgstr "Fecha prevista"
-
-#. module: custom_documents
-#: view:website:custom_documents.report_proforma_
-msgid "Shipping address:"
-msgstr "Dirección de envío:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
@@ -167,20 +142,9 @@ msgid "Starting data indicated by the client:"
 msgstr "Datos de partida indicados por el cliente:"
 
 #. module: custom_documents
-#: view:website:custom_documents.report_valued_picking
-msgid "State"
-msgstr "Estado"
-
-#. module: custom_documents
 #: model:ir.model,name:custom_documents.model_stock_move
 msgid "Stock Move"
 msgstr "Movimiento de existencias"
-
-#. module: custom_documents
-#: field:stock.move,price_subtotal:0
-#: field:stock.move.service,price_subtotal:0
-msgid "Subtotal"
-msgstr "Subtotal"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
@@ -188,14 +152,12 @@ msgid "Supplier Address:"
 msgstr "Dirección del proveedor:"
 
 #. module: custom_documents
-#: field:stock.picking,amount_tax:0
 #: view:website:custom_documents.report_proforma_
 #: view:website:custom_documents.report_valued_picking
 msgid "Taxes"
 msgstr "Impuestos"
 
 #. module: custom_documents
-#: field:stock.picking,amount_total:0
 #: view:website:custom_documents.report_proforma_
 #: view:website:custom_documents.report_valued_picking
 msgid "Total"
@@ -211,16 +173,6 @@ msgstr "Total sin impuestos"
 #: view:website:custom_documents.report_proforma_
 msgid "Unit Price"
 msgstr "Precio unidad"
-
-#. module: custom_documents
-#: field:stock.picking,amount_untaxed:0
-msgid "Untaxed Amount"
-msgstr "Untaxed Amount"
-
-#. module: custom_documents
-#: field:stock.move.service,product_uom:0
-msgid "UoM"
-msgstr "UdM"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
@@ -239,27 +191,17 @@ msgid "Warehouse Address:"
 msgstr "Dirección del almacén"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_valued_picking
+msgid "Weight"
+msgstr "Peso"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_proforma_
 msgid "Your Reference:"
 msgstr "Su referencia:"
 
 #. module: custom_documents
-#: field:stock.picking,amount_gross:0
-msgid "amount gross"
-msgstr "amount gross"
-
-#. module: custom_documents
-#: field:sale.order,tittle:0
-msgid "name"
-msgstr "name"
-
-#. module: custom_documents
 #: view:sale.order:custom_documents.sale_order_add_tittle
-#: field:sale.order,baseline_data:0
 msgid "starting data indicated by the client"
 msgstr "Datos de partida indicados por el cliente:"
 
-#. module: sale
-#: view:website:sale.report_saleorder_document
-msgid "Starting data indicated by the client:"
-msgstr "Datos de partida indicados por el cliente:"
