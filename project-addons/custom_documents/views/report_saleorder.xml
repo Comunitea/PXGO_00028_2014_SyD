@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <template id="report_proforma_">
+        <template id="sale.report_saleorder_document">
             <t t-call="report.external_layout">
                 <div class="page">
                     <div class="oe_structure"/>
@@ -24,10 +24,13 @@
                                 t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}' />
                         </div>
                     </div>
+
+
                     <div class="row">
                         <div class="col-xs-6 text-left">
                             <h2>
-                                <span>PROFORMA</span>
+                                <span t-if="o.state not in ['draft','sent']">Order N° </span>
+                                <span t-if="o.state in ['draft','sent']">Quotation N° </span>
                                 <span t-field="o.name"/>
                             </h2>
                         </div>
@@ -145,14 +148,6 @@
                     </p>
                     <div class="oe_structure"/>
                 </div>
-            </t>
-        </template>
-
-        <template id="report_proforma">
-            <t t-call="report.html_container">
-                <t t-foreach="doc_ids" t-as="doc_id">
-                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'custom_documents.report_proforma_')"/>
-                </t>
             </t>
         </template>
 

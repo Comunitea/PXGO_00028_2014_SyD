@@ -18,5 +18,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import stock
-from . import sale_order
+from openerp import models, fields
+
+
+class SaleOrder(models.Model):
+
+    _inherit = 'sale.order'
+
+    tittle = fields.Char('name')
+    baseline_data = fields.Text('starting data indicated by the client')
