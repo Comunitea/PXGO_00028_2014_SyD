@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields
+from openerp import models, fields, api
 
 
 class SaleOrder(models.Model):
@@ -27,3 +27,12 @@ class SaleOrder(models.Model):
 
     tittle = fields.Char('name')
     baseline_data = fields.Text('starting data indicated by the client')
+    have_discounts = fields.Boolean('Have discounts', compute='_have_discounts')
+
+    @api.one
+    def _have_discounts(self):
+        discounts = False
+        for line in self.order_line:
+            if line.discount > 0:
+                discounts = True
+        self.have_discounts = discounts

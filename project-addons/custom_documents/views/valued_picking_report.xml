@@ -30,9 +30,8 @@
                             <thead>
                                 <tr>
                                     <th><strong>Order (Origin)</strong></th>
-                                    <th><strong>State</strong></th>
-                                    <th><strong>Commitment Date</strong></th>
-                                    <th name="td_sched_date_h"><strong>Scheduled Date</strong></th>
+                                    <th t-if="o.picking_type_id.code == 'outgoing'"><strong>Carrier</strong></th>
+                                    <th><strong>Weight</strong></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,14 +39,11 @@
                                     <td>
                                         <span t-field="o.origin"/>
                                     </td>
-                                    <td>
-                                        <span t-field="o.state"/>
+                                    <td t-if="o.picking_type_id.code == 'outgoing'">
+                                        <span t-field="o.carrier_id"/>
                                     </td>
                                     <td>
-                                        <span t-field="o.date"/>
-                                    </td>
-                                    <td name="td_sched_date">
-                                        <span t-field="o.min_date"/>
+                                        <span t-field="o.weight"/>
                                     </td>
                                 </tr>
                             </tbody>
