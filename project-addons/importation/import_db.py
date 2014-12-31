@@ -6,6 +6,7 @@ import socket
 import traceback
 import re
 import base64
+import time
 
 UOM_MAP = {
     'KG': 'kg',
@@ -278,9 +279,14 @@ class SyDImport:
         return suppliers and suppliers[0] or False
 
     def _get_customer_by_ref(self, partner_code):
-        """Obtiene un proveedor por nombre"""
+        """Obtiene un cliente por código"""
         customers = self.search('res.partner', [('customer', '=', True),('ref', '=', partner_code.strip(' ')),('active', 'in', [True,False])])
         return customers and customers[0] or False
+
+    def _get_product_by_code(self, product_code):
+        """Obtiene un producto por código"""
+        products = self.search('product.product', [('default_code', '=', product_code.strip(' '))])
+        return products and products[0] or False
 
     def import_country_states(self, cr):
         """Importamos provincias nuevas"""
@@ -621,7 +627,7 @@ class SyDImport:
                 'track_outgoing': row[3] and True or False,
                 'procure_method': procure_method,
                 'supply_method': supply_method,
-                'standard_price': row[5] and float(row[5]) or 1.0,
+                'standard_price': row[6] and float(row[6]) or 1.0,
                 'list_price': row[13] and float(row[13]) or 1.0,
                 'purchase_ok': row[6] and True or False,
                 'uom_id': row[7] and self._get_uom_id(row[7].upper()) or 1,
@@ -767,6 +773,51 @@ class SyDImport:
         print "Procesados %s de %s registros en BUQUES." % (imported_rows, num_rows)
         return str(imported_rows) + " de " + str(num_rows)
 
+    def import_inventory(self, cr):
+        cr.execute("select count(*) as count from Z_SYSTEM_PL_EXISTALM where XEXISTENCIA > 0")
+        row_count = cr.fetchone()
+        print "Número de lineas de inventario: ", (row_count[0])
+        num_rows = row_count[0]
+        if num_rows > 0:
+            # creamos inventario
+            inv_vals = {
+                'name': "INV: " + time.strftime("%Y-%m-%d"),
+            }
+            inv_id = self.create("stock.inventory", inv_vals)
+            self.execute("stock.inventory", "prepare_inventory", [inv_id])
+            inv_data = self.read('stock.inventory', inv_id, ['location_id'])
+
+        #nos traemos todos los registros
+        cr.execute("""select XARTICULO_ID, sum(XEXISTENCIA) as qty from Z_SYSTEM_PL_EXISTALM
+                      group by XARTICULO_ID having sum(XEXISTENCIA) > 0""")
+        rows = cr.fetchall()
+
+        #recorremos los registros
+        imported_rows = 0
+        for row in rows:
+            try:
+                product_id = self._get_product_by_code(row[0])
+                if product_id:
+                    prod_data = self.read('product.product', product_id, ['uom_id'])
+                    line_vals = {
+                        'inventory_id': inv_id,
+                        'product_id': product_id,
+                        'location_id': inv_data['location_id'][0],
+                        'product_qty': row[1] and float(row[1]) or 0.0,
+                        'product_uom_id': prod_data['uom_id'][0]
+                    }
+                    self.create("stock.inventory.line", line_vals)
+
+                    imported_rows += 1
+                    print "%s de %s" % (imported_rows, num_rows)
+            except Exception, ex:
+                exceptionType, exceptionValue, exceptionTraceback = sys.exc_info()
+                traceback.print_exception(exceptionType, exceptionValue, exceptionTraceback,limit=2, file=sys.stdout)
+                self.exception_handler(u"Error importando LINEAS DE INVENTARIO.: %s en Access %s" % (repr(ex), repr(row)))
+
+        print "Procesados %s de %s registros en LINEAS DE INVENTARIO." % (imported_rows, num_rows)
+        return str(imported_rows) + " de " + str(num_rows)
+
     def process_data(self):
         """
         Importa la bbdd
@@ -795,6 +846,8 @@ class SyDImport:
             self.file.write("INFO: Importados PRODUCTOS, resultado: %s\n\n\n" % result)
             print "Importando Buques"
             result = self.import_ships(cr)
+            print "Importando inventario"
+            result = self.import_inventory(cr)
 
             #cerramos el fichero
             cr.close()
