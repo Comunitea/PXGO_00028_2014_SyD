@@ -24,6 +24,7 @@
                         <div t-field="company.partner_id"
                             t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
                             style="border-bottom: 1px solid black;"/>
+                        Cod. cliente: <span t-field="o.partner_id.customer_code"/>
                     </div>
                 </div>
             </div>
