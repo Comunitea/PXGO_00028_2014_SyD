@@ -33,6 +33,7 @@
                                         <th><strong>Order (Origin)</strong></th>
                                         <th t-if="o.picking_type_id.code == 'outgoing'"><strong>Carrier</strong></th>
                                         <th><strong>Weight</strong></th>
+                                        <th><strong>Date</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,6 +46,9 @@
                                         </td>
                                         <td>
                                             <span t-field="o.weight"/>
+                                        </td>
+                                         <td>
+                                            <span t-field="o.date_done"/>
                                         </td>
                                     </tr>
                                 </tbody>
