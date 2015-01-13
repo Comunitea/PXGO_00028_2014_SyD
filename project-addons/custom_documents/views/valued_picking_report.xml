@@ -63,8 +63,8 @@
                                         <!--t
                         t-if="o.picking_type_id.code != 'incoming'"><th><strong>Source</strong></th></t-->
                                         <t t-if="o.picking_type_id.code != 'outgoing'"><th><strong>Destination</strong></th></t>
-                                        <th><strong>Price unit</strong></th>
-                                        <th><strong>Total</strong></th>
+                                        <th class="text-right"><strong>Price unit</strong></th>
+                                        <th class="text-right"><strong>Total</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -85,8 +85,9 @@
                                         <td><span t-field="service.product_id"/></td>
                                         <td class="text-right"><span t-field="service.quantity"/> <span t-field="service.product_uom" groups="product.group_uom"/></td>
                                         <td></td>
-                                        <td><span t-field="service.order_price_unit"/></td>
-                                        <td>
+                                        <td class="text-right"><span
+                                                t-field="service.order_price_unit"/></td>
+                                        <td class="text-right">
                                             <span t-field="service.price_subtotal"
                                                 t-field-options='{"widget": "monetary", "display_currency": "o.sale_id.pricelist_id.currency_id"}'/>
                                         </td>
