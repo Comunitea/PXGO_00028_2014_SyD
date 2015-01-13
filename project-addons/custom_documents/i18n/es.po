@@ -32,6 +32,12 @@ msgstr "Transportista"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
+msgid "Date"
+msgstr "Fecha"
+
+
+#. module: custom_documents
+#: view:website:custom_documents.report_valued_picking
 msgid "Customer Address:"
 msgstr "Dirección de cliente:"
 
