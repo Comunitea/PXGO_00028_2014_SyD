@@ -31,11 +31,11 @@
                                 <thead>
                                     <tr>
                                         <th><strong>Order (Origin)</strong></th>
-                                        <th t-if="o.sale_id"><strong>Pedido ciente</strong></th>
+                                        <th t-if="o.sale_id.client_order_ref"><strong>Pedido ciente</strong></th>
                                         <th t-if="o.picking_type_id.code == 'outgoing'"><strong>Carrier</strong></th>
                                         <th t-if="o.ship_id"><strong>Buque</strong></th>
                                         <th><strong>Weight</strong></th>
-                                        <th><strong>Date</strong></th>
+                                        <th t-if="o.date_done"><strong>Date</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,7 +55,7 @@
                                         <td>
                                             <span t-field="o.weight"/>
                                         </td>
-                                         <td>
+                                         <td t-if="o.date_done">
                                             <span t-esc="time.strftime('%d/%m/%Y',time.strptime(o.date_done,'%Y-%m-%d %H:%M:%S'))"/>
                                         </td>
                                     </tr>
