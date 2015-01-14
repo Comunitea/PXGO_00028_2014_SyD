@@ -26,7 +26,7 @@
 
             <div class="row mt32 mb32">
                 <div class="col-xs-2" t-if="o.partner_id.supplier_ref">
-                    <strong>Referencia proveedor:</strong>
+                    <strong>Ref. proveedor:</strong>
                     <p t-field="o.partner_id.supplier_ref"/>
                 </div>
                 <div class="col-xs-2" t-if="o.name">
