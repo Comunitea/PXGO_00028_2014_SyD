@@ -41,6 +41,8 @@ class stock_picking(models.Model):
     amount_discounted = fields.Float(
         compute='_amount_all', digits_compute=dp.get_precision('Sale Price'),
         string='Sale price', readonly=True, store=True)
+    external_note = fields.Text(
+        ' External Notes')
 
     @api.multi
     @api.depends('move_lines', 'service_ids', 'partner_id')

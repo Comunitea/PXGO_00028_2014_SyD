@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="stock_pickin_add_note" model="ir.ui.view">
+            <field name="name">stock.picking.note.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <field name="note" position="after">
+                    <field name="external_note"
+                           placeholder="Añada una nota para imprimir en el albarán..."
+                           class="oe_inline"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+
+
+
+
+
+
+
+
+
+
+
