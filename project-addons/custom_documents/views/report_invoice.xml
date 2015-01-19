@@ -30,7 +30,7 @@
                     <p t-field="o.partner_id.supplier_ref"/>
                 </div>
                 <div class="col-xs-2" t-if="o.name">
-                    <strong>Description:</strong>
+                    <strong>Referencia:</strong>
                     <p t-field="o.name"/>
                 </div>
                 <div class="col-xs-2" t-if="o.date_invoice">
@@ -141,12 +141,16 @@
                 <span >No se admiten devoluciones pasados 15 días</span>
             </p>
             <p t-if="o.comment">
-                <strong>Comment:</strong>
+                <!--strong>Comment:</strong-->
                 <span t-field="o.comment"/>
             </p>
             <p t-if="o.payment_term.note">
                 <strong>Payment Term:</strong>
                 <span t-field="o.payment_term.note"/>
+            </p>
+            <p t-if="o.payment_mode_id">
+                <strong>Modo de pago:</strong>
+                <span t-field="o.payment_mode_id.name"/>
             </p>
             <p t-if="o.fiscal_position.note">
                 <strong>Fiscal Position Remark:</strong>
@@ -154,7 +158,6 @@
             </p>
 
             <p>
-
                 <span>
                         SANDE Y DÍAZ, S.L., inscrita en el Reg. Merc. de A Coruña, folio 188, libro 241, inscripción 1ª, hoja 849. CIF: ESB15033558.
                 </span>
