@@ -148,6 +148,18 @@
                 <strong>Payment Term:</strong>
                 <span t-field="o.payment_term.note"/>
             </p>
+
+            <p t-if="o.move_id">
+                <strong>Vencimiento:</strong>
+                <span t-foreach="o.move_id.line_id" t-as="ml">
+                    <span t-if="ml.date_maturity">
+                        <span t-field="ml.date_maturity"/>:
+                        <span t-field="ml.debit"/> -
+                    </span>
+                </span>
+
+            </p>
+
             <p t-if="o.payment_mode_id">
                 <strong>Modo de pago:</strong>
                 <span t-field="o.payment_mode_id.name"/>
