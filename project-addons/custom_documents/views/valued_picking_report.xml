@@ -24,7 +24,7 @@
 
                              <h2>
                              <span t-field="o.picking_type_id"/>:
-                             <span t-field="o.name"/>
+                             <span t-esc="o.name.replace('\\', '')"/>
                              </h2>
                              <table class="table table-condensed">
                             <thead>
@@ -55,7 +55,7 @@
                                             <span t-field="o.weight"/>
                                         </td>
                                          <td t-if="o.date_done">
-                                            <span t-esc="time.strftime('%d/%m/%Y',time.strptime(o.date_done,'%Y-%m-%d %H:%M:%S'))"/>
+                                            <span t-field="o.date_done" t-field-options='{"format": "d/m/y"}'/>
                                         </td>
                                 </tr>
                             </tbody>

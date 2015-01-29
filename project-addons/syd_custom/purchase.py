@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
+#    Copyright (C) 2015 Pexego All Rights Reserved
 #    $Jesús Ventosinos Mayor <jesus@pexego.es>$
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import ship
-from . import sale
-from . import stock
-from . import account
+from openerp import models, fields, api
+
+
+class PurchaseOrder(models.Model):
+    _inherit = 'purchase.order'
+
+    shipment_count_ = fields.Integer('Incoming Shipments',
+                                     compute='_count_ship', store=False)
+
+    @api.depends('picking_ids')
+    def _count_ship(self):
+        for po in self:
+            po.shipment_count_ = len([x.id for x in po.picking_ids
+                                      if x.state not in ['cancel']])

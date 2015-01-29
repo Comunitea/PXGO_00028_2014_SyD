@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
+#    Copyright (C) 2015 Pexego All Rights Reserved
 #    $Jesús Ventosinos Mayor <jesus@pexego.es>$
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -20,15 +20,37 @@
 ##############################################################################
 from openerp import models, fields, api
 
+class productTemplate(models.Model):
 
-class StockPicking(models.Model):
+    _inherit = 'product.template'
 
-    _inherit = 'stock.picking'
+    _defaults = {
+        'categ_id': False,
+        'warranty': 12,
+    }
 
-    ship_id = fields.Many2one('ship', 'Ship')
+    @api.onchange('categ_id')
+    def change_categ_id(self):
+        self.sale_delay = self.categ_id.sale_delay
 
-    @api.model
-    def _get_invoice_vals(self, key, inv_type, journal_id, move):
-        res = super(StockPicking, self)._get_invoice_vals(key, inv_type, journal_id, move)
-        res['ship_id'] = move.picking_id.ship_id
+class ProductProduct(models.Model):
+    _inherit = 'product.product'
+
+    @api.onchange('categ_id')
+    def change_categ_id(self):
+        self.sale_delay = self.categ_id.sale_delay
+
+
+class productCategory(models.Model):
+    _inherit = 'product.category'
+
+    sale_delay = fields.Integer('Default sale delay', default=20)
+    use_in_sub = fields.Boolean('Use delay in subcategories')
+
+    @api.one
+    def write(self, vals):
+        res = super(productCategory, self).write(vals)
+        if vals.get('use_in_sub', False):
+            if self.child_id:
+                self.child_id.write({'sale_delay': self.sale_delay, 'use_in_sub': True})
         return res
