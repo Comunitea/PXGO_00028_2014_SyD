@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-31 11:36+0000\n"
-"PO-Revision-Date: 2014-12-31 11:36+0000\n"
+"POT-Creation-Date: 2015-01-29 11:00+0000\n"
+"PO-Revision-Date: 2015-01-29 11:00+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,53 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: custom_documents
+#: field:stock.picking,external_note:0
+msgid " External Notes"
+msgstr " External Notes"
+
+#. module: custom_documents
+#: field:stock.move,percent_margin:0
+#: field:stock.move.service,percent_margin:0
+msgid "% margin"
+msgstr "% margen"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 msgid "Aceptance quotation Nº"
 msgstr "Aceptación presupuesto Nº"
 
-#. module: sale
-#: view:website:sale.report_saleorder_document
-msgid "Aceptance quotation Nº"
-msgstr "Aceptación presupuesto Nº"
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Amount"
+msgstr "Importe"
+
+#. module: custom_documents
+#: view:stock.picking:custom_documents.stock_pickin_add_note
+msgid "Añada una nota para imprimir en el albarán..."
+msgstr "Añada una nota para imprimir en el albarán..."
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
+msgid "Bank account:"
+msgstr "Cuenta bancaria:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Base"
+msgstr "Base"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_valued_picking
+msgid "Buque"
+msgstr "Buque"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Cancelled Invoice"
+msgstr "Factura cancelada"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
@@ -31,10 +70,10 @@ msgid "Carrier"
 msgstr "Transportista"
 
 #. module: custom_documents
-#: view:website:custom_documents.report_valued_picking
-msgid "Date"
-msgstr "Fecha"
-
+#: field:stock.move,cost_subtotal:0
+#: field:stock.move.service,cost_subtotal:0
+msgid "Cost subtotal"
+msgstr "Coste subtotal"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
@@ -42,27 +81,44 @@ msgid "Customer Address:"
 msgstr "Dirección de cliente:"
 
 #. module: custom_documents
-#: field:res.partner,customer_code:0
-msgid "Customer code"
-msgstr "Código cliente"
+#: view:website:custom_documents.report_invoice_document
+msgid "Customer Code:"
+msgstr "Código de cliente"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 msgid "Customer conformity:"
 msgstr "Conformidad cliente:"
 
 #. module: custom_documents
-#: view:website:custom_documents.report_proforma_
-msgid "Date Ordered:"
-msgstr "Fecha pedido:"
+#: view:website:custom_documents.report_valued_picking
+msgid "Date"
+msgstr "Fecha"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
+msgid "Date Ordered:"
+msgstr "Fecha pedida:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Date Req."
+msgstr "Fecha solicitud"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 msgid "Date:"
 msgstr "Fecha:"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_purchaseorder_document
+#: view:website:custom_documents.report_saleorder_document
+#: view:website:custom_documents.report_valued_picking
 msgid "Description"
 msgstr "Descripción"
 
@@ -73,18 +129,75 @@ msgstr "Destino"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 msgid "Disc.(%)"
 msgstr "Desc.(%)"
 
 #. module: custom_documents
-#: view:website:custom_documents.report_valued_picking
-msgid "Order (Origin)"
-msgstr "Pedido (Origen)"
+#: view:website:custom_documents.report_invoice_document
+msgid "Discount (%)"
+msgstr "Descuento (%)"
 
 #. module: custom_documents
-#: view:website:custom_documents.report_proforma_
-msgid "PROFORMA"
-msgstr "PROFORMA"
+#: view:website:custom_documents.report_invoice_document
+msgid "Draft Invoice"
+msgstr "Factura borrador"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Fiscal Position Remark:"
+msgstr ""
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Invoice Date:"
+msgstr "Fecha de factura:"
+
+#. module: custom_documents
+#: field:stock.move,margin:0
+#: field:stock.move.service,margin:0
+msgid "Margin"
+msgstr "Margen"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Net Price"
+msgstr "Precio neto"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_valued_picking
+msgid "No se aceptarán devoluciones sin nuestro consentimiento por escrito, pasados 15 días de la entrega de la mercancía o de mercancía que esté manipulada."
+msgstr "No se aceptarán devoluciones sin nuestro consentimiento por escrito, pasados 15 días de la entrega de la mercancía o de mercancía que esté manipulada."
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "No se admiten devoluciones pasados 15 días"
+msgstr "No se admiten devoluciones pasados 15 días"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_saleorder_document
+msgid "Order"
+msgstr "Pedido"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Order Date:"
+msgstr "Fecha de pedido:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Our Order Reference:"
+msgstr "Nuestra referencia de pedido:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "PRO-FORMA"
+msgstr "PRO-FORMA"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_res_partner
@@ -92,9 +205,18 @@ msgid "Partner"
 msgstr "Empresa"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 msgid "Payment Term:"
 msgstr "Plazo de pago:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
+msgid "Payment mode:"
+msgstr "Modo de pago:"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_stock_picking
@@ -103,34 +225,102 @@ msgstr "Albarán"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 msgid "Price"
 msgstr "Precio"
 
 #. module: custom_documents
+#: field:stock.move,order_price_unit:0
+#: field:stock.move.service,order_price_unit:0
 #: view:website:custom_documents.report_valued_picking
 msgid "Price unit"
-msgstr "Precio unitario"
-
-#. module: custom_documents
-#: view:website:custom_documents.report_valued_picking
-msgid "Product"
-msgstr "Producto"
+msgstr "Precio unidad"
 
 #. module: custom_documents
 #: model:ir.actions.report.xml,name:custom_documents.report_proforma_order
+#: view:website:custom_documents.report_proforma_
 msgid "Proforma"
 msgstr "Proforma"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Purchase Order Confirmation"
+msgstr "Confirmación pedido de compra"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Qty"
+msgstr "Ctdad"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 #: view:website:custom_documents.report_valued_picking
 msgid "Quantity"
 msgstr "Cantidad"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_saleorder_document
+msgid "Quotation"
+msgstr "Presupuesto"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 msgid "Quotation Date:"
 msgstr "Fecha de presupuesto:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
+msgid "Ref. proveedor:"
+msgstr "Ref. proveedor:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_valued_picking
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
+msgid "Reference:"
+msgstr "Referencia:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Referencia:"
+msgstr "Referencia:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Refund"
+msgstr "Factura rectificativa"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Request for Quotation"
+msgstr "Solicitud de presupuesto"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "SANDE Y DÍAZ, S.L., inscrita en el Reg. Merc. de A Coruña, folio 188, libro 241, inscripción 1ª, hoja 849. CIF: ESB15033558."
+msgstr "SANDE Y DÍAZ, S.L., inscrita en el Reg. Merc. de A Coruña, folio 188, libro 241, inscripción 1ª, hoja 849. CIF: ESB15033558."
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
+msgid "SIWFT code:"
+msgstr "Código SWIFT:"
+
+#. module: custom_documents
+#: field:stock.picking,amount_discounted:0
+msgid "Sale price"
+msgstr "Sale price"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_sale_order
@@ -139,16 +329,30 @@ msgstr "Pedido de venta"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 msgid "Salesperson:"
 msgstr "Comercial:"
 
 #. module: custom_documents
-#: view:website:custom_documents.report_valued_picking
-msgid "Source"
-msgstr "Origen"
+#: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
+msgid "Ship:"
+msgstr "Buque:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Shipping address:"
+msgstr "Dirección de envío:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Source:"
+msgstr "Origen:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_saleorder_document
 msgid "Starting data indicated by the client:"
 msgstr "Datos de partida indicados por el cliente:"
 
@@ -158,43 +362,95 @@ msgid "Stock Move"
 msgstr "Movimiento de existencias"
 
 #. module: custom_documents
+#: field:stock.move,price_subtotal:0
+#: field:stock.move.service,price_subtotal:0
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
 msgid "Supplier Address:"
 msgstr "Dirección del proveedor:"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Supplier Invoice"
+msgstr "Factura de proveedor"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Supplier Refund"
+msgstr "Factura rectificativa de proveedor"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: custom_documents
+#: field:stock.picking,amount_tax:0
+#: view:website:custom_documents.report_invoice_document
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_purchaseorder_document
+#: view:website:custom_documents.report_saleorder_document
 #: view:website:custom_documents.report_valued_picking
 msgid "Taxes"
 msgstr "Impuestos"
 
 #. module: custom_documents
+#: field:stock.picking,amount_total:0
+#: view:website:custom_documents.report_invoice_document
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_purchaseorder_document
+#: view:website:custom_documents.report_saleorder_document
 #: view:website:custom_documents.report_valued_picking
 msgid "Total"
 msgstr "Total"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_purchaseorder_document
+#: view:website:custom_documents.report_saleorder_document
 #: view:website:custom_documents.report_valued_picking
 msgid "Total Without Taxes"
 msgstr "Total sin impuestos"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_purchaseorder_document
+#: view:website:custom_documents.report_saleorder_document
 msgid "Unit Price"
 msgstr "Precio unidad"
 
 #. module: custom_documents
+#: field:stock.picking,amount_untaxed:0
+msgid "Untaxed Amount"
+msgstr "Base imponible"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_purchaseorder_document
+#: view:website:custom_documents.report_saleorder_document
 #: view:website:custom_documents.report_valued_picking
 msgid "VAT:"
 msgstr "NIF:"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Validated By:"
+msgstr "Validado por:"
+
+#. module: custom_documents
 #: model:ir.actions.report.xml,name:custom_documents.action_report_valued_picking
 msgid "Valued picking"
 msgstr "Ablarán valorado"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Vencimiento:"
+msgstr "Vencimiento:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
@@ -207,12 +463,23 @@ msgid "Weight"
 msgstr "Peso"
 
 #. module: custom_documents
-#: view:website:custom_documents.report_proforma_
-msgid "Your Reference:"
-msgstr "Su referencia:"
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Your Order Reference"
+msgstr "Su referencia"
+
+#. module: custom_documents
+#: field:stock.picking,amount_gross:0
+msgid "amount gross"
+msgstr "amount gross"
+
+#. module: custom_documents
+#: field:sale.order,tittle:0
+msgid "name"
+msgstr "Título"
 
 #. module: custom_documents
 #: view:sale.order:custom_documents.sale_order_add_tittle
+#: field:sale.order,baseline_data:0
 msgid "starting data indicated by the client"
 msgstr "Datos de partida indicados por el cliente:"
 
