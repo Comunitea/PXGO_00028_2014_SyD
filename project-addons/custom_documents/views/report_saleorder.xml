@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <template id="sale.report_saleorder_document">
+        <template id="report_saleorder_document">
             <t t-call="report.external_layout">
                 <div class="page">
                     <div class="oe_structure"/>
@@ -58,27 +58,27 @@
                     </div>
 
                     <div class="row mt32 mb32" id="informations">
-                        <div t-if="o.client_order_ref" class="col-xs-3">
-                            <strong>Your Reference:</strong>
+                        <div class="col-xs-2" t-if="o.partner_id.supplier_ref">
+                            <strong>Ref. proveedor:</strong>
+                            <p t-field="o.partner_id.supplier_ref"/>
+                        </div>
+                        <div t-if="o.client_order_ref" class="col-xs-2">
+                            <strong>Reference:</strong>
                             <p t-field="o.client_order_ref"/>
                         </div>
-                        <div t-if="o.ship_id" class="col-xs-3">
-                            <strong>Ship</strong>
+                        <div t-if="o.ship_id" class="col-xs-2">
+                            <strong>Ship:</strong>
                             <p t-field="o.ship_id"/>
                         </div>
-                        <div t-if="o.date_order" class="col-xs-3">
+                        <div t-if="o.date_order" class="col-xs-2">
                             <strong t-if="o.state not in ['draft','sent']">Date Ordered:</strong>
                             <strong t-if="o.state in ['draft','sent']">Quotation Date:</strong>
                             <p t-field="o.date_order" t-field-options='{"format": "d/m/y"}'/>
                         </div>
-                        <div t-if="o.user_id.name" class="col-xs-3">
+                        <div t-if="o.user_id.name" class="col-xs-2">
                             <strong>Salesperson:</strong>
                             <p t-field="o.user_id.name"/>
                         </div>
-                        <!--div t-if="o.payment_term" class="col-xs-3">
-                            <strong>Payment Term:</strong>
-                            <p t-field="o.payment_term"/>
-                        </div-->
                     </div>
 
                     <table class="table table-condensed">
@@ -156,23 +156,31 @@
                         <div class="col-xs-4">Customer conformity:</div>
                         <div class="col-xs-4">Date:</div>
                     </div>
-
+                    <p></p>
                     <p t-field="o.note" />
                     <p t-if="o.payment_term.note">
                         <strong>Payment Term:</strong>
                         <span t-field="o.payment_term.note"/>
                     </p>
+                    <div class="row" t-if="o.payment_mode_id">
+                        <div class="col-xs-4">
+                            <strong>Payment mode:</strong> <span t-field="o.payment_mode_id.name"/>
+                        </div>
+                        <div t-if="o.payment_mode_id.bank_id" class="col-xs-4">
+                            Bank account: <span t-field="o.payment_mode_id.bank_id.acc_number"/>
+                        </div>
+                        <div t-if="o.payment_mode_id.bank_id" class="col-xs-4">
+                            SIWFT code: <span t-field="o.payment_mode_id.bank_id.bank_bic"/>
+                        </div>
+                    </div>
                     <div class="oe_structure"/>
                 </div>
             </t>
         </template>
 
-    </data>
 
-
-    <data>
         <template id="sale_layout.report_sale_layouted"
-                  inherit_id="sale.report_saleorder_document">
+                  inherit_id="custom_documents.report_saleorder_document">
             <xpath expr="//table/tbody[@class='sale_tbody']" position="replace">
                 <t t-foreach="o.sale_layout_lines(order_id = o.id)" t-as="p">
                     <!-- Name of the category -->
@@ -236,6 +244,13 @@
                 </t>
             </xpath>
        </template>
-    </data>
 
+        <template id="sale.report_saleorder">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'custom_documents.report_saleorder_document')"/>
+                </t>
+            </t>
+        </template>
+    </data>
 </openerp>

@@ -30,5 +30,5 @@ class StockPicking(models.Model):
     @api.model
     def _get_invoice_vals(self, key, inv_type, journal_id, move):
         res = super(StockPicking, self)._get_invoice_vals(key, inv_type, journal_id, move)
-        res['ship_id'] = move.picking_id.ship_id
+        res['ship_id'] = move.picking_id.ship_id.id
         return res
