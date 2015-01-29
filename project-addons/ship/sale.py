@@ -41,3 +41,8 @@ class SaleOrder(models.Model):
                             pickings += move.picking_id
             pickings.write({'ship_id': order.ship_id.id})
         return res
+
+    @api.model
+    def _prepare_invoice(self, order, lines):
+        res = super(SaleOrder, self)._prepare_invoice(order, lines)
+        res['ship_id'] = order.ship_id

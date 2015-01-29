@@ -6,6 +6,7 @@
                 <div class="row">
                     <div class="col-xs-4">
                         <span t-esc="company.name.upper()"/>
+                        <p t-field="company.partner_id.vat"/>
                     </div>
                     <div class="col-xs-2 text-left">
                         <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 70px;"/>

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2004-2014 Pexego Sistemas Informáticos All Rights Reserved
+#    $Marta Vázquez Rodríguez$ <marta@pexego.es>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -18,7 +18,25 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import ship
-from . import sale
-from . import stock
-from . import account
+
+{
+    "name": "Sale display stock",
+    "version": "1.0",
+    "author": "Pexego",
+    'website': 'www.pexego.es',
+    "category": "Sales",
+    "description": """
+Sales display stock
+========================================
+
+    * Displays the real stock of product at each sale order line.
+""",
+    "depends": ["base", "sale", "stock"],
+    "data": [
+        "sale_view.xml",
+    ],
+    "demo": [],
+    'auto_install': False,
+    "installable": True,
+    'images': [],
+}
