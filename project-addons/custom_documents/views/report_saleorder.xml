@@ -73,7 +73,7 @@
                         <div t-if="o.date_order" class="col-xs-2">
                             <strong t-if="o.state not in ['draft','sent']">Date Ordered:</strong>
                             <strong t-if="o.state in ['draft','sent']">Quotation Date:</strong>
-                            <p t-field="o.date_order" t-field-options='{"format": "d/m/y"}'/>
+                            <p t-field="o.date_order" t-field-options='{"format": "dd/MM/y"}'/>
                         </div>
                         <div t-if="o.user_id.name" class="col-xs-2">
                             <strong>Salesperson:</strong>
