@@ -51,7 +51,7 @@
                                         <span t-field="o.weight"/>
                                     </td>
                                      <td t-if="o.date_done">
-                                        <span t-field="o.date_done" t-field-options='{"format": "d/m/y"}'/>
+                                        <span t-field="o.date_done" t-field-options='{"format": "dd/MM/y"}'/>
                                     </td>
                                 </tr>
                             </tbody>
