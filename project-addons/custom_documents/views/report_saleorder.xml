@@ -42,6 +42,37 @@
                         </div>
                     </div>
 
+                    <div class="row mt32 mb32" id="informations">
+                        <div class="col-xs32" t-if="o.partner_id.supplier_ref">
+                            <strong>Ref. proveedor:</strong>
+                            <p t-field="o.partner_id.supplier_ref"/>
+                        </div>
+                        <div t-if="o.client_order_ref" class="col-xs-3">
+                            <strong>Reference:</strong>
+                            <p t-field="o.client_order_ref"/>
+                        </div>
+                        <div t-if="o.ship_id" class="col-xs-3">
+                            <strong>Ship:</strong>
+                            <p t-field="o.ship_id"/>
+                        </div>
+                        <div t-if="o.date_order" class="col-xs-3">
+                            <strong>Date:</strong>
+                            <p t-field="o.date_order" t-field-options='{"format": "dd/MM/y"}'/>
+                        </div>
+                        <div t-if="o.user_id.name" class="col-xs-3">
+                            <strong>Salesperson:</strong>
+                            <p t-field="o.user_id.name"/>
+                        </div>
+                        <div t-if="o.user_id.phone" class="col-xs-3">
+                            <strong>Phone:</strong>
+                            <p t-field="o.user_id.phone"/>
+                        </div>
+                        <div t-if="o.user_id.email" class="col-xs-3">
+                            <strong>Email:</strong>
+                            <p t-field="o.user_id.email"/>
+                        </div>
+                    </div>
+
                     <div t-if="o.baseline_data" class="row">
                         <div class="col-xs-12">
                             <div class="row">
@@ -54,30 +85,6 @@
                                     <span t-field="o.baseline_data"/>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="row mt32 mb32" id="informations">
-                        <div class="col-xs-2" t-if="o.partner_id.supplier_ref">
-                            <strong>Ref. proveedor:</strong>
-                            <p t-field="o.partner_id.supplier_ref"/>
-                        </div>
-                        <div t-if="o.client_order_ref" class="col-xs-2">
-                            <strong>Reference:</strong>
-                            <p t-field="o.client_order_ref"/>
-                        </div>
-                        <div t-if="o.ship_id" class="col-xs-2">
-                            <strong>Ship:</strong>
-                            <p t-field="o.ship_id"/>
-                        </div>
-                        <div t-if="o.date_order" class="col-xs-2">
-                            <strong t-if="o.state not in ['draft','sent']">Date Ordered:</strong>
-                            <strong t-if="o.state in ['draft','sent']">Quotation Date:</strong>
-                            <p t-field="o.date_order" t-field-options='{"format": "dd/MM/y"}'/>
-                        </div>
-                        <div t-if="o.user_id.name" class="col-xs-2">
-                            <strong>Salesperson:</strong>
-                            <p t-field="o.user_id.name"/>
                         </div>
                     </div>
 
@@ -147,22 +154,39 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <strong>Aceptance quotation Nº <span t-field="o.name"/>: <span t-field="o.tittle"/></strong>
+
+                    <p t-field="o.note" />
+                    <p/>
+                    <div style="page-break-inside: avoid;">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <strong>Aceptance quotation Nº <span t-field="o.name"/>: <span t-field="o.tittle"/></strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">Customer conformity:</div>
+                            <div class="col-xs-4">Date:</div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-4">Customer conformity:</div>
-                        <div class="col-xs-4">Date:</div>
-                    </div>
-                    <p></p>
-                    <p t-field="o.note" />
+                    <p/>
                     <p t-if="o.payment_term.note">
                         <strong>Payment Term:</strong>
                         <span t-field="o.payment_term.note"/>
                     </p>
-                    <div class="row" t-if="o.payment_mode_id">
+                    <div class="row" t-if="o.payment_mode_id and o.payment_mode_id.show_client_account" style="page-break-inside: avoid;">
+                        <div class="col-xs-4">
+                            <strong>Payment mode:</strong> <span t-field="o.payment_mode_id.name"/>
+                        </div>
+                        <div t-if="o.partner_id.bank_ids">
+                            <div class="col-xs-4">
+                                Bank account: <span t-esc="o.partner_id.bank_ids[0].acc_number"/>
+                            </div>
+                            <div class="col-xs-4">
+                                SIWFT code: <span t-esc="o.partner_id.bank_ids[0].bank_bic"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" t-if="o.payment_mode_id and not o.payment_mode_id.show_client_account" style="page-break-inside: avoid;">
                         <div class="col-xs-4">
                             <strong>Payment mode:</strong> <span t-field="o.payment_mode_id.name"/>
                         </div>
