@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
+#    Copyright (C) 2015 Pexego All Rights Reserved
 #    $Jesús Ventosinos Mayor <jesus@pexego.es>$
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -18,22 +18,21 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from openerp import models, fields, api
 
-{
-    'name': "Document customizations",
-    'version': '1.0',
-    'category': '',
-    'description': """""",
-    'author': 'Pexego',
-    'website': '',
-    "depends": ['report', 'sale', 'stock', 'sale_stock', 'picking_services',
-                'delivery', 'supplier_ref', 'sale_layout'],
-    "data": ['views/ir_qweb.xml', 'views/report_proforma.xml',
-             'views/report_saleorder.xml', 'sale_report.xml',
-             'views/report_stockpicking.xml',
-             'views/valued_picking_report.xml', 'stock_report.xml',
-             'views/report_purchase_order.xml', 'views/report_header.xml',
-             'sale_view.xml', 'stock_view.xml', 'views/report_invoice.xml',
-             'data/paperformat_data.xml', 'payment_mode_view.xml'],
-    "installable": True
-}
+
+class ResPartner(models.Model):
+
+    _inherit = 'res.partner'
+
+    checked_by = fields.Char('Checked by')
+    document_name = fields.Char('Document name', compute='_get_document_name',
+                                store=True)
+
+    @api.one
+    @api.depends('name', 'parent_id')
+    def _get_document_name(self):
+        if self.parent_id:
+            self.document_name = self.parent_id.document_name
+        else:
+            self.document_name = self.name
