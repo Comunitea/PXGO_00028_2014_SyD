@@ -21,3 +21,4 @@
 from . import stock
 from . import sale_order
 from . import payment_mode
+from . import res_partner

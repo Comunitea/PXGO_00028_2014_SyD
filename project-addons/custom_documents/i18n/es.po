@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-29 11:00+0000\n"
-"PO-Revision-Date: 2015-01-29 11:00+0000\n"
+"POT-Creation-Date: 2015-02-13 13:38+0000\n"
+"PO-Revision-Date: 2015-02-13 13:38+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -70,6 +70,11 @@ msgid "Carrier"
 msgstr "Transportista"
 
 #. module: custom_documents
+#: field:res.partner,checked_by:0
+msgid "Checked by"
+msgstr "Checked by"
+
+#. module: custom_documents
 #: field:stock.move,cost_subtotal:0
 #: field:stock.move.service,cost_subtotal:0
 msgid "Cost subtotal"
@@ -98,7 +103,6 @@ msgstr "Fecha"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
-#: view:website:custom_documents.report_saleorder_document
 msgid "Date Ordered:"
 msgstr "Fecha pedida:"
 
@@ -139,14 +143,24 @@ msgid "Discount (%)"
 msgstr "Descuento (%)"
 
 #. module: custom_documents
+#: field:res.partner,document_name:0
+msgid "Document name"
+msgstr "Document name"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
 msgid "Draft Invoice"
 msgstr "Factura borrador"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_saleorder_document
+msgid "Email:"
+msgstr "Correo electrónico:"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
 msgid "Fiscal Position Remark:"
-msgstr ""
+msgstr "Fiscal Position Remark:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
@@ -163,6 +177,11 @@ msgstr "Fecha de factura:"
 #: field:stock.move.service,margin:0
 msgid "Margin"
 msgstr "Margen"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_saleorder_document
+msgid "Name:"
+msgstr "Nombre:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_purchaseorder_document
@@ -205,6 +224,11 @@ msgid "Partner"
 msgstr "Empresa"
 
 #. module: custom_documents
+#: model:ir.model,name:custom_documents.model_payment_mode
+msgid "Payment Mode"
+msgstr "Modo de pago"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
 #: view:website:custom_documents.report_proforma_
 #: view:website:custom_documents.report_saleorder_document
@@ -217,6 +241,11 @@ msgstr "Plazo de pago:"
 #: view:website:custom_documents.report_saleorder_document
 msgid "Payment mode:"
 msgstr "Modo de pago:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_saleorder_document
+msgid "Phone:"
+msgstr "Teléfono:"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_stock_picking
@@ -267,7 +296,6 @@ msgstr "Presupuesto"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
-#: view:website:custom_documents.report_saleorder_document
 msgid "Quotation Date:"
 msgstr "Fecha de presupuesto:"
 
@@ -344,6 +372,11 @@ msgstr "Buque:"
 #: view:website:custom_documents.report_purchaseorder_document
 msgid "Shipping address:"
 msgstr "Dirección de envío:"
+
+#. module: custom_documents
+#: field:payment.mode,show_client_account:0
+msgid "Show client account"
+msgstr "Show client account"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
@@ -427,7 +460,7 @@ msgstr "Precio unidad"
 #. module: custom_documents
 #: field:stock.picking,amount_untaxed:0
 msgid "Untaxed Amount"
-msgstr "Base imponible"
+msgstr "Untaxed Amount"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_

@@ -63,13 +63,17 @@
                             <strong>Salesperson:</strong>
                             <p t-field="o.user_id.name"/>
                         </div>
-                        <div t-if="o.user_id.phone" class="col-xs-3">
-                            <strong>Phone:</strong>
-                            <p t-field="o.user_id.phone"/>
+                        <div class="col-xs-3">
+                            <strong>Name:</strong>
+                            <p t-field="o.partner_id.name"/>
                         </div>
-                        <div t-if="o.user_id.email" class="col-xs-3">
+                        <div t-if="o.partner_id.phone" class="col-xs-3">
+                            <strong>Phone:</strong>
+                            <p t-field="o.partner_id.phone"/>
+                        </div>
+                        <div t-if="o.partner_id.email" class="col-xs-3">
                             <strong>Email:</strong>
-                            <p t-field="o.user_id.email"/>
+                            <p t-field="o.partner_id.email"/>
                         </div>
                     </div>
 
@@ -156,19 +160,7 @@
 
 
                     <p t-field="o.note" />
-                    <p/>
-                    <div style="page-break-inside: avoid;">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <strong>Aceptance quotation Nº <span t-field="o.name"/>: <span t-field="o.tittle"/></strong>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-4">Customer conformity:</div>
-                            <div class="col-xs-4">Date:</div>
-                        </div>
-                    </div>
-                    <p/>
+
                     <p t-if="o.payment_term.note">
                         <strong>Payment Term:</strong>
                         <span t-field="o.payment_term.note"/>
@@ -195,6 +187,18 @@
                         </div>
                         <div t-if="o.payment_mode_id.bank_id" class="col-xs-4">
                             SIWFT code: <span t-field="o.payment_mode_id.bank_id.bank_bic"/>
+                        </div>
+                    </div>
+                    <p/>
+                    <div style="page-break-inside: avoid;">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <strong>Aceptance quotation Nº <span t-field="o.name"/>: <span t-field="o.tittle"/></strong>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">Customer conformity:</div>
+                            <div class="col-xs-4">Date:</div>
                         </div>
                     </div>
                     <div class="oe_structure"/>
