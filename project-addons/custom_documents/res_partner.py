@@ -32,7 +32,10 @@ class ResPartner(models.Model):
     @api.one
     @api.depends('name', 'parent_id')
     def _get_document_name(self):
-        if self.parent_id:
-            self.document_name = self.parent_id.document_name
-        else:
+        if self.is_company:
             self.document_name = self.name
+        else:
+            if self.parent_id:
+                self.document_name = self.parent_id.document_name
+            else:
+                self.document_name = self.name
