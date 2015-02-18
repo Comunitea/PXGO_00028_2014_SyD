@@ -63,15 +63,18 @@
                             <strong>Salesperson:</strong>
                             <p t-field="o.user_id.name"/>
                         </div>
-                        <div class="col-xs-3">
-                            <strong>Name:</strong>
+                        <div
+                                t-if="not (o.partner_id.is_company) and o.partner_id.type=='contact' and o.partner_id.name" class="col-xs-3">
+                            <strong>Contacto:</strong>
                             <p t-field="o.partner_id.name"/>
                         </div>
-                        <div t-if="o.partner_id.phone" class="col-xs-3">
+                        <div
+                                t-if="not (o.partner_id.is_company) and o.partner_id.type=='contact' and o.partner_id.phone" class="col-xs-3">
                             <strong>Phone:</strong>
                             <p t-field="o.partner_id.phone"/>
                         </div>
-                        <div t-if="o.partner_id.email" class="col-xs-3">
+                        <div
+                                t-if="not (o.partner_id.is_company) and o.partner_id.type=='contact' and o.partner_id.email" class="col-xs-3">
                             <strong>Email:</strong>
                             <p t-field="o.partner_id.email"/>
                         </div>
