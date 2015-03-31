@@ -27,7 +27,7 @@
     'author': 'Pexego',
     'website': '',
     "depends": ['report', 'sale', 'stock', 'sale_stock', 'picking_services',
-                'delivery', 'supplier_ref', 'sale_layout'],
+                'delivery', 'supplier_ref', 'sale_layout', 'product_pack'],
     "data": ['views/ir_qweb.xml', 'views/report_proforma.xml',
              'views/report_saleorder.xml', 'sale_report.xml',
              'views/report_stockpicking.xml',

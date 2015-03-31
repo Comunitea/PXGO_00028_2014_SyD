@@ -210,6 +210,18 @@ class sale_order_line(orm.Model):
                 no_pack_ids.append(line.id)
         return super(sale_order_line, self).invoice_line_create(cr, uid, no_pack_ids, context)
 
+    @api.multi
+    def pack_in_moves(self, product_ids):
+        is_in_list = True
+        for child in self.pack_child_line_ids:
+            if child.pack_child_line_ids:
+                if not child.pack_in_moves(product_ids):
+                    is_in_list = False
+            else:
+                if child.product_id.id not in product_ids:
+                    is_in_list = False
+        return is_in_list
+
 
 class sale_order(orm.Model):
     _inherit = 'sale.order'
@@ -228,11 +240,18 @@ class sale_order(orm.Model):
         line_obj = self.pool.get('sale.order.line')
         result = super(sale_order, self).copy(cr, uid, id, default, context)
         sale = self.browse(cr, uid, result, context)
-        for line in sale.order_line:
-            if line.pack_parent_line_id:
-                line_obj.unlink(cr, uid, [line.id], context)
+        self.unlink_pack_components(cr, uid, sale.id, context)
         self.expand_packs(cr, uid, sale.id, context)
         return result
+
+    def unlink_pack_components(self, cr, uid, sale_id, context=None):
+        unlink_lines = self.pool.get('sale.order.line').search(cr, uid, [('order_id', '=', sale_id), ('pack_parent_line_id', '!=', None), ('pack_child_line_ids', '=', None)], context=context)
+        if unlink_lines:
+            self.pool.get('sale.order.line').unlink(cr, uid, unlink_lines, context)
+            self.unlink_pack_components(cr, uid, sale_id, context)
+        else:
+            return
+
 
     def expand_packs(self, cr, uid, ids, context={}, depth=1):
         if type(ids) in [int, long]:
@@ -543,6 +562,50 @@ class purchase_order(orm.Model):
             self.expand_packs(cr, uid, ids, context, depth + 1)
         return
 
+    '''def action_invoice_create(self, cr, uid, ids, context=None):
+        """Generates invoice for given ids of purchase orders and links that invoice ID to purchase order.
+        :param ids: list of ids of purchase orders.
+        :return: ID of created invoice.
+        :rtype: int
+        """
+        context = dict(context or {})
+
+        inv_obj = self.pool.get('account.invoice')
+        inv_line_obj = self.pool.get('account.invoice.line')
+
+        res = False
+        uid_company_id = self.pool.get('res.users').browse(cr, uid, uid, context=context).company_id.id
+        for order in self.browse(cr, uid, ids, context=context):
+            context.pop('force_company', None)
+            if order.company_id.id != uid_company_id:
+                #if the company of the document is different than the current user company, force the company in the context
+                #then re-do a browse to read the property fields for the good company.
+                context['force_company'] = order.company_id.id
+                order = self.browse(cr, uid, order.id, context=context)
+
+            # generate invoice line correspond to PO line and link that to created invoice (inv_id) and PO line
+            inv_lines = []
+            for po_line in order.order_line:
+                if po_line.pack_depth > 0:
+                    continue
+                acc_id = self._choose_account_from_po_line(cr, uid, po_line, context=context)
+                inv_line_data = self._prepare_inv_line(cr, uid, acc_id, po_line, context=context)
+                inv_line_id = inv_line_obj.create(cr, uid, inv_line_data, context=context)
+                inv_lines.append(inv_line_id)
+                po_line.write({'invoice_lines': [(4, inv_line_id)]})
+
+            # get invoice data and create invoice
+            inv_data = self._prepare_invoice(cr, uid, order, inv_lines, context=context)
+            inv_id = inv_obj.create(cr, uid, inv_data, context=context)
+
+            # compute the invoice
+            inv_obj.button_compute(cr, uid, [inv_id], context=context, set_total=True)
+
+            # Link this new invoice to related purchase order
+            order.write({'invoice_ids': [(4, inv_id)]})
+            res = inv_id
+        return res'''
+
 
 class stock_pciking(orm.Model):
 
@@ -585,15 +648,34 @@ class stock_pciking(orm.Model):
                 # Si el albarán no tiene ningun movimiento facturable se crea
                 # una factura con uno de los movimientos y se borran las lineas.
                 invoice = self._invoice_create_line(cr, uid, [moves[0]], journal_id, type, context=context)
-                to_delete = inv_line_obj.search(
-                    cr, uid,[('invoice_id', '=', invoice),
-                             ('product_id', '=', moves[0].product_id.id)],
-                    context=context)
+                to_delete = inv_line_obj.search(cr, uid,
+                    [('invoice_id', '=', invoice),
+                     ('product_id', '=', moves[0].product_id.id)], context=context)
                 inv_line_obj.unlink(cr, uid, to_delete, context)
                 invoices += invoice
             if pack_moves:
                 self.pool.get('stock.move').write(cr, uid, [x.id for x in pack_moves], {'invoice_state': 'invoiced'}, context)
         return invoices
+
+
+    def _create_invoice_from_picking(self, cr, uid, picking, vals, context=None):
+        sale_obj = self.pool.get('sale.order')
+        sale_line_obj = self.pool.get('sale.order.line')
+        invoice_line_obj = self.pool.get('account.invoice.line')
+        invoice_id = super(stock_pciking, self)._create_invoice_from_picking(cr, uid, picking, vals, context=context)
+        picking_product_ids = [x.product_id.id for x in picking.move_lines]
+        if picking.group_id:
+            sale_ids = sale_obj.search(cr, uid, [('procurement_group_id', '=', picking.group_id.id)], context=context)
+            if sale_ids:
+                sale_line_ids = sale_line_obj.search(cr, uid, [('order_id', 'in', sale_ids), ('product_id.type', '=', 'service')], context=context)
+                if sale_line_ids:
+                    for line in sale_line_obj.browse(cr, uid, sale_line_ids, context):
+                        if line.pack_child_line_ids and not line.pack_parent_line_id and line.invoiced:
+                            if not line.pack_in_moves(picking_product_ids):
+                                invoice_line_obj.unlink(cr, uid, [x.id for x in line.invoice_lines], context)
+                                sale_line_obj.write(cr, uid, line.id, {'invoice_lines': False}, context)
+        return invoice_id
+
 
 
 class stock_move(orm.Model):
