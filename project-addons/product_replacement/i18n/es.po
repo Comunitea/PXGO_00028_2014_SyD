@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * product_replacement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-06 16:00+0000\n"
+"PO-Revision-Date: 2015-04-06 16:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_replacement
+#: model:ir.model,name:product_replacement.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "Lote/Nº de serie"
+
+#. module: product_replacement
+#: model:ir.model,name:product_replacement.model_stock_pack_operation
+msgid "Packing Operation"
+msgstr "Operación de empaquetado"
+
+#. module: product_replacement
+#: model:ir.model,name:product_replacement.model_stock_transfer_details
+msgid "Picking wizard"
+msgstr "Asistente de albarán"
+
+#. module: product_replacement
+#: model:ir.model,name:product_replacement.model_stock_transfer_details_items
+msgid "Picking wizard items"
+msgstr "Elementos del asistente de albarán"
+
+#. module: product_replacement
+#: model:ir.model,name:product_replacement.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: product_replacement
+#: field:product.product,replacement_for_ids:0
+#: field:stock.pack.operation,replacement_for_id:0
+#: field:stock.transfer_details_items,replacement_for_id:0
+msgid "Replacement for"
+msgstr "Repuesto para"
+
+#. module: product_replacement
+#: view:stock.production.lot:product_replacement.stock_production_lot_add_replacement
+msgid "Replacement sended"
+msgstr "Repuesto enviado"
+
+#. module: product_replacement
+#: view:product.product:product_replacement.product_product_form_add_replacements
+#: field:product.product,replacement_ids:0
+msgid "Replacements"
+msgstr "Repuestos"
+
+#. module: product_replacement
+#: field:stock.production.lot,replacement_sended:0
+msgid "Replacements sended"
+msgstr "Repuestos enviados"
+
