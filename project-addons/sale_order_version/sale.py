@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields, api, exceptions, _
+from openerp import models, fields, api, exceptions, _, tools
 
 
 class SaleOrder(models.Model):
@@ -26,9 +26,9 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     version = fields.Integer('Version')
-    new_version_id = fields.Many2one('sale.order', 'New version')
-    orig_version_id = fields.Many2one('sale.order', 'Original version')
-
+    base_version = fields.Many2one('sale.order', 'Base version', copy=False)
+    version_ids = fields.One2many('sale.order', compute='_get_versions', string='Versions')
+    active = fields.Boolean('Active', default=True)
 
 
     name = fields.Char(states={'draft': [('readonly', False)]})
@@ -44,9 +44,59 @@ class SaleOrder(models.Model):
     ship_id = fields.Many2one(states={'draft': [('readonly', False)]})
 
 
-    @api.one
+    @api.multi
+    @api.depends('base_version')
+    def _get_versions(self):
+        for sale in self:
+            if not sale.base_version:
+                sale.version_ids = False
+                continue
+            versions = self.search(
+                [('base_version', '=', sale.base_version.id),
+                 ('id', '!=', sale.id), '|', ('active', '=', True),
+                 ('active', '=', False)])
+            sale.version_ids = versions
+
+    @api.multi
     def create_new_version(self):
-        new_version = self.copy({'version': self.version + 1, 'orig_version_id': self.id})
-        new_version.write({'name': new_version.name + ' V' + str(new_version.version)})
-        self.new_version_id = new_version.id
-        self.signal_workflow('cancel')
+        args = {'version': self.version + 1, 'name': self.base_version.name + ' V' + str(self.version + 1), 'base_version': self.base_version.id}
+        new_version = self.copy(args)
+        self.write({'active': False})
+        action = self.env.ref('sale.action_quotations')
+        if not action:
+            return
+        action = action.read()[0]
+        res = self.env.ref('sale.view_order_form')
+        action['views'] = [(res.id, 'form')]
+        action['res_id'] = new_version.id
+        action['context'] = False
+        return action
+
+    @api.model
+    def create(self, vals):
+        res = super(SaleOrder, self).create(vals)
+        if not res.base_version:
+            res.base_version = res.id
+        return res
+
+
+
+class SaleOrderLine(models.Model):
+
+    _inherit = 'sale.order.line'
+
+    active = fields.Boolean('Active', default=True)
+
+
+class sale_report(models.Model):
+    _inherit = "sale.report"
+
+    def init(self, cr):
+        # self._table = sale_report
+        tools.drop_view_if_exists(cr, self._table)
+        cr.execute("""CREATE or REPLACE VIEW %s as (
+            %s
+            FROM ( %s )
+            WHERE s.active=true
+            %s
+            )""" % (self._table, self._select(), self._from(), self._group_by()))

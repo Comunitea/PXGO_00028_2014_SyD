@@ -7,14 +7,18 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <button name="copy_quotation" position="replace">
-                    <field name="new_version_id" invisible="1"/>
-                    <button name="copy_quotation" string="New Copy of Quotation" type="object" attrs="{'invisible': ['|', ('state', '!=', 'cancel'), ('new_version_id', '!=', None)]}"/>
+                    <!--field name="new_version_id" invisible="1"/>
+                    <button name="copy_quotation" string="New Copy of Quotation" type="object" attrs="{'invisible': ['|', ('state', '!=', 'cancel'), ('new_version_id', '!=', None)]}"/-->
                     <button name="create_new_version" string="New version of order" type="object" states="sent"/>
                 </button>
                 <field name="pricelist_id" position="after">
-                    <field name="new_version_id" readonly="1" attrs="{'invisible': [('new_version_id', '=', False)]}"/>
-                    <field name="orig_version_id" readonly="1" attrs="{'invisible': [('orig_version_id', '=', False)]}"/>
+                    <!--field name="base_version" readonly="1"/-->
                 </field>
+                <notebook position="inside">
+                    <page string="Versions" attrs="{'invisible': [('version_ids', '=', [])]}">
+                        <field name="version_ids"/>
+                    </page>
+                </notebook>
             </field>
         </record>
     </data>

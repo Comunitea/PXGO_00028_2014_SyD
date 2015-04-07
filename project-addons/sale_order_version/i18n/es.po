@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 08:14+0000\n"
-"PO-Revision-Date: 2015-04-07 08:14+0000\n"
+"POT-Creation-Date: 2015-04-07 16:24+0000\n"
+"PO-Revision-Date: 2015-04-07 16:24+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,15 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_order_version
-#: view:sale.order:sale_order_version.sale_order_view_form_add_version
-msgid "New Copy of Quotation"
-msgstr "Nueva copia de presupuesto"
+#: field:sale.order,active:0
+#: field:sale.order.line,active:0
+msgid "Active"
+msgstr "Activo"
 
 #. module: sale_order_version
-#: field:sale.order,new_version_id:0
-msgid "New version"
-msgstr "Nueva versión"
+#: field:sale.order,base_version:0
+msgid "Base version"
+msgstr "Versión base"
 
 #. module: sale_order_version
 #: view:sale.order:sale_order_version.sale_order_view_form_add_version
@@ -31,17 +32,27 @@ msgid "New version of order"
 msgstr "Nueva versión del pedido"
 
 #. module: sale_order_version
-#: field:sale.order,orig_version_id:0
-msgid "Original version"
-msgstr "Versión original"
-
-#. module: sale_order_version
 #: model:ir.model,name:sale_order_version.model_sale_order
 msgid "Sales Order"
 msgstr "Pedido de venta"
 
 #. module: sale_order_version
+#: model:ir.model,name:sale_order_version.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: sale_order_version
+#: model:ir.model,name:sale_order_version.model_sale_report
+msgid "Sales Orders Statistics"
+msgstr "Estadísticas pedidos de venta"
+
+#. module: sale_order_version
 #: field:sale.order,version:0
 msgid "Version"
 msgstr "Versión"
+
+#. module: sale_order_version
+#: view:sale.order:sale_order_version.sale_order_view_form_add_version
+msgid "Versions"
+msgstr "Versiones"
 
