@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <field name="client_order_ref" position="after">
-                    <field name="ship_id" attrs="{'readonly': [('state', 'not in', ['draft', 'sent'])]}" domain="[('partner_id', '=', partner_id)]" context="{'default_partner_id': partner_id}"/>
+                    <field name="ship_id" domain="[('partner_id', '=', partner_id)]" context="{'default_partner_id': partner_id}"/>
                 </field>
             </field>
         </record>
