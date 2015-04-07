@@ -25,7 +25,7 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    ship_id = fields.Many2one('ship', 'Ship')
+    ship_id = fields.Many2one('ship', 'Ship', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]})
 
     @api.multi
     def action_ship_create(self):
