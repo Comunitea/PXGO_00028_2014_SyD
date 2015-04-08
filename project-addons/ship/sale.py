@@ -46,3 +46,4 @@ class SaleOrder(models.Model):
     def _prepare_invoice(self, order, lines):
         res = super(SaleOrder, self)._prepare_invoice(order, lines)
         res['ship_id'] = order.ship_id
+        return res
