@@ -92,26 +92,28 @@
                        </thead>
                        <tbody class="sale_tbody">
                             <tr t-foreach="o.order_line" t-as="l">
-                                <td>
-                                   <span t-field="l.name"/>
-                                </td>
-                                <td class="text-right">
-                                    <span t-field="l.product_uom_qty"/>
-                                    <span groups="product.group_uom" t-field="l.product_uom"/>
-                                </td>
-                                <td class="text-right">
-                                    <span t-field="l.price_unit"
-                                        t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
-                                </td>
-                                <t t-if="o.have_discounts">
-                                    <td groups="sale.group_discount_per_so_line">
-                                        <span t-field="l.discount"/>
+                                <t t-if="l.pack_depth == 0">
+                                    <td>
+                                       <span t-field="l.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.product_uom_qty"/>
+                                        <span groups="product.group_uom" t-field="l.product_uom"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.price_unit"
+                                            t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                    </td>
+                                    <t t-if="o.have_discounts">
+                                        <td groups="sale.group_discount_per_so_line">
+                                            <span t-field="l.discount"/>
+                                        </td>
+                                    </t>
+                                    <td class="text-right">
+                                        <span t-field="l.price_subtotal"
+                                            t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
                                     </td>
                                 </t>
-                                <td class="text-right">
-                                    <span t-field="l.price_subtotal"
-                                        t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
-                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -160,7 +162,20 @@
                         <strong>Payment Term:</strong>
                         <span t-field="o.payment_term.note"/>
                     </p>
-                    <div class="row" t-if="o.payment_mode_id">
+                    <div class="row" t-if="o.payment_mode_id and o.payment_mode_id.show_client_account" style="page-break-inside: avoid;">
+                        <div class="col-xs-4">
+                            <strong>Payment mode:</strong> <span t-field="o.payment_mode_id.name"/>
+                        </div>
+                        <div t-if="o.partner_id.bank_ids">
+                            <div class="col-xs-4">
+                                Bank account: <span t-esc="o.partner_id.bank_ids[0].acc_number"/>
+                            </div>
+                            <div class="col-xs-4">
+                                SIWFT code: <span t-esc="o.partner_id.bank_ids[0].bank_bic"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" t-if="o.payment_mode_id and not o.payment_mode_id.show_client_account" style="page-break-inside: avoid;">
                         <div class="col-xs-4">
                             <strong>Payment mode:</strong> <span t-field="o.payment_mode_id.name"/>
                         </div>

@@ -158,13 +158,31 @@
                         <span t-foreach="o.move_id.line_id" t-as="ml">
                             <span t-if="ml.date_maturity">
                                 <span t-field="ml.date_maturity"/>:
-                                <span t-field="ml.debit"/> -
+                                <t t-if="ml.debit">
+                                    <span t-field="ml.debit"/> -
+                                </t>
+                                <t t-if="ml.credit">
+                                    <span t-field="ml.credit"/> -
+                                </t>
                             </span>
                         </span>
 
                     </p>
 
-                    <div class="row" t-if="o.payment_mode_id">
+                    <div class="row" t-if="o.payment_mode_id and o.payment_mode_id.show_client_account" style="page-break-inside: avoid;">
+                        <div class="col-xs-4">
+                            <strong>Payment mode:</strong> <span t-field="o.payment_mode_id.name"/>
+                        </div>
+                        <div t-if="o.partner_id.bank_ids">
+                            <div class="col-xs-4">
+                                Bank account: <span t-esc="o.partner_id.bank_ids[0].acc_number"/>
+                            </div>
+                            <div class="col-xs-4">
+                                SIWFT code: <span t-esc="o.partner_id.bank_ids[0].bank_bic"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" t-if="o.payment_mode_id and not o.payment_mode_id.show_client_account" style="page-break-inside: avoid;">
                         <div class="col-xs-4">
                             <strong>Payment mode:</strong> <span t-field="o.payment_mode_id.name"/>
                         </div>
