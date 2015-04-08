@@ -1,8 +1,8 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright(c) 2013-2015 Serv. Tecnol. Avanzados (http://serviciosbaeza.com)
+#                           Pedro M. Baeza <pedro.baeza@serviciosbaeza.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -18,7 +18,19 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import stock
-from . import sale_order
-from . import payment_mode
-from . import res_partner
+{
+    'name': 'Importación de extractos bancarios españoles (Norma 43)',
+    'category': 'Accounting & Finance',
+    'version': '4.0',
+    'license': 'AGPL-3',
+    'author': 'Spanish Localization Team,'
+              'Serv. Tecnol. Avanzados - Pedro M. Baeza,'
+              'Antiun Ingenería S.L.,'
+              'Odoo Community Association (OCA)',
+    "website": "https://github.com/OCA/l10n-spain",
+    'depends': [
+        'account_bank_statement_import',
+    ],
+    'data': [],
+    'installable': True,
+}

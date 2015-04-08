@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
+#    Copyright (C) 2015 Pexego All Rights Reserved
 #    $Jesús Ventosinos Mayor <jesus@pexego.es>$
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -21,29 +21,26 @@
 from openerp import models, fields, api
 
 
-class SaleOrder(models.Model):
+class account_invoice(models.Model):
 
-    _inherit = 'sale.order'
-
-    ship_id = fields.Many2one('ship', 'Ship', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]})
+    _inherit = 'account.invoice'
 
     @api.multi
-    def action_ship_create(self):
-        res = super(SaleOrder, self).action_ship_create()
-        for order in self:
-            if not order.ship_id:
-                continue
-            pickings = self.env['stock.picking']
-            for line in order.order_line:
-                for procurement in line.procurement_ids:
-                    for move in procurement.move_ids:
-                        if move.picking_id not in pickings:
-                            pickings += move.picking_id
-            pickings.write({'ship_id': order.ship_id.id})
+    def action_move_create(self):
+        res = super(account_invoice, self).action_move_create()
+        for invoice in self:
+            move_lines = self.env['account.move.line'].search(
+                [('move_id', '=', invoice.move_id.id),
+                 ('date_maturity', '!=', False)], order='date_maturity')
+            sequence = 1
+            for line in move_lines:
+                line.sequence = sequence
+                sequence += 1
         return res
 
-    @api.model
-    def _prepare_invoice(self, order, lines):
-        res = super(SaleOrder, self)._prepare_invoice(order, lines)
-        res['ship_id'] = order.ship_id
-        return res
+
+class account_move_line(models.Model):
+
+    _inherit = 'account.move.line'
+
+    sequence = fields.Integer('Sequence')

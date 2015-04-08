@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
+#    Copyright (C) 2015 Pexego All Rights Reserved
 #    $Jesús Ventosinos Mayor <jesus@pexego.es>$
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -20,20 +20,13 @@
 ##############################################################################
 
 {
-    'name': "Document customizations",
+    'name': 'Account move sequence',
     'version': '1.0',
-    'category': '',
-    'description': """""",
+    'category': 'account',
+    'description': """Adds sequence to account moves""",
     'author': 'Pexego',
     'website': '',
-    "depends": ['report', 'sale', 'stock', 'sale_stock', 'picking_services',
-                'delivery', 'supplier_ref', 'sale_layout', 'product_pack'],
-    "data": ['views/ir_qweb.xml', 'views/report_proforma.xml',
-             'views/report_saleorder.xml', 'sale_report.xml',
-             'views/report_stockpicking.xml',
-             'views/valued_picking_report.xml', 'stock_report.xml',
-             'views/report_purchase_order.xml', 'views/report_header.xml',
-             'sale_view.xml', 'stock_view.xml', 'views/report_invoice.xml',
-             'data/paperformat_data.xml', 'payment_mode_view.xml'],
+    "depends": ['account'],
+    "data": ['account_view.xml'],
     "installable": True
 }

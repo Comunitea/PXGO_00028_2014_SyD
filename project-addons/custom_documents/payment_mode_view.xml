@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="payment_mode_add_client_account" model="ir.ui.view">
+            <field name="name">payment.mode.form</field>
+            <field name="model">payment.mode</field>
+            <field name="inherit_id" ref="account_payment.view_payment_mode_form"/>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="show_client_account"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
