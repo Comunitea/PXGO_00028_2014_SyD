@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <field name="partner_id" position="attributes">
                     <attribute name="domain">[ ('customer', '=', True), '|', ('active', '=', True), '&amp;', ('active', '=', False), ('prospective', '=', True)]</attribute>
+                    <attribute name="context">{'default_active': False, 'default_prospective': True}</attribute>
                 </field>
             </field>
         </record>

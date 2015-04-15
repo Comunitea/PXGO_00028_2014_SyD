@@ -9,6 +9,7 @@
             <field name="arch" type="xml">
                 <field name="partner_ids" position="attributes">
                     <attribute name="domain">['|', ('active', '=', True), '&amp;', ('active', '=', False), ('prospective', '=', True)]</attribute>
+                    <attribute name="context">{'default_active': False, 'default_prospective': True}</attribute>
                 </field>
             </field>
         </record>
