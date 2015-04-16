@@ -6,14 +6,77 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-06 16:00+0000\n"
-"PO-Revision-Date: 2015-04-06 16:00+0000\n"
+"POT-Creation-Date: 2015-04-16 09:32+0000\n"
+"PO-Revision-Date: 2015-04-16 09:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: product_replacement
+#: view:sale.add.replacement:product_replacement.sale_add_replacement_form
+msgid "Add"
+msgstr "Añadir"
+
+#. module: product_replacement
+#: model:ir.actions.act_window,name:product_replacement.sale_add_replacement_action
+#: view:sale.add.replacement:product_replacement.sale_add_replacement_form
+#: view:sale.order:product_replacement.sale_order_add_replacement_form
+msgid "Add replacements"
+msgstr "Añadir repuestos"
+
+#. module: product_replacement
+#: view:sale.add.replacement:product_replacement.sale_add_replacement_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: product_replacement
+#: field:product.replacement,create_uid:0
+#: field:sale.add.replacement,create_uid:0
+#: field:sale.add.replacement.line,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: product_replacement
+#: field:product.replacement,create_date:0
+#: field:sale.add.replacement,create_date:0
+#: field:sale.add.replacement.line,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: product_replacement
+#: field:product.replacement,disassembly_ref:0
+#: field:sale.add.replacement.line,disassembly_ref:0
+msgid "Disassembly reference"
+msgstr "Referencia de despiece"
+
+#. module: product_replacement
+#: field:product.replacement,id:0
+#: field:sale.add.replacement,id:0
+#: field:sale.add.replacement.line,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: product_replacement
+#: field:product.replacement,write_uid:0
+#: field:sale.add.replacement,write_uid:0
+#: field:sale.add.replacement.line,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: product_replacement
+#: field:product.replacement,write_date:0
+#: field:sale.add.replacement,write_date:0
+#: field:sale.add.replacement.line,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: product_replacement
+#: field:sale.add.replacement,line_ids:0
+msgid "Lines"
+msgstr "Lineas"
 
 #. module: product_replacement
 #: model:ir.model,name:product_replacement.model_stock_production_lot
@@ -37,11 +100,27 @@ msgstr "Elementos del asistente de albarán"
 
 #. module: product_replacement
 #: model:ir.model,name:product_replacement.model_product_product
+#: field:sale.add.replacement,product_id:0
+#: field:sale.add.replacement.line,product_id:0
 msgid "Product"
 msgstr "Producto"
 
 #. module: product_replacement
-#: field:product.product,replacement_for_ids:0
+#: field:product.replacement,qty:0
+#: field:sale.add.replacement.line,qty:0
+#: field:sale.add.replacement.line,qty_in:0
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: product_replacement
+#: view:product.replacement:product_replacement.product_replacement_filter
+#: view:product.replacement:product_replacement.product_replacement_form
+#: field:product.replacement,product_id:0
+msgid "Replacement"
+msgstr "Repuesto"
+
+#. module: product_replacement
+#: field:product.replacement,replacement_for_ids:0
 #: field:stock.pack.operation,replacement_for_id:0
 #: field:stock.transfer_details_items,replacement_for_id:0
 msgid "Replacement for"
@@ -53,13 +132,26 @@ msgid "Replacement sended"
 msgstr "Repuesto enviado"
 
 #. module: product_replacement
+#: model:ir.actions.act_window,name:product_replacement.action_product_replacement
+#: model:ir.ui.menu,name:product_replacement.product_replacement_menu
 #: view:product.product:product_replacement.product_product_form_add_replacements
 #: field:product.product,replacement_ids:0
+#: view:product.replacement:product_replacement.product_replacement_tree
 msgid "Replacements"
 msgstr "Repuestos"
+
+#. module: product_replacement
+#: field:product.product,replacement_for_ids:0
+msgid "Replacements for"
+msgstr "Repuestos para"
 
 #. module: product_replacement
 #: field:stock.production.lot,replacement_sended:0
 msgid "Replacements sended"
 msgstr "Repuestos enviados"
+
+#. module: product_replacement
+#: field:sale.add.replacement.line,wizard_id:0
+msgid "wizard"
+msgstr "Asistente"
 

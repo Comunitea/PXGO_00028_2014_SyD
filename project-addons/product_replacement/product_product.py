@@ -25,13 +25,27 @@ class ProductProduct(models.Model):
 
     _inherit = 'product.product'
 
-    replacement_for_ids = fields.Many2many('product.product',
-                                           'product_replacements_rel',
-                                           'replacement_for_id',
-                                           'replacement_id',
-                                           'Replacement for')
-    replacement_ids = fields.Many2many('product.product',
-                                       'product_replacements_rel',
-                                       'replacement_id',
-                                       'replacement_for_id',
-                                       'Replacements')
+    replacement_for_ids = fields.One2many('product.replacement',
+                                          'product_id',
+                                          'Replacements for')
+    replacement_ids = fields.Many2many(
+        'product.replacement',
+        'product_replacement_rel',
+        'product_id',
+        'replacement_id',
+        'Replacements')
+
+
+class ProductReplacement(models.Model):
+
+    _name = 'product.replacement'
+
+    product_id = fields.Many2one('product.product', 'Replacement')
+    replacement_for_ids = fields.Many2many(
+        'product.product',
+        'product_replacement_rel',
+        'replacement_id',
+        'product_id',
+        'Replacement for')
+    qty = fields.Float('Quantity')
+    disassembly_ref = fields.Char('Disassembly reference')

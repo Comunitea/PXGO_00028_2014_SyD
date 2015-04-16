@@ -18,15 +18,4 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-{
-    'name': 'Product replacement',
-    'version': '1.0',
-    'category': 'product',
-    'description': """""",
-    'author': 'Pexego',
-    'website': '',
-    "depends": ['product', 'stock', 'sale'],
-    "data": ['product_product_view.xml', 'stock_view.xml', 'wizard/sale_replacement.xml', 'sale_view.xml', 'security/ir.model.access.csv'],
-    "installable": True
-}
+from . import sale_replacement
