@@ -49,14 +49,17 @@ class stock_transfer_details_item(models.TransientModel):
                                    'transfer_details_lot_rel', 'transfer_id',
                                    'lot_id', 'filter lots',
                                    compute='_get_lots')
-    picking_type = fields.Char('Picking type', related='transfer_id.picking_id.picking_type_code')
+    picking_type = fields.Char(
+        'Picking type', related='transfer_id.picking_id.picking_type_code')
 
     @api.one
     @api.depends('product_id')
     def _get_lots(self):
+        product_ids = []
+        for replacement in self.product_id.replacement_for_ids:
+            product_ids += [x.id for x in replacement.replacement_for_ids]
         self.filter_lots = self.env['stock.production.lot'].search(
-            [('product_id', 'in',
-              [x.id for x in self.product_id.replacement_for_ids])])
+            [('product_id', 'in', product_ids)])
 
 
 class stock_transfer_details(models.TransientModel):
