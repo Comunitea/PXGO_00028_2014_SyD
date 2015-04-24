@@ -18,7 +18,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import purchase
-from . import procurement
-from . import sale
-from . import crm
+from openerp import models, fields, api, exceptions, _
+
+
+class StockPicking(models.Model):
+
+    _inherit = 'stock.picking'
+
+    supplier_ref = fields.Char('Supplier reference')
+
+    @api.model
+    def _get_invoice_vals(self, key, inv_type, journal_id, move):
+        res = super(StockPicking, self)._get_invoice_vals(key, inv_type, journal_id, move)
+        res['supplier_picking_ref'] = move.picking_id.supplier_ref
+        return res

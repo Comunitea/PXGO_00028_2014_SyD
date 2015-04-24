@@ -115,6 +115,9 @@
                     </div>
 
                     <p t-field="o.notes"/>
+                    <p t-if="o.carrier">
+                        Carrier: <span t-field="o.carrier"/>
+                    </p>
                     <div class="oe_structure"/>
                 </div>
             </t>

@@ -18,7 +18,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import purchase
-from . import procurement
-from . import sale
-from . import crm
+from openerp import models, fields, api, exceptions, _
+
+
+class sale_order(models.Model):
+
+    _inherit = 'sale.order'
+
+    def print_quotation(self, cr, uid, ids, context=None):
+        assert len(ids) == 1, 'This option should only be used for a single id at a time'
+        return self.pool['report'].get_action(cr, uid, ids, 'sale.report_saleorder', context=context)
+
+    def quotation_sended(self, cr, uid, ids, context=None):
+        self.signal_workflow(cr, uid, ids, 'quotation_sent')
+        return True

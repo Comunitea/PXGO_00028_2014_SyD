@@ -20,3 +20,7 @@
 ##############################################################################
 from . import product
 from . import purchase
+from . import stock
+from . import account
+from . import res_partner
+from . import sale_order

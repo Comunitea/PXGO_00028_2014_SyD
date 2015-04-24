@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-29 11:06+0000\n"
-"PO-Revision-Date: 2015-01-29 11:06+0000\n"
+"POT-Creation-Date: 2015-04-23 17:56+0000\n"
+"PO-Revision-Date: 2015-04-23 17:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: syd_custom
+#: field:purchase.order,carrier:0
+msgid "Carrier"
+msgstr "Transporte"
 
 #. module: syd_custom
 #: field:product.category,sale_delay:0
@@ -29,6 +34,26 @@ msgstr "En recepciones"
 #: view:purchase.order:syd_custom.purchase_order_change_shpiment_count
 msgid "Incoming Shipments"
 msgstr "Albaranes de entrada"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: syd_custom
+#: view:sale.order:syd_custom.sale_order_add_button_send
+msgid "Mark as sended"
+msgstr "marcar como enviado"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_stock_picking
+msgid "Picking List"
+msgstr "Albarán"
 
 #. module: syd_custom
 #: model:ir.model,name:syd_custom.model_product_product
@@ -49,6 +74,21 @@ msgstr "Plantilla de producto"
 #: model:ir.model,name:syd_custom.model_purchase_order
 msgid "Purchase Order"
 msgstr "Pedido de compra"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: syd_custom
+#: field:account.invoice,supplier_picking_ref:0
+msgid "Supplier picking reference"
+msgstr "Referencia del albarán de proveedor"
+
+#. module: syd_custom
+#: field:stock.picking,supplier_ref:0
+msgid "Supplier reference"
+msgstr "Referencia de proveedor"
 
 #. module: syd_custom
 #: field:product.category,use_in_sub:0

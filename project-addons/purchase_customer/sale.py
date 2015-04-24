@@ -18,7 +18,13 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import purchase
-from . import procurement
-from . import sale
-from . import crm
+from openerp import models, fields
+
+
+class SaleOrder(models.Model):
+
+    _inherit = 'sale.order'
+
+    purchase_ids = fields.Many2many('purchase.order',
+                                    'sale_purchase_order_rel', 'sale_id',
+                                    'purchase_id', 'Related purchases')

@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields, api, exceptions, _
+from openerp import models, fields
 
 
 class purchase_order(models.Model):
@@ -26,3 +26,7 @@ class purchase_order(models.Model):
     _inherit = 'purchase.order'
 
     customer_id = fields.Many2one('res.partner', 'Customer')
+    sale_ids = fields.Many2many('sale.order', 'sale_purchase_order_rel',
+                                'purchase_id', 'sale_id', 'related Sales')
+    lead_ids = fields.Many2many('crm.lead', 'lead_purchase_order_rel',
+                                'purchase_id', 'lead_id', 'Related leads')
