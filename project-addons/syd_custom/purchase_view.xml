@@ -19,6 +19,9 @@
                             <field name="shipment_count_" widget="statinfo" string="In Shipments" help="Incoming Shipments"/>
                     </button>
                 </xpath>
+                <field name="picking_type_id" position="after">
+                    <field name="carrier"/>
+                </field>
           </field>
       </record>
 

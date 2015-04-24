@@ -26,6 +26,7 @@ class PurchaseOrder(models.Model):
 
     shipment_count_ = fields.Integer('Incoming Shipments',
                                      compute='_count_ship', store=False)
+    carrier = fields.Char('Carrier')
 
     @api.depends('picking_ids')
     def _count_ship(self):

@@ -18,7 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import purchase
-from . import procurement
-from . import sale
-from . import crm
+from openerp import models, fields
+
+
+class AccountInvoice(models.Model):
+
+    _inherit = 'account.invoice'
+
+    supplier_picking_ref = fields.Char('Supplier picking reference')

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 08:34+0000\n"
-"PO-Revision-Date: 2015-04-07 08:34+0000\n"
+"POT-Creation-Date: 2015-04-24 08:21+0000\n"
+"PO-Revision-Date: 2015-04-24 08:21+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,12 +22,89 @@ msgid "Customer"
 msgstr "Cliente"
 
 #. module: purchase_customer
+#: code:addons/purchase_customer/procurement.py:95
+#, python-format
+msgid "Draft Purchase Order created"
+msgstr "Creado presupuesto de compra"
+
+#. module: purchase_customer
 #: view:purchase.order:purchase_customer.purchase_order_search_add_customer
 msgid "Group By"
 msgstr "Agrupar por"
 
 #. module: purchase_customer
+#: model:ir.model,name:purchase_customer.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Iniciativa/Oportunidad"
+
+#. module: purchase_customer
+#: model:ir.model,name:purchase_customer.model_crm_make_sale
+msgid "Make sales"
+msgstr "Crear ventas"
+
+#. module: purchase_customer
+#: code:addons/purchase_customer/procurement.py:74
+#, python-format
+msgid "PO: %s"
+msgstr "PO: %s"
+
+#. module: purchase_customer
+#: model:ir.model,name:purchase_customer.model_procurement_order
+msgid "Procurement"
+msgstr "Abastecimiento"
+
+#. module: purchase_customer
 #: model:ir.model,name:purchase_customer.model_purchase_order
 msgid "Purchase Order"
 msgstr "Pedido de compra"
+
+#. module: purchase_customer
+#: code:addons/purchase_customer/procurement.py:97
+#, python-format
+msgid "Purchase line created and linked to an existing Purchase Order"
+msgstr "Purchase line created and linked to an existing Purchase Order"
+
+#. module: purchase_customer
+#: code:addons/purchase_customer/procurement.py:99
+#, python-format
+msgid "Quantity added in existing Purchase Order Line"
+msgstr "Quantity added in existing Purchase Order Line"
+
+#. module: purchase_customer
+#: view:purchase.order:purchase_customer.purchase_order_form_add_customer
+msgid "Related"
+msgstr "Ventas relacionadas"
+
+#. module: purchase_customer
+#: field:purchase.order,lead_ids:0
+msgid "Related leads"
+msgstr "Oportunidades relacionadas"
+
+#. module: purchase_customer
+#: view:crm.lead:purchase_customer.crm_lead_add_purchase_relation
+#: view:sale.order:purchase_customer.sale_order_add_purchase_related
+msgid "Related purchase"
+msgstr "Compras relacionadas"
+
+#. module: purchase_customer
+#: field:crm.lead,purchase_ids:0
+#: field:sale.order,purchase_ids:0
+msgid "Related purchases"
+msgstr "Compras relacionadas"
+
+#. module: purchase_customer
+#: model:ir.model,name:purchase_customer.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: purchase_customer
+#: code:addons/purchase_customer/procurement.py:45
+#, python-format
+msgid "There is no supplier associated to product %s"
+msgstr "There is no supplier associated to product %s"
+
+#. module: purchase_customer
+#: field:purchase.order,sale_ids:0
+msgid "related Sales"
+msgstr "Ventas asociadas"
 

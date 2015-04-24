@@ -26,7 +26,7 @@
     'description': """""",
     'author': 'Pexego',
     'website': '',
-    "depends": ['base', 'purchase'],
-    "data": ['purchase_view.xml'],
+    "depends": ['base', 'purchase', 'sale', 'crm', 'sale_crm'],
+    "data": ['purchase_view.xml', 'sale_view.xml', 'crm_lead_view.xml'],
     "installable": True
 }

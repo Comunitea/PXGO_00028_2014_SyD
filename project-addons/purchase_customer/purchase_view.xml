@@ -10,6 +10,16 @@
                 <field name="pricelist_id" position="after">
                     <field name="customer_id"/>
                 </field>
+                <notebook position="inside">
+                    <page string="Related">
+                        <group>
+                            <group>
+                                <field name="sale_ids"/>
+                                <field name="lead_ids"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
             </field>
         </record>
 
