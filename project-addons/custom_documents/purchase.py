@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
+#    Copyright (C) 2015 Pexego All Rights Reserved
 #    $Jesús Ventosinos Mayor <jesus@pexego.es>$
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -18,24 +18,15 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from openerp import models, fields, api, exceptions, _
 
-{
-    'name': "Document customizations",
-    'version': '1.0',
-    'category': '',
-    'description': """""",
-    'author': 'Pexego',
-    'website': '',
-    "depends": ['report', 'sale', 'stock', 'sale_stock', 'picking_services',
-                'delivery', 'supplier_ref', 'sale_layout', 'product_pack',
-                'syd_custom'],
-    "data": ['views/ir_qweb.xml', 'views/report_proforma.xml',
-             'views/report_saleorder.xml', 'sale_report.xml',
-             'views/report_stockpicking.xml',
-             'views/valued_picking_report.xml', 'stock_report.xml',
-             'views/report_purchase_order.xml', 'views/report_header.xml',
-             'sale_view.xml', 'stock_view.xml', 'views/report_invoice.xml',
-             'data/paperformat_data.xml', 'payment_mode_view.xml',
-             'views/purchase_quotation.xml'],
-    "installable": True
-}
+
+class purchase_order(models.Model):
+
+    _inherit = 'purchase.order'
+
+    notes = fields.Text('Terms and Conditions', default="""Deberán enviar especificaciones técnicas de los equipos o materiales ofertados.
+Indicarán el precio unitario de cada material de forma detallada y el total de su oferta.
+Los precios serán netos, o en su caso se indicará el descuento realizado, e incluirá todos los conceptos como embalajes, estudios, etc.
+Se indicarán los portes hasta nuestro local en A Coruña, por separado.
+Se indicará el PLAZO DE ENTREGA MÁXIMO.""")
