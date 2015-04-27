@@ -26,6 +26,15 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     ship_id = fields.Many2one('ship', 'Ship', readonly=True, states={'draft': [('readonly', False)], 'sent': [('readonly', False)]})
+    partner_parent_id = fields.Many2one('res.partner', 'partner parent', compute='_get_partner_parent')
+
+    @api.depends('partner_id')
+    def _get_partner_parent(self):
+        for sale in self:
+            if not sale.partner_id.parent_id:
+                sale.partner_parent_id = sale.partner_id
+            else:
+                sale.partner_parent_id = sale.partner_id.parent_id
 
     @api.multi
     def action_ship_create(self):
