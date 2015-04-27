@@ -37,7 +37,7 @@
                         </div>
                         <div class="col-xs-6 text-right">
                             <h2>
-                                <span t-field="o.tittle"/>
+                                <span t-field="o.title"/>
                             </h2>
                         </div>
                     </div>
@@ -198,7 +198,7 @@
                     <div style="page-break-inside: avoid;">
                         <div class="row">
                             <div class="col-xs-12">
-                                <strong>Aceptance quotation Nº <span t-field="o.name"/>: <span t-field="o.tittle"/></strong>
+                                <strong>Aceptance quotation Nº <span t-field="o.name"/>: <span t-field="o.title"/></strong>
                             </div>
                         </div>
                         <div class="row">

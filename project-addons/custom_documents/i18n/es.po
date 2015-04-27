@@ -522,12 +522,12 @@ msgid "amount gross"
 msgstr "amount gross"
 
 #. module: custom_documents
-#: field:sale.order,tittle:0
+#: field:sale.order,title:0
 msgid "name"
 msgstr "Título"
 
 #. module: custom_documents
-#: view:sale.order:custom_documents.sale_order_add_tittle
+#: view:sale.order:custom_documents.sale_order_add_title
 #: field:sale.order,baseline_data:0
 msgid "starting data indicated by the client"
 msgstr "Datos de partida indicados por el cliente:"

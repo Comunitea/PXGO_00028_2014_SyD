@@ -25,7 +25,7 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    tittle = fields.Char('name')
+    title = fields.Char('name')
     baseline_data = fields.Text('starting data indicated by the client')
     have_discounts = fields.Boolean('Have discounts', compute='_have_discounts')
 
