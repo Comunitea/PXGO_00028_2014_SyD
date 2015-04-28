@@ -53,6 +53,7 @@
                                 <th class="text-center"><strong>Date Req.</strong></th>
                                 <th class="text-right"><strong>Qty</strong></th>
                                 <th class="text-right"><strong>Unit Price</strong></th>
+                                <th class="text-right"><strong>Disc.(%)</strong></th>
                                 <th class="text-right"><strong>Net Price</strong></th>
                             </tr>
                         </thead>
@@ -74,6 +75,9 @@
                                 <td class="text-right">
                                     <span t-field="line.price_unit"
                                         t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.discount"/>
                                 </td>
                                 <td class="text-right">
                                     <span t-field="line.price_subtotal"
