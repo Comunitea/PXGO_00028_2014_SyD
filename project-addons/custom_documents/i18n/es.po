@@ -194,6 +194,11 @@ msgid "Net Price"
 msgstr "Precio neto"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Disc.(%)"
+msgstr "Desc.(%)"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_valued_picking
 msgid "No se aceptarán devoluciones sin nuestro consentimiento por escrito, pasados 15 días de la entrega de la mercancía o de mercancía que esté manipulada."
 msgstr "No se aceptarán devoluciones sin nuestro consentimiento por escrito, pasados 15 días de la entrega de la mercancía o de mercancía que esté manipulada."
