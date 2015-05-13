@@ -20,11 +20,11 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale_margin.sale_margin_sale_order"/>
             <field name="arch" type="xml">
-                <xpath expr="//group[@name='sale_margin_grp']" position="replace"/>
-                <field name="amount_untaxed" position="after">
-                    <label for="margin"/>
+                <!--xpath expr="//group[@name='sale_margin_grp']" position="replace"/-->
+                <field name="margin" position="after">
+                    <label for="margin_perc"/>
                     <div>
-                        <field name="margin" class="oe_inline"/>%%
+                        <field name="margin_perc" class="oe_inline"/>%%
                     </div>
                 </field>
             </field>

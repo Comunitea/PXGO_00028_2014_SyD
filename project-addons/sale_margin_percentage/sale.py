@@ -68,7 +68,7 @@ class sale_order(orm.Model):
 
     _inherit = "sale.order"
 
-    def _product_margin(self, cr, uid, ids, field_name, arg, context=None):
+    def _product_margin_perc(self, cr, uid, ids, field_name, arg, context=None):
         result = {}
         for sale in self.browse(cr, uid, ids, context=context):
             total_purchase = sale.total_purchase or \
@@ -117,7 +117,7 @@ class sale_order(orm.Model):
                                                              ['order_line'],
                                                              20),
                                           }),
-        'margin': fields.function(_product_margin, string='Margin',
+        'margin_perc': fields.function(_product_margin_perc, string='Margin %',
                                   help="It gives profitability by calculating \
                                         percentage.",
                                   store={
