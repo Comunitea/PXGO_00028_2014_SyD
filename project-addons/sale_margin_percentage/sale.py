@@ -71,15 +71,20 @@ class sale_order(orm.Model):
     def _product_margin_perc(self, cr, uid, ids, field_name, arg, context=None):
         result = {}
         for sale in self.browse(cr, uid, ids, context=context):
-            total_purchase = sale.total_purchase or \
-                self._get_total_price_purchase(cr, uid, ids, 'total_purchase',
-                                               arg, context)[sale.id]
-            if total_purchase != 0:
-                result[sale.id] = 0.0
-                for line in sale.order_line:
-                    result[sale.id] += line.margin or 0.0
-                result[sale.id] = round((result[sale.id] * 100) /
-                                        total_purchase, 2)
+            # total_purchase = sale.total_purchase or \
+            #     self._get_total_price_purchase(cr, uid, ids, 'total_purchase',
+            #                                    arg, context)[sale.id]
+            # if total_purchase != 0:
+            #     result[sale.id] = 0.0
+            #     for line in sale.order_line:
+            #         result[sale.id] += line.margin or 0.0
+            #     result[sale.id] = round((result[sale.id] * 100) /
+            #                             total_purchase, 2)
+            result[sale.id] = 0.0
+            for line in sale.order_line:
+                result[sale.id] += line.margin or 0.0
+            result[sale.id] = round((result[sale.id] * 100) /
+                                    sale.amount_untaxed, 2)
         return result
 
     def _get_total_price_purchase(self, cr, uid, ids, field_name, arg,
