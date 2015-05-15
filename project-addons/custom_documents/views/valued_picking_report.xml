@@ -68,7 +68,7 @@
                                         <th><strong>Description</strong></th>
                                         <th class="text-right"><strong>Quantity</strong></th>
                                         <th class="text-right"><strong>Nº serie</strong></th>
-                                        <th class="text-right"><strong>Nº serie dest.</strong></th>
+                                        <!--th class="text-right"><strong>Nº serie dest.</strong></th-->
                                         <!--t
                         t-if="o.picking_type_id.code != 'incoming'"><th><strong>Source</strong></th></t-->
                                         <t t-if="o.picking_type_id.code != 'outgoing'"><th><strong>Destination</strong></th></t>
@@ -104,11 +104,11 @@
                                                         <span t-field="pack_operation.lot_id"/>
                                                      </span>
                                                  </td>
-                                                <td class="text-right">
+                                                <!--td class="text-right">
                                                      <span t-if="pack_operation.replacement_for_id">
                                                         <span t-field="pack_operation.replacement_for_id"/>
                                                      </span>
-                                                 </td>
+                                                 </td-->
                                                 <td class="text-right"><span
                                                         t-field="pack_operation.linked_move_operation_ids[0].move_id.order_price_unit"
                                                         t-field-options='{"widget": "monetary", "display_currency": "o.sale_id.pricelist_id.currency_id"}'/></td>
