@@ -108,7 +108,7 @@
                                                         <span t-field="pack_operation.replacement_for_id"/>
                                                      </span>
                                                  </td>
-                                             
+
                                             </t>
                                         </tr>
 
