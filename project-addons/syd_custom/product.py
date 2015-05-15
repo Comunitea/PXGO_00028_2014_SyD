@@ -41,6 +41,23 @@ class ProductProduct(models.Model):
         self.sale_delay = self.categ_id.sale_delay
 
 
+    @api.multi
+    def write(self, vals):
+        for product in self:
+            new_code = False
+            if product.default_code in [False, '/', ''] or ('default_code' in vals and vals['default_code'] == '/'):
+                if product.seller_ids:
+                    if product.seller_ids[0].name.ref and product.seller_ids[0].product_code:
+                        vals['default_code'] = product.seller_ids[0].name.ref + ":" + \
+                                               product.seller_ids[0].product_code
+                        new_code = True
+                if not new_code:
+                    vals['default_code'] = self.env['ir.sequence'].get(
+                    'product.product')
+            super(ProductProduct, product).write(vals)
+        return True
+
+
 class productCategory(models.Model):
     _inherit = 'product.category'
 
