@@ -88,7 +88,7 @@ msgstr "Referencia del albarán de proveedor"
 #. module: syd_custom
 #: field:stock.picking,supplier_ref:0
 msgid "Supplier reference"
-msgstr "Referencia de proveedor"
+msgstr "Albarán de proveedor"
 
 #. module: syd_custom
 #: field:product.category,use_in_sub:0
