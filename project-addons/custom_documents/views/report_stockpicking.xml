@@ -78,7 +78,7 @@
                                         <th><strong>Descripción</strong></th>
                                         <th class="text-right"><strong>Quantity</strong></th>
                                         <th class="text-right"><strong>Nº serie</strong></th>
-                                        <th class="text-right"><strong>Nº serie dest.</strong></th>
+                                        <!--th class="text-right"><strong>Nº serie dest.</strong></th-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -103,11 +103,11 @@
                                                         <span t-field="pack_operation.lot_id"/>
                                                      </span>
                                                  </td>
-                                                <td class="text-right">
+                                                <!--td class="text-right">
                                                      <span t-if="pack_operation.replacement_for_id">
                                                         <span t-field="pack_operation.replacement_for_id"/>
                                                      </span>
-                                                 </td>
+                                                 </td-->
 
                                             </t>
                                         </tr>
