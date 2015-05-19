@@ -81,7 +81,7 @@ class sale_order(orm.Model):
             #     result[sale.id] = round((result[sale.id] * 100) /
             #                             total_purchase, 2)
             result[sale.id] = 0.0
-            if sale.amount_untaxed !=0:
+            if sale.amount_untaxed != 0:
                 for line in sale.order_line:
                     result[sale.id] += line.margin or 0.0
                 result[sale.id] = round((result[sale.id] * 100) /
