@@ -67,7 +67,9 @@
                                         <th><strong>Reference</strong></th>
                                         <th><strong>Description</strong></th>
                                         <th class="text-right"><strong>Quantity</strong></th>
-                                        <th class="text-right"><strong>Nº serie</strong></th>
+                                        <t t-if="o.pack_operation_ids">
+                                            <th class="text-right"><strong>Nº serie</strong></th>
+                                        </t>
                                         <!--th class="text-right"><strong>Nº serie dest.</strong></th-->
                                         <!--t
                         t-if="o.picking_type_id.code != 'incoming'"><th><strong>Source</strong></th></t-->
