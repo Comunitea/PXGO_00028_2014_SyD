@@ -11,5 +11,16 @@
                 </field>
             </field>
         </record>
+        <record id="account_invoice_reference_tree" model="ir.ui.view">
+            <field name="name">account.invoice.tree.reference</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <field name="reference" position="replace">
+                    <field name="reference" />
+                </field>
+            </field>
+        </record>
+
     </data>
 </openerp>
