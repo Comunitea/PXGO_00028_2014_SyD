@@ -115,7 +115,7 @@
                                                         t-field="pack_operation.linked_move_operation_ids[0].move_id.order_price_unit"
                                                         t-field-options='{"widget": "monetary", "display_currency": "o.sale_id.pricelist_id.currency_id"}'/></td>
                                                 <td class="text-right">
-                                                    <span t-field="pack_operation.linked_move_operation_ids[0].move_id.price_subtotal"
+                                                    <span t-field="pack_operation.price_subtotal"
                                                         t-field-options='{"widget": "monetary", "display_currency": "o.sale_id.pricelist_id.currency_id"}'/>
                                                 </td>
                                             </t>
