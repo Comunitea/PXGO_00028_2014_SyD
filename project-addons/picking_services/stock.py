@@ -19,6 +19,7 @@
 #
 ##############################################################################
 from openerp import models, fields, api
+import openerp.addons.decimal_precision as dp
 
 
 class StockMoveService(models.Model):
@@ -26,7 +27,7 @@ class StockMoveService(models.Model):
     _name = 'stock.move.service'
 
     product_id = fields.Many2one('product.product', 'Product', required=True)
-    quantity = fields.Float('Quantity')
+    quantity = fields.Float('Quantity', digits= dp.get_precision('Product Unit of Measure'))
     product_uom = fields.Many2one('product.uom', 'UoM')
     picking_id = fields.Many2one('stock.picking', 'Picking')
     sale_line_id = fields.Many2one('sale.order.line', 'Order line')
