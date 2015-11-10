@@ -18,7 +18,7 @@ msgstr ""
 #. module: custom_documents
 #: field:stock.picking,external_note:0
 msgid " External Notes"
-msgstr " External Notes"
+msgstr " Notas externas"
 
 #. module: custom_documents
 #: field:stock.move,percent_margin:0
@@ -112,6 +112,35 @@ msgid "Date"
 msgstr "Fecha"
 
 #. module: custom_documents
+#: view:website:custom_documents.report_picking
+#: view:website:custom_documents.report_valued_picking_document
+msgid "Customer Address:"
+msgstr "Dirección de cliente:"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_picking
+msgid "Order (Origin)"
+msgstr "Pedido (Origen)"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_picking
+#: view:website:custom_documents.report_valued_picking_document
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_picking
+#: view:website:custom_documents.report_valued_picking_document
+msgid "Carrier"
+msgstr "Transportista"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_picking
+#: view:website:custom_documents.report_valued_picking_document
+msgid "Date"
+msgstr "Fecha"
+
+#. module: custom_documents
 #: view:website:custom_documents.report_proforma_
 msgid "Date Ordered:"
 msgstr "Fecha pedida:"
@@ -129,10 +158,11 @@ msgstr "Fecha:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_picking
 #: view:website:custom_documents.report_proforma_
 #: view:website:custom_documents.report_purchaseorder_document
 #: view:website:custom_documents.report_saleorder_document
-#: view:website:custom_documents.report_valued_picking
+#: view:website:custom_documents.report_valued_picking_document
 msgid "Description"
 msgstr "Descripción"
 
@@ -266,7 +296,7 @@ msgstr "Precio"
 #. module: custom_documents
 #: field:stock.move,order_price_unit:0
 #: field:stock.move.service,order_price_unit:0
-#: view:website:custom_documents.report_valued_picking
+#: view:website:custom_documents.report_valued_picking_document
 msgid "Price unit"
 msgstr "Precio unidad"
 
@@ -293,16 +323,35 @@ msgstr "Ctdad"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_picking
 #: view:website:custom_documents.report_proforma_
 #: view:website:custom_documents.report_saleorder_document
-#: view:website:custom_documents.report_valued_picking
+#: view:website:custom_documents.report_valued_picking_document
 msgid "Quantity"
 msgstr "Cantidad"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_picking
+#: view:website:custom_documents.report_valued_picking_document
+msgid "Serial No."
+msgstr "Nº serie"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_invoice_document
+msgid "Maturity:"
+msgstr "Vencimiento:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_saleorder_document
 msgid "Quotation"
 msgstr "Presupuesto"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_valued_picking_document
+#: view:website:custom_documents.report_picking
+msgid "Returns are not accepted without our written consent, after 15 days of delivery of goods or merchandise that is manipulated."
+msgstr "No se aceptarán devoluciones sin nuestro consentimiento por escrito, pasados 15 días de la entrega de la mercancía o de mercancía que esté manipulada."
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
@@ -447,7 +496,7 @@ msgstr "Impuesto"
 #: view:website:custom_documents.report_proforma_
 #: view:website:custom_documents.report_purchaseorder_document
 #: view:website:custom_documents.report_saleorder_document
-#: view:website:custom_documents.report_valued_picking
+#: view:website:custom_documents.report_valued_picking_document
 msgid "Taxes"
 msgstr "Impuestos"
 
@@ -466,7 +515,7 @@ msgstr "Total"
 #: view:website:custom_documents.report_proforma_
 #: view:website:custom_documents.report_purchaseorder_document
 #: view:website:custom_documents.report_saleorder_document
-#: view:website:custom_documents.report_valued_picking
+#: view:website:custom_documents.report_valued_picking_document
 msgid "Total Without Taxes"
 msgstr "Total sin impuestos"
 
