@@ -124,7 +124,7 @@
                                 <td><span t-field="service.product_id.default_code"/></td>
                                 <td><span t-field="service.product_id.name"/></td>
                                 <td class="text-right"><span t-field="service.quantity"/> <span t-field="service.product_uom" groups="product.group_uom"/></td>
-                                <td></td>
+                                <td t-if="o.pack_operation_ids"></td>
                                 <td class="text-right">
                                     <span t-field="service.order_price_unit" t-field-options='{"widget": "monetary", "display_currency": "o.sale_id.pricelist_id.currency_id"}'/></td>
                                 <td class="text-right">
