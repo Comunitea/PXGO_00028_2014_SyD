@@ -59,7 +59,7 @@
                         <thead>
                             <tr>
                                 <th>Description</th>
-                                <th>Nº Serie</th>
+                                <th>Serial No.</th>
                                 <th>Quantity</th>
                                 <th class="text-right">Unit Price</th>
                                 <th class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
@@ -83,9 +83,6 @@
                                 <td class="text-right" groups="sale.group_discount_per_so_line">
                                     <span t-field="l.discount"/>
                                 </td>
-                                <!--td class="text-right">
-                                    <span t-esc="', '.join(map(lambda x: x.name, l.invoice_line_tax_id))"/>
-                                </td-->
                                 <td class="text-right">
                                     <span t-field="l.price_subtotal"
                                         t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
@@ -158,7 +155,7 @@
                     </p>
 
                     <p t-if="o.move_id">
-                        <strong>Vencimiento:</strong>
+                        <strong>Maturity:</strong>
                         <span t-foreach="o.move_id.line_id" t-as="ml">
                             <span t-if="ml.date_maturity">
                                 <span t-field="ml.date_maturity"/>:
@@ -230,15 +227,12 @@
                                 </t>
 
                             </td>
-                            <td><span t-field="l.quantity"/></td>
-                            <td groups="product.group_uom"><span t-field="l.uos_id"/></td>
+                            <td><span t-field="l.quantity"/> <span t-field="l.uos_id" groups="product.group_uom"/></td>
                             <td class="text-right">
                                 <span t-field="l.price_unit"/>
                             </td>
                             <td class="text-right" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
-                            <!--td class="text-right">
-                                <span t-esc="', '.join(map(lambda x: x.name, l.invoice_line_tax_id))"/>
-                            </td-->
+
                             <td class="text-right">
                                 <span t-field="l.price_subtotal"
                                     t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
