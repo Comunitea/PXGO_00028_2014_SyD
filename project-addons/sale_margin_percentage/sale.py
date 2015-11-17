@@ -22,48 +22,6 @@
 from openerp.osv import fields, orm
 
 
-class sale_order_line(orm.Model):
-
-    _inherit = "sale.order.line"
-
-    def _product_margin(self, cr, uid, ids, field_name, arg, context=None):
-        res = {}
-        for line in self.browse(cr, uid, ids, context=context):
-            res[line.id] = {
-                'margin': 0.0,
-                'margin_perc': 0.0,
-            }
-            margin = 0.0
-            if line.product_id:
-                if line.purchase_price and line.product_uos_qty:
-                    margin = round((line.price_unit * line.product_uos_qty *
-                                   (100.0 - line.discount) / 100.0) -
-                                   (line.purchase_price *
-                                    line.product_uos_qty), 2)
-                    res[line.id]['margin_perc'] = round((margin * 100) /
-                                                        (line.purchase_price *
-                                                         line.product_uos_qty),
-                                                        2)
-                elif line.product_id.standard_price:
-                    margin = round((line.price_unit * line.product_uos_qty *
-                                    (100.0 - line.discount) / 100.0) -
-                                   (line.product_id.standard_price *
-                                    line.product_uos_qty), 2)
-                    res[line.id]['margin_perc'] = round((margin * 100) /
-                                                        (line.product_id.standard_price *
-                                                         line.product_uos_qty),
-                                                        2)
-                res[line.id]['margin'] = margin
-        return res
-
-    _columns = {
-        'margin': fields.function(_product_margin, string='Margin',
-                                  store=True, multi='marg'),
-        'margin_perc': fields.function(_product_margin, string='Margin',
-                                       store=True, multi='marg'),
-    }
-
-
 class sale_order(orm.Model):
 
     _inherit = "sale.order"
@@ -71,15 +29,6 @@ class sale_order(orm.Model):
     def _product_margin_perc(self, cr, uid, ids, field_name, arg, context=None):
         result = {}
         for sale in self.browse(cr, uid, ids, context=context):
-            # total_purchase = sale.total_purchase or \
-            #     self._get_total_price_purchase(cr, uid, ids, 'total_purchase',
-            #                                    arg, context)[sale.id]
-            # if total_purchase != 0:
-            #     result[sale.id] = 0.0
-            #     for line in sale.order_line:
-            #         result[sale.id] += line.margin or 0.0
-            #     result[sale.id] = round((result[sale.id] * 100) /
-            #                             total_purchase, 2)
             result[sale.id] = 0.0
             if sale.amount_untaxed != 0:
                 for line in sale.order_line:
@@ -134,3 +83,47 @@ class sale_order(orm.Model):
                                            ids, ['order_line'], 20),
                                   }),
     }
+
+
+from openerp import models, fields, api
+
+
+class sale_order_line(models.Model):
+
+    _inherit = "sale.order.line"
+
+    @api.one
+    def _get_cost_price(self):
+        cost_price = 0.0
+        if self.pack_child_line_ids:
+            child_lines = self.pack_child_line_ids
+            cost_price = sum(child_lines.with_context(for_parent=True)._get_cost_price())
+        elif self._context.get('for_parent', False):
+            if self.purchase_price and self.product_uos_qty:
+                cost_price = self.purchase_price * self.product_uos_qty
+            elif self.product_id.standard_price:
+                cost_price = self.product_id.standard_price * self.product_uos_qty
+        elif not self.pack_parent_line_id:
+            if self.purchase_price and self.product_uos_qty:
+                cost_price = self.purchase_price
+            elif self.product_id.standard_price:
+                cost_price = self.product_id.standard_price
+        return cost_price
+
+    @api.one
+    @api.depends('product_id', 'price_unit', 'product_uos_qty', 'purchase_price', 'discount',
+                 'pack_child_line_ids', 'pack_parent_line_id')
+    def _product_margin(self):
+        margin = 0.0
+        if self.product_id:
+            cost_price = self._get_cost_price()[0]
+            if cost_price:
+                margin = round((self.price_unit * self.product_uos_qty *
+                               (100.0 - self.discount) / 100.0) -
+                               (cost_price * self.product_uos_qty), 2)
+                self.margin_perc = round((margin * 100) /
+                                                    (cost_price * self.product_uos_qty), 2)
+        self.margin = margin
+
+    margin = fields.Float('Margin', compute='_product_margin', store=True)
+    margin_perc = fields.Float('Margin', compute='_product_margin', store=True)
