@@ -75,7 +75,9 @@
                                 <th><strong>Reference</strong></th>
                                 <th><strong>Description</strong></th>
                                 <th class="text-right"><strong>Quantity</strong></th>
-                                <th class="text-right"><strong>Serial No.</strong></th>
+                                <t t-if="o.pack_operation_ids">
+                                    <th class="text-right"><strong>Serial No.</strong></th>
+                                </t>
                             </tr>
                         </thead>
                         <tbody>
@@ -85,7 +87,6 @@
                                         <td><span t-field="move.product_id.default_code"/></td>
                                         <td><span t-field="move.name"/></td>
                                         <td class="text-right"><span t-field="move.product_uom_qty"/> <span t-field="move.product_uom" groups="product.group_uom"/></td>
-                                        <td></td>
                                     </t>
                                 </tr>
                             </t>
@@ -115,7 +116,7 @@
                                 <td><span t-field="service.product_id.default_code"/></td>
                                 <td><span t-field="service.product_id.name"/></td>
                                 <td class="text-right"><span t-field="service.quantity"/> <span t-field="service.product_uom" groups="product.group_uom"/></td>
-                                <td></td>
+                                <td t-if="o.pack_operation_ids"></td>
                             </tr>
 
 
