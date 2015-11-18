@@ -476,12 +476,12 @@ msgid "Supplier Refund"
 msgstr "Factura rectificativa de proveedor"
 
 #. module: custom_documents
-#: view:website:stock.report_picking
+#: view:website:custom_documents.report_picking
 msgid "Supplier Reference"
 msgstr "Referencia de proveedor"
 
 #. module: custom_documents
-#: view:website:stock.report_picking
+#: view:website:custom_documents.report_picking
 msgid "Date"
 msgstr "Fecha"
 
