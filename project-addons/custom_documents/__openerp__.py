@@ -21,7 +21,7 @@
 
 {
     'name': "Document customizations",
-    'version': '1.0',
+    'version': '2.0',
     'category': '',
     'description': """""",
     'author': 'Pexego',

@@ -111,13 +111,14 @@ class stock_pack_operation(models.Model):
         store=True)
 
     @api.multi
-    @api.depends('linked_move_operation_ids.move_id.order_price_unit')
+    @api.depends('linked_move_operation_ids.move_id.order_price_unit_net')
     def _get_subtotal(self):
         for operation in self:
             if operation.linked_move_operation_ids:
                 operation.price_subtotal = \
                     operation.product_qty * \
-                    operation.linked_move_operation_ids[0].move_id.order_price_unit
+                    operation.linked_move_operation_ids[0].move_id.order_price_unit_net
+
 
 class stock_move(models.Model):
 
@@ -171,6 +172,14 @@ class stock_move(models.Model):
                     move.percent_margin = (move.margin/move.price_subtotal)*100
                 else:
                     move.percent_margin = 0
+            else:
+                move.price_subtotal = 0.0
+                move.discount = 0.0
+                move.order_price_unit = 0.0
+                move.order_price_unit_net = 0.0
+                move.cost_subtotal = 0.0
+                move.margin = 0.0
+                move.percent_margin = 0.0
 
 
 class StockMoveService(models.Model):
@@ -226,3 +235,11 @@ class StockMoveService(models.Model):
                                               service.price_subtotal) * 100
                 else:
                     service.percent_margin = 0
+            else:
+                service.price_subtotal = 0.0
+                service.discount = 0.0
+                service.order_price_unit = 0.0
+                service.order_price_unit_net = 0.0
+                service.cost_subtotal = 0.0
+                service.margin = 0.0
+                service.percent_margin = 0.0
