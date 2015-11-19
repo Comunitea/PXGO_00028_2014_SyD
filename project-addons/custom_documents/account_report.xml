@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <report
+            id="account_invoices"
+            model="account.invoice"
+            string="Net Invoices"
+            report_type="qweb-pdf"
+            name="custom_documents.report_net_invoice"
+            file="account.report_invoice"
+        />
+
+    </data>
+</openerp>

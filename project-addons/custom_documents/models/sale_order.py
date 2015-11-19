@@ -19,7 +19,7 @@
 #
 ##############################################################################
 from openerp import models, fields, api
-
+import openerp.addons.decimal_precision as dp
 
 class SaleOrder(models.Model):
 
@@ -36,3 +36,19 @@ class SaleOrder(models.Model):
             if line.discount > 0:
                 discounts = True
         self.have_discounts = discounts
+
+
+class SaleOrderLine(models.Model):
+
+    _inherit = 'sale.order.line'
+
+    price_unit_net = fields.Float('Unit Price',
+                                  digits_compute= dp.get_precision('Product Price'),
+                                  compute='_get_price_unit_net')
+
+    @api.one
+    @api.depends('price_unit', 'discount')
+    def _get_price_unit_net(self):
+        self.price_unit_net = self.price_unit * (1 - (self.discount / 100))
+
+

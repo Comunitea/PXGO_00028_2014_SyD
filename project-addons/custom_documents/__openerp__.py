@@ -21,7 +21,7 @@
 
 {
     'name': "Document customizations",
-    'version': '1.0',
+    'version': '2.0',
     'category': '',
     'description': """""",
     'author': 'Pexego',
@@ -29,13 +29,14 @@
     "depends": ['report', 'sale', 'stock', 'sale_stock', 'picking_services',
                 'delivery', 'supplier_ref', 'sale_layout', 'product_pack',
                 'syd_custom', 'purchase_discount','stock_picking_invoice_link'],
-    "data": ['views/ir_qweb.xml', 'views/report_proforma.xml',
-             'views/report_saleorder.xml', 'sale_report.xml',
-             'views/report_stockpicking.xml',
-             'views/valued_picking_report.xml', 'stock_report.xml',
-             'views/report_purchase_order.xml', 'views/report_header.xml',
-             'sale_view.xml', 'stock_view.xml', 'views/report_invoice.xml',
-             'data/paperformat_data.xml', 'payment_mode_view.xml',
-             'views/purchase_quotation.xml'],
+
+    "data": ['views/sale_view.xml', 'views/payment_mode_view.xml', 'views/stock_view.xml',
+             'qweb_report/ir_qweb.xml', 'qweb_report/report_proforma.xml',
+             'qweb_report/report_saleorder.xml', 'qweb_report/report_stockpicking.xml',
+             'qweb_report/valued_picking_report.xml', 'qweb_report/report_purchase_order.xml',
+             'qweb_report/report_header.xml', 'qweb_report/report_invoice.xml',
+             'qweb_report/purchase_quotation.xml',
+             'sale_report.xml', 'stock_report.xml', 'account_report.xml',
+             'data/paperformat_data.xml'],
     "installable": True
 }

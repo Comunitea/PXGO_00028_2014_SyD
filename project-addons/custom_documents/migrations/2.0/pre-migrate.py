@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -18,5 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import models
-from . import report
+
+
+def migrate(cr, version):
+    print("Se inicia el borrado de las columnas a recalcular.")
+    cr.execute("""alter table stock_move drop column order_price_unit;""")
+    cr.execute("""alter table stock_pack_operation drop column price_subtotal;""")
+    cr.execute("""alter table stock_move_service drop column order_price_unit;""")

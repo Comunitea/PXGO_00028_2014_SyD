@@ -6,19 +6,6 @@
                 <div class="page">
                     <div class="oe_structure"/>
                     <div class="row">
-                        <!--div class="col-xs-6">
-                            <strong t-if="o.partner_shipping_id == o.partner_invoice_id">Invoice and shipping address:</strong>
-                            <strong t-if="o.partner_shipping_id != o.partner_invoice_id">Invoice address:</strong>
-                            <div t-field="o.partner_invoice_id"
-                                t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
-                            <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
-                            <div t-if="o.partner_shipping_id != o.partner_invoice_id" class="mt8">
-                                <strong>Shipping address:</strong>
-                                <div t-field="o.partner_shipping_id"
-                                    t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
-                                <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
-                            </div>
-                        </div-->
                         <div class="col-xs-5 col-xs-offset-7">
                             <div t-field="o.partner_id"
                                 t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}' />
@@ -101,7 +88,7 @@
                                 <th>Description</th>
                                 <th class="text-right">Quantity</th>
                                 <th class="text-right">Unit Price</th>
-                                <t t-if="o.have_discounts">
+                                <t t-if="o.have_discounts and not net">
                                     <th groups="sale.group_discount_per_so_line">Disc.(%)</th>
                                 </t>
                                 <th class="text-right">Price</th>
@@ -117,11 +104,16 @@
                                         <span t-field="l.product_uom_qty"/>
                                         <span groups="product.group_uom" t-field="l.product_uom"/>
                                     </td>
-                                    <td class="text-right">
+                                    <td class="text-right" t-if="not net">
                                         <span t-field="l.price_unit"
                                             t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
                                     </td>
-                                    <t t-if="o.have_discounts">
+
+                                    <td class="text-right" t-if="net">
+                                        <span t-field="l.price_unit_net"
+                                            t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                    </td>
+                                    <t t-if="o.have_discounts and not net">
                                         <td groups="sale.group_discount_per_so_line">
                                             <span t-field="l.discount"/>
                                         </td>
@@ -230,11 +222,15 @@
                                     <span t-field="l.product_uom_qty"/>
                                     <span groups="product.group_uom" t-field="l.product_uom"/>
                                 </td>
-                                <td class="text-right">
+                                <td class="text-right" t-if="not net">
                                     <span t-field="l.price_unit"
                                         t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
                                 </td>
-                                <t t-if="o.have_discounts">
+                                <td class="text-right" t-if="net">
+                                        <span t-field="l.price_unit_net"
+                                            t-field-options='{"widget": "monetary", "display_currency": "o.pricelist_id.currency_id"}'/>
+                                    </td>
+                                <t t-if="o.have_discounts and not net">
                                     <td groups="sale.group_discount_per_so_line">
                                         <span t-field="l.discount"/>
                                     </td>

@@ -111,13 +111,14 @@ class stock_pack_operation(models.Model):
         store=True)
 
     @api.multi
-    @api.depends('linked_move_operation_ids.move_id.order_price_unit')
+    @api.depends('linked_move_operation_ids.move_id.order_price_unit_net')
     def _get_subtotal(self):
         for operation in self:
             if operation.linked_move_operation_ids:
                 operation.price_subtotal = \
                     operation.product_qty * \
-                    operation.linked_move_operation_ids[0].move_id.order_price_unit
+                    operation.linked_move_operation_ids[0].move_id.order_price_unit_net
+
 
 class stock_move(models.Model):
 
@@ -130,6 +131,14 @@ class stock_move(models.Model):
     order_price_unit = fields.Float(
         compute='_get_subtotal', string="Price unit",
         digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        store=True)
+    order_price_unit_net = fields.Float(
+        compute='_get_subtotal', string="Price unit",
+        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        store=True)
+    discount = fields.Float(
+        compute='_get_subtotal', string="Discount",
+        digits= dp.get_precision('Discount'), readonly=True,
         store=True)
     cost_subtotal = fields.Float(
         compute='_get_subtotal', string="Cost subtotal",
@@ -154,13 +163,23 @@ class stock_move(models.Model):
                               (1-(move.procurement_id.sale_line_id.discount or
                                   0.0)/100.0))
                 move.price_subtotal = price_unit * move.product_qty
-                move.order_price_unit = price_unit
+                move.discount = move.procurement_id.sale_line_id.discount or 0.0
+                move.order_price_unit = move.procurement_id.sale_line_id.price_unit
+                move.order_price_unit_net = price_unit
                 move.cost_subtotal = cost_price * move.product_qty
                 move.margin = move.price_subtotal - move.cost_subtotal
                 if move.price_subtotal > 0:
                     move.percent_margin = (move.margin/move.price_subtotal)*100
                 else:
                     move.percent_margin = 0
+            else:
+                move.price_subtotal = 0.0
+                move.discount = 0.0
+                move.order_price_unit = 0.0
+                move.order_price_unit_net = 0.0
+                move.cost_subtotal = 0.0
+                move.margin = 0.0
+                move.percent_margin = 0.0
 
 
 class StockMoveService(models.Model):
@@ -174,6 +193,14 @@ class StockMoveService(models.Model):
     order_price_unit = fields.Float(
         compute='_get_subtotal', string="Price unit",
         digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        store=True)
+    order_price_unit_net = fields.Float(
+        compute='_get_subtotal', string="Price unit",
+        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        store=True)
+    discount = fields.Float(
+        compute='_get_subtotal', string="Discount",
+        digits= dp.get_precision('Discount'), readonly=True,
         store=True)
     cost_subtotal = fields.Float(
         compute='_get_subtotal', string="Cost subtotal",
@@ -198,7 +225,9 @@ class StockMoveService(models.Model):
                               (1-(service.sale_line_id.discount or
                                   0.0)/100.0))
                 service.price_subtotal = price_unit * service.quantity
-                service.order_price_unit = price_unit
+                service.order_price_unit = service.sale_line_id.price_unit
+                service.discount = service.sale_line_id.discount
+                service.order_price_unit_net = price_unit
                 service.cost_subtotal = cost_price * service.quantity
                 service.margin = service.price_subtotal - service.cost_subtotal
                 if service.price_subtotal > 0:
@@ -206,3 +235,11 @@ class StockMoveService(models.Model):
                                               service.price_subtotal) * 100
                 else:
                     service.percent_margin = 0
+            else:
+                service.price_subtotal = 0.0
+                service.discount = 0.0
+                service.order_price_unit = 0.0
+                service.order_price_unit_net = 0.0
+                service.cost_subtotal = 0.0
+                service.margin = 0.0
+                service.percent_margin = 0.0
