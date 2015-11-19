@@ -11,5 +11,14 @@
             file="custom_documents.report_valued_picking"
         />
 
+        <report
+            string="Net Valued picking"
+            id="action_report_net_valued_picking"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="custom_documents.report_net_valued_picking"
+            file="custom_documents.report_valued_picking"
+        />
+
     </data>
 </openerp>
