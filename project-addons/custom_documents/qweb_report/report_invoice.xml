@@ -62,7 +62,7 @@
                                 <th>Serial No.</th>
                                 <th>Quantity</th>
                                 <th class="text-right">Unit Price</th>
-                                <th class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+                                <th class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">Discount (%)</th>
                                 <!--th class="text-right">Taxes</th-->
                                 <th class="text-right">Amount</th>
                             </tr>
@@ -76,11 +76,15 @@
                                     <span t-field="l.quantity"/>
                                     <span t-field="l.uos_id"  groups="product.group_uom"/>
                                 </td>
-                                <td class="text-right">
+                                <td class="text-right" t-if="not net">
                                     <span t-field="l.price_unit"
                                         t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
                                 </td>
-                                <td class="text-right" groups="sale.group_discount_per_so_line">
+                                <td class="text-right" t-if="net">
+                                    <span t-field="l.price_unit_net"
+                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                </td>
+                                <td class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
                                     <span t-field="l.discount"/>
                                 </td>
                                 <td class="text-right">
@@ -228,11 +232,17 @@
 
                             </td>
                             <td><span t-field="l.quantity"/> <span t-field="l.uos_id" groups="product.group_uom"/></td>
-                            <td class="text-right">
-                                <span t-field="l.price_unit"
-                                    t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                            </td>
-                            <td class="text-right" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
+                            <td class="text-right" t-if="not net">
+                                    <span t-field="l.price_unit"
+                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                </td>
+                                <td class="text-right" t-if="net">
+                                    <span t-field="l.price_unit_net"
+                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                </td>
+                                <td class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
+                                    <span t-field="l.discount"/>
+                                </td>
 
                             <td class="text-right">
                                 <span t-field="l.price_subtotal"
@@ -262,7 +272,7 @@
                                     <th>Quantity</th>
                                     <th groups="product.group_uom">Unit of measure</th>
                                     <th class="text-right">Unit Price</th>
-                                    <th class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
+                                    <th class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">Discount (%)</th>
                                     <th class="text-right">Taxes</th>
                                     <th class="text-right">Amount</th>
                                 </tr>

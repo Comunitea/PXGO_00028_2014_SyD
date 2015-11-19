@@ -173,7 +173,9 @@ msgstr "Destino"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_proforma_
+#: view:website:custom_documents.report_purchaseorder_document
 #: view:website:custom_documents.report_saleorder_document
+#: view:website:custom_documents.report_valued_picking_document
 msgid "Disc.(%)"
 msgstr "Desc.(%)"
 
@@ -305,6 +307,31 @@ msgstr "Precio unidad"
 #: view:website:custom_documents.report_proforma_
 msgid "Proforma"
 msgstr "Proforma"
+
+#. module: custom_documents
+#: model:ir.actions.report.xml,name:custom_documents.account_invoices
+msgid "Net Invoices"
+msgstr "Facturas netas"
+
+#. module: custom_documents
+#: model:ir.actions.report.xml,name:custom_documents.action_report_net_valued_picking
+msgid "Net Valued picking"
+msgstr "Albarán valorado neto"
+
+#. module: custom_documents
+#: view:website:custom_documents.report_purchaseorder_document
+msgid "Net Price"
+msgstr "Precio neto"
+
+#. module: custom_documents
+#: model:ir.actions.report.xml,name:custom_documents.report_net_proforma_order
+msgid "Net Proforma"
+msgstr "Proforma neto"
+
+#. module: custom_documents
+#: model:ir.actions.report.xml,name:custom_documents.report_sale_order
+msgid "Net Quotation / Order"
+msgstr "Presupuesto / Pedido neto"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_purchase_order
