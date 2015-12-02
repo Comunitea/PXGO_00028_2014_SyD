@@ -26,7 +26,7 @@
     'description': """""",
     'author': 'Pexego',
     'website': '',
-    "depends": ['product', 'stock', 'purchase', 'product_sequence'],
+    "depends": ['product', 'stock', 'purchase', 'product_sequence', 'product_pack'],
     "data": ['product_view.xml', 'purchase_view.xml', 'account_view.xml',
              'stock_view.xml', 'sale_view.xml'],
     "installable": True

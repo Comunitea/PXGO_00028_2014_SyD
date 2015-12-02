@@ -29,6 +29,28 @@ class StockPicking(models.Model):
 
     @api.model
     def _get_invoice_vals(self, key, inv_type, journal_id, move):
-        res = super(StockPicking, self)._get_invoice_vals(key, inv_type, journal_id, move)
+        res = super(StockPicking, self)._get_invoice_vals(key, inv_type,
+                                                        journal_id, move)
         res['supplier_picking_ref'] = move.picking_id.supplier_ref
         return res
+
+    @api.multi
+    def action_invoice_create(self, journal_id, group=False,
+                              type='out_invoice'):
+        invoice_ids = super(StockPicking, self).action_invoice_create(
+                                    journal_id, group=group, type=type)
+
+        # import ipdb; ipdb.set_trace()
+
+        for invoice in invoice_ids:
+            invoice_obj = self.env['account.invoice'].browse(invoice)
+            supp_pick_ref = ''
+            if(invoice_obj):
+                for pick in invoice_obj.picking_ids:
+                    if(pick.supplier_ref):
+                        if(supp_pick_ref):
+                            supp_pick_ref += ', '
+                        supp_pick_ref += pick.supplier_ref
+            invoice_obj.supplier_picking_ref = supp_pick_ref
+
+        return invoice_ids
