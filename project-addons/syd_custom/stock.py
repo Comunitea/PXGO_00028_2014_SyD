@@ -30,7 +30,7 @@ class StockPicking(models.Model):
     @api.model
     def _get_invoice_vals(self, key, inv_type, journal_id, move):
         res = super(StockPicking, self)._get_invoice_vals(key, inv_type,
-                                                        journal_id, move)
+                                                          journal_id, move)
         res['supplier_picking_ref'] = move.picking_id.supplier_ref
         return res
 
@@ -38,19 +38,25 @@ class StockPicking(models.Model):
     def action_invoice_create(self, journal_id, group=False,
                               type='out_invoice'):
         invoice_ids = super(StockPicking, self).action_invoice_create(
-                                    journal_id, group=group, type=type)
-
-        # import ipdb; ipdb.set_trace()
+            journal_id, group=group, type=type)
 
         for invoice in invoice_ids:
+            write_vals = {}
             invoice_obj = self.env['account.invoice'].browse(invoice)
-            supp_pick_ref = ''
-            if(invoice_obj):
-                for pick in invoice_obj.picking_ids:
-                    if(pick.supplier_ref):
-                        if(supp_pick_ref):
-                            supp_pick_ref += ', '
-                        supp_pick_ref += pick.supplier_ref
-            invoice_obj.supplier_picking_ref = supp_pick_ref
+            has_supp_ref = invoice_obj.picking_ids.filtered(
+                lambda record: record.supplier_ref and True or False)
+            supplier_ref_list = has_supp_ref.mapped('supplier_ref')
+            if supplier_ref_list:
+                write_vals['supplier_picking_ref'] = ', '.join(
+                    list(set(supplier_ref_list)))
+
+            has_order_ref = invoice_obj.picking_ids.filtered(
+                lambda record: record.sale_id.client_order_ref and True or
+                False)
+            name_list = has_order_ref.mapped('sale_id.client_order_ref')
+            if name_list:
+                write_vals['name'] = ', '.join(list(set(name_list)))
+            if write_vals:
+                invoice_obj.write(write_vals)
 
         return invoice_ids
