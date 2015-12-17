@@ -23,5 +23,6 @@
 def migrate(cr, version):
     print("Se inicia el borrado de las columnas a recalcular.")
     cr.execute("""alter table stock_move drop column order_price_unit;""")
+    cr.execute("""alter table stock_move drop column if exists order_price_unit_net;""")
     cr.execute("""alter table stock_pack_operation drop column price_subtotal;""")
     cr.execute("""alter table stock_move_service drop column order_price_unit;""")
