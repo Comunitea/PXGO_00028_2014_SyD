@@ -35,7 +35,8 @@
              'qweb_report/report_saleorder.xml', 'qweb_report/report_stockpicking.xml',
              'qweb_report/valued_picking_report.xml', 'qweb_report/report_purchase_order.xml',
              'qweb_report/report_header.xml', 'qweb_report/report_invoice.xml',
-             'qweb_report/purchase_quotation.xml',
+             'qweb_report/purchase_quotation.xml', 'qweb_report/report_res_partner.xml',
+             'res_partner_report.xml',
              'sale_report.xml', 'stock_report.xml', 'account_report.xml',
              'data/paperformat_data.xml'],
     "installable": True

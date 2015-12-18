@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="report_res_partner">
+            <!--t t-call="report.html_container"-->
+                <t t-foreach="partners" t-as="page_partners">
+                    <div class="page">
+                        <t t-foreach="page_partners" t-as="partner">
+                            <div style="float: left; width: 97mm; height: 68mm;">
+                                <p t-field="partner.name"/>
+                                <t t-if="partner.parent_id.name">
+                                    <p t-field="partner.parent_id.name"/>
+                                </t>
+                                <p t-field="partner.street"/>
+                                <p t-field="partner.street2"/>
+                                <span t-field="partner.zip"/>
+                                <span t-field="partner.city"/>
+                                <p t-field="partner.country_id.name"/>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+            <!--/t-->
+        </template>
+
+    </data>
+</openerp>

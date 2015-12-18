@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="a4_res_partner_tag_report" model="report.paperformat">
+          <field name="name">A4 partner tag</field>
+          <field name="default" eval="False"/>
+          <field name="format">A4</field>
+          <field name="orientation">Portrait</field>
+
+           <field name="margin_top">12</field>
+           <field name="margin_bottom">0</field>
+           <field name="margin_left">20</field>
+           <field name="margin_right">0</field>
+           <field name="header_line" eval="False"/>
+           <field name="header_spacing">26</field>
+           <field name="dpi">90</field>
+        </record>
+
+        <report
+            id="base.res_partner_address_report"
+            model="res.partner"
+            string="Labels"
+            report_type="qweb-pdf"
+            file="custom_documents.report_res_partner"
+            name="custom_documents.report_res_partner"
+            />
+
+
+        <record id="base.res_partner_address_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="a4_res_partner_tag_report"/>
+        </record>
+
+    </data>
+</openerp>
