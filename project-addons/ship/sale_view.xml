@@ -6,6 +6,7 @@
             <field name="name">sale.order.form</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="sequence">90</field>
             <field name="arch" type="xml">
                 <field name="client_order_ref" position="after">
                     <field name="partner_parent_id" invisible="1"/>
