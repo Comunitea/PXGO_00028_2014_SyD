@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* syd_custom
+#   * syd_custom
 #
 msgid ""
 msgstr ""
@@ -14,6 +14,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: syd_custom
+#: view:sale.order.update.purchase.price:syd_custom.sale_order_update_purchase_price_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: syd_custom
+#: view:sale.order.update.purchase.price:syd_custom.sale_order_update_purchase_price_form
+msgid "Update"
+msgstr "Actualizar"
+
+#. module: syd_custom
+#: model:ir.actions.act_window,name:syd_custom.sale_order_update_purchase_price_action
+#: view:sale.order:syd_custom.sale_order_add_button_send
+msgid "Update purchase price"
+msgstr "Actualizar precio de coste"
+
+#. module: syd_custom
+#: view:sale.order.update.purchase.price:syd_custom.sale_order_update_purchase_price_form
+msgid "Set price by purchase order"
+msgstr "Establecer precio de compra."
 
 #. module: syd_custom
 #: field:purchase.order,carrier:0
@@ -57,6 +78,7 @@ msgstr "Albarán"
 
 #. module: syd_custom
 #: model:ir.model,name:syd_custom.model_product_product
+#: field:sale.order.update.purchase.price.line,product_id:0
 msgid "Product"
 msgstr "Producto"
 
@@ -69,6 +91,11 @@ msgstr "Categoría de producto"
 #: model:ir.model,name:syd_custom.model_product_template
 msgid "Product Template"
 msgstr "Plantilla de producto"
+
+#. module: syd_custom
+#: field:sale.order.update.purchase.price.line,purchase_price:0
+msgid "Purchase price"
+msgstr "Precio de coste"
 
 #. module: syd_custom
 #: model:ir.model,name:syd_custom.model_purchase_order

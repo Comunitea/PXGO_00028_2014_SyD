@@ -70,3 +70,15 @@ class res_partner(osv.osv):
         'meeting_count': fields.function(_opportunity_meeting_phonecall_count, string="# Meetings", type='integer', multi='opp_meet'),
         'phonecall_count': fields.function(_opportunity_meeting_phonecall_count, string="Phonecalls", type="integer", multi='opp_meet'),
     }
+
+    def create(self, cr, uid, vals, context=None):
+        if not vals.get('ref', False):
+            vals['ref'] = self.pool.get('ir.sequence').get(cr, uid,
+                                                           'res.partner')
+        return super(res_partner, self).create(cr, uid, vals, context)
+
+    def copy(self, cr, uid, id, default=None, context=None):
+        if not default.get('ref', False):
+            default['ref'] = self.pool.get('ir.sequence').get(cr, uid,
+                                                              'res.partner')
+        return super(res_partner, self).copy(cr, uid, id, default, context)

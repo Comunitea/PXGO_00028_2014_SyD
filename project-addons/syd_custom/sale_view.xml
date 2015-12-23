@@ -10,6 +10,9 @@
                 <button name="print_quotation" position="after">
                     <button name="quotation_sended" string="Mark as sended" type="object" states="draft" groups="base.group_user"/>
                 </button>
+                <field name="order_line" position="before">
+                    <button string="Update purchase price" name="%(sale_order_update_purchase_price_action)d" type="action" states="progress"/>
+                </field>
             </field>
         </record>
 

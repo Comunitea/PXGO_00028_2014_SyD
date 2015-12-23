@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="res_partner_sequence_type" model='ir.sequence.type'>
+            <field name="name">partners</field>
+            <field name="code">res.partner</field>
+        </record>
+        <record id="seq_res_partner" model="ir.sequence">
+            <field name="name">partner</field>
+            <field name="code">res.partner</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</openerp>
