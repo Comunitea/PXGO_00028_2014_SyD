@@ -16,13 +16,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div t-if="o._name == 'stock.picking'" class="col-xs-12 text-center">
+                    <div t-if="o._name == 'stock.picking'" class="col-xs-12 text-left not-first-page">
                         <h2>
                             <span t-field="o.picking_type_id.name"/>
                             <span t-esc="o.name.replace('\\', '')"/>
                         </h2>
                     </div>
-                    <div t-if="o._name == 'account.invoice'" class="col-xs-12 text-center">
+                    <div t-if="o._name == 'account.invoice'" class="col-xs-12 text-left not-first-page">
                         <h2>
                             <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
                             <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>

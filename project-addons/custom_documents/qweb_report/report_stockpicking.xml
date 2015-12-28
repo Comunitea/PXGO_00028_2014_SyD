@@ -25,10 +25,10 @@
                         </div>
                     </div>
 
-                     <!--h2>
+                     <h2>
                         <span t-field="o.picking_type_id.name"/>
                         <span t-esc="o.name.replace('\\', '')"/>
-                     </h2-->
+                     </h2>
                      <table class="table table-condensed">
                         <thead>
                             <tr>

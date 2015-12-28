@@ -13,7 +13,7 @@
                         </div>
                     </div>
 
-                    <!--h2>
+                    <h2>
                         <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
                         <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
                         <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
@@ -22,7 +22,7 @@
                         <span t-if="o.type == 'in_refund'">Supplier Refund</span>
                         <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
                         <span t-field="o.number"/>
-                    </h2-->
+                    </h2>
 
                     <div class="row mt32 mb32">
                         <div class="col-xs-2" t-if="o.partner_id.supplier_ref">
