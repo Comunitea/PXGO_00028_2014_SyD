@@ -122,3 +122,8 @@ msgstr "Albarán de proveedor"
 msgid "Use delay in subcategories"
 msgstr "Usar tiempo de entrega en subcategorías"
 
+#. module: syd_custom
+#: field:res.partner,title:0
+msgid "Calification"
+msgstr "Calificación"
+

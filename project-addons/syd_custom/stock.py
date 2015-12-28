@@ -25,7 +25,7 @@ class StockPicking(models.Model):
 
     _inherit = 'stock.picking'
 
-    supplier_ref = fields.Char('Supplier reference')
+    supplier_ref = fields.Char('Supplier reference', copy=False)
 
     @api.model
     def _get_invoice_vals(self, key, inv_type, journal_id, move):

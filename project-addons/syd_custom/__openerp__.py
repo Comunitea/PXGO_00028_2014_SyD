@@ -28,6 +28,8 @@
     'website': '',
     "depends": ['product', 'stock', 'purchase', 'product_sequence', 'product_pack'],
     "data": ['product_view.xml', 'purchase_view.xml', 'account_view.xml',
-             'stock_view.xml', 'data/ir_sequence.xml', 'wizard/sale_order_update_purchase_price.xml', 'sale_view.xml', ],
+             'stock_view.xml', 'data/ir_sequence.xml',
+             'wizard/sale_order_update_purchase_price.xml', 'sale_view.xml',
+             'data/res_partner_title_data.xml'],
     "installable": True
 }

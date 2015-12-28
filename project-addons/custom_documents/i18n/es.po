@@ -60,7 +60,8 @@ msgid "Buque"
 msgstr "Buque"
 
 #. module: custom_documents
-#: view:website:custom_documents.report_invoice_document
+#: view:website:custom_documents.report_invoice_documentç
+#: view:website:report.external_layout_header
 msgid "Cancelled Invoice"
 msgstr "Factura cancelada"
 
@@ -191,6 +192,7 @@ msgstr "Document name"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
+#: view:website:report.external_layout_header
 msgid "Draft Invoice"
 msgstr "Factura borrador"
 
@@ -206,6 +208,7 @@ msgstr "Fiscal Position Remark:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
+#: view:website:report.external_layout_header
 msgid "Invoice"
 msgstr "Factura"
 
@@ -252,6 +255,7 @@ msgstr "Fecha de pedido:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
+#: view:website:report.external_layout_header
 msgid "PRO-FORMA"
 msgstr "PRO-FORMA"
 
@@ -411,6 +415,7 @@ msgstr "Referencia:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
+#: view:website:report.external_layout_header
 msgid "Refund"
 msgstr "Factura rectificativa"
 
@@ -494,11 +499,13 @@ msgstr "Dirección del proveedor:"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
+#: view:website:report.external_layout_header
 msgid "Supplier Invoice"
 msgstr "Factura de proveedor"
 
 #. module: custom_documents
 #: view:website:custom_documents.report_invoice_document
+#: view:website:report.external_layout_header
 msgid "Supplier Refund"
 msgstr "Factura rectificativa de proveedor"
 

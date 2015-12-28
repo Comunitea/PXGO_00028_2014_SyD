@@ -28,7 +28,8 @@
     'website': '',
     "depends": ['report', 'sale', 'stock', 'sale_stock', 'picking_services',
                 'delivery', 'supplier_ref', 'sale_layout', 'product_pack',
-                'syd_custom', 'purchase_discount','stock_picking_invoice_link'],
+                'syd_custom', 'purchase_discount', 'stock_picking_invoice_link',
+                'report_qweb_element_page_visibility'],
 
     "data": ['views/sale_view.xml', 'views/payment_mode_view.xml', 'views/stock_view.xml',
              'qweb_report/ir_qweb.xml', 'qweb_report/report_proforma.xml',

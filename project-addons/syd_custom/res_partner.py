@@ -69,6 +69,7 @@ class res_partner(osv.osv):
         'opportunity_count': fields.function(_opportunity_meeting_phonecall_count, string="Opportunity", type='integer', multi='opp_meet'),
         'meeting_count': fields.function(_opportunity_meeting_phonecall_count, string="# Meetings", type='integer', multi='opp_meet'),
         'phonecall_count': fields.function(_opportunity_meeting_phonecall_count, string="Phonecalls", type="integer", multi='opp_meet'),
+        'title': fields.many2one('res.partner.title', 'Calification'),
     }
 
     def create(self, cr, uid, vals, context=None):
