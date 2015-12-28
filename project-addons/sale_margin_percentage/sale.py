@@ -117,12 +117,14 @@ class sale_order_line(models.Model):
         margin = 0.0
         if self.product_id:
             cost_price = self._get_cost_price()[0]
-            if cost_price:
-                margin = round((self.price_unit * self.product_uos_qty *
-                               (100.0 - self.discount) / 100.0) -
-                               (cost_price * self.product_uos_qty), 2)
-                self.margin_perc = round((margin * 100) /
-                                                    (cost_price * self.product_uos_qty), 2)
+        else:
+            cost_price = self.purchase_price
+        if cost_price:
+            margin = round((self.price_unit * self.product_uos_qty *
+                           (100.0 - self.discount) / 100.0) -
+                           (cost_price * self.product_uos_qty), 2)
+            self.margin_perc = round((margin * 100) /
+                                                (cost_price * self.product_uos_qty), 2)
         self.margin = margin
 
     margin = fields.Float('Margin', compute='_product_margin', store=True)
