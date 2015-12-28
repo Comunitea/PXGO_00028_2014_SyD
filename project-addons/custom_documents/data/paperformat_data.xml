@@ -7,5 +7,7 @@
                 <field name="header_spacing">35</field>
          </record>
 
+        <delete model="ir.actions.report.xml" id="purchase.report_purchase_order"/>
+
     </data>
 </openerp>
