@@ -30,3 +30,5 @@ Indicarán el precio unitario de cada material de forma detallada y el total de 
 Los precios serán netos, o en su caso se indicará el descuento realizado, e incluirá todos los conceptos como embalajes, estudios, etc.
 Se indicarán los portes hasta nuestro local en A Coruña, por separado.
 Se indicará el PLAZO DE ENTREGA MÁXIMO.""")
+
+    notes_confirmed = fields.Text('Terms and Conditions')

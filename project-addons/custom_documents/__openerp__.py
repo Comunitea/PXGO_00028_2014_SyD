@@ -32,7 +32,7 @@
                 'report_qweb_element_page_visibility'],
 
     "data": ['views/sale_view.xml', 'views/payment_mode_view.xml', 'views/stock_view.xml',
-             'qweb_report/ir_qweb.xml', 'qweb_report/report_proforma.xml',
+             'views/purchase_order.xml', 'qweb_report/ir_qweb.xml', 'qweb_report/report_proforma.xml',
              'qweb_report/report_saleorder.xml', 'qweb_report/report_stockpicking.xml',
              'qweb_report/valued_picking_report.xml', 'qweb_report/report_purchase_order.xml',
              'qweb_report/report_header.xml', 'qweb_report/report_invoice.xml',
