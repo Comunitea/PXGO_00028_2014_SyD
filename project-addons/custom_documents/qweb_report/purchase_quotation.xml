@@ -3,7 +3,8 @@
     <data>
         <template id="purchase_quotation_custom" inherit_id="purchase.report_purchasequotation_document">
             <xpath expr="//span[text()='Regards,']" position="replace"></xpath>
-            <xpath expr="//strong[text()='Shipping address:']" position="replace"><strong>Shipping address:</strong></xpath>
+            <xpath expr="//span[@t-field='user.signature']" position="replace"></xpath>
+            <!--xpath expr="//strong[text()='Shipping address:']" position="replace"><strong>Shipping address:</strong></xpath-->
 
         </template>
     </data>
