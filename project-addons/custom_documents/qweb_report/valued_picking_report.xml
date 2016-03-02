@@ -102,7 +102,7 @@
                             </t>
                             <t t-if="o.pack_operation_ids">
                                 <tr t-foreach="o.pack_operation_ids" t-as="pack_operation">
-                                    <t t-if="not pack_operation.linked_move_operation_ids[0].move_id.pack_component">
+                                    <t t-if="pack_operation.product_qty &gt; 0 and not pack_operation.linked_move_operation_ids[0].move_id.pack_component">
                                         <td><span t-field="pack_operation.product_id.default_code"/></td>
                                         <td><span t-field="pack_operation.linked_move_operation_ids[0].move_id.name"/></td>
                                         <td class="text-right"><span t-field="pack_operation.product_qty"/> <span t-field="pack_operation.product_uom_id" groups="product.group_uom"/></td>
