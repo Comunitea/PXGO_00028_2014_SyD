@@ -160,14 +160,20 @@
 
                     <p t-if="o.move_id">
                         <strong>Maturity:</strong>
-                        <span t-foreach="o.move_id.line_id" t-as="ml">
+                        <span t-foreach="o.move_id.line_id.sorted(key=lambda b: b.date_maturity)" t-as="ml">
                             <span t-if="ml.date_maturity">
                                 <span t-field="ml.date_maturity"/>:
                                 <t t-if="ml.debit">
-                                    <span t-field="ml.debit"/> -
+                                    <span t-field="ml.debit"/>
                                 </t>
                                 <t t-if="ml.credit">
-                                    <span t-field="ml.credit"/> -
+                                    <span t-field="ml.credit"/>
+                                </t>
+                                <t t-if="ml.currency_id">
+                                  <span t-field="ml.currency_id.symbol"/> -
+                                </t>
+                                <t t-if="not ml.currency_id">
+                                  <span t-field="ml.company_id.currency_id.symbol"/> -
                                 </t>
                             </span>
                         </span>
