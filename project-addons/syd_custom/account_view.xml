@@ -22,5 +22,15 @@
             </field>
         </record>
 
+    <record id="view_payments_filter_week" model="ir.ui.view">
+        <field name="model">account.move.line</field>
+        <field name="inherit_id" ref="account_due_list.view_payments_filter"/>
+        <field name="arch" type="xml">
+            <filter string="Month" position="after">
+                <filter string="Semana" icon="terp-go-month" domain="[]" context="{'group_by':'date_maturity:week'}"/>
+            </filter>
+        </field>
+    </record>
+
     </data>
 </openerp>

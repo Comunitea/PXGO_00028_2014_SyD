@@ -26,7 +26,7 @@
     'description': """Adds sequence to account moves""",
     'author': 'Pexego',
     'website': '',
-    "depends": ['account'],
+    "depends": ['account', 'account_due_list'],
     "data": ['account_view.xml'],
     "installable": True
 }
