@@ -3,7 +3,7 @@
 #
 #    OpenERP, Open Source Management Solution
 #
-#    Copyright (c) 2015 ICTSTUDIO (www.ictstudio.eu).
+#    Copyright (c) 2016 Comunitea 
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,16 +19,17 @@
 #    along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from openerp import models, fields, api, _
-import logging
-
-_logger = logging.getLogger(__name__)
-
-class PurchaseOrder(models.Model):
-    _inherit = "purchase.order"
-
-    @api.multi
-    def wkf_confirm_order(self):
-        self.write({'date_order': fields.Datetime.now()})
-        return super(PurchaseOrder, self).wkf_confirm_order()
+{
+    'name': 'Purchase Date Planned',
+    'version': '8.0.1.0.0',
+    'category': 'Purchase',
+    'author': 'Comunitea',
+    'website': 'http://comunitea.com',
+    'license': 'AGPL-3',
+    'summary': 'Always write planned date in liens if it is cahged in purchase',
+    'depends': [
+        'purchase',
+        ],
+    'data': [
+    ],
+}
