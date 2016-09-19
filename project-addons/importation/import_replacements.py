@@ -175,7 +175,7 @@ class import_replacements(object):
         return categ_ids and categ_ids[-1] or False
 
     def getProductByCode(self, code):
-        product_ids = self.search("product.product", [('default_code', '=', code)])
+        product_ids = self.search("product.product", [('default_code', 'like', code+u"%")])
         return product_ids and product_ids[-1] or False
 
 
@@ -192,24 +192,26 @@ class import_replacements(object):
             try:
                 product_ids = self.getProductByCode(str(record[1]))
                 if product_ids:
-                    print "REPUESTOS para Bomba: ", str(record[1])
+                    #print "REPUESTOS para Bomba: ", str(record[1])
                     replace_ids = self.getProductByCode(str(record[3]))
                     if not replace_ids:
-                         print "Repuesto no encontrado en BD: ", str(record[3])
+                     #    print "Repuesto no encontrado en BD: ", str(record[3])
+                     pass
                     else:
-                        print "Añadiendo Repuesto : ", str(record[3])
+                     #   print "Añadiendo Repuesto : ", str(record[3])
                         replace_vals = {
                             'product_id': replace_ids,
                             'qty': int(record[6]),
                             'disassembly_ref':  str(record[4]),
                             'replacement_for_ids': [(4, product_ids, False)]
                         }
-                        repl_id = self.create('product.replacement', replace_vals)
+                        #repl_id = self.create('product.replacement', replace_vals)
                         #self.write('product.replacement', repl_id,
                         #           {'replacement_for_ids': (4, product_ids, False)})
                 else:
-                     print "Bomba no encontrada en BD: ", str(record[3])
-                print "%s de %s" % (cont, all_lines)
+                     #print "Bomba no encontrada en BD: ", str(record[3])
+                     print str(record[3])
+                #print "%s de %s" % (cont, all_lines)
                 cont += 1
             except Exception, e:
                 print "EXCEPTION: REC: ", (record, e)
