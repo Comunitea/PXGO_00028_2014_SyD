@@ -33,6 +33,7 @@ class purchase_order(osv.osv):
                 'purchase.order.line': (_get_order, ['date_planned'], 10),
                 'purchase.order': (_get_purchase_order, ['order_line'], 10),
             }
+        )
     }
     
     def _set_minimum_planned_date(self, cr, uid, ids, name, value, arg, context=None):
