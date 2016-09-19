@@ -27,14 +27,6 @@ _logger = logging.getLogger(__name__)
 
 class purchase_order(osv.osv):
     _inherit = "purchase.order"
-    _columns = {
-    'minimum_planned_date':fields.function(_minimum_planned_date, fnct_inv=_set_minimum_planned_date, string='Expected Date', type='date', select=True, help="This is computed as the minimum scheduled date of all purchase order lines' products.",
-            store = {
-                'purchase.order.line': (_get_order, ['date_planned'], 10),
-                'purchase.order': (_get_purchase_order, ['order_line'], 10),
-            }
-        )
-    }
     
     def _set_minimum_planned_date(self, cr, uid, ids, name, value, arg, context=None):
         if not value: return False
@@ -64,3 +56,15 @@ class purchase_order(osv.osv):
                         min_date=line.date_planned
                 res[purchase.id]=min_date
         return res
+
+    
+    _columns = {
+    'minimum_planned_date':fields.function(_minimum_planned_date, fnct_inv=_set_minimum_planned_date, string='Expected Date', type='date', select=True, help="This is computed as the minimum scheduled date of all purchase order lines' products.",
+            store = {
+                'purchase.order.line': (_get_order, ['date_planned'], 10),
+                'purchase.order': (_get_purchase_order, ['order_line'], 10),
+            }
+        )
+    }
+    
+    
