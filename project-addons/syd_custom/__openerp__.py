@@ -27,7 +27,7 @@
     'author': 'Pexego',
     'website': '',
     "depends": ['product', 'stock', 'purchase', 'product_sequence', 'product_pack',
-                'account_due_list'],
+                'account_due_list', 'sale_stock', 'warning'],
     "data": ['product_view.xml', 'purchase_view.xml', 'account_view.xml',
              'stock_view.xml', 'data/ir_sequence.xml',
              'wizard/sale_order_update_purchase_price.xml', 'sale_view.xml',
