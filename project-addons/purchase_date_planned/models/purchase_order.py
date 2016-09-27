@@ -3,8 +3,7 @@
 #
 #    OpenERP, Open Source Management Solution
 #
-#    Copyright (c) 2015 ICTSTUDIO (www.ictstudio.eu).
-#
+
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
@@ -29,6 +28,7 @@ class purchase_order(osv.osv):
     _inherit = "purchase.order"
     
     def _set_minimum_planned_date(self, cr, uid, ids, name, value, arg, context=None):
+        print "HEREDADO"
         if not value: return False
         if type(ids)!=type([]):
             ids=[ids]

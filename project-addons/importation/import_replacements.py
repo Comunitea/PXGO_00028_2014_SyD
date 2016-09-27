@@ -187,18 +187,21 @@ class import_replacements(object):
         cont = 1
         all_lines = sh.nrows - 1
         print "products no: ", all_lines
+        lista_no_encontrados = []
+        lista_encontrados = []
         for rownum in range(1, all_lines):
             record = sh.row_values(rownum)
             try:
                 product_ids = self.getProductByCode(str(record[1]))
                 if product_ids:
-                    #print "REPUESTOS para Bomba: ", str(record[1])
+                    print "REPUESTOS para Bomba: ", str(record[1])
+                    if str(record[1]) not in lista_encontrados:
+                         lista_encontrados.append(str(record[1]))
                     replace_ids = self.getProductByCode(str(record[3]))
                     if not replace_ids:
-                     #    print "Repuesto no encontrado en BD: ", str(record[3])
-                     pass
+                        print "Repuesto no encontrado en BD: ", str(record[3])
                     else:
-                     #   print "Añadiendo Repuesto : ", str(record[3])
+                        print "Añadiendo Repuesto : ", str(record[3])
                         replace_vals = {
                             'product_id': replace_ids,
                             'qty': int(record[6]),
@@ -209,13 +212,18 @@ class import_replacements(object):
                         #self.write('product.replacement', repl_id,
                         #           {'replacement_for_ids': (4, product_ids, False)})
                 else:
-                     #print "Bomba no encontrada en BD: ", str(record[3])
-                     print str(record[3])
-                #print "%s de %s" % (cont, all_lines)
+                     print "Bomba no encontrada en BD: ", str(record[1])
+                     #print str(record[1])
+                     if str(record[1]) not in lista_no_encontrados:
+                         lista_no_encontrados.append(str(record[1]))
+                print "%s de %s" % (cont, all_lines)
                 cont += 1
             except Exception, e:
                 print "EXCEPTION: REC: ", (record, e)
-
+        print "NO ENCONTRADOS"
+        print lista_no_encontrados
+        print "ENCONTRADOS"
+        print lista_encontrados
 
     def import_product(self):
         pwb = xlrd.open_workbook(self.products_file, encoding_override="utf-8")
