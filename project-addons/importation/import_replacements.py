@@ -174,9 +174,19 @@ class import_replacements(object):
         categ_ids = self.search("product.category", [('name', '=like', categ_name+u"%")])
         return categ_ids and categ_ids[-1] or False
 
-    def getProductByCode(self, code):
-        product_ids = self.search("product.product", [('default_code', 'like', code+u"%")])
-        return product_ids and product_ids[-1] or False
+    def getProductByCode(self, code): # Incluimos tb codigos desactivados
+        product_ids = self.search("product.product", [('default_code', '=', code)])
+        return product_ids  or False
+        
+    def getProductByCodeNoExact(self, code): # Incluimos tb codigos desactivados
+        
+        if len(code) <= 2 or code.strip() == "":
+            print "CODIGO IGNORADO ", code
+            return False
+        else :
+            product_ids = self.search("product.product", [('default_code', 'like', code+u"%"),
+            '|', ('active', '=', True), ('active', '=', False)])
+        return product_ids  or False
 
 
 
@@ -192,25 +202,31 @@ class import_replacements(object):
         for rownum in range(1, all_lines):
             record = sh.row_values(rownum)
             try:
-                product_ids = self.getProductByCode(str(record[1]))
+                if str(record[1]).strip() <> "":
+                    product_ids = self.getProductByCodeNoExact(str(record[1]))
+                else:
+                    product_ids = False
                 if product_ids:
                     print "REPUESTOS para Bomba: ", str(record[1])
+                    print "Para bombas", product_ids
                     if str(record[1]) not in lista_encontrados:
                          lista_encontrados.append(str(record[1]))
                     replace_ids = self.getProductByCode(str(record[3]))
                     if not replace_ids:
                         print "Repuesto no encontrado en BD: ", str(record[3])
                     else:
-                        print "Añadiendo Repuesto : ", str(record[3])
-                        replace_vals = {
-                            'product_id': replace_ids,
-                            'qty': int(record[6]),
-                            'disassembly_ref':  str(record[4]),
-                            'replacement_for_ids': [(4, product_ids, False)]
-                        }
-                        #repl_id = self.create('product.replacement', replace_vals)
-                        #self.write('product.replacement', repl_id,
-                        #           {'replacement_for_ids': (4, product_ids, False)})
+                        for repuesto_id in replace_ids:
+                            print "Añadiendo Repuesto : ", str(record[3])
+                            replace_vals = {
+                                'product_id': repuesto_id,
+                                'qty': int(record[6]),
+                                'disassembly_ref':  str(record[4]),
+                                'replacement_for_ids': [(6, False, product_ids)]
+                            }
+                            print replace_vals
+                            repl_id = self.create('product.replacement', replace_vals)
+                            #self.write('product.replacement', repl_id,
+                            #           {'replacement_for_ids': (4, product_ids, False)})
                 else:
                      print "Bomba no encontrada en BD: ", str(record[1])
                      #print str(record[1])
@@ -225,93 +241,6 @@ class import_replacements(object):
         print "ENCONTRADOS"
         print lista_encontrados
 
-    def import_product(self):
-        pwb = xlrd.open_workbook(self.products_file, encoding_override="utf-8")
-        sh = pwb.sheet_by_index(0)
-
-        cont = 1
-        all_lines = sh.nrows - 1
-        print "products no: ", all_lines
-        for rownum in range(1, all_lines):
-            record = sh.row_values(rownum)
-            try:
-                product_vals = {
-                    "default_code": str(int(record[0])),
-                    "name": record[4],
-                    "categ_id": self.getCategoryByName(record[6]),
-                    "uom_id": 1, # Unidad
-                    "uom_po_id": record[7] in ["C","U"] and self.getUomByName(UOM_MAP[record[7]]) or 1,
-                    "uos_id": self.getUomByName(UOM_MAP[record[7]]),
-                    "min_unit": record[9] == "N" and "box" or (record[9] == "S" and "both" or "unit"),
-                    "uos_coeff": record[10] and (1.0 / int(record[10])) or 1.0,
-                    "mes_type": record[9] == "V" and "variable" or "fixed",
-                    "un_ca": record[10] or 1.0,
-                    "supplier_un_ca": record[10] or 1.0,
-                    "supplier_kg_un": record[8] == "K" and 1.0 or 1.0,
-                    "kg_un": record[8] == "K" and 1.0 or 1.0,
-                    "taxes_id": [(6, 0, self.getTaxes(IVA_MAP[str(int(record[13]))][0]))],
-                    "supplier_taxes_id": [(6, 0, self.getTaxes(IVA_MAP[str(int(record[13]))][1]))],
-                    "standard_price": record[16],
-                    "cost_method": "average",
-                    "type": record[24] == "N" and "service" or "product",
-                    "weight": (record[9] == "N" and record[10]) and (record[30] / (1.0 / int(record[10]))) or (record[9] == "S" and record[30] or 0.0),
-                    "ca_ma": 1.0,
-                    "ma_pa": 1.0,
-                    "un_width": 1.0,
-                    "ma_width": 1.0,
-                    "ca_width": 1.0,
-                    "un_height": 1.0,
-                    "ma_height": 1.0,
-                    "ca_height": 1.0,
-                    "un_length": 1.0,
-                    "ca_length": 1.0,
-                    "ma_length": 1.0,
-                    "pa_length": 1.0,
-                    "supplier_un_width": 1.0,
-                    "supplier_un_height": 1.0,
-                    "supplier_un_length": 1.0,
-                    "supplier_ca_ma": 1.0,
-                    "supplier_ma_width": 1.0,
-                    "supplier_ma_height": 1.0,
-                    "supplier_ma_length": 1.0,
-                    "supplier_ma_pa": 1.0,
-                    "supplier_pa_length": 1.0,
-                    "supplier_ca_length": 1.0,
-                    "supplier_ca_height": 1.0,
-                    "supplier_ca_width": 1.0,
-                    "purchase_ok": True,
-                    "sale_ok": True
-                }
-                product_id = self.create("product.product", product_vals)
-
-                if record[25] or record[29]:
-                    ean13 = str(int((record[29] or record[25])))
-                    if len(ean13) == 13:
-                        try:
-                            self.write("product.product", [product_id], {'ean13': ean13})
-                        except:
-                            print u"EAN13 no váĺido", ean13
-
-                product_data = self.read("product.product", product_id, ["product_tmpl_id"])
-                supplier_id = self.getSupplierByRef(str(int(record[1])))
-                if supplier_id:
-                    supplier_vals = {
-                        "name": supplier_id,
-                        "product_code": record[3],
-                        "product_tmpl_id": product_data["product_tmpl_id"][0]
-                    }
-                    self.create("product.supplierinfo", supplier_vals)
-
-                self.exec_workflow("product.template", "logic_validated", product_data["product_tmpl_id"][0])
-                self.exec_workflow("product.template", "commercial_validated", product_data["product_tmpl_id"][0])
-                self.exec_workflow("product.template", "active", product_data["product_tmpl_id"][0])
-
-                print "%s de %s" % (cont, all_lines)
-                cont += 1
-            except Exception, e:
-                print "EXCEPTION: REC: ",(record, e)
-
-        return True
 
 
 if __name__ == "__main__":
