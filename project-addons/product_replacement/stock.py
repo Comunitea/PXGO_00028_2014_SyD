@@ -50,7 +50,8 @@ class stock_transfer_details_item(models.TransientModel):
                                    'lot_id', 'filter lots',
                                    compute='_get_lots')'''
     picking_type = fields.Char(
-        'Picking type', related='transfer_id.picking_id.picking_type_code')
+        'Picking type', related='transfer_id.picking_id.picking_type_code',
+        readonly=True)
 
     '''@api.one
     @api.depends('product_id')
