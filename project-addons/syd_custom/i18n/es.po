@@ -15,6 +15,17 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+
+#. module: syd_custom
+#: field:stock.production.lot,product_available:0
+msgid "Quantity available"
+msgstr "Cantidad disponible (de producto)"
+
+#. module: syd_custom
+#: field:sale.report,margin:0
+msgid "Margin"
+msgstr "Margen"
+
 #. module: syd_custom
 #: view:sale.order.update.purchase.price:syd_custom.sale_order_update_purchase_price_form
 msgid "Cancel"
@@ -126,4 +137,3 @@ msgstr "Usar tiempo de entrega en subcategorías"
 #: field:res.partner,title:0
 msgid "Calification"
 msgstr "Calificación"
-
