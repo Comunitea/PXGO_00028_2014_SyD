@@ -25,7 +25,7 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    version = fields.Integer('Version', default=1)
+    version = fields.Integer('Version', default=1, copy=False)
     base_version = fields.Many2one('sale.order', 'Base version', copy=False)
     version_ids = fields.One2many('sale.order', compute='_get_versions', string='Versions')
     active = fields.Boolean('Active', default=True)
