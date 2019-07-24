@@ -30,17 +30,18 @@ class crm_lead(models.Model):
                                     'purchase_id', 'Related purchases')
 
 
-class crm_make_sale(models.TransientModel):
+#TODO: Migrar
+# ~ class crm_make_sale(models.TransientModel):
 
-    _inherit = "crm.make.sale"
+    # ~ _inherit = "crm.make.sale"
 
-    @api.multi
-    def makeOrder(self):
-        lead = self.env['crm.lead'].browse(self.env.context.get('active_id', False))
-        res = super(crm_make_sale, self).makeOrder()
-        sale_ids = res['res_id']
-        if not isinstance(sale_ids, (int, long, type([]))):
-            return res
-        for sale in self.env['sale.order'].browse(sale_ids):
-            sale.purchase_ids = lead.purchase_ids
-        return res
+    # ~ @api.multi
+    # ~ def makeOrder(self):
+        # ~ lead = self.env['crm.lead'].browse(self.env.context.get('active_id', False))
+        # ~ res = super(crm_make_sale, self).makeOrder()
+        # ~ sale_ids = res['res_id']
+        # ~ if not isinstance(sale_ids, (int, long, type([]))):
+            # ~ return res
+        # ~ for sale in self.env['sale.order'].browse(sale_ids):
+            # ~ sale.purchase_ids = lead.purchase_ids
+        # ~ return res

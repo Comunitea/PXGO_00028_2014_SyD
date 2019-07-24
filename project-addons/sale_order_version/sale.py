@@ -30,20 +30,6 @@ class SaleOrder(models.Model):
     version_ids = fields.One2many('sale.order', compute='_get_versions', string='Versions')
     active = fields.Boolean('Active', default=True)
 
-
-    name = fields.Char(states={'draft': [('readonly', False)]})
-    date_order = fields.Datetime(states={'draft': [('readonly', False)]})
-    user_id = fields.Many2one(states={'draft': [('readonly', False)]})
-    partner_id = fields.Many2one(states={'draft': [('readonly', False)]})
-    partner_invoice_id = fields.Many2one(states={'draft': [('readonly', False)]})
-    partner_shipping_id = fields.Many2one(states={'draft': [('readonly', False)]})
-    order_policy = fields.Selection(states={'draft': [('readonly', False)]})
-    pricelist_id = fields.Many2one(states={'draft': [('readonly', False)]})
-    project_id = fields.Many2one(states={'draft': [('readonly', False)]})
-    order_line = fields.One2many(states={'draft': [('readonly', False)]})
-    ship_id = fields.Many2one(states={'draft': [('readonly', False)]})
-
-
     @api.multi
     @api.depends('base_version')
     def _get_versions(self):
