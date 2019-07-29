@@ -18,68 +18,65 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models
-from openerp.osv import fields,osv
+from openerp import models, fields, api
 
 
-class res_partner(osv.osv):
+class res_partner(models.Model):
 
     _inherit = 'res.partner'
 
-    def _sale_order_count(self, cr, uid, ids, field_name, arg, context=None):
-        res = dict(map(lambda x: (x,0), ids))
-        # The current user may not have access rights for sale orders
-        try:
-            for partner in self.browse(cr, uid, ids, context):
-                res[partner.id] = len(self.pool.get('sale.order').search(cr, uid, [('partner_id', 'child_of', partner.id)], context=context))
-        except:
-            pass
-        return res
+    @api.multi
+    def _sale_order_count(self):
+        for partner in self:
+            partner.sale_order_count = self.env['sale.order'].\
+                search_count([('partner_id', 'child_of', [partner.id])])
 
-    def _get_meeting_len(self, cr, uid, partner, context={}):
+    def _get_meeting_len(self):
+        self.ensure_one()
         total = 0
-        if partner.child_ids:
-            for child in partner.child_ids:
-                total += self._get_meeting_len(cr, uid, child, context)
-        return total + len(partner.meeting_ids)
+        if self.child_ids:
+            for child in self.child_ids:
+                total += child._get_meeting_len()
+        return total + len(self.meeting_ids)
 
+    @api.multi
+    def _opportunity_meeting_phonecall_count(self):
+        for partner in self:
+            if partner.is_company:
+                operator = 'child_of'
+            else:
+                operator = '='
+            opps = self.env['crm.lead'].\
+                search_count([('partner_id', operator, partner.id),
+                              ('type', '=', 'opportunity'),
+                              ('probability', '<', '100')])
+            phonnecalls = self.env['crm.phonecall'].\
+                search_count([('partner_id', operator, partner.id)])
+            partner.opportunity_count = opps
+            partner.meeting_count = partner._get_meeting_len()
+            partner.phonecall_count = phonnecalls
 
-    def _opportunity_meeting_phonecall_count(self, cr, uid, ids, field_name, arg, context=None):
-        res = dict(map(lambda x: (x,{'opportunity_count': 0, 'meeting_count': 0}), ids))
-        # the user may not have access rights for opportunities or meetings
-        try:
-            for partner in self.browse(cr, uid, ids, context):
-                if partner.is_company:
-                    operator = 'child_of'
-                else:
-                    operator = '='
-                opp_ids = self.pool['crm.lead'].search(cr, uid, [('partner_id', operator, partner.id), ('type', '=', 'opportunity'), ('probability', '<', '100')], context=context)
-                phonnecall_ids = self.pool['crm.phonecall'].search(cr, uid, [('partner_id', operator, partner.id)], context=context)
-                res[partner.id] = {
-                    'opportunity_count': len(opp_ids),
-                    'meeting_count': self._get_meeting_len(cr, uid, partner, context),
-                    'phonecall_count': len(phonnecall_ids),
-                }
-        except:
-            pass
-        return res
+    sale_order_count = fields.Integer(compute="_sale_order_count",
+                                      string='# of Sales Order')
+    opportunity_count = fields.\
+        Integer(compute="_opportunity_meeting_phonecall_count",
+                string="Opportunity", multi=True)
+    meeting_count = fields.\
+        Integer(compute="_opportunity_meeting_phonecall_count",
+                string="# Meetings", multi=True)
+    phonecall_count = fields.\
+        Integer(compute="_opportunity_meeting_phonecall_count",
+                string="Phonecalls", multi=True)
 
-    _columns = {
-        'sale_order_count': fields.function(_sale_order_count, string='# of Sales Order', type='integer'),
-        'opportunity_count': fields.function(_opportunity_meeting_phonecall_count, string="Opportunity", type='integer', multi='opp_meet'),
-        'meeting_count': fields.function(_opportunity_meeting_phonecall_count, string="# Meetings", type='integer', multi='opp_meet'),
-        'phonecall_count': fields.function(_opportunity_meeting_phonecall_count, string="Phonecalls", type="integer", multi='opp_meet'),
-        'title': fields.many2one('res.partner.title', 'Calification'),
-    }
-
-    def create(self, cr, uid, vals, context=None):
+    @api.model
+    def create(self, vals):
         if not vals.get('ref', False):
-            vals['ref'] = self.pool.get('ir.sequence').get(cr, uid,
-                                                           'res.partner')
-        return super(res_partner, self).create(cr, uid, vals, context)
+            vals['ref'] = self.env['ir.sequence'].next_by_code('res.partner')
+        return super(res_partner, self).create(vals)
 
-    def copy(self, cr, uid, id, default=None, context=None):
+    @api.multi
+    def copy(self, default=None):
         if not default.get('ref', False):
-            default['ref'] = self.pool.get('ir.sequence').get(cr, uid,
-                                                              'res.partner')
-        return super(res_partner, self).copy(cr, uid, id, default, context)
+            default['ref'] = self.env['ir.sequence'].\
+                next_by_code('res.partner')
+        return super(res_partner, self).copy(default)

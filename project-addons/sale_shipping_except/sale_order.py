@@ -18,19 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv import fields, osv
-import openerp.addons.decimal_precision as dp
+from odoo import models
 
 
-class sale_order(osv.osv):
+class SaleOrder(models.Model):
     _inherit = 'sale.order'
-    _columns = {
-        'order_line': fields.one2many('sale.order.line', 'order_id', 'Order '
-                'Lines', readonly=True, states={
-                'draft': [('readonly', False)],
-                'sent': [('readonly', False)],
-                'shipping_except': [('readonly', False)]}, copy=True),
-    }
 
     def action_ship_create(self, cr, uid, ids, context=None):
         procurement_obj = self.pool.get('procurement.order')
@@ -48,64 +40,21 @@ class sale_order(osv.osv):
                                                    line.product_id.id,
                                                'product_qty':
                                                    line.product_uom_qty,
-                                               'product_uos_qty':
-                                                   line.product_uos_qty
+                                               'product_uom_qty':
+                                                   line.product_uom_qty
                                                })
                 else:
                     if line.state == 'draft':
                         sale_line_obj.write(cr, uid, line.id,
                             {'state': 'confirmed'})
 
-        super(sale_order, self).action_ship_create(cr, uid, ids,
+        super(SaleOrder, self).action_ship_create(cr, uid, ids,
                                                    context=context)
 
-class sale_order_line(osv.osv):
-    _inherit = "sale.order.line"
-    _columns = {
-        'name': fields.text('Description',
-                            required=True, readonly=True,
-                            states={'draft': [('readonly', False)],
-                                    'confirmed':[('readonly', False)]}),
-        'product_id': fields.many2one(
-            'product.product', 'Product',
-            domain=[('sale_ok', '=', True)],
-            change_default=True, readonly=True,
-            states={'draft': [('readonly', False)],
-                    'confirmed':[('readonly', False)]},
-            ondelete='restrict'),
-        'price_unit': fields.float(
-            'Unit Price', required=True,
-            digits_compute= dp.get_precision('Product Price'),
-            readonly=True,
-            states={'draft': [('readonly', False)],
-                    'confirmed':[('readonly', False)]}),
-        'tax_id': fields.many2many(
-            'account.tax', 'sale_order_tax',
-            'order_line_id', 'tax_id', 'Taxes', readonly=True,
-            states={'draft': [('readonly', False)],
-                    'confirmed':[('readonly', False)]}),
-        'product_uom_qty': fields.float(
-            'Quantity', digits_compute= dp.get_precision('Product UoS'),
-            required=True, readonly=True,
-            states={'draft': [('readonly', False)],
-                    'confirmed':[('readonly', False)]}),
-        'product_uom': fields.many2one(
-            'product.uom', 'Unit of Measure ',
-            required=True, readonly=True,
-            states={'draft': [('readonly', False)],
-                    'confirmed':[('readonly', False)]}),
-        'product_uos_qty': fields.float(
-            'Quantity (UoS)' ,digits_compute= dp.get_precision('Product UoS'),
-            readonly=True,
-            states={'draft': [('readonly', False)],
-                    'confirmed':[('readonly', False)]}),
-        'discount': fields.float('Discount (%)',
-            digits_compute= dp.get_precision('Discount'), readonly=True,
-            states={'draft': [('readonly', False)],
-            'confirmed':[('readonly', False)]}),
-        }
 
+class SaleOrderLine(models.Model):
+    _inherit = "sale.order.line"
 
     def unlink(self, cr, uid, ids, context=None):
         self.button_cancel(cr, uid, ids, context)
-        return super(sale_order_line, self).unlink(cr, uid, ids, context=context)
+        return super(SaleOrderLine, self).unlink(cr, uid, ids, context=context)

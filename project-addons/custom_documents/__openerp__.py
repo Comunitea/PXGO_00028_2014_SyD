@@ -27,7 +27,8 @@
     'author': 'Pexego',
     'website': '',
     "depends": ['report', 'sale', 'stock', 'sale_stock', 'picking_services',
-                'delivery', 'supplier_ref', 'sale_layout', 'product_pack',
+                'delivery', 'supplier_ref', 'sale',
+                #TODO: Migrar'product_pack',
                 'syd_custom', 'purchase_discount', 'stock_picking_invoice_link',
                 'report_qweb_element_page_visibility'],
 

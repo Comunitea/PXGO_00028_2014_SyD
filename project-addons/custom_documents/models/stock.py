@@ -27,19 +27,19 @@ class stock_picking(models.Model):
     _inherit = "stock.picking"
 
     amount_untaxed = fields.Float(
-        compute='_amount_all', digits_compute=dp.get_precision('Sale Price'),
+        compute='_amount_all', digits=dp.get_precision('Sale Price'),
         string='Untaxed Amount', readonly=True, store=False)
     amount_tax = fields.Float(
-        compute='_amount_all', digits_compute=dp.get_precision('Sale Price'),
+        compute='_amount_all', digits=dp.get_precision('Sale Price'),
         string='Taxes', readonly=True, store=False)
     amount_total = fields.Float(
-        compute='_amount_all', digits_compute=dp.get_precision('Sale Price'),
+        compute='_amount_all', digits=dp.get_precision('Sale Price'),
         string='Total', readonly=True, store=False)
     amount_gross = fields.Float(
-        compute='_amount_all', digits_compute=dp.get_precision('Sale Price'),
+        compute='_amount_all', digits=dp.get_precision('Sale Price'),
         string='amount gross', readonly=True, store=False)
     amount_discounted = fields.Float(
-        compute='_amount_all', digits_compute=dp.get_precision('Sale Price'),
+        compute='_amount_all', digits=dp.get_precision('Sale Price'),
         string='Sale price', readonly=True, store=False)
     external_note = fields.Text(
         ' External Notes')
@@ -107,7 +107,7 @@ class stock_pack_operation(models.Model):
 
     price_subtotal = fields.Float(
         compute='_get_subtotal', string="Subtotal",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
 
     @api.multi
@@ -126,15 +126,15 @@ class stock_move(models.Model):
 
     price_subtotal = fields.Float(
         compute='_get_subtotal', string="Subtotal",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     order_price_unit = fields.Float(
         compute='_get_subtotal', string="Price unit",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     order_price_unit_net = fields.Float(
         compute='_get_subtotal', string="Price unit",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     discount = fields.Float(
         compute='_get_subtotal', string="Discount",
@@ -142,15 +142,15 @@ class stock_move(models.Model):
         store=False)
     cost_subtotal = fields.Float(
         compute='_get_subtotal', string="Cost subtotal",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     margin = fields.Float(
         compute='_get_subtotal', string="Margin",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     percent_margin = fields.Float(
         compute='_get_subtotal', string="% margin",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
 
     @api.multi
@@ -188,15 +188,15 @@ class StockMoveService(models.Model):
 
     price_subtotal = fields.Float(
         compute='_get_subtotal', string="Subtotal",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     order_price_unit = fields.Float(
         compute='_get_subtotal', string="Price unit",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     order_price_unit_net = fields.Float(
         compute='_get_subtotal', string="Price unit",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     discount = fields.Float(
         compute='_get_subtotal', string="Discount",
@@ -204,15 +204,15 @@ class StockMoveService(models.Model):
         store=False)
     cost_subtotal = fields.Float(
         compute='_get_subtotal', string="Cost subtotal",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     margin = fields.Float(
         compute='_get_subtotal', string="Margin",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
     percent_margin = fields.Float(
         compute='_get_subtotal', string="% margin",
-        digits_compute=dp.get_precision('Sale Price'), readonly=True,
+        digits=dp.get_precision('Sale Price'), readonly=True,
         store=False)
 
     @api.multi

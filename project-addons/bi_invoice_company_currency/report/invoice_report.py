@@ -152,8 +152,8 @@ class AccountInvoiceReportBi(models.Model):
         """
         return group_by
 
-    def init(self, cr):
-        tools.drop_view_if_exists(cr, self._table)
-        cr.execute("CREATE or REPLACE VIEW %s as (%s FROM %s %s %s)" % (
+    def init(self):
+        tools.drop_view_if_exists(self._cr, self._table)
+        self._cr.execute("CREATE or REPLACE VIEW %s as (%s FROM %s %s %s)" % (
             self._table, self._select(), self._from(), self._where(),
             self._group_by()))

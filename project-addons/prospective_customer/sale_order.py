@@ -19,10 +19,10 @@
 #
 ##############################################################################
 
-from openerp.osv import orm
+from odoo import models
 
 
-class sale_order(orm.Model):
+class SaleOrder(models.Model):
 
     _inherit = "sale.order"
 

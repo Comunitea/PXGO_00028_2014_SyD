@@ -29,6 +29,6 @@ class sale_order_line(models.Model):
 
     qty_available = fields.Float('Qty available', readonly=True,
                                   related='product_id.qty_available',
-                                  digits_compute=
+                                  digits=
                                   dp.get_precision('Product \
                                                     Unit of Measure'))

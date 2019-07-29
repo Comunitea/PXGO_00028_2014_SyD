@@ -18,47 +18,30 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.osv import fields, osv
-from datetime import datetime, timedelta
-from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
+from odoo import fields, models, api
+from datetime import timedelta
 
-class sale_order(osv.osv):
+
+class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    def _get_date_planned(self, cr, uid, order, line, start_date, context=None):
-        order_confirm_datetime = datetime.strptime(order.date_confirm + " 06:00:00", DEFAULT_SERVER_DATETIME_FORMAT)
-        dc_s = order_confirm_datetime.strftime(DEFAULT_SERVER_DATETIME_FORMAT)
-        date_planned = super(sale_order, self)._get_date_planned(cr, uid, order, line, dc_s, context=context)
-        print date_planned
-        return date_planned
-        
-    # Calcula fecha de compromiso desde la fecha de confirmación si ya  existe   
-    def _get_commitment_date(self, cr, uid, ids, name, arg, context=None):
+    @api.depends('date_order', 'order_line.customer_lead', 'confirmation_date')
+    def _compute_commitment_date(self):
         """Compute the commitment date"""
-        res = {}
-        dates_list = []
-        for order in self.browse(cr, uid, ids, context=context):
+        for order in self:
             dates_list = []
-            if order.date_confirm:
-                print "Compromiso sobre confirmación"
-                order_datetime = datetime.strptime(order.date_confirm + " 06:00:00", DEFAULT_SERVER_DATETIME_FORMAT)
+            if order.confirmation_date:
+                order_datetime = fields.Datetime.\
+                    from_string(order.confirmation_date)
             else:
-                order_datetime = datetime.strptime(order.date_order, DEFAULT_SERVER_DATETIME_FORMAT)
-            for line in order.order_line:
-                if line.state == 'cancel':
-                    continue
-                dt = order_datetime + timedelta(days=line.delay or 0.0)
-                dt_s = dt.strftime(DEFAULT_SERVER_DATETIME_FORMAT)
-                dates_list.append(dt_s)
+                order_datetime = fields.Datetime.from_string(order.date_order)
+            for line in order.order_line.\
+                filtered(lambda x: x.state != 'cancel' and
+                         not x._is_delivery()):
+                dt = order_datetime + timedelta(days=line.customer_lead or 0.0)
+                dates_list.append(dt)
             if dates_list:
-                res[order.id] = min(dates_list)
-        return res
-        
-    _columns = {
-        'commitment_date': fields.function(_get_commitment_date, store=True,
-            type='datetime', string='Commitment Date',
-            help="Date by which the products are sure to be delivered. This is "
-                 "a date that you can promise to the customer, based on the "
-                 "Product Lead Times."),
-    }
+                commit_date = min(dates_list) \
+                    if order.picking_policy == 'direct' else max(dates_list)
+                order.commitment_date = fields.Datetime.to_string(commit_date)

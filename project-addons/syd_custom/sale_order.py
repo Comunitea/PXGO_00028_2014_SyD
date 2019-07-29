@@ -47,7 +47,7 @@ class SaleOrderLine(models.Model):
         warning = {}
         if not product:
             return {'value': {'th_weight' : 0, 'product_packaging': False,
-                'product_uos_qty': qty}, 'domain': {'product_uom': [],
+                'product_uom_qty': qty}, 'domain': {'product_uom': [],
                    'product_uos': []}}
         product_obj = self.env['product.product']
         product_info = product_obj.browse(product)

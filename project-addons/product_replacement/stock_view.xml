@@ -2,18 +2,17 @@
 <openerp>
     <data>
 
-        <record id="stock_transfer_details_add_replacement" model="ir.ui.view">
+        <!--TODO: Migrar<record id="stock_transfer_details_add_replacement" model="ir.ui.view">
             <field name="name">stock.transfer_details.form</field>
             <field name="model">stock.transfer_details</field>
             <field name="inherit_id" ref="stock.view_stock_enter_transfer_details"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='item_ids']/tree/field[@name='lot_id']" position="after">
-                    <!--field name="filter_lots" invisible="1"/-->
                     <field name="picking_type" invisible="1"/>
                     <field name="replacement_for_id" attrs="{'invisible': [('picking_type', '!=', 'outgoing')]}"/>
                 </xpath>
             </field>
-        </record>
+        </record>-->
 
         <record id="view_picking_form_add_replacement" model="ir.ui.view">
             <field name="name">stock.picking.form</field>

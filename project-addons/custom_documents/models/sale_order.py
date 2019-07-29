@@ -43,7 +43,7 @@ class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
     price_unit_net = fields.Float('Unit Price',
-                                  digits_compute= dp.get_precision('Product Price'),
+                                  digits= dp.get_precision('Product Price'),
                                   compute='_get_price_unit_net')
 
     @api.one

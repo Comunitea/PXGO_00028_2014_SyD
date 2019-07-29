@@ -28,7 +28,7 @@
     'website': 'www.pexego.es',
     "depends" : ["base",
                  "sale",
-                 "crm",
+                 'crm_phonecall',
                  "sale_crm"],
     "data" : ["res_partner_view.xml",
               "sale_order_view.xml",
