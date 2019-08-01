@@ -102,22 +102,23 @@ class stock_picking(models.Model):
                 picking.amount_untaxed
 
 
-class stock_pack_operation(models.Model):
-    _inherit = "stock.pack.operation"
+#TODO: Migrar
+# ~ class stock_pack_operation(models.Model):
+    # ~ _inherit = "stock.pack.operation"
 
-    price_subtotal = fields.Float(
-        compute='_get_subtotal', string="Subtotal",
-        digits=dp.get_precision('Sale Price'), readonly=True,
-        store=False)
+    # ~ price_subtotal = fields.Float(
+        # ~ compute='_get_subtotal', string="Subtotal",
+        # ~ digits=dp.get_precision('Sale Price'), readonly=True,
+        # ~ store=False)
 
-    @api.multi
-    @api.depends('linked_move_operation_ids.move_id.order_price_unit_net')
-    def _get_subtotal(self):
-        for operation in self:
-            if operation.linked_move_operation_ids:
-                operation.price_subtotal = \
-                    operation.product_qty * \
-                    operation.linked_move_operation_ids[0].move_id.order_price_unit_net
+    # ~ @api.multi
+    # ~ @api.depends('linked_move_operation_ids.move_id.order_price_unit_net')
+    # ~ def _get_subtotal(self):
+        # ~ for operation in self:
+            # ~ if operation.linked_move_operation_ids:
+                # ~ operation.price_subtotal = \
+                    # ~ operation.product_qty * \
+                    # ~ operation.linked_move_operation_ids[0].move_id.order_price_unit_net
 
 
 class stock_move(models.Model):

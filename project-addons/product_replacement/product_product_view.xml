@@ -101,7 +101,7 @@
             <field name="search_view_id" ref="product_replacement_filter"/>
         </record>
 
-        <menuitem name="Replacements" parent="base.menu_product" action="action_product_replacement" id="product_replacement_menu"/>
+        <!--TODO: Migrar<menuitem name="Replacements" parent="base.menu_product" action="action_product_replacement" id="product_replacement_menu"/>-->
 
     </data>
 </openerp>

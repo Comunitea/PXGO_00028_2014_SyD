@@ -23,21 +23,23 @@ from openerp.exceptions import Warning
 from datetime import datetime
 
 
-class stock_pack_operation(models.Model):
+#TODO: Migrar
+# ~ class stock_pack_operation(models.Model):
 
-    _inherit = 'stock.pack.operation'
+    # ~ _inherit = 'stock.pack.operation'
 
-    replacement_for_id = fields.Many2one('stock.production.lot',
-                                         'Replacement for')
+    # ~ replacement_for_id = fields.Many2one('stock.production.lot',
+                                         # ~ 'Replacement for')
 
 
-class stock_production_lot(models.Model):
+#TODO: Migrar
+# ~ class stock_production_lot(models.Model):
 
-    _inherit = 'stock.production.lot'
+    # ~ _inherit = 'stock.production.lot'
 
-    replacement_sended = fields.One2many('stock.pack.operation',
-                                         'replacement_for_id',
-                                         'Replacements sended')
+    # ~ replacement_sended = fields.One2many('stock.pack.operation',
+                                         # ~ 'replacement_for_id',
+                                         # ~ 'Replacements sended')
 
 
 #TODO: Migrar

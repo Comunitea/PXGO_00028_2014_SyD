@@ -32,8 +32,8 @@
             </field>
         </record>
 
-    <menuitem id="res_partner_prospective" name="Prospective customers" string="Prospective customers"
-        action="action_view_prospective_customers"  parent="base.menu_sales" sequence="3"/>
+    <!--TODO: Migrar<menuitem id="res_partner_prospective" name="Prospective customers" string="Prospective customers"
+        action="action_view_prospective_customers"  parent="base.menu_sales" sequence="3"/>-->
 
     </data>
 </openerp>
