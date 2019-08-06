@@ -2,12 +2,10 @@
 <openerp>
     <data>
 
-         <record id="report.paperformat_euro" model="report.paperformat">
+         <record id="base.paperformat_euro" model="report.paperformat">
                 <field name="margin_top">40</field>
                 <field name="header_spacing">35</field>
          </record>
-
-        <delete model="ir.actions.report.xml" id="purchase.report_purchase_order"/>
 
     </data>
 </openerp>

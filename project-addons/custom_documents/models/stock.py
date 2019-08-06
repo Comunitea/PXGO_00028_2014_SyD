@@ -18,8 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields, api
-from openerp.addons.decimal_precision import decimal_precision as dp
+from odoo import models, fields, api
+from odoo.addons import decimal_precision as dp
 
 
 class stock_picking(models.Model):
@@ -58,7 +58,7 @@ class stock_picking(models.Model):
                 or False
             for line in picking.move_lines:
                 price_unit = 0.0
-                sale_line = line.procurement_id.sale_line_id
+                sale_line = line.sale_line_id
                 if sale_line and line.state != 'cancel':
                     price_unit = sale_line.price_unit * \
                         (1-(sale_line.discount or 0.0)/100.0)
@@ -155,17 +155,17 @@ class stock_move(models.Model):
         store=False)
 
     @api.multi
-    @api.depends('product_id', 'product_qty', 'procurement_id.sale_line_id')
+    @api.depends('product_id', 'product_qty', 'sale_line_id')
     def _get_subtotal(self):
         for move in self:
-            if move.procurement_id.sale_line_id:
+            if move.sale_line_id:
                 cost_price = move.product_id.standard_price or 0.0
-                price_unit = (move.procurement_id.sale_line_id.price_unit *
-                              (1-(move.procurement_id.sale_line_id.discount or
+                price_unit = (move.sale_line_id.price_unit *
+                              (1-(move.sale_line_id.discount or
                                   0.0)/100.0))
                 move.price_subtotal = price_unit * move.product_qty
-                move.discount = move.procurement_id.sale_line_id.discount or 0.0
-                move.order_price_unit = move.procurement_id.sale_line_id.price_unit
+                move.discount = move.sale_line_id.discount or 0.0
+                move.order_price_unit = move.sale_line_id.price_unit
                 move.order_price_unit_net = price_unit
                 move.cost_subtotal = cost_price * move.product_qty
                 move.margin = move.price_subtotal - move.cost_subtotal

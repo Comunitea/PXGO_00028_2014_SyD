@@ -204,14 +204,12 @@
         </template>
 
 
-        <template id="sale_layout.report_sale_layouted"
+        <!--TODO: Migrar<template id="sale_layout.report_sale_layouted"
                   inherit_id="custom_documents.report_saleorder_document">
             <xpath expr="//table/tbody[@class='sale_tbody']" position="replace">
                 <t t-foreach="o.sale_layout_lines(order_id = o.id)" t-as="p">
-                    <!-- Name of the category -->
                     <t t-call="sale_layout.category_template" />
 
-                    <!-- Lines associated -->
                     <t t-foreach="p['lines']" t-as="l">
                         <tr>
                             <t t-if="l.pack_depth == 0">
@@ -243,13 +241,10 @@
                         </tr>
                     </t>
 
-                    <!-- Subtotal -->
                     <t t-call="sale_layout.subtotal_template" />
 
-                    <!-- Separator -->
                     <t t-call="sale_layout.separator_template" />
 
-                    <!-- Pagebreak -->
                     <t t-if="'pagebreak' in p['category'] and p['category'].pagebreak is True">
                         <t t-if="p_index &lt; p_size - 1">
                             <![CDATA[
@@ -274,7 +269,7 @@
                     </t>
                 </t>
             </xpath>
-       </template>
+       </template>-->
 
         <template id="sale.report_saleorder">
             <t t-call="report.html_container">

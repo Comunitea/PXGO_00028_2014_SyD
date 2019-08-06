@@ -1,8 +1,0 @@
-1. Añadimos los fichero necesarios al CLASSPATH
-export CLASSPATH=/opt/openerp/git/syd/project-addons/importation/java_lib/*:$CLASSPATH
-
-2. Instalamos Jython 2.5.3
-http://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.5.3/jython-installer-2.5.3.jar
-
-3. Ejecutamos el script con Jython
-./jython -J-Xmx2g /opt/openerp/git/syd/project-addons/importation/import_db.py syd_devel admin admin

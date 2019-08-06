@@ -12,9 +12,7 @@
         "sale_order_dates"
     ],
     "demo": [],
-    "data": [
-        "view/sale_order_view.xml"
-    ],
+    "data": [],
     "test": [],
     "js": [],
     "css": [],

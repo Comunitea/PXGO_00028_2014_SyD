@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <record id="sale_order_view_form_add_version" model="ir.ui.view">
+        <!-- TODO: Migrar a sale_order_revision<record id="sale_order_view_form_add_version" model="ir.ui.view">
             <field name="name">sale.order.form</field>
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <button name="copy_quotation" position="replace">
-                    <!--field name="new_version_id" invisible="1"/>
-                    <button name="copy_quotation" string="New Copy of Quotation" type="object" attrs="{'invisible': ['|', ('state', '!=', 'cancel'), ('new_version_id', '!=', None)]}"/-->
+                <button name="copy_quotation" position="replace">>
                     <button name="create_new_version" string="New version of order" type="object" states="sent,cancel"/>
                 </button>
                 <field name="pricelist_id" position="after">
-                    <!--field name="base_version" readonly="1"/-->
                 </field>
                 <notebook position="inside">
                     <page string="Versions" attrs="{'invisible': [('version_ids', '=', [])]}">
@@ -20,6 +17,6 @@
                     </page>
                 </notebook>
             </field>
-        </record>
+        </record>-->
     </data>
 </openerp>

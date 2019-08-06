@@ -27,7 +27,7 @@
     'author': 'Pexego',
     'website': '',
     "depends": ['sale', 'stock', 'sale_stock', 'picking_services',
-                'delivery', 'supplier_ref',
+                'delivery', 'supplier_ref', 'account_payment_mode',
                 #TODO: Migrar'product_pack',
                 'syd_custom', 'purchase_discount', 'stock_picking_invoice_link',
                 'report_qweb_element_page_visibility'],
@@ -37,7 +37,6 @@
              'qweb_report/report_saleorder.xml', 'qweb_report/report_stockpicking.xml',
              'qweb_report/valued_picking_report.xml', 'qweb_report/report_purchase_order.xml',
              'qweb_report/report_header.xml', 'qweb_report/report_invoice.xml',
-             'qweb_report/purchase_quotation.xml',
              'sale_report.xml', 'stock_report.xml', 'account_report.xml',
              'data/paperformat_data.xml'],
     "installable": True

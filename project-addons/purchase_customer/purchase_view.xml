@@ -7,7 +7,7 @@
             <field name="model">purchase.order</field>
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
-                <field name="pricelist_id" position="after">
+                <field name="company_id" position="after">
                     <field name="customer_id"/>
                 </field>
                 <notebook position="inside">
@@ -42,8 +42,8 @@
                 <field name="partner_id" position="after">
                     <field name="customer_id" operator="child_of"/>
                 </field>
-                <group string="Group By" position="inside">
-                    <filter string="Customer" icon="terp-partner" domain="[]" context="{'group_by':'customer_id'}"/>
+                <group position="inside">
+                    <filter string="Customer" domain="[]" context="{'group_by':'customer_id'}"/>
                 </group>
             </field>
         </record>

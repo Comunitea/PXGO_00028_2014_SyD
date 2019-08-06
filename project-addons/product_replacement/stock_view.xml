@@ -12,7 +12,7 @@
                     <field name="replacement_for_id" attrs="{'invisible': [('picking_type', '!=', 'outgoing')]}"/>
                 </xpath>
             </field>
-        </record>-->
+        </record>
 
         <record id="view_picking_form_add_replacement" model="ir.ui.view">
             <field name="name">stock.picking.form</field>
@@ -30,8 +30,8 @@
             <field name="model">stock.production.lot</field>
             <field name="inherit_id" ref="stock.view_production_lot_form"/>
             <field name="arch" type="xml">
-                <notebook position="inside">
-                    <page string="Replacement sended">
+                <group name="main_group" position="inside">
+                    <group string="Replacement sended" name="replacement">
                         <field name="replacement_sended" nolabel="1" readonly="1">
                             <tree editable="top">
                                 <field name="package_id" groups="stock.group_tracking_lot"/>
@@ -46,9 +46,9 @@
                                 <field name="result_package_id" groups="stock.group_tracking_lot" context="{'location_id': location_dest_id}"/>
                             </tree>
                         </field>
-                    </page>
-                </notebook>
+                    </group>
+                </group>
             </field>
-        </record>
+        </record>-->
     </data>
 </openerp>

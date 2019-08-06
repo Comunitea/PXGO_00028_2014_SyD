@@ -18,11 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields
+from odoo import models, fields
 
 
 class PaymentMode(models.Model):
 
-    _inherit = 'payment.mode'
+    _inherit = 'account.payment.mode'
 
     show_client_account = fields.Boolean('Show client account')

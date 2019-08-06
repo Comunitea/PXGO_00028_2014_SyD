@@ -5,26 +5,20 @@
       <record id="purchase_order_change_shpiment_count" model="ir.ui.view">
           <field name="name">purchase.order.form</field>
           <field name="model">purchase.order</field>
-          <field name="inherit_id" ref="purchase.purchase_order_2_stock_picking"/>
+          <field name="inherit_id" ref="purchase.purchase_order_form"/>
           <field name="arch" type="xml">
-                <!--field name="shipment_count" position="replace">
-                    <field name="shipment_count" widget="statinfo" string="In Shipments" help="Incoming Shipments"/>
-                </field-->
-                <xpath expr="//div[contains(@class, 'oe_button_box')]/button[@name='view_picking']" position="replace">
-                    <button type="object"
-                            name="view_picking"
-                            class="oe_stat_button"
-                            icon="fa-truck"
-                            attrs="{'invisible': [('shipment_count_', '=', 0)]}">
-                            <field name="shipment_count_" widget="statinfo" string="In Shipments" help="Incoming Shipments"/>
-                    </button>
+                <xpath expr="//button[@name='action_view_picking']/field[@name='picking_count']" position="after">
+                    <field name="shipment_count_" widget="statinfo" string="Shipment" help="Incoming Shipments"/>
                 </xpath>
+                <button name="action_view_picking" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', '|' , ('is_shipped', '=', True), ('state','not in', ('purchase','done')), ('shipment_count_', '=', 0)]}</attribute>
+                </button>
                 <field name="picking_type_id" position="after">
                     <field name="carrier"/>
                 </field>
           </field>
       </record>
-      
+
        <record id="purchase_order_change_approve" model="ir.ui.view">
           <field name="name">purchase.order.change.approve</field>
           <field name="model">purchase.order</field>
@@ -33,7 +27,7 @@
                 <field name="date_approve" position="replace"/>
           </field>
       </record>
-      
+
       <record id="purchase_order_position_approve" model="ir.ui.view">
           <field name="name">purchase.order.position.approve</field>
           <field name="model">purchase.order</field>

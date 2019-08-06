@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -18,20 +17,19 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 
-class account_invoice(models.Model):
+class AccountInvoice(models.Model):
 
     _inherit = 'account.invoice'
 
     @api.multi
     def action_move_create(self):
-        res = super(account_invoice, self).action_move_create()
+        res = super().action_move_create()
         for invoice in self:
             move_lines = self.env['account.move.line'].search(
-                [('move_id', '=', invoice.move_id.id),
-                 ('date_maturity', '!=', False)], order='date_maturity')
+                [('move_id', '=', invoice.move_id.id)])
             sequence = 1
             for line in move_lines:
                 line.sequence = sequence
@@ -39,7 +37,7 @@ class account_invoice(models.Model):
         return res
 
 
-class account_move_line(models.Model):
+class AccountMoveLine(models.Model):
 
     _inherit = 'account.move.line'
 

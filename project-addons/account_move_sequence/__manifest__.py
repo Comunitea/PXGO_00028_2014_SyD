@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,12 +20,12 @@
 
 {
     'name': 'Account move sequence',
-    'version': '1.0',
+    'version': '11.0.0.0.1',
     'category': 'account',
     'description': """Adds sequence to account moves""",
-    'author': 'Pexego',
+    'author': 'Comunitea',
     'website': '',
     "depends": ['account', 'account_due_list'],
-    "data": ['account_view.xml'],
+    "data": ['views/account_view.xml'],
     "installable": True
 }

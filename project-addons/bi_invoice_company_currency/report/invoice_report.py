@@ -20,8 +20,8 @@
 #
 ##############################################################################
 
-from openerp import models, fields, tools
-import openerp.addons.decimal_precision as dp
+from odoo import models, fields, tools
+from odoo.addons import decimal_precision as dp
 
 
 class AccountInvoiceReportBi(models.Model):

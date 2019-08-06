@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, api, _, fields
+from odoo import models, api, _, fields
 
 
 class sale_order(models.Model):
@@ -74,18 +74,3 @@ class SaleOrderLine(models.Model):
             result['warning'] = warning
         return result
 
-
-class sale_report(models.Model):
-    _inherit = "sale.report"
-
-    margin = fields.Float()
-
-    def _select(self):
-        select_str = super(sale_report,self)._select()
-        this_str = """, l.margin as margin"""
-        return select_str + this_str
-
-    def _group_by(self):
-        group_by_str = super(sale_report,self)._group_by()
-        this_str = """, l.margin"""
-        return group_by_str + this_str

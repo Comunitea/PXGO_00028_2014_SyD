@@ -18,14 +18,14 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
     shipment_count_ = fields.Integer('Incoming Shipments',
-                                     compute='_count_ship', store=False)
+                                     compute='_count_ship', store=True)
     #carrier = fields.Char('Carrier')
     carrier = fields.Many2one('delivery.carrier','Carrier')
 

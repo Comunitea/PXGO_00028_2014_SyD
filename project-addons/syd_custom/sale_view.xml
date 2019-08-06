@@ -13,9 +13,6 @@
                 <field name="order_line" position="before">
                     <button string="Update purchase price" name="%(sale_order_update_purchase_price_action)d" type="action" states="progress"/>
                 </field>
-                <field name="date_order" position="after">
-                    <field name="date_confirm" />
-                </field>
             </field>
         </record>
 
