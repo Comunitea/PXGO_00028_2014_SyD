@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2014 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -27,7 +26,8 @@ class StockMoveService(models.Model):
     _name = 'stock.move.service'
 
     product_id = fields.Many2one('product.product', 'Product', required=True)
-    quantity = fields.Float('Quantity', digits= dp.get_precision('Product Unit of Measure'))
+    quantity = fields.Float('Quantity',
+                            digits=dp.get_precision('Product Unit of Measure'))
     product_uom = fields.Many2one('product.uom', 'UoM')
     picking_id = fields.Many2one('stock.picking', 'Picking')
     sale_line_id = fields.Many2one('sale.order.line', 'Order line')
@@ -40,15 +40,16 @@ class StockPicking(models.Model):
     service_ids = fields.One2many('stock.move.service', 'picking_id',
                                   'Services')
 
-    @api.one
+    @api.multi
     def get_services(self):
-        services = self.env['stock.move.service']
-        self.service_ids.unlink()
-        for line in self.sale_id.order_line:
-            if line.product_id.type == 'service':
+        for pick in self:
+            services = self.env['stock.move.service']
+            pick.service_ids.unlink()
+            for line in pick.sale_id.order_line.\
+                    filtered(lambda x: x.product_id.type == 'service'):
                 services += services.create({'product_id': line.product_id.id,
                                              'product_uom':
                                             line.product_uom.id,
                                              'quantity': line.product_uom_qty,
                                              'sale_line_id': line.id})
-        self.service_ids = services
+            pick.service_ids = services
