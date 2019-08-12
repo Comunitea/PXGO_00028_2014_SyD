@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
+
         <record id="product_product_form_add_replacements" model="ir.ui.view">
             <field name="name">product.product.form</field>
             <field name="model">product.product</field>
@@ -54,7 +54,6 @@
         <record id="product_replacement_tree" model="ir.ui.view">
             <field name="name">product.replacement.tree</field>
             <field name="model">product.replacement</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Replacements">
                     <field name="disassembly_ref"/>
@@ -67,7 +66,6 @@
         <record id="product_replacement_form" model="ir.ui.view">
             <field name="name">product.replacement.form</field>
             <field name="model">product.replacement</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Replacement">
                     <group>
@@ -83,7 +81,6 @@
         <record id="product_replacement_filter" model="ir.ui.view">
             <field name="name">product.replacement.search</field>
             <field name="model">product.replacement</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Replacement">
                    <field name="disassembly_ref"/>
@@ -101,7 +98,6 @@
             <field name="search_view_id" ref="product_replacement_filter"/>
         </record>
 
-        <!--TODO: Migrar<menuitem name="Replacements" parent="base.menu_product" action="action_product_replacement" id="product_replacement_menu"/>-->
+        <menuitem name="Replacements" parent="sale.product_menu_catalog" action="action_product_replacement" id="product_replacement_menu" sequence="99"/>
 
-    </data>
-</openerp>
+</odoo>

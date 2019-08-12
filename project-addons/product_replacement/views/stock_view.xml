@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="stock_production_lot_add_replacement" model="ir.ui.view">
+            <field name="name">stock.production.lot.form</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="arch" type="xml">
+                <group name="main_group" position="inside">
+                    <group string="Replacements sent" name="replacement">
+                        <field name="replacement_sent_ids" nolabel="1" readonly="1"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record id="view_stock_move_line_operation_tree_add_relacement" model="ir.ui.view">
+            <field name="name">stock.move.line.operations.tree.add_relacement</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+            <field name="arch" type="xml">
+                <field name="product_uom_id" position="after">
+                    <field name="replacement_for_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_move_line_tree_add_relacement" model="ir.ui.view">
+            <field name="name">stock.move.line.tree.add_relacement</field>
+            <field name="model">stock.move.line</field>
+            <field name="inherit_id" ref="stock.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="replacement_for_id"/>
+                </field>
+            </field>
+        </record>
+
+</odoo>

@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -25,7 +24,7 @@ class SaleAddReplacementLine(models.TransientModel):
 
     _name = 'sale.add.replacement.line'
 
-    wizard_id = fields.Many2one('sale.replacement', 'wizard')
+    wizard_id = fields.Many2one('sale.add.replacement', 'wizard')
     product_id = fields.Many2one('product.product', 'Product')
     disassembly_ref = fields.Char('Disassembly reference')
     qty = fields.Float('Quantity')

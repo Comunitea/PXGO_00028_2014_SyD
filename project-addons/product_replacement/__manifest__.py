@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,12 +20,14 @@
 
 {
     'name': 'Product replacement',
-    'version': '1.0',
+    'version': '11.0.0.0.0',
     'category': 'product',
     'description': """""",
-    'author': 'Pexego',
+    'author': 'Comunitea',
     'website': '',
     "depends": ['product', 'stock', 'sale'],
-    "data": ['product_product_view.xml', 'stock_view.xml', 'wizard/sale_replacement.xml', 'sale_view.xml', 'security/ir.model.access.csv'],
+    "data": ['views/product_product_view.xml', 'views/stock_view.xml',
+             'wizard/sale_replacement.xml', 'views/sale_view.xml',
+             'security/ir.model.access.csv'],
     "installable": True
 }

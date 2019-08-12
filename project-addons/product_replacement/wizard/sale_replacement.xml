@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<openerp>
-    <data>
+<odoo>
 
         <record id="sale_add_replacement_form" model="ir.ui.view">
             <field name="name">sale.add.replacement.form</field>
             <field name="model">sale.add.replacement</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Add replacements">
                     <group>
@@ -20,8 +17,10 @@
                             </tree>
                         </field>
                     </group>
-                    <button string="Add" name="add_replacement" type="object" icon="gtk-ok"/>
-                    <button string="Cancel" special="cancel" icon="gtk-cancel"/>
+                    <footer>
+                        <button string="Add" name="add_replacement" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
                 </form>
             </field>
         </record>
@@ -33,6 +32,5 @@
             target="new"
             id="sale_add_replacement_action"/>
 
-    </data>
-</openerp>
+</odoo>
 
