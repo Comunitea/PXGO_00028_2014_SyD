@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (C) 2014 Pexego Sistemas Informáticos All Rights Reserved
@@ -26,13 +25,14 @@
     'description': """Adds prospective customers menu and search it on sale order, and crm views""",
     'author': 'Pexego Sistemas Informáticos',
     'website': 'www.pexego.es',
-    "depends" : ["base",
-                 "sale",
-                 'crm_phonecall',
-                 "sale_crm"],
-    "data" : ["res_partner_view.xml",
-              "sale_order_view.xml",
-              "crm_view.xml",
-              "calendar_view.xml"],
-    "installable": True
+    'depends': ["base",
+                "sale",
+                "crm",
+                "crm_phonecall",
+                "sale_crm"],
+    'data': ["views/res_partner_view.xml",
+             "views/sale_order_view.xml",
+             "views/crm_view.xml",
+             "views/calendar_view.xml"],
+    'installable': True
 }

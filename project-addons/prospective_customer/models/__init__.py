@@ -1,8 +1,4 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
-#
-#    Copyright (C) 2014 Pexego Sistemas Informáticos All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -19,15 +15,5 @@
 #
 ##############################################################################
 
-from odoo import models
-
-
-class SaleOrder(models.Model):
-
-    _inherit = "sale.order"
-
-    def action_button_confirm(self, cr, uid, ids, context=None):
-        for order in self.browse(cr, uid, ids, context):
-            if order.partner_id.prospective:
-                self.pool.get('res.partner').write(cr, uid, order.partner_id.id, {'active': True, 'prospective': False})
-        super(sale_order,self).action_button_confirm(cr, uid, ids, context)
+from . import res_partner
+from . import sale_order
