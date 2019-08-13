@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2004-2014 Pexego Sistemas Informáticos All Rights Reserved
-#    $Marta Vázquez Rodríguez$ <marta@pexego.es>
+#    Copyright (C) 2014 Comunitea All Rights Reserved
+#    $Omar Castiñeira Saaveda$ <omar@comunitea.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -26,9 +25,7 @@ from odoo.addons import decimal_precision as dp
 class sale_order_line(models.Model):
     _inherit = 'sale.order.line'
 
-
-    qty_available = fields.Float('Qty available', readonly=True,
-                                  related='product_id.qty_available',
-                                  digits=
-                                  dp.get_precision('Product \
-                                                    Unit of Measure'))
+    qty_available = fields.\
+        Float('Qty available', readonly=True,
+              related='product_id.qty_available',
+              digits=dp.get_precision('Product Unit of Measure'))

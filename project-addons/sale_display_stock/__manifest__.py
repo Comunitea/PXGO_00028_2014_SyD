@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2004-2014 Pexego Sistemas Informáticos All Rights Reserved
-#    $Marta Vázquez Rodríguez$ <marta@pexego.es>
+#    Copyright (C) 2014 Comunitea All Rights Reserved
+#    $Omar Castiñeira Saaveda$ <omar@comunitea.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,9 +20,9 @@
 
 {
     "name": "Sale display stock",
-    "version": "1.0",
-    "author": "Pexego",
-    'website': 'www.pexego.es',
+    "version": "11.0.0.0.0",
+    "author": "Comunitea",
+    'website': 'www.comunitea.com',
     "category": "Sales",
     "description": """
 Sales display stock
@@ -31,12 +30,8 @@ Sales display stock
 
     * Displays the real stock of product at each sale order line.
 """,
-    "depends": ["base", "sale", "stock"],
-    "data": [
-        "sale_view.xml",
-    ],
-    "demo": [],
+    "depends": ["sale_stock"],
+    "data": ["views/sale_view.xml"],
     'auto_install': False,
     "installable": True,
-    'images': [],
 }
