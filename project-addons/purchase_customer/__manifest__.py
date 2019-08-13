@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,12 +20,13 @@
 
 {
     'name': 'Purchase customer',
-    'version': '1.0',
+    'version': '11.0.0.0.0',
     'category': 'purchase',
     'description': """""",
-    'author': 'Pexego',
+    'author': 'Comunitea',
     'website': '',
     "depends": ['base', 'purchase', 'sale', 'crm', 'sale_crm'],
-    "data": ['purchase_view.xml', 'sale_view.xml', 'crm_lead_view.xml'],
+    "data": ['views/purchase_view.xml', 'views/sale_view.xml',
+             'views/crm_lead_view.xml'],
     "installable": True
 }

@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -18,30 +17,13 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import models, fields, api
+from odoo import models, fields
 
 
-class crm_lead(models.Model):
+class SaleOrder(models.Model):
 
-    _inherit = 'crm.lead'
+    _inherit = 'sale.order'
 
     purchase_ids = fields.Many2many('purchase.order',
-                                    'lead_purchase_order_rel', 'lead_id',
+                                    'sale_purchase_order_rel', 'sale_id',
                                     'purchase_id', 'Related purchases')
-
-
-#TODO: Migrar
-# ~ class crm_make_sale(models.TransientModel):
-
-    # ~ _inherit = "crm.make.sale"
-
-    # ~ @api.multi
-    # ~ def makeOrder(self):
-        # ~ lead = self.env['crm.lead'].browse(self.env.context.get('active_id', False))
-        # ~ res = super(crm_make_sale, self).makeOrder()
-        # ~ sale_ids = res['res_id']
-        # ~ if not isinstance(sale_ids, (int, long, type([]))):
-            # ~ return res
-        # ~ for sale in self.env['sale.order'].browse(sale_ids):
-            # ~ sale.purchase_ids = lead.purchase_ids
-        # ~ return res

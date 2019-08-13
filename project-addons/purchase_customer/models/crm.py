@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,12 +20,10 @@
 from odoo import models, fields
 
 
-class purchase_order(models.Model):
+class CrmLead(models.Model):
 
-    _inherit = 'purchase.order'
+    _inherit = 'crm.lead'
 
-    customer_id = fields.Many2one('res.partner', 'Customer')
-    sale_ids = fields.Many2many('sale.order', 'sale_purchase_order_rel',
-                                'purchase_id', 'sale_id', 'related Sales')
-    lead_ids = fields.Many2many('crm.lead', 'lead_purchase_order_rel',
-                                'purchase_id', 'lead_id', 'Related leads')
+    purchase_ids = fields.Many2many('purchase.order',
+                                    'lead_purchase_order_rel', 'lead_id',
+                                    'purchase_id', 'Related purchases')
