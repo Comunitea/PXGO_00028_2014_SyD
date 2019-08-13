@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <record id="stock_picking_add_services" model="ir.ui.view">
             <field name="name">stock.picking.form</field>
             <field name="model">stock.picking</field>
             <field name="inherit_id" ref="stock.view_picking_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//page" position="after">
+                <xpath expr="//page[2]" position="after">
                     <page string="Services" attrs="{'invisible': [('picking_type_code', '!=', 'outgoing')]}">
                         <button name="get_services" string="Add services" type="object"/>
                         <field name="service_ids">
@@ -22,5 +21,4 @@
             </field>
         </record>
 
-    </data>
-</openerp>
+</odoo>

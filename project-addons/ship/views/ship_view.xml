@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <record id="ship_tree" model="ir.ui.view">
             <field name="name">ship.tree</field>
             <field name="model">ship</field>
-            <field name="type">tree</field>
             <field name="arch" type="xml">
                 <tree string="Ships">
                     <field name="name"/>
@@ -18,7 +16,6 @@
         <record id="ship_form" model="ir.ui.view">
             <field name="name">ship.form</field>
             <field name="model">ship</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Ship">
                     <sheet>
@@ -31,10 +28,10 @@
                         <group>
                             <group colspan="4">
                                 <field name="partner_id"/>
-                                <field name="address_id" domain="[('parent_id', '=', partner_id)]" context="{'default_parent_id': partner_id, 'default_type': 'other', 'default_customer': False}"/>
-                            </group>
-                            <newline/>
+                                <field name="address_id" domain="[('id', 'child_of', [partner_id])]" context="{'default_parent_id': partner_id, 'default_type': 'other', 'default_customer': False}"/>
+                                <newline/>
                                 <field name="inspector"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>
@@ -44,7 +41,6 @@
         <record id="ship_filter" model="ir.ui.view">
             <field name="name">ship.search</field>
             <field name="model">ship</field>
-            <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Ship">
                    <field name="name"/>
@@ -67,6 +63,6 @@
             <field name="search_view_id" ref="ship_filter"/>
         </record>
 
-        <!--menuitem name="ships" parent="base.menu_product" action="action_ship_tree" id="view_ships"/-->
-    </data>
-</openerp>
+        <menuitem name="Ships" parent="sale.product_menu_catalog" action="action_ship_tree" id="view_ships"/>
+
+</odoo>

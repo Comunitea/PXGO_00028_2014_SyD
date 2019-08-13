@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2014 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,14 +20,19 @@
 from odoo import models, fields, api
 
 
-class StockPicking(models.Model):
+class SaleOrder(models.Model):
 
-    _inherit = 'stock.picking'
+    _inherit = 'sale.order'
 
-    ship_id = fields.Many2one('ship', 'Ship')
+    ship_id = fields.Many2one('ship', 'Ship', readonly=True,
+                              states={'draft': [('readonly', False)],
+                                      'sent': [('readonly', False)]})
+    partner_parent_id = fields.\
+        Many2one('res.partner', 'partner parent', readonly=True,
+                 related='partner_id.commercial_partner_id')
 
-    @api.model
-    def _get_invoice_vals(self, key, inv_type, journal_id, move):
-        res = super(StockPicking, self)._get_invoice_vals(key, inv_type, journal_id, move)
-        res['ship_id'] = move.picking_id.ship_id.id
+    @api.multi
+    def _prepare_invoice(self):
+        res = super()._prepare_invoice()
+        res['ship_id'] = self.ship_id.id
         return res

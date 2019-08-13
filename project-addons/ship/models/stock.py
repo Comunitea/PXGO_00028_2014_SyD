@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2014 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,8 +20,18 @@
 from odoo import models, fields
 
 
-class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+class StockPicking(models.Model):
+
+    _inherit = 'stock.picking'
 
     ship_id = fields.Many2one('ship', 'Ship')
 
+
+class StockMove(models.Model):
+
+    _inherit = "stock.move"
+
+    def _assign_picking_post_process(self, new=False):
+        super()._assign_picking_post_process(new=new)
+        if new and self.sale_line_id and self.sale_line_id.order_id.ship_id:
+            self.picking_id.ship_id = self.sale_line_id.order_id.ship_id

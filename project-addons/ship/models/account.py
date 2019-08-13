@@ -1,6 +1,6 @@
 ##############################################################################
 #
-#    Copyright (C) 2014 Comunitea All Rights Reserved
+#    Copyright (C) 2015 Comunitea All Rights Reserved
 #    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -17,17 +17,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from odoo import models, fields
 
-{
-    'name': "Ships",
-    'version': '11.0.0.0.0',
-    'category': '',
-    'description': """""",
-    'author': 'Comunitea',
-    'website': '',
-    "depends": ['product', 'sale'],
-    "data": ['views/ship_view.xml', 'views/sale_view.xml',
-             'views/stock_view.xml', 'views/account_view.xml',
-             'security/ir.model.access.csv'],
-    "installable": True
-}
+
+class AccountInvoice(models.Model):
+    _inherit = 'account.invoice'
+
+    ship_id = fields.Many2one('ship', 'Ship')
