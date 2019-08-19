@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
+
         <delete model="res.partner.title" id="base.res_partner_title_pvt_ltd"/>
         <delete model="res.partner.title" id="base.res_partner_title_ltd"/>
         <delete model="res.partner.title" id="base.res_partner_title_madam"/>
@@ -10,5 +10,4 @@
         <delete model="res.partner.title" id="base.res_partner_title_doctor"/>
         <delete model="res.partner.title" id="base.res_partner_title_prof"/>
 
-    </data>
-</openerp>
+</odoo>

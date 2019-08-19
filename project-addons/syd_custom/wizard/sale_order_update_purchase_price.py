@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (C) 2015 Comunitea All Rights Reserved
@@ -18,7 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import models, fields, api, exceptions, _
+from odoo import models, fields, api
 
 
 class SaleOrderUpdatePurchasePriceLine(models.TransientModel):
@@ -40,7 +39,7 @@ class SaleOrderUpdatePurchasePrice(models.TransientModel):
 
     @api.model
     def default_get(self, fields):
-        res = super(SaleOrderUpdatePurchasePrice, self).default_get(fields)
+        res = super().default_get(fields)
         sale_id = self._context.get('active_id')
         if sale_id and not self.env.context.get('nocreate', False):
             sale = self.env['sale.order'].browse(sale_id)
@@ -59,14 +58,12 @@ class SaleOrderUpdatePurchasePrice(models.TransientModel):
     def set_purchase_price_by_order(self):
         self.ensure_one()
         for line in self.wizard_lines:
-            procurement_group = line.order_line_id.order_id.procurement_group_id
-            procurements = self.env['procurement.order'].search(
-                [('group_id', '=', procurement_group.id),
-                 ('purchase_line_id', '!=', False),
-                 ('product_id', '=', line.order_line_id.product_id.id)])
-            procurement = procurements and procurements[0] or False
-            if procurement:
-                line.purchase_price = procurement.purchase_line_id.price_unit
+            moves = self.env['stock.move'].search(
+                [('sale_line_id', '=', line.order_line_id.id),
+                 ('created_purchase_line_id', '!=', False)], limit=1)
+            if moves:
+                line.purchase_price = moves[0].\
+                    created_purchase_line_id.price_unit
         context = dict(self.env.context)
         context.update(nocreate=True)
         return {

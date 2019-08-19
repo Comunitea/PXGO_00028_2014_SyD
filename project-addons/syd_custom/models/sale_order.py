@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -18,11 +17,18 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import models, fields
+from odoo import models, api
 
 
-class AccountInvoice(models.Model):
+class SaleOrder(models.Model):
 
-    _inherit = 'account.invoice'
+    _inherit = 'sale.order'
 
-    supplier_picking_ref = fields.Char('Supplier picking reference')
+    @api.multi
+    def print_quotation(self):
+        return self.env.ref('sale.action_report_saleorder').report_action(self)
+
+    @api.multi
+    def quotation_sended(self):
+        return self.filtered(lambda s: s.state == 'draft').\
+            write({'state': 'sent'})

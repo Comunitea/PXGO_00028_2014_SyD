@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<openerp>
-    <data>
+<odoo>
 
         <record id="sale_order_update_purchase_price_form" model="ir.ui.view">
             <field name="name">sale.order.update.purchase.price.form</field>
             <field name="model">sale.order.update.purchase.price</field>
-            <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="x">
+                <form>
                     <field name="wizard_lines">
                         <tree editable="top">
                             <field name="product_id" readonly="1"/>
                             <field name="purchase_price" readonly="0"/>
                         </tree>
                     </field>
-                    <button string="Set price by purchase order" name="set_purchase_price_by_order" type="object" icon="gtk-ok"/>
-                    <button string="Update" name="update" type="object" icon="gtk-ok"/>
-                    <button string="Cancel" special="cancel" icon="gtk-cancel"/>
+                    <footer>
+                        <button string="Set price by purchase order" name="set_purchase_price_by_order" type="object" class="btn-primary"/>
+                        <button string="Update" name="update" type="object" class="btn-primary"/>
+                        <button string="Cancel" special="cancel" class="btn-default"/>
+                    </footer>
                 </form>
             </field>
         </record>
@@ -29,6 +28,5 @@
             target="new"
             id="sale_order_update_purchase_price_action"/>
 
-    </data>
-</openerp>
+</odoo>
 

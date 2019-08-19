@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -20,18 +19,17 @@
 ##############################################################################
 from odoo import models, fields, api
 
-class productTemplate(models.Model):
+
+class ProductTemplate(models.Model):
 
     _inherit = 'product.template'
 
-    _defaults = {
-        'categ_id': False,
-        'warranty': 12,
-    }
+    categ_id = fields.Many2one(default=False)
 
     @api.onchange('categ_id')
     def change_categ_id(self):
         self.sale_delay = self.categ_id.sale_delay
+
 
 class ProductProduct(models.Model):
     _inherit = 'product.product'
@@ -41,33 +39,18 @@ class ProductProduct(models.Model):
         self.sale_delay = self.categ_id.sale_delay
 
 
-    @api.multi
-    def write(self, vals):
-        for product in self:
-            new_code = False
-            if product.default_code in [False, '/', ''] or ('default_code' in vals and vals['default_code'] == '/'):
-                if product.seller_ids:
-                    if product.seller_ids[0].name.ref and product.seller_ids[0].product_code:
-                        vals['default_code'] = product.seller_ids[0].name.ref + ":" + \
-                                               product.seller_ids[0].product_code
-                        new_code = True
-                if not new_code:
-                    vals['default_code'] = self.env['ir.sequence'].get(
-                    'product.product')
-            super(ProductProduct, product).write(vals)
-        return True
-
-
-class productCategory(models.Model):
+class ProductCategory(models.Model):
     _inherit = 'product.category'
 
     sale_delay = fields.Integer('Default sale delay', default=20)
     use_in_sub = fields.Boolean('Use delay in subcategories')
 
-    @api.one
+    @api.multi
     def write(self, vals):
-        res = super(productCategory, self).write(vals)
+        res = super().write(vals)
         if vals.get('use_in_sub', False):
-            if self.child_id:
-                self.child_id.write({'sale_delay': self.sale_delay, 'use_in_sub': True})
+            for categ in self:
+                if categ.child_id:
+                    categ.child_id.write({'sale_delay': categ.sale_delay,
+                                          'use_in_sub': True})
         return res

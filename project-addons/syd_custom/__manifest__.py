@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,17 +20,18 @@
 
 {
     'name': "SyD customizations",
-    'version': '1.0',
+    'version': '11.0.0.0.0',
     'category': '',
     'description': """""",
-    'author': 'Pexego',
+    'author': 'Comunitea',
     'website': '',
     "depends": ['product', 'stock', 'purchase', 'product_sequence',
-    #TODO: Migrar'product_pack',
-                'account_due_list', 'sale_stock', 'crm_phonecall'],
-    "data": ['product_view.xml', 'purchase_view.xml', 'account_view.xml',
-             'stock_view.xml', 'data/ir_sequence.xml',
-             'wizard/sale_order_update_purchase_price.xml', 'sale_view.xml',
-             'data/res_partner_title_data.xml'],
+                'account_due_list', 'sale_stock', 'crm_phonecall',
+                'sale_disable_inventory_check'],
+    "data": ['views/product_view.xml', 'views/purchase_view.xml',
+             'views/account_view.xml', 'views/stock_view.xml',
+             'data/ir_sequence.xml',
+             'wizard/sale_order_update_purchase_price.xml',
+             'views/sale_view.xml', 'data/res_partner_title_data.xml'],
     "installable": True
 }

@@ -17,5 +17,19 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import wizard
-from . import models
+from odoo import models, fields, api
+
+
+class AccountInvoice(models.Model):
+
+    _inherit = 'account.invoice'
+
+    supplier_picking_ref = fields.Char('Supplier picking reference')
+
+    @api.onchange('invoice_line_ids')
+    def _onchange_origin(self):
+        super()._onchange_origin()
+        purchase_ids = self.invoice_line_ids.mapped('purchase_id')
+        if purchase_ids:
+            self.supplier_picking_ref = ', '.\
+                join(purchase_ids.mapped('supplier_picking_ref'))

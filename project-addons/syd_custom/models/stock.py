@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,16 +20,30 @@
 from odoo import models, fields, api
 
 
-class PurchaseOrder(models.Model):
-    _inherit = 'purchase.order'
+class StockPicking(models.Model):
 
-    shipment_count_ = fields.Integer('Incoming Shipments',
-                                     compute='_count_ship', store=True)
-    #carrier = fields.Char('Carrier')
-    carrier = fields.Many2one('delivery.carrier','Carrier')
+    _inherit = 'stock.picking'
 
-    @api.depends('picking_ids')
-    def _count_ship(self):
-        for po in self:
-            po.shipment_count_ = len([x.id for x in po.picking_ids
-                                      if x.state not in ['cancel']])
+    supplier_ref = fields.Char('Supplier reference', copy=False)
+
+
+class StockProductionLot(models.Model):
+
+    _inherit = 'stock.production.lot'
+
+    product_available = fields.\
+        Float('Quantity available',
+              compute='_compute_product_available', search='_search_total')
+
+    @api.multi
+    def _compute_product_available(self):
+        for lot in self:
+            lot.product_available = lot.product_id.qty_available
+
+    @api.model
+    def _search_total(self, operator, operand):
+        return [
+            ('id',
+             'in',
+             self.search(
+                [('product_id.qty_available', operator, operand)]).ids)]

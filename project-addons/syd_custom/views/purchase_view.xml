@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
       <record id="purchase_order_change_shpiment_count" model="ir.ui.view">
           <field name="name">purchase.order.form</field>
@@ -10,11 +9,15 @@
                 <xpath expr="//button[@name='action_view_picking']/field[@name='picking_count']" position="after">
                     <field name="shipment_count_" widget="statinfo" string="Shipment" help="Incoming Shipments"/>
                 </xpath>
+                <xpath expr="//button[@name='action_view_picking']/field[@name='picking_count']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
                 <button name="action_view_picking" position="attributes">
                     <attribute name="attrs">{'invisible': ['|', '|' , ('is_shipped', '=', True), ('state','not in', ('purchase','done')), ('shipment_count_', '=', 0)]}</attribute>
                 </button>
                 <field name="picking_type_id" position="after">
                     <field name="carrier"/>
+                    <field name="supplier_picking_ref"/>
                 </field>
           </field>
       </record>
@@ -39,5 +42,4 @@
           </field>
       </record>
 
-    </data>
-</openerp>
+</odoo>

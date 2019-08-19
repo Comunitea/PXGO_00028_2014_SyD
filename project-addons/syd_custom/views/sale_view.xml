@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <record id="sale_order_add_button_send" model="ir.ui.view">
             <field name="name">sale.order.form</field>
@@ -16,5 +15,4 @@
             </field>
         </record>
 
-    </data>
-</openerp>
+</odoo>
