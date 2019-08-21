@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2014 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,21 +20,13 @@
 from odoo import models, fields, api
 from odoo.addons import decimal_precision as dp
 
+
 class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
-    title = fields.Char('name')
-    baseline_data = fields.Text('starting data indicated by the client')
-    have_discounts = fields.Boolean('Have discounts', compute='_have_discounts')
-
-    @api.one
-    def _have_discounts(self):
-        discounts = False
-        for line in self.order_line:
-            if line.discount > 0:
-                discounts = True
-        self.have_discounts = discounts
+    title = fields.Char('Title')
+    baseline_data = fields.Text('Starting data indicated by the client')
 
 
 class SaleOrderLine(models.Model):
@@ -43,12 +34,10 @@ class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
     price_unit_net = fields.Float('Unit Price',
-                                  digits= dp.get_precision('Product Price'),
+                                  digits=dp.get_precision('Product Price'),
                                   compute='_get_price_unit_net')
 
-    @api.one
     @api.depends('price_unit', 'discount')
     def _get_price_unit_net(self):
-        self.price_unit_net = self.price_unit * (1 - (self.discount / 100))
-
-
+        for line in self:
+            line.price_unit_net = line.price_unit * (1 - (line.discount / 100))

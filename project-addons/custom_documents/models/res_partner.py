@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2015 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -29,13 +28,7 @@ class ResPartner(models.Model):
     document_name = fields.Char('Document name', compute='_get_document_name',
                                 store=True)
 
-    @api.one
     @api.depends('name', 'parent_id')
     def _get_document_name(self):
-        if self.is_company:
-            self.document_name = self.name
-        else:
-            if self.parent_id:
-                self.document_name = self.parent_id.document_name
-            else:
-                self.document_name = self.name
+        for partner in self:
+            partner.document_name = partner.commercial_partner_id.name

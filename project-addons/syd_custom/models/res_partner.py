@@ -28,7 +28,7 @@ class res_partner(models.Model):
     def _compute_sale_order_count(self):
         for partner in self:
             sales_no = self.env['sale.order'].search_count(
-                domain=[('partner_id', 'child_of', [partner.id])])
+                [('partner_id', 'child_of', [partner.id])])
             partner.sale_order_count = sales_no
 
     def _get_meeting_len(self):

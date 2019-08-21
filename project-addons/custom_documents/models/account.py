@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (C) 2015 Comunitea All Rights Reserved
@@ -18,7 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import models, fields, api, exceptions, _
+from odoo import models, fields, api
 from odoo.addons import decimal_precision as dp
 
 
@@ -27,10 +26,10 @@ class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
 
     price_unit_net = fields.Float(string='Unit Price',
-                                  digits= dp.get_precision('Product Price'),
+                                  digits=dp.get_precision('Product Price'),
                                   compute='_get_price_unit_net')
 
-    @api.one
     @api.depends('price_unit', 'discount')
     def _get_price_unit_net(self):
-        self.price_unit_net = self.price_unit * (1 - (self.discount / 100))
+        for line in self:
+            line.price_unit_net = line.price_unit * (1 - (line.discount / 100))

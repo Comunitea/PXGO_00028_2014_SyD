@@ -1,146 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-        <template id="delivery.report_shipping2" inherit_id="stock.report_picking" />
+<odoo>
 
-        <template id="report_picking">
-            <t t-call="report.external_layout">
-                <div class="page">
-                     <div class="row">
-                        <div class="col-xs-5 col-xs-offset-7">
-                             <div t-if="o.picking_type_id.code=='incoming' and o.partner_id">
-                                 <span><strong>Supplier Address:</strong></span>
-                             </div>
-                             <div t-if="o.picking_type_id.code=='internal' and o.partner_id">
-                                 <span><strong>Warehouse Address:</strong></span>
-                             </div>
-                             <div t-if="o.picking_type_id.code=='outgoing' and o.partner_id">
-                                 <span><strong>Customer Address:</strong></span>
-                             </div>
-                             <div t-if="o.partner_id" name="partner_header">
-                                 <div t-field="o.partner_id"
-                                    t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
-                                <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
-                             </div>
-                        </div>
-                    </div>
-
-                     <h2>
-                        <span t-field="o.picking_type_id.name"/>
-                        <span t-esc="o.name.replace('\\', '')"/>
-                     </h2>
-                     <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th><strong>Order (Origin)</strong></th>
-                                <th t-if="o.supplier_ref and o.picking_type_code == 'incoming'"><strong>Supplier Reference</strong></th>
-                                <th t-if="o.sale_id.client_order_ref"><strong>Reference</strong></th>
-                                <th t-if="o.picking_type_id.code == 'outgoing'"><strong>Carrier</strong></th>
-                                <th t-if="o.ship_id"><strong>Buque</strong></th>
-                                <th t-if="o.weight"><strong>Weight</strong></th>
-                                <th t-if="o.date_done"><strong>Date</strong></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <span t-field="o.origin"/>
-                                </td>
-                                <td t-if="o.supplier_ref and o.picking_type_code == 'incoming'">
-                                    <span t-field="o.supplier_ref"/>
-                                </td>
-                                <td t-if="o.sale_id.client_order_ref">
-                                    <span t-field="o.sale_id.client_order_ref"/>
-                                </td>
-                                <td t-if="o.picking_type_id.code == 'outgoing'">
-                                    <span t-field="o.carrier_id"/>
-                                </td>
-                                <td  t-if="o.ship_id">
-                                    <span t-field="o.ship_id.name"/>
-                                </td>
-                                <td t-if="o.weight">
-                                    <span t-field="o.weight"/>
-                                </td>
-                                 <td t-if="o.date_done">
-                                    <span t-field="o.date_done" t-field-options='{"format": "dd/MM/y"}'/>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br/>
-                    <br/>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th><strong>Reference</strong></th>
-                                <th><strong>Description</strong></th>
-                                <th class="text-right"><strong>Quantity</strong></th>
-                                <t t-if="o.pack_operation_ids">
-                                    <th class="text-right"><strong>Serial No.</strong></th>
-                                </t>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <t t-if="not o.pack_operation_ids">
-                                <tr t-foreach="o.move_lines" t-as="move">
-                                    <t t-if="not move.pack_component">
-                                        <td><span t-field="move.product_id.default_code"/></td>
-                                        <td><span t-field="move.name"/></td>
-                                        <td class="text-right"><span t-field="move.product_uom_qty"/> <span t-field="move.product_uom" groups="product.group_uom"/></td>
-                                    </t>
-                                </tr>
-                            </t>
-
-                            <t t-if="o.pack_operation_ids">
-                                <tr t-foreach="o.pack_operation_ids" t-as="pack_operation">
-                                    <t t-if="pack_operation.product_qty &gt; 0 and not pack_operation.linked_move_operation_ids[0].move_id.pack_component">
-                                        <td><span t-field="pack_operation.product_id.default_code"/></td>
-                                        <td><span t-field="pack_operation.linked_move_operation_ids[0].move_id.name"/></td>
-                                        <td class="text-right"><span t-field="pack_operation.product_qty"/> <span t-field="pack_operation.product_uom_id" groups="product.group_uom"/></td>
-                                         <td class="text-right">
-                                             <span t-if="pack_operation.lot_id">
-                                                <span t-field="pack_operation.lot_id"/>
-                                             </span>
-                                         </td>
-                                        <!--td class="text-right">
-                                             <span t-if="pack_operation.replacement_for_id">
-                                                <span t-field="pack_operation.replacement_for_id"/>
-                                             </span>
-                                         </td-->
-
-                                    </t>
-                                </tr>
-
-                            </t>
-                            <tr t-foreach="o.service_ids" t-as="service">
-                                <td><span t-field="service.product_id.default_code"/></td>
-                                <td><span t-field="service.product_id.name"/></td>
-                                <td class="text-right"><span t-field="service.quantity"/> <span t-field="service.product_uom" groups="product.group_uom"/></td>
-                                <td t-if="o.pack_operation_ids"></td>
-                            </tr>
-
-
-
-                        </tbody>
-                    </table>
-                    <span>
-                      Returns are not accepted without our written consent, after 15 days of delivery of goods or merchandise that is manipulated.
-                        <br/>
-                        <br/>
-                    </span>
-                    <span t-if="o.external_note">
-                        <span t-field="o.external_note"/>
-                    </span>
-                </div>
-            </t>
+        <template id="report_delivery_document_custom" inherit_id="stock_picking_report_valued.valued_report_picking">
+            <xpath expr="//th[@name='td_sched_date_h']" position="after">
+                <th t-if="o.ship_id"><strong>Buque</strong></th>
+            </xpath>
+            <xpath expr="//td[@name='td_sched_date']" position="after">
+                <td  t-if="o.ship_id">
+                    <span t-field="o.ship_id.name"/>
+                </td>
+            </xpath>
+            <xpath expr="//th[@groups='sale.group_discount_per_so_line']" position="attributes">
+                <attribute name="t-if">not net</attribute>
+            </xpath>
+            <xpath expr="//span[@t-field='move_line.sale_price_unit']/.." position="attributes">
+                <attribute name="t-if">not net</attribute>
+            </xpath>
+            <xpath expr="//span[@t-field='move_line.sale_price_unit']/.." position="after">
+                <td class="text-right" t-if="net">
+                    <span t-field="move_line.sale_price_unit_net" />
+                </td>
+            </xpath>
+            <xpath expr="//span[@t-field='move_line.sale_discount']/.." position="attributes">
+                <attribute name="t-if">not net</attribute>
+            </xpath>
+            <xpath expr="//tr[@t-foreach='o.move_line_ids']" position="after">
+                <tr t-foreach="o.service_ids" t-as="service">
+                    <td><span t-field="service.product_id"/></td>
+                    <td t-if="has_serial_number"></td>
+                    <td class="text-center"><span t-field="service.quantity"/> <span t-field="service.product_uom"/></td>
+                    <t t-if="o.valued and o.sale_id and o.service_ids">
+                        <td class="text-right" t-if="not net">
+                            <span t-field="service.order_price_unit" />
+                        </td>
+                        <td class="text-right" t-if="net">
+                            <span t-field="service.order_price_unit_net" />
+                        </td>
+                        <td class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
+                            <span t-field="service.discount" />
+                        </td>
+                        <td class="text-right">
+                            <span t-field="service.price_subtotal" />
+                        </td>
+                    </t>
+                </tr>
+            </xpath>
+            <xpath expr="//t[@t-if='o.valued and o.sale_id and o.move_line_ids']/th[last()]" position="replace"/>
+            <xpath expr="//span[@t-field='move_line.sale_tax_description']/.." position="replace"/>
+            <xpath expr="//p[@t-if='o.backorder_id']" position="before">
+                <p><span>Returns are not accepted without our written consent, after 15 days of delivery of goods or merchandise that is manipulated.<br/><br/></span></p>
+                <p t-if="o.external_note">
+                    <span t-field="o.external_note"/>
+                </p>
+            </xpath>
         </template>
 
-        <template id="stock.report_picking">
-            <t t-call="report.html_container">
-                <t t-foreach="doc_ids" t-as="doc_id">
-                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'custom_documents.report_picking')"/>
+        <template id="report_deliveryslip_net">
+            <t t-call="web.html_container">
+                <t t-set="net" t-value="True"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="stock.report_delivery_document" t-lang="o.partner_id.lang"/>
                 </t>
             </t>
         </template>
-    </data>
-</openerp>
+
+</odoo>

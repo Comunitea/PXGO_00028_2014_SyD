@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2004-2012 Pexego Sistemas Informáticos. All Rights Reserved
-#    $Marta Vázquez Rodríguez$
+#    Copyright (C) 2019 Comunitea Servicios Tecnológicos. All Rights Reserved
+#    $Omar Castiñeira Saavedra$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -22,165 +21,73 @@ from odoo import models, fields, api
 from odoo.addons import decimal_precision as dp
 
 
-class stock_picking(models.Model):
+class StockPicking(models.Model):
 
     _inherit = "stock.picking"
 
-    amount_untaxed = fields.Float(
-        compute='_amount_all', digits=dp.get_precision('Sale Price'),
-        string='Untaxed Amount', readonly=True, store=False)
-    amount_tax = fields.Float(
-        compute='_amount_all', digits=dp.get_precision('Sale Price'),
-        string='Taxes', readonly=True, store=False)
-    amount_total = fields.Float(
-        compute='_amount_all', digits=dp.get_precision('Sale Price'),
-        string='Total', readonly=True, store=False)
-    amount_gross = fields.Float(
-        compute='_amount_all', digits=dp.get_precision('Sale Price'),
-        string='amount gross', readonly=True, store=False)
-    amount_discounted = fields.Float(
-        compute='_amount_all', digits=dp.get_precision('Sale Price'),
-        string='Sale price', readonly=True, store=False)
-    external_note = fields.Text(
-        ' External Notes')
+    amount_gross = fields.Monetary('Amount gross', compute='_amount_all',
+                                   compute_sudo=True)
+    amount_discounted = fields.Monetary('Sale price', compute='_amount_all',
+                                        compute_sudo=True)
+    external_note = fields.Text('External Notes')
 
     @api.multi
-    @api.depends('move_lines', 'service_ids', 'partner_id')
+    def get_taxes_values(self):
+        tax_grouped = super().get_taxes_values()
+        for line in self.service_ids:
+            for tax in line.sale_line_id.tax_id:
+                tax_id = tax.id
+                price_unit = line.sale_line_id.price_unit * \
+                    (1 - (line.sale_line_id.discount or 0.0) / 100.0)
+                if tax_id not in tax_grouped:
+                    tax_grouped[tax_id] = {
+                        'base': price_unit * line.quantity,
+                        'tax': tax,
+                    }
+                else:
+                    tax_grouped[tax_id]['base'] += price_unit * line.quantity
+        for tax_id, tax_group in tax_grouped.items():
+            tax_grouped[tax_id]['amount'] = tax_group['tax'].compute_all(
+                tax_group['base'], self.sale_id.currency_id
+            )['taxes'][0]['amount']
+        return tax_grouped
+
+    @api.multi
     def _amount_all(self):
         for picking in self:
             if not picking.sale_id:
-                picking.amount_tax = picking.amount_untaxed = \
-                    picking.amount_gross = 0.0
+                picking.amount_discounted = picking.amount_gross = 0.0
                 continue
-            taxes = amount_gross = amount_untaxed = 0.0
-            cur = picking.partner_id.property_product_pricelist \
-                and picking.partner_id.property_product_pricelist.currency_id \
-                or False
+            amount_gross = 0.0
             for line in picking.move_lines:
-                price_unit = 0.0
                 sale_line = line.sale_line_id
                 if sale_line and line.state != 'cancel':
-                    price_unit = sale_line.price_unit * \
-                        (1-(sale_line.discount or 0.0)/100.0)
-                    for c in sale_line.tax_id.compute_all(
-                            price_unit, line.product_qty,
-                            line.product_id,
-                            sale_line.order_id.partner_id)['taxes']:
-                        taxes += c.get('amount', 0.0)
-                    amount_gross += (sale_line.price_unit *
+                    amount_gross += (line.sale_line_id.price_unit *
                                      line.product_qty)
-                    amount_untaxed += price_unit * line.product_qty
                 else:
                     continue
             for line in picking.service_ids:
-                price_unit = 0.0
                 sale_line = line.sale_line_id
                 if sale_line:
-                    price_unit = sale_line.price_unit * \
-                        (1-(sale_line.discount or 0.0)/100.0)
-                    for c in sale_line.tax_id.compute_all(
-                            price_unit, line.quantity,
-                            line.product_id,
-                            sale_line.order_id.partner_id)['taxes']:
-                        taxes += c.get('amount', 0.0)
                     amount_gross += (sale_line.price_unit *
                                      line.quantity)
-                    amount_untaxed += price_unit * line.quantity
                 else:
                     continue
-            if cur:
-                picking.amount_tax = cur.round(taxes)
-                picking.amount_untaxed = cur.round(amount_untaxed)
-                picking.amount_gross = cur.round(amount_gross)
-            else:
-                picking.amount_tax = round(taxes, 2)
-                picking.amount_untaxed = round(amount_untaxed, 2)
-                picking.amount_gross = round(amount_gross, 2)
-
-            picking.amount_total = picking.amount_untaxed + picking.amount_tax
-            picking.amount_discounted = picking.amount_gross - \
+            round_curr = picking.sale_id.currency_id.round
+            picking.amount_gross = round_curr(amount_gross)
+            picking.amount_discounted = round_curr(amount_gross) - \
                 picking.amount_untaxed
 
 
-#TODO: Migrar
-# ~ class stock_pack_operation(models.Model):
-    # ~ _inherit = "stock.pack.operation"
+class StockMoveLine(models.Model):
 
-    # ~ price_subtotal = fields.Float(
-        # ~ compute='_get_subtotal', string="Subtotal",
-        # ~ digits=dp.get_precision('Sale Price'), readonly=True,
-        # ~ store=False)
+    _inherit = "stock.move.line"
 
-    # ~ @api.multi
-    # ~ @api.depends('linked_move_operation_ids.move_id.order_price_unit_net')
-    # ~ def _get_subtotal(self):
-        # ~ for operation in self:
-            # ~ if operation.linked_move_operation_ids:
-                # ~ operation.price_subtotal = \
-                    # ~ operation.product_qty * \
-                    # ~ operation.linked_move_operation_ids[0].move_id.order_price_unit_net
-
-
-class stock_move(models.Model):
-
-    _inherit = "stock.move"
-
-    price_subtotal = fields.Float(
-        compute='_get_subtotal', string="Subtotal",
-        digits=dp.get_precision('Sale Price'), readonly=True,
-        store=False)
-    order_price_unit = fields.Float(
-        compute='_get_subtotal', string="Price unit",
-        digits=dp.get_precision('Sale Price'), readonly=True,
-        store=False)
-    order_price_unit_net = fields.Float(
-        compute='_get_subtotal', string="Price unit",
-        digits=dp.get_precision('Sale Price'), readonly=True,
-        store=False)
-    discount = fields.Float(
-        compute='_get_subtotal', string="Discount",
-        digits= dp.get_precision('Discount'), readonly=True,
-        store=False)
-    cost_subtotal = fields.Float(
-        compute='_get_subtotal', string="Cost subtotal",
-        digits=dp.get_precision('Sale Price'), readonly=True,
-        store=False)
-    margin = fields.Float(
-        compute='_get_subtotal', string="Margin",
-        digits=dp.get_precision('Sale Price'), readonly=True,
-        store=False)
-    percent_margin = fields.Float(
-        compute='_get_subtotal', string="% margin",
-        digits=dp.get_precision('Sale Price'), readonly=True,
-        store=False)
-
-    @api.multi
-    @api.depends('product_id', 'product_qty', 'sale_line_id')
-    def _get_subtotal(self):
-        for move in self:
-            if move.sale_line_id:
-                cost_price = move.product_id.standard_price or 0.0
-                price_unit = (move.sale_line_id.price_unit *
-                              (1-(move.sale_line_id.discount or
-                                  0.0)/100.0))
-                move.price_subtotal = price_unit * move.product_qty
-                move.discount = move.sale_line_id.discount or 0.0
-                move.order_price_unit = move.sale_line_id.price_unit
-                move.order_price_unit_net = price_unit
-                move.cost_subtotal = cost_price * move.product_qty
-                move.margin = move.price_subtotal - move.cost_subtotal
-                if move.price_subtotal > 0:
-                    move.percent_margin = (move.margin/move.price_subtotal)*100
-                else:
-                    move.percent_margin = 0
-            else:
-                move.price_subtotal = 0.0
-                move.discount = 0.0
-                move.order_price_unit = 0.0
-                move.order_price_unit_net = 0.0
-                move.cost_subtotal = 0.0
-                move.margin = 0.0
-                move.percent_margin = 0.0
+    sale_price_unit_net = fields.Float(
+        related='sale_line.price_unit_net', readonly=True,
+        string='Sale price unit',
+        related_sudo=True,
+    )
 
 
 class StockMoveService(models.Model):
@@ -201,7 +108,7 @@ class StockMoveService(models.Model):
         store=False)
     discount = fields.Float(
         compute='_get_subtotal', string="Discount",
-        digits= dp.get_precision('Discount'), readonly=True,
+        digits=dp.get_precision('Discount'), readonly=True,
         store=False)
     cost_subtotal = fields.Float(
         compute='_get_subtotal', string="Cost subtotal",
@@ -217,11 +124,11 @@ class StockMoveService(models.Model):
         store=False)
 
     @api.multi
-    @api.depends('product_id', 'quantity', 'sale_line_id')
     def _get_subtotal(self):
         for service in self:
             if service.sale_line_id:
-                cost_price = service.product_id.standard_price or 0.0
+                cost_price = service.sale_line_id.purchase_price or \
+                    service.product_id.standard_price or 0.0
                 price_unit = (service.sale_line_id.price_unit *
                               (1-(service.sale_line_id.discount or
                                   0.0)/100.0))

@@ -1,300 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-        <template id="report_invoice_document">
-            <t t-call="report.external_layout">
-                <div class="page">
-                    <div class="row">
-                        <div class="col-xs-5 col-xs-offset-7">
-                            <address t-field="o.partner_id"
-                                t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}' />
+<odoo>
 
-                            <span t-field="o.partner_id.vat"/>
-                        </div>
-                    </div>
-
-                    <h2>
-                        <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
-                        <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
-                        <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
-                        <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                        <span t-if="o.type == 'out_refund'">Refund</span>
-                        <span t-if="o.type == 'in_refund'">Supplier Refund</span>
-                        <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
-                        <span t-field="o.number"/>
-                    </h2>
-
-                    <div class="row mt32 mb32">
-                        <div class="col-xs-2" t-if="o.partner_id.commercial_partner_id.supplier_ref">
-                            <strong>Ref. proveedor:</strong>
-                            <p t-field="o.partner_id.commercial_partner_id.supplier_ref"/>
-                        </div>
-                        <div class="col-xs-2" t-if="o.name">
-                            <strong>Referencia:</strong>
-                            <p t-field="o.name"/>
-                        </div>
-                        <div class="col-xs-2" t-if="o.date_invoice">
-                            <strong>Invoice Date:</strong>
-                            <p t-field="o.date_invoice"/>
-                        </div>
-                        <div class="col-xs-2" t-if="o.origin">
-                            <strong>Source:</strong>
-                            <p t-field="o.origin"/>
-                        </div>
-                        <div class="col-xs-2" t-if="o.partner_id.commercial_partner_id.ref">
-                            <strong>Customer Code:</strong>
-                            <p t-field="o.partner_id.commercial_partner_id.ref"/>
-                        </div>
-                        <div class="col-xs-2" t-if="o.reference">
-                            <strong>Reference:</strong>
-                            <p t-field="o.reference"/>
-                        </div>
-                        <div class="col-xs-2" t-if="o.ship_id">
-                            <strong>Ship:</strong>
-                            <p t-field="o.ship_id.name"/>
-                        </div>
-                    </div>
-
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Description</th>
-                                <th>Serial No.</th>
-                                <th>Quantity</th>
-                                <th class="text-right">Unit Price</th>
-                                <th class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">Discount (%)</th>
-                                <!--th class="text-right">Taxes</th-->
-                                <th class="text-right">Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody class="invoice_tbody">
-                            <tr t-foreach="o.invoice_line" t-as="l">
-                                <td><span t-field="l.name"/></td>
-
-
-                                <td>
-                                    <span t-field="l.quantity"/>
-                                    <span t-field="l.uos_id"  groups="product.group_uom"/>
-                                </td>
-                                <td class="text-right" t-if="not net">
-                                    <span t-field="l.price_unit"
-                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                </td>
-                                <td class="text-right" t-if="net">
-                                    <span t-field="l.price_unit_net"
-                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                </td>
-                                <td class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
-                                    <span t-field="l.discount"/>
-                                </td>
-                                <td class="text-right">
-                                    <span t-field="l.price_subtotal"
-                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="row">
-                        <div class="col-xs-4 pull-right">
-                            <table class="table table-condensed">
-                                <tr class="border-black">
-                                    <td><strong>Total Without Taxes</strong></td>
-                                    <td class="text-right">
-                                        <span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Taxes</td>
-                                    <td class="text-right">
-                                        <span t-field="o.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                    </td>
-                                </tr>
-                                <tr class="border-black">
-                                    <td><strong>Total</strong></td>
-                                    <td class="text-right">
-                                         <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="row" t-if="o.tax_line">
-                        <div class="col-xs-6">
-                            <table class="table table-condensed">
-                                <thead>
-                                    <tr>
-                                        <th>Tax</th>
-                                        <th class="text-right">Base</th>
-                                        <th class="text-right">Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr t-foreach="o.tax_line" t-as="t">
-                                        <td><span t-field="t.name"/></td>
-                                        <td class="text-right">
-                                            <span t-field="t.base"
-                                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                        </td>
-                                        <td class="text-right">
-                                            <span t-field="t.amount"
-                                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <p >
-                        <span >No se admiten devoluciones pasados 15 días</span>
-                    </p>
-                    <p t-if="o.comment">
-                        <!--strong>Comment:</strong-->
-                        <span t-field="o.comment"/>
-                    </p>
-                    <p t-if="o.payment_term.note">
-                        <strong>Payment Term:</strong>
-                        <span t-field="o.payment_term.note"/>
-                    </p>
-
-                    <p t-if="o.move_id">
-                        <strong>Maturity:</strong>
-                        <span t-foreach="o.move_id.line_id.sorted(key=lambda b: b.date_maturity)" t-as="ml">
-                            <span t-if="ml.date_maturity">
-                                <span t-field="ml.date_maturity"/>:
-                                <t t-if="ml.debit">
-                                    <span t-field="ml.debit"/>
-                                </t>
-                                <t t-if="ml.credit">
-                                    <span t-field="ml.credit"/>
-                                </t>
-                                <t t-if="ml.currency_id">
-                                  <span t-field="ml.currency_id.symbol"/> -
-                                </t>
-                                <t t-if="not ml.currency_id">
-                                  <span t-field="ml.company_id.currency_id.symbol"/> -
-                                </t>
-                            </span>
-                        </span>
-
-                    </p>
-
-                    <div class="row" t-if="o.payment_mode_id and o.payment_mode_id.show_client_account" style="page-break-inside: avoid;">
-                        <div class="col-xs-4">
-                            <strong>Payment mode:</strong> <span t-field="o.payment_mode_id.name"/>
-                        </div>
-                        <div t-if="o.partner_id.bank_ids">
-                            <div class="col-xs-4">
-                                Bank account: <span t-esc="o.partner_id.bank_ids[0].acc_number"/>
-                            </div>
-                            <div class="col-xs-4">
-                                SIWFT code: <span t-esc="o.partner_id.bank_ids[0].bank_bic"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" t-if="o.payment_mode_id and not o.payment_mode_id.show_client_account" style="page-break-inside: avoid;">
-                        <div class="col-xs-4">
-                            <strong>Payment mode:</strong> <span t-field="o.payment_mode_id.name"/>
-                        </div>
-                        <div t-if="o.payment_mode_id.bank_id" class="col-xs-4">
-                            Bank account: <span t-field="o.payment_mode_id.bank_id.acc_number"/>
-                        </div>
-                        <div t-if="o.payment_mode_id.bank_id" class="col-xs-4">
-                            SIWFT code: <span t-field="o.payment_mode_id.bank_id.bank_bic"/>
-                        </div>
-                    </div>
-                    <p t-if="o.fiscal_position.note">
-                        <strong>Fiscal Position Remark:</strong>
-                        <span t-field="o.fiscal_position.note"/>
-                    </p>
-
-                    <p>
-                        <span>
-                                SANDE Y DÍAZ, S.L., inscrita en el Reg. Merc. de A Coruña, folio 188, libro 241, inscripción 1ª, hoja 849. CIF: ESB15033558.
-                        </span>
-                    </p>
+        <template id="report_invoice_document_custom" inherit_id="account.report_invoice_document">
+            <xpath expr="//div[@t-if='o.name']" position="before">
+                <div class="col-xs-2" t-if="o.partner_id.commercial_partner_id.supplier_ref">
+                    <strong>Ref. proveedor:</strong>
+                    <p t-field="o.partner_id.commercial_partner_id.supplier_ref"/>
                 </div>
-            </t>
-        </template>
-
-        <!--TODO: Migrar<template id="sale_layout.report_invoice_layouted"
-                  inherit_id="custom_documents.report_invoice_document">
-            <xpath expr="//table/tbody[@class='invoice_tbody']" position="replace">
-                <t t-foreach="o.sale_layout_lines(invoice_id=o.id)" t-as="p">
-                    <t t-call="sale_layout.category_template"/>
-
-                    <t t-foreach="p['lines']" t-as="l">
-                        <tr>
-                            <td><span t-field="l.name"/></td>
-                             <td>
-                                <t t-if="l.move_line_ids">
-                                    <t t-if="l.move_line_ids[0].linked_move_operation_ids">
-                                        <span t-field="l.move_line_ids[0].linked_move_operation_ids[0].operation_id.lot_id"/>
-                                     </t>
-                                </t>
-
-                            </td>
-                            <td><span t-field="l.quantity"/> <span t-field="l.uos_id" groups="product.group_uom"/></td>
-                            <td class="text-right" t-if="not net">
-                                    <span t-field="l.price_unit"
-                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                </td>
-                                <td class="text-right" t-if="net">
-                                    <span t-field="l.price_unit_net"
-                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                                </td>
-                                <td class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
-                                    <span t-field="l.discount"/>
-                                </td>
-
-                            <td class="text-right">
-                                <span t-field="l.price_subtotal"
-                                    t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                            </td>
-                        </tr>
-                    </t>
-
-                    <t t-call="sale_layout.subtotal_template"/>
-
-                    <t t-call="sale_layout.separator_template"/>
-
-                    <t t-if="'pagebreak' in p['category'] and p['category'].pagebreak is True">
-                        <t t-if="p_index &lt; p_size - 1">
-                            <![CDATA[
-                                </tbody>
-                            </table>
-                            <p style="page-break-before:always;"> </p>
-                            <table class="table table-condensed">
-                            ]]>
-                            <thead>
-                                <tr>
-                                    <th>Description</th>
-                                    <th>Quantity</th>
-                                    <th groups="product.group_uom">Unit of measure</th>
-                                    <th class="text-right">Unit Price</th>
-                                    <th class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">Discount (%)</th>
-                                    <th class="text-right">Taxes</th>
-                                    <th class="text-right">Amount</th>
-                                </tr>
-                            </thead>
-                            <![CDATA[
-                                <tbody>
-                            ]]>
-                        </t>
-                    </t>
-                </t>
             </xpath>
-        </template>-->
+            <xpath expr="//div[@t-if='o.partner_id.ref']/p" position="replace">
+                <p t-field="o.partner_id.commercial_partner_id.ref"/>
+            </xpath>
+            <xpath expr="//div[@name='reference']" position="after">
+                <div class="col-xs-2" t-if="o.ship_id">
+                    <strong>Ship:</strong>
+                    <p t-field="o.ship_id.name"/>
+                </div>
+            </xpath>
+            <xpath expr="//th[last()-1]" position="replace"/>
+            <xpath expr="//span[contains(@t-esc, 'l.invoice_line_tax_ids')]/.." position="replace"/>
+            <xpath expr="//p[@t-if='o.comment']" position="before">
+                <p>
+                    <span >No se admiten devoluciones pasados 15 días</span>
+                </p>
+            </xpath>
+            <xpath expr="//tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']/td[last()-1]" position="replace"/>
+        </template>
 
-        <template id="account.report_invoice">
-            <t t-call="report.html_container">
-                <t t-foreach="doc_ids" t-as="doc_id">
-                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'custom_documents.report_invoice_document')"/>
+        <template id="report_invoice_layouted_custom" inherit_id="sale.report_invoice_layouted">
+            <xpath expr="//t[@name='lines_layouted']//th[last()-1]" position="replace"/>
+            <xpath expr="//t[@name='lines_layouted']//span[contains(@t-esc, 'l.invoice_line_tax_ids')]/.." position="replace"/>
+        </template>
+
+        <template id="report_invoice_document_net_price" inherit_id="sale.report_invoice_layouted" primary="True">
+            <xpath expr="//table[@name='invoice_line_table']//th[@t-if='display_discount']" position="replace"/>
+            <xpath expr="//table[@name='invoice_line_table']//td[@t-if='display_discount']" position="replace"/>
+            <xpath expr="//table[@name='invoice_line_table']//span[@t-field='l.price_unit']" position="attributes">
+                <attribute name="t-field">l.price_unit_net</attribute>
+            </xpath>
+            <xpath expr="//t[@name='lines_layouted']//th[@t-if='display_discount']" position="replace"/>
+            <xpath expr="//t[@name='lines_layouted']//td[@t-if='display_discount']" position="replace"/>
+            <xpath expr="//t[@name='lines_layouted']//span[@t-field='l.price_unit']" position="attributes">
+                <attribute name="t-field">l.price_unit_net</attribute>
+            </xpath>
+        </template>
+
+        <template id="report_net_invoice">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="custom_documents.report_invoice_document_net_price" t-lang="o.partner_id.lang"/>
                 </t>
             </t>
         </template>
 
-
-    </data>
-</openerp>
+</odoo>

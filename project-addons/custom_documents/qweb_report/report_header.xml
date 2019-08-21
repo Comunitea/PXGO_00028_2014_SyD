@@ -1,41 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-       <!--TODO: Migrar<template id="report.external_layout_header">
-            <div class="header">
-                <div class="row">
+<odoo>
+
+    <template id="external_layout_boxed_custom" inherit_id="web.external_layout_boxed">
+        <xpath expr="//div[@class='header o_boxed_header']" position="replace">
+            <div class="header o_boxed_header">
+                <div class="row mb8">
                     <div class="col-xs-4">
-                        <span t-esc="company.name.upper()"/>
-                        <p t-field="company.partner_id.vat"/>
+                        <span t-esc="company.name.upper()" />
+                        <p t-field="company.vat" />
                     </div>
                     <div class="col-xs-2 text-left">
-                        <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 70px;"/>
+                        <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="max-height: 70px;" />
                     </div>
                     <div class="col-xs-3 col-xs-offset-3 text-right">
-                        <img src="/custom_documents/static/src/img/quality_logo.jpg" style="max-height: 70px;"/>
-                    </div>
-                </div>
-                <div class="row">
-                    <div t-if="o._name == 'stock.picking'" class="col-xs-12 text-left not-first-page">
-                        <h2>
-                            <span t-field="o.picking_type_id.name"/>
-                            <span t-esc="o.name.replace('\\', '')"/>
-                        </h2>
-                    </div>
-                    <div t-if="o._name == 'account.invoice'" class="col-xs-12 text-left not-first-page">
-                        <h2>
-                            <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
-                            <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
-                            <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
-                            <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                            <span t-if="o.type == 'out_refund'">Refund</span>
-                            <span t-if="o.type == 'in_refund'">Supplier Refund</span>
-                            <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
-                            <span t-field="o.number"/>
-                        </h2>
+                        <img src="/custom_documents/static/src/img/quality_logo.jpg" style="max-height: 70px;" />
                     </div>
                 </div>
             </div>
-        </template>-->
-    </data>
-</openerp>
+        </xpath>
+        <xpath expr="//li[@t-if='company.vat']" position="replace"/>
+        <xpath expr="//li[@t-if='company.phone']" position="before">
+             <li><span class="company_address" t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["address"], "no_marker": true, "no_tag_br": true}'/></li>
+        </xpath>
+    </template>
+
+</odoo>

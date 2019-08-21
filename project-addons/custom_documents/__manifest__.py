@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2014 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -21,23 +20,26 @@
 
 {
     'name': "Document customizations",
-    'version': '2.0',
+    'version': '11.0.0.0.0',
     'category': '',
     'description': """""",
-    'author': 'Pexego',
+    'author': 'Comunitea',
     'website': '',
     "depends": ['sale', 'stock', 'sale_stock', 'picking_services',
                 'delivery', 'supplier_ref', 'account_payment_mode',
-                #TODO: Migrar'product_pack',
-                'syd_custom', 'purchase_discount', 'stock_picking_invoice_link',
-                'report_qweb_element_page_visibility'],
+                'mrp_bom_phantom_fix', 'syd_custom', 'purchase_discount',
+                'account_invoice_production_lot',
+                'stock_picking_report_valued',
+                'report_qweb_element_page_visibility', 'sale_margin',
+                'account_invoice_report_due_list',
+                'account_invoice_report_grouped_by_picking'],
 
-    "data": ['views/sale_view.xml', 'views/payment_mode_view.xml', 'views/stock_view.xml',
-             'views/purchase_order.xml', 'qweb_report/ir_qweb.xml', 'qweb_report/report_proforma.xml',
-             'qweb_report/report_saleorder.xml', 'qweb_report/report_stockpicking.xml',
-             'qweb_report/valued_picking_report.xml', 'qweb_report/report_purchase_order.xml',
+    "data": ['views/sale_view.xml',
+             'views/stock_view.xml', 'views/purchase_order.xml',
+             'qweb_report/report_saleorder.xml',
+             'qweb_report/report_stockpicking.xml',
+             'qweb_report/report_purchase_order.xml',
              'qweb_report/report_header.xml', 'qweb_report/report_invoice.xml',
-             'sale_report.xml', 'stock_report.xml', 'account_report.xml',
-             'data/paperformat_data.xml'],
+             'sale_report.xml', 'stock_report.xml', 'account_report.xml'],
     "installable": True
 }

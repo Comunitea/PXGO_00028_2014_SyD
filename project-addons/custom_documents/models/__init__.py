@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Copyright (C) 2015 Comunitea All Rights Reserved
@@ -19,7 +18,6 @@
 #
 ##############################################################################
 from . import account
-from . import payment_mode
 from . import purchase
 from . import res_partner
 from . import sale_order

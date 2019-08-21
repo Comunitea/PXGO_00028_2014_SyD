@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <report
-            id="report_sale_order"
+            id="report_net_sale_order"
             string="Net Quotation / Order"
             model="sale.order"
             report_type="qweb-pdf"
-            file="sale.report_saleorder"
+            file="custom_documents.report_net_saleorder"
             name="custom_documents.report_net_saleorder"
-        />
-
-        <report
-            id="report_proforma_order"
-            string="Proforma"
-            model="sale.order"
-            report_type="qweb-pdf"
-            file="custom_documents.report_proforma"
-            name="custom_documents.report_proforma"
+            print_report_name="(object.state in ('draft', 'sent') and 'Net Quotation - %s' % (object.name)) or 'Net Order - %s' % (object.name)"
         />
 
         <report
@@ -25,8 +16,10 @@
             string="Net Proforma"
             model="sale.order"
             report_type="qweb-pdf"
-            file="custom_documents.report_proforma"
-            name="custom_documents.report_net_proforma"
+            file="custom_documents.report_net_saleorder_pro_forma"
+            name="custom_documents.report_net_saleorder_pro_forma"
+            print_report_name="'Net PRO-FORMA - %s' % (object.name)"
+            groups="sale.group_proforma_sales"
         />
-    </data>
-</openerp>
+
+</odoo>

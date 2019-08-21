@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Copyright (C) 2014 Pexego Sistemas Informáticos All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@pexego.es>$
+#    Copyright (C) 2014 Comunitea All Rights Reserved
+#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -20,11 +20,12 @@
 
 {
     'name': "Prospective customer",
-    'version': '1.0',
+    'version': '11.0.0.0.0',
     'category': '',
-    'description': """Adds prospective customers menu and search it on sale order, and crm views""",
-    'author': 'Pexego Sistemas Informáticos',
-    'website': 'www.pexego.es',
+    'description': """Adds prospective customers menu and search it
+        on sale order, and crm views""",
+    'author': 'Comunitea',
+    'website': 'www.comunitea.com',
     'depends': ["base",
                 "sale",
                 "crm",
