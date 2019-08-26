@@ -27,7 +27,8 @@ class StockPicking(models.Model):
 
     amount_gross = fields.Monetary('Amount gross', compute='_amount_all',
                                    compute_sudo=True)
-    amount_discounted = fields.Monetary('Sale price', compute='_amount_all',
+    amount_discounted = fields.Monetary('Disounted amount',
+                                        compute='_amount_all',
                                         compute_sudo=True)
     external_note = fields.Text('External Notes')
 

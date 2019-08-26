@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * product_replacement
+#       * product_replacement
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-16 09:32+0000\n"
-"PO-Revision-Date: 2015-04-16 09:32+0000\n"
+"POT-Creation-Date: 2019-08-26 12:13+0000\n"
+"PO-Revision-Date: 2019-08-26 12:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,67 +16,81 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_replacement
-#: view:sale.add.replacement:product_replacement.sale_add_replacement_form
+#: model:ir.ui.view,arch_db:product_replacement.sale_add_replacement_form
 msgid "Add"
 msgstr "Añadir"
 
 #. module: product_replacement
 #: model:ir.actions.act_window,name:product_replacement.sale_add_replacement_action
-#: view:sale.add.replacement:product_replacement.sale_add_replacement_form
-#: view:sale.order:product_replacement.sale_order_add_replacement_form
+#: model:ir.ui.view,arch_db:product_replacement.sale_add_replacement_form
+#: model:ir.ui.view,arch_db:product_replacement.sale_order_add_replacement_form
 msgid "Add replacements"
 msgstr "Añadir repuestos"
 
 #. module: product_replacement
-#: view:sale.add.replacement:product_replacement.sale_add_replacement_form
+#: model:ir.ui.view,arch_db:product_replacement.sale_add_replacement_form
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: product_replacement
-#: field:product.replacement,create_uid:0
-#: field:sale.add.replacement,create_uid:0
-#: field:sale.add.replacement.line,create_uid:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_create_uid
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_create_uid
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_create_uid
 msgid "Created by"
-msgstr "Created by"
+msgstr "Creado por"
 
 #. module: product_replacement
-#: field:product.replacement,create_date:0
-#: field:sale.add.replacement,create_date:0
-#: field:sale.add.replacement.line,create_date:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_create_date
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_create_date
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_create_date
 msgid "Created on"
-msgstr "Created on"
+msgstr "Creado en"
 
 #. module: product_replacement
-#: field:product.replacement,disassembly_ref:0
-#: field:sale.add.replacement.line,disassembly_ref:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_disassembly_ref
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_disassembly_ref
 msgid "Disassembly reference"
 msgstr "Referencia de despiece"
 
 #. module: product_replacement
-#: field:product.replacement,id:0
-#: field:sale.add.replacement,id:0
-#: field:sale.add.replacement.line,id:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_display_name
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_display_name
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: product_replacement
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_id
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_id
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_id
 msgid "ID"
 msgstr "ID"
 
 #. module: product_replacement
-#: field:product.replacement,write_uid:0
-#: field:sale.add.replacement,write_uid:0
-#: field:sale.add.replacement.line,write_uid:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement___last_update
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement___last_update
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: product_replacement
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_write_uid
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_write_uid
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_write_uid
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Última actualización de"
 
 #. module: product_replacement
-#: field:product.replacement,write_date:0
-#: field:sale.add.replacement,write_date:0
-#: field:sale.add.replacement.line,write_date:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_write_date
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_write_date
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_write_date
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr "Última actualización en"
 
 #. module: product_replacement
-#: field:sale.add.replacement,line_ids:0
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_ids
 msgid "Lines"
-msgstr "Lineas"
+msgstr "Líneas"
 
 #. module: product_replacement
 #: model:ir.model,name:product_replacement.model_stock_production_lot
@@ -84,6 +98,7 @@ msgid "Lot/Serial"
 msgstr "Lote/Nº de serie"
 
 #. module: product_replacement
+#: model:ir.model,name:product_replacement.model_stock_move_line
 #: model:ir.model,name:product_replacement.model_stock_pack_operation
 msgid "Packing Operation"
 msgstr "Operación de empaquetado"
@@ -100,58 +115,72 @@ msgstr "Elementos del asistente de albarán"
 
 #. module: product_replacement
 #: model:ir.model,name:product_replacement.model_product_product
-#: field:sale.add.replacement,product_id:0
-#: field:sale.add.replacement.line,product_id:0
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_product_id
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_product_id
 msgid "Product"
 msgstr "Producto"
 
 #. module: product_replacement
-#: field:product.replacement,qty:0
-#: field:sale.add.replacement.line,qty:0
-#: field:sale.add.replacement.line,qty_in:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_qty
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_qty
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_qty_in
 msgid "Quantity"
 msgstr "Cantidad"
 
 #. module: product_replacement
-#: view:product.replacement:product_replacement.product_replacement_filter
-#: view:product.replacement:product_replacement.product_replacement_form
-#: field:product.replacement,product_id:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_product_id
+#: model:ir.ui.view,arch_db:product_replacement.product_replacement_filter
+#: model:ir.ui.view,arch_db:product_replacement.product_replacement_form
 msgid "Replacement"
 msgstr "Repuesto"
 
 #. module: product_replacement
-#: field:product.replacement,replacement_for_ids:0
-#: field:stock.pack.operation,replacement_for_id:0
-#: field:stock.transfer_details_items,replacement_for_id:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_replacement_replacement_for_ids
+#: model:ir.model.fields,field_description:product_replacement.field_stock_move_line_replacement_for_id
 msgid "Replacement for"
 msgstr "Repuesto para"
 
 #. module: product_replacement
-#: view:stock.production.lot:product_replacement.stock_production_lot_add_replacement
-msgid "Replacement sended"
-msgstr "Repuesto enviado"
-
-#. module: product_replacement
 #: model:ir.actions.act_window,name:product_replacement.action_product_replacement
+#: model:ir.model.fields,field_description:product_replacement.field_product_product_replacement_ids
 #: model:ir.ui.menu,name:product_replacement.product_replacement_menu
-#: view:product.product:product_replacement.product_product_form_add_replacements
-#: field:product.product,replacement_ids:0
-#: view:product.replacement:product_replacement.product_replacement_tree
+#: model:ir.ui.view,arch_db:product_replacement.product_product_form_add_replacements
+#: model:ir.ui.view,arch_db:product_replacement.product_replacement_tree
 msgid "Replacements"
 msgstr "Repuestos"
 
 #. module: product_replacement
-#: field:product.product,replacement_for_ids:0
+#: model:ir.model.fields,field_description:product_replacement.field_product_product_replacement_for_ids
 msgid "Replacements for"
 msgstr "Repuestos para"
 
 #. module: product_replacement
-#: field:stock.production.lot,replacement_sended:0
-msgid "Replacements sended"
+#: model:ir.model.fields,field_description:product_replacement.field_stock_production_lot_replacement_sent_ids
+#: model:ir.ui.view,arch_db:product_replacement.stock_production_lot_add_replacement
+msgid "Replacements sent"
 msgstr "Repuestos enviados"
 
 #. module: product_replacement
-#: field:sale.add.replacement.line,wizard_id:0
+#: model:ir.model,name:product_replacement.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: product_replacement
+#: model:ir.model,name:product_replacement.model_product_replacement
+msgid "product.replacement"
+msgstr "product.replacement"
+
+#. module: product_replacement
+#: model:ir.model,name:product_replacement.model_sale_add_replacement
+msgid "sale.add.replacement"
+msgstr "sale.add.replacement"
+
+#. module: product_replacement
+#: model:ir.model,name:product_replacement.model_sale_add_replacement_line
+msgid "sale.add.replacement.line"
+msgstr "sale.add.replacement.line"
+
+#. module: product_replacement
+#: model:ir.model.fields,field_description:product_replacement.field_sale_add_replacement_line_wizard_id
 msgid "wizard"
 msgstr "Asistente"
-

@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * syd_custom
+#       * syd_custom
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-27 16:37+0000\n"
-"PO-Revision-Date: 2015-04-27 16:37+0000\n"
+"POT-Creation-Date: 2019-08-26 15:59+0000\n"
+"PO-Revision-Date: 2019-08-26 15:59+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,55 +15,53 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-
 #. module: syd_custom
-#: field:stock.production.lot,product_available:0
-msgid "Quantity available"
-msgstr "Cantidad disponible (de producto)"
-
-#. module: syd_custom
-#: field:sale.report,margin:0
-msgid "Margin"
-msgstr "Margen"
-
-#. module: syd_custom
-#: view:sale.order.update.purchase.price:syd_custom.sale_order_update_purchase_price_form
+#: model:ir.ui.view,arch_db:syd_custom.sale_order_update_purchase_price_form
 msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: syd_custom
-#: view:sale.order.update.purchase.price:syd_custom.sale_order_update_purchase_price_form
-msgid "Update"
-msgstr "Actualizar"
-
-#. module: syd_custom
-#: model:ir.actions.act_window,name:syd_custom.sale_order_update_purchase_price_action
-#: view:sale.order:syd_custom.sale_order_add_button_send
-msgid "Update purchase price"
-msgstr "Actualizar precio de coste"
-
-#. module: syd_custom
-#: view:sale.order.update.purchase.price:syd_custom.sale_order_update_purchase_price_form
-msgid "Set price by purchase order"
-msgstr "Establecer precio de compra."
-
-#. module: syd_custom
-#: field:purchase.order,carrier:0
+#: model:ir.model.fields,field_description:syd_custom.field_purchase_order_carrier
 msgid "Carrier"
-msgstr "Transporte"
+msgstr "Forma de envío"
 
 #. module: syd_custom
-#: field:product.category,sale_delay:0
+#: model:ir.model,name:syd_custom.model_res_partner
+msgid "Contact"
+msgstr "Contactos"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_create_uid
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_create_date
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_product_category_sale_delay
 msgid "Default sale delay"
 msgstr "Tiempo de entrega por defecto"
 
 #. module: syd_custom
-#: view:purchase.order:syd_custom.purchase_order_change_shpiment_count
-msgid "In Shipments"
-msgstr "En recepciones"
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_display_name
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
 
 #. module: syd_custom
-#: view:purchase.order:syd_custom.purchase_order_change_shpiment_count
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_id
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_purchase_order_shipment_count_
+#: model:ir.ui.view,arch_db:syd_custom.purchase_order_change_shpiment_count
 msgid "Incoming Shipments"
 msgstr "Albaranes de entrada"
 
@@ -73,23 +71,46 @@ msgid "Invoice"
 msgstr "Factura"
 
 #. module: syd_custom
-#: view:sale.order:syd_custom.sale_order_add_button_send
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price___last_update
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_write_uid
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_write_date
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_wizard_lines
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "Lote/Nº de serie"
+
+#. module: syd_custom
+#: model:ir.ui.view,arch_db:syd_custom.sale_order_add_button_send
 msgid "Mark as sended"
-msgstr "marcar como enviado"
+msgstr "Marcar como enviado"
 
 #. module: syd_custom
-#: model:ir.model,name:syd_custom.model_res_partner
-msgid "Partner"
-msgstr "Empresa"
-
-#. module: syd_custom
-#: model:ir.model,name:syd_custom.model_stock_picking
-msgid "Picking List"
-msgstr "Albarán"
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_order_line_id
+msgid "Order line"
+msgstr "Linea de pedido"
 
 #. module: syd_custom
 #: model:ir.model,name:syd_custom.model_product_product
-#: field:sale.order.update.purchase.price.line,product_id:0
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_product_id
 msgid "Product"
 msgstr "Producto"
 
@@ -104,36 +125,97 @@ msgid "Product Template"
 msgstr "Plantilla de producto"
 
 #. module: syd_custom
-#: field:sale.order.update.purchase.price.line,purchase_price:0
-msgid "Purchase price"
-msgstr "Precio de coste"
-
-#. module: syd_custom
 #: model:ir.model,name:syd_custom.model_purchase_order
 msgid "Purchase Order"
 msgstr "Pedido de compra"
 
 #. module: syd_custom
-#: model:ir.model,name:syd_custom.model_sale_order
-msgid "Sales Order"
-msgstr "Pedido de venta"
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_purchase_price
+msgid "Purchase price"
+msgstr "Precio de coste"
 
 #. module: syd_custom
-#: field:account.invoice,supplier_picking_ref:0
+#: model:ir.model.fields,field_description:syd_custom.field_stock_production_lot_product_available
+msgid "Quantity available"
+msgstr "Cantidad disponible (de producto)"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_sale_order
+msgid "Quotation"
+msgstr "Ventas"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_sale_report
+msgid "Sales Orders Statistics"
+msgstr "Estadísticas pedidos de venta"
+
+#. module: syd_custom
+#: model:ir.ui.view,arch_db:syd_custom.view_payments_filter_week
+msgid "Semana"
+msgstr "Semana"
+
+#. module: syd_custom
+#: model:ir.ui.view,arch_db:syd_custom.sale_order_update_purchase_price_form
+msgid "Set price by purchase order"
+msgstr "Establecer precio de compra."
+
+#. module: syd_custom
+#: model:ir.ui.view,arch_db:syd_custom.purchase_order_change_shpiment_count
+msgid "Shipment"
+msgstr "Envío"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_account_invoice_supplier_picking_ref
 msgid "Supplier picking reference"
 msgstr "Referencia del albarán de proveedor"
 
 #. module: syd_custom
-#: field:stock.picking,supplier_ref:0
+#: model:ir.model.fields,field_description:syd_custom.field_purchase_order_supplier_picking_ref
+msgid "Supplier picking refs."
+msgstr "Ref. albaranes proveedor"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_stock_picking_supplier_ref
 msgid "Supplier reference"
 msgstr "Albarán de proveedor"
 
 #. module: syd_custom
-#: field:product.category,use_in_sub:0
+#: model:ir.model,name:syd_custom.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: syd_custom
+#: model:ir.ui.view,arch_db:syd_custom.sale_order_update_purchase_price_form
+msgid "Update"
+msgstr "Actualizar"
+
+#. module: syd_custom
+#: model:ir.actions.act_window,name:syd_custom.sale_order_update_purchase_price_action
+#: model:ir.ui.view,arch_db:syd_custom.sale_order_add_button_send
+msgid "Update purchase price"
+msgstr "Actualizar precio de coste"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_product_category_use_in_sub
 msgid "Use delay in subcategories"
 msgstr "Usar tiempo de entrega en subcategorías"
 
 #. module: syd_custom
-#: field:res.partner,title:0
-msgid "Calification"
-msgstr "Calificación"
+#: model:ir.model,name:syd_custom.model_sale_order_update_purchase_price
+msgid "sale.order.update.purchase.price"
+msgstr "sale.order.update.purchase.price"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_sale_order_update_purchase_price_line
+msgid "sale.order.update.purchase.price.line"
+msgstr "sale.order.update.purchase.price.line"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_wizard_id
+msgid "wzd"
+msgstr "Asistente"

@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * ship
+#       * ship
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-23 09:38+0000\n"
-"PO-Revision-Date: 2014-12-23 09:38+0000\n"
+"POT-Creation-Date: 2019-08-26 15:51+0000\n"
+"PO-Revision-Date: 2019-08-26 15:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,54 +16,110 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: ship
-#: view:ship:ship.ship_filter
-#: field:ship,address_id:0
+#: model:ir.model.fields,field_description:ship.field_ship_address_id
+#: model:ir.ui.view,arch_db:ship.ship_filter
 msgid "Address"
 msgstr "Dirección"
 
 #. module: ship
-#: view:ship:ship.ship_filter
-#: field:ship,partner_id:0
+#: model:ir.model.fields,field_description:ship.field_ship_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ship
+#: model:ir.model.fields,field_description:ship.field_ship_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: ship
+#: model:ir.model.fields,field_description:ship.field_ship_partner_id
+#: model:ir.ui.view,arch_db:ship.ship_filter
 msgid "Customer"
 msgstr "Cliente"
 
 #. module: ship
-#: field:ship,insepctor:0
+#: model:ir.model.fields,field_description:ship.field_ship_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: ship
+#: model:ir.model.fields,field_description:ship.field_ship_id
+msgid "ID"
+msgstr "ID"
+
+#. module: ship
+#: model:ir.model.fields,field_description:ship.field_ship_inspector
 msgid "Inspector"
 msgstr "Inspector"
 
 #. module: ship
-#: view:ship:ship.ship_form
-#: field:ship,name:0
+#: model:ir.model,name:ship.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: ship
+#: model:ir.model.fields,field_description:ship.field_ship___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: ship
+#: model:ir.model.fields,field_description:ship.field_ship_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: ship
+#: model:ir.model.fields,field_description:ship.field_ship_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: ship
+#: model:ir.model.fields,field_description:ship.field_ship_name
+#: model:ir.ui.view,arch_db:ship.ship_form
 msgid "Name"
 msgstr "Nombre"
 
 #. module: ship
-#: model:ir.model,name:ship.model_stock_picking
-msgid "Picking List"
-msgstr "Albarán"
-
-#. module: ship
 #: model:ir.model,name:ship.model_sale_order
-msgid "Sales Order"
-msgstr "Pedido de venta"
+msgid "Quotation"
+msgstr "Ventas"
 
 #. module: ship
-#: field:sale.order,ship_id:0
-#: view:ship:ship.ship_filter
-#: view:ship:ship.ship_form
-#: field:stock.picking,ship_id:0
+#: model:ir.model.fields,field_description:ship.field_account_invoice_ship_id
+#: model:ir.model.fields,field_description:ship.field_sale_order_ship_id
+#: model:ir.model.fields,field_description:ship.field_stock_picking_ship_id
+#: model:ir.ui.view,arch_db:ship.ship_filter
+#: model:ir.ui.view,arch_db:ship.ship_form
 msgid "Ship"
 msgstr "Buque"
 
 #. module: ship
 #: model:ir.actions.act_window,name:ship.action_ship_tree
-#: view:ship:ship.ship_tree
+#: model:ir.ui.menu,name:ship.view_ships
+#: model:ir.ui.view,arch_db:ship.ship_tree
 msgid "Ships"
 msgstr "Buques"
 
 #. module: ship
-#: view:ship:ship.ship_filter
+#: model:ir.model,name:ship.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
+
+#. module: ship
+#: model:ir.model,name:ship.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: ship
+#: model:ir.ui.view,arch_db:ship.ship_filter
 msgid "group by..."
 msgstr "Agrupar por..."
 
+#. module: ship
+#: model:ir.model.fields,field_description:ship.field_sale_order_partner_parent_id
+msgid "partner parent"
+msgstr "Empresa padre"
+
+#. module: ship
+#: model:ir.model,name:ship.model_ship
+msgid "ship"
+msgstr "Buques"

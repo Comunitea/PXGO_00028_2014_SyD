@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * picking_services
+#       * picking_services
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-26 10:29+0000\n"
-"PO-Revision-Date: 2014-12-26 10:29+0000\n"
+"POT-Creation-Date: 2019-08-26 12:12+0000\n"
+"PO-Revision-Date: 2019-08-26 12:12+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,43 +16,87 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: picking_services
-#: view:stock.picking:picking_services.stock_picking_add_services
+#: model:ir.ui.view,arch_db:picking_services.stock_picking_add_services
 msgid "Add services"
 msgstr "Añadir servicios"
 
 #. module: picking_services
-#: field:stock.move.service,sale_line_id:0
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: picking_services
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: picking_services
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: picking_services
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_id
+msgid "ID"
+msgstr "ID"
+
+#. module: picking_services
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: picking_services
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: picking_services
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: picking_services
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_sale_line_id
 msgid "Order line"
 msgstr "Linea de pedido"
 
 #. module: picking_services
-#: field:stock.move.service,picking_id:0
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_picking_id
 msgid "Picking"
 msgstr "Albarán"
 
 #. module: picking_services
-#: model:ir.model,name:picking_services.model_stock_picking
-msgid "Picking List"
-msgstr "Albarán"
-
-#. module: picking_services
-#: field:stock.move.service,product_id:0
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_product_id
 msgid "Product"
 msgstr "Producto"
 
 #. module: picking_services
-#: field:stock.move.service,quantity:0
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_quantity
 msgid "Quantity"
 msgstr "Cantidad"
 
 #. module: picking_services
-#: view:stock.picking:picking_services.stock_picking_add_services
+#: model:ir.ui.view,arch_db:picking_services.stock_picking_add_services
 msgid "Sales Order Lines"
 msgstr "Lineas de pedido"
 
 #. module: picking_services
-#: view:stock.picking:picking_services.stock_picking_add_services
-#: field:stock.picking,service_ids:0
+#: model:ir.model.fields,field_description:picking_services.field_stock_picking_service_ids
+#: model:ir.ui.view,arch_db:picking_services.stock_picking_add_services
 msgid "Services"
 msgstr "Servicios"
 
+#. module: picking_services
+#: model:ir.model,name:picking_services.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: picking_services
+#: model:ir.model.fields,field_description:picking_services.field_stock_move_service_product_uom
+msgid "UoM"
+msgstr "UdM"
+
+#. module: picking_services
+#: model:ir.model,name:picking_services.model_stock_move_service
+msgid "stock.move.service"
+msgstr "stock.move.service"

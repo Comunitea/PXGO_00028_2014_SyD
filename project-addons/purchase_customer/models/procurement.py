@@ -29,12 +29,12 @@ class ProcurementRule(models.Model):
         vals = super().\
             _prepare_purchase_order(product_id, product_qty, product_uom,
                                     origin, values, partner)
-        if values.get('sale_line_id'):
-            line = self.env['sale.order.line'].\
-                browse(values['sale_line_id'])
+        if values.get('move_dest_ids') and \
+                values['move_dest_ids'][0].sale_line_id:
+            line = values['move_dest_ids'][0].sale_line_id
             vals.update({'customer_id': line.order_id.partner_id.id,
                          'sale_ids': [(6, 0, [line.order_id.id])],
                          'lead_ids': line.order_id.opportunity_id and
                          [(6, 0, [line.order_id.opportunity_id.id])]
                          or False})
-        return values
+        return vals
