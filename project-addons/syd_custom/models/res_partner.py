@@ -18,12 +18,55 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import models, api
+from odoo import models, api, fields
+import time
 
 
 class res_partner(models.Model):
 
     _inherit = 'res.partner'
+
+    total_invoiced_current_year = fields.\
+        Monetary(compute='_invoice_total_curr_year', string="Total Invoiced",
+                 groups='account.group_account_invoice')
+
+    @api.multi
+    def _invoice_total_curr_year(self):
+        account_invoice_report = self.env['account.invoice.report']
+        if not self.ids:
+            self.total_invoiced_current_year = 0.0
+            return True
+
+        all_partners_and_children = {}
+        all_partner_ids = []
+        for partner in self:
+            all_partners_and_children[partner] = self.\
+                with_context(active_test=False).\
+                search([('id', 'child_of', partner.id)]).ids
+            all_partner_ids += all_partners_and_children[partner]
+
+        where_query = account_invoice_report._where_calc([
+            ('partner_id', 'in', all_partner_ids),
+            ('state', 'not in', ['draft', 'cancel']),
+            ('type', 'in', ('out_invoice', 'out_refund')),
+            ('date', '>=', time.strftime("%Y-01-01"))
+        ])
+        account_invoice_report._apply_ir_rules(where_query, 'read')
+        from_clause, where_clause, where_clause_params = where_query.get_sql()
+
+        # price_total is in the company currency
+        query = """
+                  SELECT SUM(price_total) as total, partner_id
+                    FROM account_invoice_report account_invoice_report
+                   WHERE %s
+                   GROUP BY partner_id
+                """ % where_clause
+        self.env.cr.execute(query, where_clause_params)
+        price_totals = self.env.cr.dictfetchall()
+        for partner, child_ids in all_partners_and_children.items():
+            partner.total_invoiced_current_year = \
+                sum(price['total'] for price in
+                    price_totals if price['partner_id'] in child_ids)
 
     def _compute_sale_order_count(self):
         for partner in self:

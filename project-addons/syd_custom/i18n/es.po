@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-26 15:59+0000\n"
-"PO-Revision-Date: 2019-08-26 15:59+0000\n"
+"POT-Creation-Date: 2019-08-26 17:43+0000\n"
+"PO-Revision-Date: 2019-08-26 17:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "Cancelar"
 #. module: syd_custom
 #: model:ir.model.fields,field_description:syd_custom.field_purchase_order_carrier
 msgid "Carrier"
-msgstr "Forma de envío"
+msgstr "Trasportista"
 
 #. module: syd_custom
 #: model:ir.model,name:syd_custom.model_res_partner
@@ -185,9 +185,20 @@ msgid "Supplier reference"
 msgstr "Albarán de proveedor"
 
 #. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_res_partner_total_invoiced_current_year
+#: model:ir.model.fields,field_description:syd_custom.field_res_users_total_invoiced_current_year
+msgid "Total Invoiced"
+msgstr "Total facturado"
+
+#. module: syd_custom
 #: model:ir.model,name:syd_custom.model_stock_picking
 msgid "Transfer"
 msgstr "Albarán"
+
+#. module: syd_custom
+#: model:ir.ui.view,arch_db:syd_custom.invoice_tree_add_amounts
+msgid "Untaxed"
+msgstr "Base imponible"
 
 #. module: syd_custom
 #: model:ir.ui.view,arch_db:syd_custom.sale_order_update_purchase_price_form
@@ -204,6 +215,11 @@ msgstr "Actualizar precio de coste"
 #: model:ir.model.fields,field_description:syd_custom.field_product_category_use_in_sub
 msgid "Use delay in subcategories"
 msgstr "Usar tiempo de entrega en subcategorías"
+
+#. module: syd_custom
+#: model:ir.ui.view,arch_db:syd_custom.view_account_invoice_filter_add_year_filter
+msgid "Year"
+msgstr "Año"
 
 #. module: syd_custom
 #: model:ir.model,name:syd_custom.model_sale_order_update_purchase_price
