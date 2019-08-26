@@ -25,6 +25,16 @@ class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
 
     supplier_picking_ref = fields.Char('Supplier picking reference')
+    payment_order_count = fields.Integer("# Payment Order", store=True,
+                                         compute="_get_payment_order_count")
+
+    @api.multi
+    @api.depends('move_id.line_ids.payment_line_ids')
+    def _get_payment_order_count(self):
+        for invoice in self:
+            if invoice.move_id:
+                invoice.payment_order_count = \
+                    len(invoice.move_id.mapped('line_ids.payment_line_ids'))
 
     @api.onchange('invoice_line_ids')
     def _onchange_origin(self):
@@ -33,3 +43,19 @@ class AccountInvoice(models.Model):
         if purchase_ids:
             self.supplier_picking_ref = ', '.\
                 join(purchase_ids.mapped('supplier_picking_ref'))
+
+    @api.multi
+    def action_view_payment_orders(self):
+        self.ensure_one()
+        payment_orders = []
+        if self.move_id:
+            payment_orders = self.move_id.\
+                mapped('line_ids.payment_line_ids.order_id')
+        action = (
+            self.env.
+            ref('account_payment_order.account_payment_order_inbound_action').
+            read()[0])
+        action['domain'] = []
+        if payment_orders:
+            action['domain'] = [('id', 'in', payment_orders.ids)]
+        return action

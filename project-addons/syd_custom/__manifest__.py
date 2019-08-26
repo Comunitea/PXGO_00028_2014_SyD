@@ -27,7 +27,7 @@
     'website': '',
     "depends": ['product', 'stock', 'purchase', 'product_sequence',
                 'account_due_list', 'sale_stock', 'crm_phonecall',
-                'sale_disable_inventory_check'],
+                'sale_disable_inventory_check', 'account_payment_order'],
     "data": ['views/product_view.xml', 'views/purchase_view.xml',
              'views/account_view.xml', 'views/stock_view.xml',
              'data/ir_sequence.xml',

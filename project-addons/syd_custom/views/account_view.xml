@@ -67,4 +67,23 @@
         </field>
     </record>
 
+    <record id="invoice_form_add_payment_orders" model="ir.ui.view">
+        <field name="name">account.invoice.form.add_payment_orders</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="action_view_payment_orders"
+                    attrs="{'invisible': [('payment_order_count', '&lt;=', 0)]}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="payment_order_count"/>
+                        </span>
+                        <span class="o_stat_text"># Payment orders</span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+
 </odoo>
