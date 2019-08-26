@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-26 18:42+0000\n"
-"PO-Revision-Date: 2019-08-26 18:42+0000\n"
+"POT-Creation-Date: 2019-08-26 19:10+0000\n"
+"PO-Revision-Date: 2019-08-26 19:10+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -79,6 +79,11 @@ msgstr "Albaranes de entrada"
 #: model:ir.model,name:syd_custom.model_account_invoice
 msgid "Invoice"
 msgstr "Factura"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_account_invoice_report
+msgid "Invoices Statistics"
+msgstr "Estadísticas de facturas"
 
 #. module: syd_custom
 #: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price___last_update
@@ -193,6 +198,16 @@ msgstr "Ref. albaranes proveedor"
 #: model:ir.model.fields,field_description:syd_custom.field_stock_picking_supplier_ref
 msgid "Supplier reference"
 msgstr "Albarán de proveedor"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_account_invoice_report_number
+msgid "Number"
+msgstr "Número"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_account_invoice_report_payment_mode_id
+msgid "Payment mode"
+msgstr "Modo de pago"
 
 #. module: syd_custom
 #: model:ir.model.fields,field_description:syd_custom.field_res_partner_total_invoiced_current_year
