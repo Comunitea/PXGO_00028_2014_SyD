@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <template id="report_invoice_document_custom" inherit_id="account.report_invoice_document">
+        <template id="report_invoice_document_custom" inherit_id="sale.report_invoice_layouted">
             <xpath expr="//div[@t-if='o.name']" position="before">
                 <div class="col-xs-2" t-if="o.partner_id.commercial_partner_id.supplier_ref">
                     <strong>Ref. proveedor:</strong>
@@ -25,9 +25,13 @@
                 </p>
             </xpath>
             <xpath expr="//tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']/td[last()-1]" position="replace"/>
-        </template>
-
-        <template id="report_invoice_layouted_custom" inherit_id="sale.report_invoice_layouted">
+            <xpath expr="//table" position="attributes">
+                <attribute name="groups"></attribute>
+                <attribute name="t-if">not is_layouted</attribute>
+            </xpath>
+            <xpath expr="//t[@t-foreach='o.order_lines_layouted()']" position="attributes">
+                <attribute name="t-if">is_layouted</attribute>
+            </xpath>
             <xpath expr="//t[@name='lines_layouted']//th[last()-1]" position="replace"/>
             <xpath expr="//t[@name='lines_layouted']//span[contains(@t-esc, 'l.invoice_line_tax_ids')]/.." position="replace"/>
         </template>
@@ -49,6 +53,15 @@
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <t t-call="custom_documents.report_invoice_document_net_price" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_layouted_invoice">
+            <t t-call="web.html_container">
+                <t t-set="is_layouted" t-value="True"/>
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="account.report_invoice_document" t-lang="o.partner_id.lang"/>
                 </t>
             </t>
         </template>

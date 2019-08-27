@@ -24,9 +24,19 @@ class AccountInvoice(models.Model):
 
     _inherit = 'account.invoice'
 
+    def _default_comment(self):
+        res = super()._default_comment()
+        invoice_type = self.env.context.get('type', 'out_invoice')
+        if invoice_type == 'out_invoice' and self.env['ir.config_parameter'].\
+                sudo().get_param('sale.use_sale_note'):
+            return ''
+        else:
+            return res
+
     supplier_picking_ref = fields.Char('Supplier picking reference')
     payment_order_count = fields.Integer("# Payment Order", store=True,
                                          compute="_get_payment_order_count")
+    comment = fields.Text(default=_default_comment)
 
     @api.multi
     @api.depends('move_id.line_ids.payment_line_ids')
@@ -42,7 +52,8 @@ class AccountInvoice(models.Model):
         purchase_ids = self.invoice_line_ids.mapped('purchase_id')
         if purchase_ids:
             self.supplier_picking_ref = ', '.\
-                join(purchase_ids.mapped('supplier_picking_ref'))
+                join(purchase_ids.filtered('supplier_picking_ref').
+                     mapped('supplier_picking_ref'))
 
     @api.multi
     def action_view_payment_orders(self):
@@ -59,6 +70,15 @@ class AccountInvoice(models.Model):
         if payment_orders:
             action['domain'] = [('id', 'in', payment_orders.ids)]
         return action
+
+    @api.onchange('partner_id', 'company_id')
+    def _onchange_delivery_address(self):
+        addr = self.partner_id.address_get(['delivery'])
+        self.partner_shipping_id = addr and addr.get('delivery')
+        if self.env.context.get('type', 'out_invoice') == 'out_invoice':
+            pass
+        else:
+            super()._onchange_delivery_address()
 
 
 class AccountInvoiceReport(models.Model):

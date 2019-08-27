@@ -32,3 +32,22 @@ class SaleOrder(models.Model):
     def quotation_sended(self):
         return self.filtered(lambda s: s.state == 'draft').\
             write({'state': 'sent'})
+
+    @api.multi
+    def _prepare_invoice(self):
+        invoice_vals = super()._prepare_invoice()
+        if invoice_vals.get('comment'):
+            del invoice_vals['comment']
+        return invoice_vals
+
+
+class SaleAdvancePaymentInv(models.TransientModel):
+
+    _inherit = "sale.advance.payment.inv"
+
+    @api.multi
+    def _create_invoice(self, order, so_line, amount):
+        invoice = super()._create_invoice(order, so_line, amount)
+        if invoice.comment:
+            invoice.comment = False
+        return invoice
