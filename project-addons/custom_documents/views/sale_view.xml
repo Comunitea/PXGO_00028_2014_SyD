@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <record id="sale_order_add_title" model="ir.ui.view">
             <field name="name">sale.order.form</field>
@@ -8,7 +7,7 @@
             <field name="sequence">100</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <field name="client_order_ref" position="after">
+                <field name="payment_term_id" position="after">
                     <field name="title"/>
                 </field>
                 <field name="note" position="after">
@@ -39,5 +38,4 @@
             </field>
         </record>
 
-    </data>
-</openerp>
+</odoo>

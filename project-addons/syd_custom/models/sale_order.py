@@ -17,7 +17,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import models, api
+from odoo import models, fields, api, exceptions, _
 
 
 class SaleOrder(models.Model):

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="external_layout_boxed_custom" inherit_id="web.external_layout_boxed">
-        <xpath expr="//div[@class='header o_boxed_header']" position="replace">
-            <div class="header o_boxed_header">
+    <template id="external_layout_standard_custom" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[@class='header']" position="replace">
+            <div class="header">
                 <div class="row mb8">
                     <div class="col-xs-4">
                         <span t-esc="company.name.upper()" />

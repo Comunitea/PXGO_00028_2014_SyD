@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+        <template id="report_invoice_document_inherit_sale_custom" inherit_id="sale.report_invoice_document_inherit_sale">
+            <xpath expr="//div[@t-field='o.partner_id']" position="attributes">
+                <attribute name="t-field">o.partner_id.commercial_partner_id</attribute>
+            </xpath>
+        </template>
+
         <template id="report_invoice_document_custom" inherit_id="sale.report_invoice_layouted">
             <xpath expr="//div[@t-if='o.name']" position="before">
                 <div class="col-xs-2" t-if="o.partner_id.commercial_partner_id.supplier_ref">
                     <strong>Ref. proveedor:</strong>
                     <p t-field="o.partner_id.commercial_partner_id.supplier_ref"/>
                 </div>
+            </xpath>
+            <xpath expr="//address[@t-field='o.partner_id']" position="attributes">
+                <attribute name="t-field">o.partner_id.commercial_partner_id</attribute>
             </xpath>
             <xpath expr="//div[@t-if='o.partner_id.ref']/p" position="replace">
                 <p t-field="o.partner_id.commercial_partner_id.ref"/>
@@ -32,6 +41,14 @@
             <xpath expr="//t[@t-foreach='o.order_lines_layouted()']" position="attributes">
                 <attribute name="t-if">is_layouted</attribute>
             </xpath>
+            <xpath expr="//table[@name='invoice_line_table']//span[@t-field='l.price_unit']" position="attributes">
+                <attribute name="t-options">{'precision': 2}</attribute>
+            </xpath>
+            <xpath expr="//table[@name='invoice_line_table']//span[@t-field='l.uom_id']" position="replace"/>
+            <xpath expr="//t[@name='lines_layouted']//span[@t-field='l.price_unit']" position="attributes">
+                <attribute name="t-options">{'precision': 2}</attribute>
+            </xpath>
+            <xpath expr="//t[@name='lines_layouted']//span[@t-field='l.uom_id']" position="replace"/>
             <xpath expr="//t[@name='lines_layouted']//th[last()-1]" position="replace"/>
             <xpath expr="//t[@name='lines_layouted']//span[contains(@t-esc, 'l.invoice_line_tax_ids')]/.." position="replace"/>
         </template>
