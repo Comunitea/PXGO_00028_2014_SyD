@@ -16,8 +16,10 @@
                     <attribute name="attrs">{'invisible': ['|', '|' , ('is_shipped', '=', True), ('state','not in', ('purchase','done')), ('shipment_count_', '=', 0)]}</attribute>
                 </button>
                 <field name="picking_type_id" position="after">
-                    <field name="carrier"/>
                     <field name="supplier_picking_ref"/>
+                </field>
+                <field name="origin" position="after">
+                    <field name="carrier"/>
                 </field>
           </field>
       </record>

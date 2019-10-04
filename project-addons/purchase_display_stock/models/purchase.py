@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Copyright (C) 2014 Comunitea All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
+#    Copyright (C) 2019 Comunitea All Rights Reserved
+#    $Omar Castiñeira Saaveda$ <omar@comunitea.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -18,19 +18,14 @@
 #
 ##############################################################################
 
-{
-    'name': "Prospective customer",
-    'version': '11.0.0.0.0',
-    'category': '',
-    'description': """Adds prospective customers menu and search it
-        on sale order, and crm views""",
-    'author': 'Comunitea',
-    'website': 'www.comunitea.com',
-    'depends': ["base",
-                "sale",
-                "crm",
-                "crm_phonecall",
-                "sale_crm"],
-    'data': ["views/res_partner_view.xml"],
-    'installable': True
-}
+from odoo import models, fields
+from odoo.addons import decimal_precision as dp
+
+
+class PurchaseOrderLine(models.Model):
+    _inherit = 'purchase.order.line'
+
+    qty_available = fields.\
+        Float('Qty available', readonly=True,
+              related='product_id.qty_available',
+              digits=dp.get_precision('Product Unit of Measure'))

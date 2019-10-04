@@ -34,11 +34,45 @@ class SaleOrder(models.Model):
             write({'state': 'sent'})
 
     @api.multi
+    def action_confirm(self):
+        if self.order_line.filtered(lambda s: s.product_id ==
+                                    self.env.
+                                    ref('syd_custom.product_wildcard')):
+            raise exceptions.UserError(_("Cannot confirm an order with "
+                                         "wildcard products"))
+        return super().action_confirm()
+
+    @api.multi
     def _prepare_invoice(self):
         invoice_vals = super()._prepare_invoice()
         if invoice_vals.get('comment'):
             del invoice_vals['comment']
         return invoice_vals
+
+    @api.multi
+    def action_invoice_create(self, grouped=False, final=False):
+        invoices = super().action_invoice_create(grouped=grouped,
+                                                 final=final)
+        for invoice in self.env['account.invoice'].browse(invoices).\
+                filtered(lambda x: x.type == 'out_refund'):
+            sales = invoice.mapped('invoice_line_ids.sale_line_ids.order_id')
+            for sale in sales:
+                order_invoices = sale.invoice_ids.\
+                    filtered(lambda x: x.type == 'out_invoice' and
+                             not x.refund_invoice_ids)
+                if order_invoices:
+                    invoice.refund_invoice_id = order_invoices[0].id
+
+        return invoices
+
+
+class SaleOrderLine(models.Model):
+
+    _inherit = "sale.order.line"
+
+    product_id = fields.\
+        Many2one(default=lambda self:
+                 self.env.ref('syd_custom.product_wildcard'))
 
 
 class SaleAdvancePaymentInv(models.TransientModel):

@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<record id="invoice_form" model="ir.ui.view">
-    <field name="name">margin.account.invoice.form</field>
-    <field name="model">account.invoice</field>
-    <field name="inherit_id" ref="account.invoice_form"/>
-    <field name="arch" type="xml">
-        <field name="move_id" position="after">
-            <field name="margin_company_currency" groups="account.group_account_user"/>
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="name">margin.account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <field name="amount_total" position="after">
+                <field name="margin_company_currency" groups="account_invoice_margin.group_account_invoice_margin_security"/>
+                <field name="margin_percent" groups="account_invoice_margin.group_account_invoice_margin_security"/>
+            </field>
         </field>
-    </field>
-</record>
+    </record>
+
+    <record id="invoice_margin_form_tree" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_invoice_margin.invoice_margin_form_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='margin']" position="replace"/>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='margin_percent']" position="replace"/>
+        </field>
+    </record>
+
+    <record id="view_invoice_line_form" model="ir.ui.view">
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account_invoice_margin.view_invoice_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='margin']" position="replace"/>
+            <xpath expr="//field[@name='margin_percent']" position="replace"/>
+        </field>
+    </record>
+
+    <record id="view_invoice_line_tree" model="ir.ui.view">
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account_invoice_margin.view_invoice_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='margin']" position="replace"/>
+            <xpath expr="//field[@name='margin_percent']" position="replace"/>
+        </field>
+    </record>
 
 </odoo>

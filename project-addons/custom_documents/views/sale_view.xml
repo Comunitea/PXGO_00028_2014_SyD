@@ -7,11 +7,20 @@
             <field name="sequence">100</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
+                <field name="client_order_ref" position="replace"/>
                 <field name="payment_term_id" position="after">
                     <field name="title"/>
+                    <field name="client_order_ref"/>
                 </field>
                 <field name="note" position="after">
                     <field name="baseline_data" placeholder="starting data indicated by the client"/>
+                </field>
+                <field name="date_order" position="replace"/>
+                <field name="validity_date" position="replace">
+                    <field name="date_order"/>
+                </field>
+                <field name="origin" position="before">
+                    <field name="validity_date"/>
                 </field>
             </field>
         </record>
@@ -34,6 +43,17 @@
             <field name="arch" type="xml">
                 <field name="name" position="after">
                     <field name="title"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_partner_valued_picking_custom">
+            <field name="name">Partner view (Valued picking)</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="stock_picking_report_valued.view_partner_valued_picking"/>
+            <field name="arch" type="xml">
+                <field name="valued_picking" position="attributes">
+                    <attribute name="invisible">True</attribute>
                 </field>
             </field>
         </record>

@@ -26,6 +26,10 @@ class StockPicking(models.Model):
 
     supplier_ref = fields.Char('Supplier reference', copy=False)
 
+    @api.multi
+    def _add_delivery_cost_to_so(self):
+        pass
+
 
 class StockProductionLot(models.Model):
 

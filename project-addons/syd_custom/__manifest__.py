@@ -27,10 +27,11 @@
     'website': '',
     "depends": ['product', 'stock', 'purchase', 'product_sequence',
                 'account_due_list', 'sale_stock', 'crm_phonecall',
-                'sale_disable_inventory_check', 'account_payment_order'],
+                'sale_disable_inventory_check', 'account_payment_order',
+                'delivery', 'hide_product_variants'],
     "data": ['views/product_view.xml', 'views/purchase_view.xml',
              'views/account_view.xml', 'views/stock_view.xml',
-             'data/ir_sequence.xml',
+             'data/ir_sequence.xml', 'data/syd_custom_data.xml',
              'wizard/sale_order_update_purchase_price.xml',
              'views/sale_view.xml', 'data/res_partner_title_data.xml'],
     "installable": True

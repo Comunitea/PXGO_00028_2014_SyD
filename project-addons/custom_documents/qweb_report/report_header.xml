@@ -18,9 +18,16 @@
                 </div>
             </div>
         </xpath>
-        <xpath expr="//li[@t-if='company.vat']" position="replace"/>
-        <xpath expr="//li[@t-if='company.phone']" position="before">
-             <li><span class="company_address" t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["address"], "no_marker": true, "no_tag_br": true}'/></li>
+        <xpath expr="//div[@class='footer']" position="attributes">
+            <attribute name="style">font-size: 10px</attribute>
+        </xpath>
+        <xpath expr="//ul[@class='list-inline mb4']" position="replace">
+            <ul class="list-inline mb4">
+                <li><span class="company_address" t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["address"], "no_marker": true, "no_tag_br": true}'/></li>
+                <li t-if="company.phone">&amp;bull; <span t-field="company.phone"/></li>
+                <li t-if="company.email">&amp;bull; <span t-field="company.email"/></li>
+                <li t-if="company.website">&amp;bull; <span t-field="company.website"/></li>
+            </ul>
         </xpath>
     </template>
 

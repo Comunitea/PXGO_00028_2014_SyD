@@ -25,6 +25,7 @@ class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
     categ_id = fields.Many2one(default=False)
+    wildcard_product = fields.Boolean("Wildcard")
 
     @api.onchange('categ_id')
     def change_categ_id(self):

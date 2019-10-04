@@ -11,4 +11,14 @@
             print_report_name="'Delivery Slip - %s - %s' % (object.partner_id.name or '', object.name)"
         />
 
+        <report
+            string="Delivery Slip not valued"
+            id="action_report_not_valued_picking"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="custom_documents.report_deliveryslip_not_valued"
+            file="custom_documents.report_deliveryslip_not_valued"
+            print_report_name="'Delivery Slip - %s - %s' % (object.partner_id.name or '', object.name)"
+        />
+
 </odoo>

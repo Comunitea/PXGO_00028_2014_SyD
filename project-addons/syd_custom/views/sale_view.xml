@@ -15,4 +15,16 @@
             </field>
         </record>
 
+        <record id="view_order_form_with_carrier_custom" model="ir.ui.view">
+            <field name="name">delivery.sale.order.form.view.with_carrier</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="delivery.view_order_form_with_carrier"/>
+            <field name="arch" type="xml">
+                <label for="carrier_id" position="replace"/>
+                <div name='carrier_selection' position="replace">
+                    <field name="carrier_id" context="{'order_id': id}" options="{'no_create': True, 'no_open': True}" attrs="{'readonly':[('state','not in',('draft','sent'))]}"/>
+                </div>
+            </field>
+        </record>
+
 </odoo>

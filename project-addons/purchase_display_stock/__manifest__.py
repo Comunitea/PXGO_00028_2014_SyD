@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Copyright (C) 2014 Comunitea All Rights Reserved
-#    $Jesús Ventosinos Mayor <jesus@comunitea.com>$
+#    Copyright (C) 2019 Comunitea All Rights Reserved
+#    $Omar Castiñeira Saaveda$ <omar@comunitea.com>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published
@@ -19,18 +19,19 @@
 ##############################################################################
 
 {
-    'name': "Prospective customer",
-    'version': '11.0.0.0.0',
-    'category': '',
-    'description': """Adds prospective customers menu and search it
-        on sale order, and crm views""",
-    'author': 'Comunitea',
+    "name": "Purchase display stock",
+    "version": "11.0.0.0.0",
+    "author": "Comunitea",
     'website': 'www.comunitea.com',
-    'depends': ["base",
-                "sale",
-                "crm",
-                "crm_phonecall",
-                "sale_crm"],
-    'data': ["views/res_partner_view.xml"],
-    'installable': True
+    "category": "Purchases",
+    "description": """
+Purchases display stock
+========================================
+
+    * Displays the real stock of product at each purchase order line.
+""",
+    "depends": ["purchase"],
+    "data": ["views/purchase_view.xml"],
+    'auto_install': False,
+    "installable": True,
 }

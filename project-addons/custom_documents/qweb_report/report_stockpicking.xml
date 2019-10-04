@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <template id="report_delivery_document_custom" inherit_id="stock_picking_report_valued.valued_report_picking">
+        <template id="stock_picking_report_valued.valued_report_picking" inherit_id="stock.report_delivery_document">
+            <xpath expr="//table[@t-if=&quot;o.move_line_ids and o.state==&apos;done&apos;&quot;]/thead/tr"
+                   position="inside">
+                <t t-if="valued and o.sale_id and o.move_line_ids">
+                    <t t-if="o.state != 'done'">
+                        <th class="text-right"><strong>Qty Reserved</strong></th>
+                    </t>
+                    <th class="text-right"><strong>Unit Price</strong></th>
+                    <th class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
+                        <strong>Discount</strong>
+                    </th>
+                    <th class="text-right"><strong>Subtotal</strong></th>
+                    <th class="text-right"><strong>Taxes</strong></th>
+                </t>
+            </xpath>
+            <xpath expr="//span[@t-field='move_line.qty_done']/.." position="after">
+                <t t-if="valued and o.sale_id and o.move_line_ids">
+                    <t t-if="move_line.picking_id.state != 'done'">
+                        <td class="text-right">
+                            <span t-field="move_line.product_uom_qty"/>
+                            <span t-if="not valued" t-field="move_line.product_uom_id"/></td>
+                    </t>
+                    <td class="text-right" t-if="not net"><span
+                            t-field="move_line.sale_price_unit" /></td>
+                    <td class="text-right" t-if="net"><span
+                            t-field="move_line.sale_price_unit_net" /></td>
+                    <td class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
+                        <span t-field="move_line.sale_discount" />
+                    </td>
+                    <td class="text-right"><span
+                            t-field="move_line.sale_price_subtotal" /></td>
+                    <td class="text-right"><span
+                            t-field="move_line.sale_tax_description"/></td>
+                </t>
+            </xpath>
+            <xpath expr="//table[@t-if=&quot;o.move_line_ids and o.state==&apos;done&apos;&quot;]" position="after">
+                <t t-if="valued and o.sale_id and o.move_line_ids">
+                    <table class="table table-condensed mt32">
+                        <thead>
+                            <tr>
+                                <th class="text-right"><strong>Untaxed Amount</strong></th>
+                                <th class="text-right"><strong>Taxes</strong></th>
+                                <th class="text-right"><strong>Total</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-right">
+                                    <span t-field="o.amount_untaxed"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_tax"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="o.amount_total"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+            </xpath>
             <xpath expr="//th[@name='td_sched_date_h']" position="after">
                 <th t-if="o.ship_id"><strong>Buque</strong></th>
             </xpath>
@@ -10,26 +70,18 @@
                     <span t-field="o.ship_id.name"/>
                 </td>
             </xpath>
-            <xpath expr="//th[@groups='sale.group_discount_per_so_line']" position="attributes">
-                <attribute name="t-if">not net</attribute>
+            <xpath expr="//span[@t-field='move.product_uom']" position="attributes">
+                <attribute name="t-if">not valued</attribute>
             </xpath>
-            <xpath expr="//span[@t-field='move_line.sale_price_unit']/.." position="attributes">
-                <attribute name="t-if">not net</attribute>
-            </xpath>
-            <xpath expr="//span[@t-field='move_line.sale_price_unit']/.." position="after">
-                <td class="text-right" t-if="net">
-                    <span t-field="move_line.sale_price_unit_net" />
-                </td>
-            </xpath>
-            <xpath expr="//span[@t-field='move_line.sale_discount']/.." position="attributes">
-                <attribute name="t-if">not net</attribute>
+            <xpath expr="//span[@t-field='move_line.product_uom_id']" position="attributes">
+                <attribute name="t-if">not valued</attribute>
             </xpath>
             <xpath expr="//tr[@t-foreach='o.move_line_ids']" position="after">
                 <tr t-foreach="o.service_ids" t-as="service">
                     <td><span t-field="service.product_id"/></td>
                     <td t-if="has_serial_number"></td>
                     <td class="text-center"><span t-field="service.quantity"/> <span t-field="service.product_uom"/></td>
-                    <t t-if="o.valued and o.sale_id and o.service_ids">
+                    <t t-if="valued and o.sale_id and o.service_ids">
                         <td class="text-right" t-if="not net">
                             <span t-field="service.order_price_unit" />
                         </td>
@@ -45,7 +97,7 @@
                     </t>
                 </tr>
             </xpath>
-            <xpath expr="//t[@t-if='o.valued and o.sale_id and o.move_line_ids']/th[last()]" position="replace"/>
+            <xpath expr="//t[@t-if='valued and o.sale_id and o.move_line_ids']/th[last()]" position="replace"/>
             <xpath expr="//span[@t-field='move_line.sale_tax_description']/.." position="replace"/>
             <xpath expr="//p[@t-if='o.backorder_id']" position="before">
                 <p><span>Returns are not accepted without our written consent, after 15 days of delivery of goods or merchandise that is manipulated.<br/><br/></span></p>
@@ -53,15 +105,72 @@
                     <span t-field="o.external_note"/>
                 </p>
             </xpath>
+            <xpath expr="//span[@t-field='o.date_done']" position="attributes">
+                <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
+            </xpath>
+            <xpath expr="//span[@t-field='o.scheduled_date']" position="attributes">
+                <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
+            </xpath>
+        </template>
+
+        <template id="report_delivery_document_custom" inherit_id="stock.report_delivery_document">
+            <xpath expr="//div[@name='customer_address']" position="replace">
+                <div class="row" name="customer_address">
+                    <div class="col-xs-3 pull-left">
+                        <div>
+                            <span style="font-size: 11px;">Remitter:</span>
+                        </div>
+                        <div>
+                            <span t-esc="o.company_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True}' style="font-size: 11px;"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 pull-right">
+                        <div>
+                            <span><strong>Customer Address:</strong></span>
+                        </div>
+                        <t t-set="partner" t-value="o.partner_id or (o.move_lines and o.move_lines[0].partner_id) or False"/>
+                        <div t-if="partner" name="partner_header">
+                            <span t-esc="partner" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True}' style="font-weight: bold; font-size: 16px;"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//tr/td/span[@t-field='move.product_id']" position="attributes">
+                <attribute name="t-field">move.name</attribute>
+            </xpath>
+            <xpath expr="//tr/td/span[@t-field='move_line.product_id']" position="attributes">
+                <attribute name="t-field">move_line.move_id.name</attribute>
+            </xpath>
         </template>
 
         <template id="report_deliveryslip_net">
             <t t-call="web.html_container">
                 <t t-set="net" t-value="True"/>
+                <t t-set="valued" t-value="True"/>
                 <t t-foreach="docs" t-as="o">
                     <t t-call="stock.report_delivery_document" t-lang="o.partner_id.lang"/>
                 </t>
             </t>
+        </template>
+
+        <template id="report_deliveryslip_custom" inherit_id="stock.report_deliveryslip">
+            <xpath expr="//t[@t-foreach='docs']" position="before">
+                <t t-set="valued" t-value="True"/>
+            </xpath>
+        </template>
+
+        <template id="report_deliveryslip_not_valued">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="stock.report_delivery_document" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_picking_custom" inherit_id="stock.report_picking">
+            <xpath expr="//span[@t-field='o.date']" position="attributes">
+                <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
+            </xpath>
         </template>
 
 </odoo>
