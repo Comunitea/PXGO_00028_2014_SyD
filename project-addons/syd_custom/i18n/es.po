@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-26 19:10+0000\n"
-"PO-Revision-Date: 2019-08-26 19:10+0000\n"
+"POT-Creation-Date: 2019-10-06 23:29+0000\n"
+"PO-Revision-Date: 2019-10-06 23:29+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,9 +31,21 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: syd_custom
+#: code:addons/syd_custom/models/sale_order.py:41
+#, python-format
+msgid "Cannot confirm an order with wildcard products"
+msgstr "No puede confirmarf una orden con productos comodín"
+
+#. module: syd_custom
 #: model:ir.model.fields,field_description:syd_custom.field_purchase_order_carrier
 msgid "Carrier"
-msgstr "Trasportista"
+msgstr "Transportista"
+
+#. module: syd_custom
+#: model:product.product,name:syd_custom.product_wildcard
+#: model:product.template,name:syd_custom.product_wildcard_product_template
+msgid "Comodín"
+msgstr "Comodín"
 
 #. module: syd_custom
 #: model:ir.model,name:syd_custom.model_res_partner
@@ -86,6 +98,11 @@ msgid "Invoices Statistics"
 msgstr "Estadísticas de facturas"
 
 #. module: syd_custom
+#: model:ir.model,name:syd_custom.model_account_move_line
+msgid "Journal Item"
+msgstr "Apuntes contables"
+
+#. module: syd_custom
 #: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price___last_update
 #: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line___last_update
 msgid "Last Modified on"
@@ -124,6 +141,12 @@ msgid "Order line"
 msgstr "Linea de pedido"
 
 #. module: syd_custom
+#: code:addons/syd_custom/models/res_partner.py:39
+#, python-format
+msgid "Please set the phone field"
+msgstr "Por favor, establezca el campo de teléfono"
+
+#. module: syd_custom
 #: model:ir.model,name:syd_custom.model_product_product
 #: model:ir.model.fields,field_description:syd_custom.field_sale_order_update_purchase_price_line_product_id
 msgid "Product"
@@ -150,6 +173,11 @@ msgid "Purchase price"
 msgstr "Precio de coste"
 
 #. module: syd_custom
+#: model:ir.ui.view,arch_db:syd_custom.product_form_view_purchase_order_button
+msgid "Purchases"
+msgstr "Compras"
+
+#. module: syd_custom
 #: model:ir.model.fields,field_description:syd_custom.field_stock_production_lot_product_available
 msgid "Quantity available"
 msgstr "Cantidad disponible (de producto)"
@@ -158,6 +186,11 @@ msgstr "Cantidad disponible (de producto)"
 #: model:ir.model,name:syd_custom.model_sale_order
 msgid "Quotation"
 msgstr "Ventas"
+
+#. module: syd_custom
+#: model:ir.model,name:syd_custom.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Ventas. Anticipo pago factura"
 
 #. module: syd_custom
 #: model:ir.model,name:syd_custom.model_sale_order_line
@@ -200,16 +233,6 @@ msgid "Supplier reference"
 msgstr "Albarán de proveedor"
 
 #. module: syd_custom
-#: model:ir.model.fields,field_description:syd_custom.field_account_invoice_report_number
-msgid "Number"
-msgstr "Número"
-
-#. module: syd_custom
-#: model:ir.model.fields,field_description:syd_custom.field_account_invoice_report_payment_mode_id
-msgid "Payment mode"
-msgstr "Modo de pago"
-
-#. module: syd_custom
 #: model:ir.model.fields,field_description:syd_custom.field_res_partner_total_invoiced_current_year
 #: model:ir.model.fields,field_description:syd_custom.field_res_users_total_invoiced_current_year
 msgid "Total Invoiced"
@@ -240,6 +263,12 @@ msgstr "Actualizar precio de coste"
 #: model:ir.model.fields,field_description:syd_custom.field_product_category_use_in_sub
 msgid "Use delay in subcategories"
 msgstr "Usar tiempo de entrega en subcategorías"
+
+#. module: syd_custom
+#: model:ir.model.fields,field_description:syd_custom.field_product_product_wildcard_product
+#: model:ir.model.fields,field_description:syd_custom.field_product_template_wildcard_product
+msgid "Wildcard"
+msgstr "Comodín"
 
 #. module: syd_custom
 #: model:ir.ui.view,arch_db:syd_custom.view_account_invoice_filter_add_year_filter

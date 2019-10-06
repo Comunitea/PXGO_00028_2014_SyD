@@ -15,8 +15,8 @@ class AccountInvoice(models.Model):
     @api.model
     def line_get_convert(self, line, part):
         res = super(AccountInvoice, self).line_get_convert(line, part)
-        if line.get('invoice_id'):
+        if line.get('invoice_id') and line.get('product_id'):
             jrl = self.browse(line['invoice_id']).journal_id
             if jrl.group_invoice_lines and jrl.group_method == 'account':
-                res.update({'name': '/', 'product_id': False})
+                res.update({'product_id': False})
         return res

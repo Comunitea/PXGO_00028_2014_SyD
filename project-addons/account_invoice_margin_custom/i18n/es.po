@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-26 11:51+0000\n"
-"PO-Revision-Date: 2019-08-26 11:51+0000\n"
+"POT-Creation-Date: 2019-10-06 23:26+0000\n"
+"PO-Revision-Date: 2019-10-06 23:26+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,11 +16,31 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: account_invoice_margin_custom
+#: model:ir.model.fields,field_description:account_invoice_margin_custom.field_account_invoice_margin_percent
+msgid "% Margin"
+msgstr "% Margen"
+
+#. module: account_invoice_margin_custom
 #: model:ir.model,name:account_invoice_margin_custom.model_account_invoice
 msgid "Invoice"
 msgstr "Factura"
 
 #. module: account_invoice_margin_custom
+#: model:ir.model,name:account_invoice_margin_custom.model_account_invoice_report
+msgid "Invoices Statistics"
+msgstr "Estadísticas de facturas"
+
+#. module: account_invoice_margin_custom
 #: model:ir.model.fields,field_description:account_invoice_margin_custom.field_account_invoice_margin_company_currency
 msgid "Margin in Company Currency"
 msgstr "Margen"
+
+#. module: account_invoice_margin_custom
+#: model:ir.model.fields,field_description:account_invoice_margin_custom.field_account_invoice_report_number
+msgid "Number"
+msgstr "Número"
+
+#. module: account_invoice_margin_custom
+#: model:ir.model.fields,field_description:account_invoice_margin_custom.field_account_invoice_report_payment_mode_id
+msgid "Payment mode"
+msgstr "Modo de pago"

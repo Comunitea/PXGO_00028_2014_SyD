@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from odoo import models, api, fields
+from odoo import models, api, fields, exceptions, _
 import time
 
 
@@ -29,6 +29,14 @@ class res_partner(models.Model):
     total_invoiced_current_year = fields.\
         Monetary(compute='_invoice_total_curr_year', string="Total Invoiced",
                  groups='account.group_account_invoice')
+
+    @api.multi
+    @api.constrains('phone', 'name', 'parent_id')
+    def _check_phone_set(self):
+        for partner in self:
+            if not partner.parent_id and not partner.phone:
+                raise exceptions.\
+                    ValidationError(_("Please set the phone field"))
 
     @api.multi
     def _invoice_total_curr_year(self):

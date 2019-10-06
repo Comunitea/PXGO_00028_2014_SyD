@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-27 16:00+0000\n"
-"PO-Revision-Date: 2019-08-27 16:00+0000\n"
+"POT-Creation-Date: 2019-10-06 23:23+0000\n"
+"PO-Revision-Date: 2019-10-06 23:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,6 +21,21 @@ msgid "% margin"
 msgstr "% margen"
 
 #. module: custom_documents
+#: model:ir.ui.view,arch_db:custom_documents.external_layout_standard_custom
+msgid "&amp;bull;"
+msgstr "&amp;bull;"
+
+#. module: custom_documents
+#: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
+msgid "<span style=\"font-size: 11px;\">Remitter:</span>"
+msgstr "<span style=\"font-size: 11px;\">Remite:</span>"
+
+#. module: custom_documents
+#: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
+msgid "<span><strong>Customer Address:</strong></span>"
+msgstr "<span><strong>Dirección del Cliente:</strong></span>"
+
+#. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_invoice_document_custom
 msgid "<span>No se admiten devoluciones pasados 15 días</span>"
 msgstr "<span>No se admiten devoluciones pasados 15 días</span>"
@@ -29,16 +44,6 @@ msgstr "<span>No se admiten devoluciones pasados 15 días</span>"
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "<span>Pro-Forma Invoice # </span>"
 msgstr "<span>Factura Proforma # </span>"
-
-#. module: custom_documents
-#: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
-msgid "<span>Returns are not accepted without our written consent, after 15 days of delivery of goods or merchandise that is manipulated.<br/><br/></span>"
-msgstr "<span>No se aceptarán devoluciones sin nuestro consentimiento por escrito, pasados 15 días de la entrega de la mercancía o de mercancía que esté manipulada.<br/><br/></span>"
-
-#. module: custom_documents
-#: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
-msgid "<strong>Buque</strong>"
-msgstr "<strong>Buque</strong>"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_invoice_document_custom
@@ -96,6 +101,11 @@ msgstr "Conformidad cliente:"
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "Date:"
 msgstr "Fecha:"
+
+#. module: custom_documents
+#: model:ir.actions.report,name:custom_documents.action_report_not_valued_picking
+msgid "Delivery Slip not valued"
+msgstr "Vale de entrega no valorado"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_move_service_discount

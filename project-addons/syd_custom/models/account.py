@@ -105,3 +105,10 @@ class AccountInvoiceReport(models.Model):
         group_by_str += ', ai.payment_mode_id, ai.number'
 
         return group_by_str
+
+
+class AccountMoveLine(models.Model):
+
+    _inherit = "account.move.line"
+
+    partner_id = fields.Many2one(domain=[('parent_id', '=', False)])
