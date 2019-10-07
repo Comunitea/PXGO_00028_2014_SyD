@@ -171,6 +171,9 @@
             <xpath expr="//span[@t-field='o.date']" position="attributes">
                 <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
             </xpath>
+            <xpath expr="//span[@t-field='o.scheduled_date']" position="attributes">
+                <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
+            </xpath>
         </template>
 
 </odoo>

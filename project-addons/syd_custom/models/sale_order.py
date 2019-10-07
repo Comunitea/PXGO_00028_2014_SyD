@@ -24,6 +24,9 @@ class SaleOrder(models.Model):
 
     _inherit = 'sale.order'
 
+    active = fields.Boolean(copy=False)
+    current_revision_id = fields.Many2one('sale.order', copy=False)
+
     @api.multi
     def print_quotation(self):
         return self.env.ref('sale.action_report_saleorder').report_action(self)

@@ -28,7 +28,7 @@
     "depends": ['product', 'stock', 'purchase', 'product_sequence',
                 'account_due_list', 'sale_stock', 'crm_phonecall',
                 'sale_disable_inventory_check', 'account_payment_order',
-                'delivery', 'hide_product_variants'],
+                'delivery', 'hide_product_variants', 'sale_order_revision'],
     "data": ['views/product_view.xml', 'views/purchase_view.xml',
              'views/account_view.xml', 'views/stock_view.xml',
              'data/ir_sequence.xml', 'data/syd_custom_data.xml',
