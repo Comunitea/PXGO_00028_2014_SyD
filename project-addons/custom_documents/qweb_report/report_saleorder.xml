@@ -8,6 +8,12 @@
                     <p t-field="doc.partner_id.supplier_ref"/>
                 </div>
             </xpath>
+            <xpath expr="//div[@t-if='doc.client_order_ref']" position="replace">
+                <div t-if="doc.client_order_ref" class="col-xs-3">
+                    <strong>Reference:</strong>
+                    <p t-field="doc.client_order_ref"/>
+                </div>
+            </xpath>
             <xpath expr="//t[@t-if='doc.partner_shipping_id == doc.partner_invoice_id
                              and doc.partner_invoice_id != doc.partner_id
                              or doc.partner_shipping_id != doc.partner_invoice_id']" position="replace"/>
@@ -36,11 +42,11 @@
                     <div class="row">
                         <div class="col-xs-5 text-left">
                             <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
-                                <span t-if="doc.state not in ['draft','sent']">Order # </span>
-                                <span t-if="doc.state in ['draft','sent']">Quotation # </span>
+                                <span t-if="doc.state not in ['draft','sent']">Order </span>
+                                <span t-if="doc.state in ['draft','sent']">Quotation </span>
                             </t>
                             <t t-if="env.context.get('proforma', False) or is_pro_forma">
-                                <span>Pro-Forma Invoice # </span>
+                                <span>Pro-Forma Invoice </span>
                             </t>
                             <span t-field="doc.name"/>
                         </div>
@@ -75,11 +81,18 @@
                             <strong>Aceptance quotation Nº <span t-field="doc.name"/>: <span t-field="doc.title"/></strong>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="min-height: 120px;">
                         <div class="col-xs-4">Customer conformity:</div>
                         <div class="col-xs-4">Date:</div>
                     </div>
+                    <div style="font-size: 9px; width: 100%;">
+                        <p>SANDE Y DÍAZ, SL, as responsible for the treatment, and in compliance with the Spanish LOPD, we inform you that your personal data is mainly processed to make a correct provision of our services, and that the legal basis for this treatment is the contractual relationship existing. In addition, your data may be used to send commercial information by email about our services for which we ask for your consent. Your data will be kept while maintaining the commercial relationship or the time required to comply with legal obligations, and will be communicated to our consultancy in order to carry out the fiscal and accounting management of the company. You can exercise your rights in the LOPD by sending an email to sandeydiaz@sandeydiaz.com and attaching a copy of your ID. For more information, see our Privacy Policy at www.sandeydiaz.com.<br/>
+    We request your express consent to send by email commercial information about our products and services □  YES  □  NO </p>
+                    </div>
                 </div>
+            </xpath>
+            <xpath expr="//span[@t-field='doc.payment_term_id.note']" position="before">
+                <strong>Payment Term: </strong>
             </xpath>
         </template>
 

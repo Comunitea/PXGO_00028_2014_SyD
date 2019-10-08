@@ -18,11 +18,28 @@
             <xpath expr="//span[@t-field='line.date_planned']" position="attributes">
                 <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
             </xpath>
+            <xpath expr="//div[@class='page']" position="after">
+                <div style="font-size: 9px; width: 100%; page-break-inside: avoid;">
+                    <p>SANDE Y DÍAZ SL, as responsible for the treatment, and in compliance with the Spanish LOPD, we inform you that your personal data is only processed in order to provide a correct provision of our service or for order management, and that the legal basis of this Treatment is the existing contractual relationship. Your data will be retained while maintaining the business relationship or the time necessary to comply with legal obligations. They will never be transferred to third parties, except by legal obligation. You can exercise your rights in the LOPD by sending an email to sandeydiaz@sandeydiaz.com attaching a copy of your ID. For more information see our Privacy Policy at www.sandeydiaz.com.</p>
+                </div>
+            </xpath>
+            <xpath expr="//h2[contains(@t-if, 'o.state !=')]" position="replace">
+                <h2 t-if="o.state != 'draft'">Purchase Order Confirmation <span t-field="o.name"/></h2>
+            </xpath>
+            <xpath expr="//h2[contains(@t-if, 'o.state ==')]" position="replace">
+                <h2 t-if="o.state == 'draft'">Request for Quotation <span t-field="o.name"/></h2>
+            </xpath>
+            <xpath expr="//div[@t-if='o.name']" position="replace"/>
         </template>
 
         <template id="report_purchasequotation_document_custom" inherit_id="purchase.report_purchasequotation_document">
             <xpath expr="//span[@t-field='order_line.date_planned']" position="attributes">
                 <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
+            </xpath>
+            <xpath expr="//div[@class='page']" position="after">
+                <div style="font-size: 9px; width: 100%; page-break-inside: avoid;">
+                    <p>SANDE Y DÍAZ SL, as responsible for the treatment, and in compliance with the Spanish LOPD, we inform you that your personal data is only processed in order to provide a correct provision of our service or for order management, and that the legal basis of this Treatment is the existing contractual relationship. Your data will be retained while maintaining the business relationship or the time necessary to comply with legal obligations. They will never be transferred to third parties, except by legal obligation. You can exercise your rights in the LOPD by sending an email to sandeydiaz@sandeydiaz.com attaching a copy of your ID. For more information see our Privacy Policy at www.sandeydiaz.com.</p>
+                </div>
             </xpath>
         </template>
 

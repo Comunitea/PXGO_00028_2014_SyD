@@ -1,13 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 #       * custom_documents
+#       * stock_picking_report_valued
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-08 13:59+0000\n"
-"PO-Revision-Date: 2019-10-08 13:59+0000\n"
+"POT-Creation-Date: 2019-10-08 14:22+0000\n"
+"PO-Revision-Date: 2019-10-08 14:22+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +19,7 @@ msgstr ""
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_move_service_percent_margin
 msgid "% margin"
-msgstr "% margen"
+msgstr "% marxe"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.external_layout_standard_custom
@@ -33,23 +34,38 @@ msgstr "<span style=\"font-size: 11px;\">Remite:</span>"
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
 msgid "<span><strong>Customer Address:</strong></span>"
-msgstr "<span><strong>Dirección del Cliente:</strong></span>"
-
-#. module: custom_documents
-#: model:ir.ui.view,arch_db:custom_documents.report_invoice_document_custom
-msgid "<span>Returns not accepted after 15 days</span>"
-msgstr "<span>No se admiten devoluciones pasados 15 días</span>"
+msgstr "<span><strong>Dirección de envío:</strong></span>"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "<span>Pro-Forma Invoice </span>"
-msgstr "<span>Factura Proforma </span>"
+msgstr "<span>Factura proforma </span>"
+
+#. module: stock_picking_report_valued
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
+msgid "<span>Returns are not accepted without our written consent, after 15 days of delivery of goods or merchandise that is manipulated.<br/><br/></span>"
+msgstr "<span>Non se aceptarán devolucións sen o noso consentimento por escrito, pasados 15 días da entrega da mercancía ou de mercancía que esté manipulada.<br/><br/></span>"
 
 #. module: custom_documents
-#: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 #: model:ir.ui.view,arch_db:custom_documents.report_invoice_document_custom
+msgid "<span>Returns not accepted after 15 days</span>"
+msgstr "<span>Non se aceptarán devolucións pasados 15 días</span>"
+
+#. module: stock_picking_report_valued
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
+msgid "<strong>Discount</strong>"
+msgstr "<strong>Desc.</strong>"
+
+#. module: custom_documents
+#: model:ir.ui.view,arch_db:custom_documents.report_invoice_document_custom
+#: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "<strong>Payment Term: </strong>"
-msgstr "<strong>Plazo de pago: </strong>"
+msgstr "<strong>Prazo de pago: </strong>"
+
+#. module: stock_picking_report_valued
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
+msgid "<strong>Qty Reserved</strong>"
+msgstr "<strong>Cant. reservada</strong>"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_invoice_document_custom
@@ -68,15 +84,45 @@ msgstr "<strong>Referencia:</strong>"
 msgid "<strong>Ship:</strong>"
 msgstr "<strong>Buque:</strong>"
 
+#. module: stock_picking_report_valued
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
+msgid "<strong>Ship</strong>"
+msgstr "<strong>Buque</strong>"
+
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "<strong>Starting data indicated by the client:</strong>"
-msgstr "<strong>Datos de partida indicados por el cliente:</strong>"
+msgstr "<strong>Datos de partida indicados polo cliente:</strong>"
+
+#. module: stock_picking_report_valued
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Subtotal</strong>"
+
+#. module: stock_picking_report_valued
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
+msgid "<strong>Taxes</strong>"
+msgstr "<strong>Impostos</strong>"
+
+#. module: stock_picking_report_valued
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: stock_picking_report_valued
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
+msgid "<strong>Unit Price</strong>"
+msgstr "<strong>Prezo unitario</strong>"
+
+#. module: stock_picking_report_valued
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
+msgid "<strong>Untaxed Amount</strong>"
+msgstr "<strong>Base imponible</strong>"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "Aceptance quotation Nº"
-msgstr "Aceptación presupuesto Nº"
+msgstr "Aceptación de presuposto Nº"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_picking_amount_gross
@@ -86,42 +132,48 @@ msgstr "Importe bruto"
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.stock_pickin_add_note
 msgid "Añada una nota para imprimir en el albarán..."
-msgstr "Añada una nota para imprimir en el albarán..."
+msgstr "Engada unha nota para imprimir no albarán..."
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_purchaseorder_document_custom
 msgid "Carrier:"
-msgstr "Trasportista:"
+msgstr "Transportista:"
 
-#. module: custom_documents
+#. modules: custom_documents, stock_picking_report_valued
 #: model:ir.model,name:custom_documents.model_res_partner
+#: model:ir.model,name:stock_picking_report_valued.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_move_service_cost_subtotal
 msgid "Cost subtotal"
-msgstr "Coste subtotal"
+msgstr "Coste"
+
+#. module: stock_picking_report_valued
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_picking_currency_id
+msgid "Currency"
+msgstr "Moeda"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "Customer conformity:"
-msgstr "Conformidad cliente:"
+msgstr "Conformidade do cliente:"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "Date:"
-msgstr "Fecha:"
+msgstr "Data:"
 
 #. module: custom_documents
 #: model:ir.actions.report,name:custom_documents.action_report_not_valued_picking
 msgid "Delivery Slip not valued"
-msgstr "Vale de entrega no valorado"
+msgstr "Folla de entrega non valorada"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_move_service_discount
 msgid "Discount"
-msgstr "Descuento"
+msgstr "Desconto"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_picking_amount_discounted
@@ -136,46 +188,47 @@ msgstr "Notas externas"
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_account_invoice_line
 msgid "Invoice Line"
-msgstr "Línea de factura"
+msgstr "Liña de factura"
 
 #. module: custom_documents
 #: model:ir.actions.report,name:custom_documents.account_invoices_layouted
 msgid "Layout Invoices"
-msgstr "Factura con secciones"
+msgstr "Factura con seccións"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_move_service_margin
 msgid "Margin"
-msgstr "Margen"
+msgstr "Marxe"
 
 #. module: custom_documents
 #: model:ir.actions.report,name:custom_documents.action_report_net_valued_picking
 msgid "Net Delivery Slip"
-msgstr "Vale de entrega neto"
+msgstr "Folla de envío neta"
 
 #. module: custom_documents
 #: model:ir.actions.report,name:custom_documents.account_invoices
 msgid "Net Invoices"
-msgstr "Facturas netas"
+msgstr "Factura neta"
 
 #. module: custom_documents
 #: model:ir.actions.report,name:custom_documents.report_net_proforma_order
 msgid "Net Proforma"
-msgstr "Proforma neto"
+msgstr "Proforma neta"
 
 #. module: custom_documents
 #: model:ir.actions.report,name:custom_documents.report_net_sale_order
 msgid "Net Quotation / Order"
-msgstr "Presupuesto / Pedido neto"
+msgstr "Presuposto / Pedido neto"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "Order"
 msgstr "Pedido"
 
-#. module: custom_documents
+#. modules: custom_documents, stock_picking_report_valued
 #: model:ir.model,name:custom_documents.model_stock_move_line
 #: model:ir.model,name:custom_documents.model_stock_pack_operation
+#: model:ir.model,name:stock_picking_report_valued.model_stock_move_line
 msgid "Packing Operation"
 msgstr "Operación de empaquetado"
 
@@ -184,99 +237,134 @@ msgstr "Operación de empaquetado"
 msgid "Payment Modes"
 msgstr "Modos de pago"
 
+#. module: stock_picking_report_valued
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_price_subtotal
+msgid "Price subtotal"
+msgstr "Subtotal"
+
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_move_service_order_price_unit
 #: model:ir.model.fields,field_description:custom_documents.field_stock_move_service_order_price_unit_net
 msgid "Price unit"
-msgstr "Precio unidad"
+msgstr "Prezo unitario"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_purchase_order
 msgid "Purchase Order"
-msgstr "Pedido de compra"
+msgstr "Orde de compra"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_purchaseorder_document_custom
 msgid "Purchase Order Confirmation"
-msgstr "Confirmación pedido de compra"
+msgstr "Confirmación de pedido"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_sale_order
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "Quotation"
-msgstr "Presupuesto"
+msgstr "Presuposto"
+
+#. module: stock_picking_report_valued
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_line
+msgid "Related order line"
+msgstr "Liña de venda relacionada"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_purchaseorder_document_custom
 msgid "Request for Quotation"
-msgstr "Solicitud de presupuesto"
+msgstr "Petición de presuposto"
 
-#. module: custom_documents
+#. modules: custom_documents, stock_picking_report_valued
 #: model:ir.ui.view,arch_db:custom_documents.report_invoice_document_custom
 #: model:ir.ui.view,arch_db:custom_documents.report_purchaseorder_document_custom
 #: model:ir.ui.view,arch_db:custom_documents.report_purchasequotation_document_custom
+#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
 msgid "SANDE Y DÍAZ SL, as responsible for the treatment, and in compliance with the Spanish LOPD, we inform you that your personal data is only processed in order to provide a correct provision of our service or for order management, and that the legal basis of this Treatment is the existing contractual relationship. Your data will be retained while maintaining the business relationship or the time necessary to comply with legal obligations. They will never be transferred to third parties, except by legal obligation. You can exercise your rights in the LOPD by sending an email to sandeydiaz@sandeydiaz.com attaching a copy of your ID. For more information see our Privacy Policy at www.sandeydiaz.com."
-msgstr "Desde SANDE Y DÍAZ SL, como responsable del tratamiento, y en cumplimiento de la LOPD, le informamos que sus datos personales solo se procesan para poder proporcionar una prestación correcta de nuestro servicio o para la gestión de pedidos, y que la base legal de este tratamiento es la relación contractual existente. Sus datos serán retenidos mientras se mantenga la relación comercial o el tiempo necesario para cumplir con las obligaciones legales. Nunca serán transferidos a terceros, excepto por obligación legal. Puede ejercer sus derechos recogidos en la LOPD enviando un correo electrónico a sandeydiaz@sandeydiaz.com adjuntando una copia de su DNI. Para obtener más información consulte nuestra Política de privacidad en www.sandeydiaz.com."
+msgstr "Dende SANDE Y DÍAZ S.L, como responsable do tratamento, e en cumprimento da LOPD, informámoslle deque os seus datos persoais son tratados unicamente para poder realizar unha correcta prestación do noso servizo ou para a xestión de pedidos, e de que a base xurídica deste tratamento é a relación contractual existente. Os seus datos conservaranse mentres se manteña a relación comercial ou o tempo necesario para cumprir coas obrigas legais. Nunca se cederán a terceiros, salvo obriga legal. Pode exercer os dereitos recollidos na LOPD dirixíndose ao correo electrónico sandeydiaz@sandeydiaz.com e achegando unha copia do seu DNI. Para máis información pode consultar a nosa Política de Privacidade na web www.sandeydiaz.com."
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "SANDE Y DÍAZ, SL, as responsible for the treatment, and in compliance with the Spanish LOPD, we inform you that your personal data is mainly processed to make a correct provision of our services, and that the legal basis for this treatment is the contractual relationship existing. In addition, your data may be used to send commercial information by email about our services for which we ask for your consent. Your data will be kept while maintaining the commercial relationship or the time required to comply with legal obligations, and will be communicated to our consultancy in order to carry out the fiscal and accounting management of the company. You can exercise your rights in the LOPD by sending an email to sandeydiaz@sandeydiaz.com and attaching a copy of your ID. For more information, see our Privacy Policy at www.sandeydiaz.com.<br/>\n"
 "    We request your express consent to send by email commercial information about our products and services □  YES  □  NO"
-msgstr "Desde SANDE Y DÍAZ, S.L, como responsable del tratamiento, y en cumplimiento de la LOPD, le informamos que sus datos personales se procesan principalmente para hacer una provisión correcta de los nuestros servicios, y que la base legal para este tratamiento es la relación contractual existente. Además, sus datos pueden usarse para enviar información comercial por correo electrónico sobre nuestros servicios para lo cual le pedimos su  consentimiento. Sus datos se conservarán mientras mantenga la relación comercial o el tiempo requerido para cumplir con las obligaciones legales, y se comunicarán a nuestra consultoría para poder llevar a cabo la gestión fiscal y contable de la empresa. Puede ejercer sus derechos recogidos en la LOPD enviando un correo electrónico a sandeydiaz@sandeydiaz.com y adjuntando una copia de su DNI. Para obtener más información consulte nuestra Política de privacidad en www.sandeydiaz.com.<br/>\n"
-"    Solicitamos su consentimiento expreso para enviar por correo electrónico información comercial sobre nuestros productos y servicios □  SI  □  NO"
+msgstr "Dende SANDE Y DÍAZ, S.L, como responsable do tratamento, e en cumprimento da LOPD, informámoslle de que os seus datos persoais son tratados fundamentalmente para poder realizar unha correcta prestación do noso servizo, e de que a base xurídica deste tratamento é a relación contractual existente. Ademais, os seus datos poderán ser usados para o envío por correo electrónico de información comercial relativa aos nosos servizos, para o cal solicitamos o seu consentimento.  Os seus datos conservaranse mentres se manteña a relación comercial ou o tempo necesario para cumprir coas obrigas legais, e serán comunicados á nosa asesoría co fin de poder levar a cabo a xestión fiscal e contable da empresa. Pode exercer os dereitos recollidos na LOPD dirixíndose ao correo electrónico sandeydiaz@sandeydiaz.com e achegando unha copia do seu DNI. Para máis información pode consultar a nosa Política de Privacidade na web www.sandeydiaz.com. <br/>\n"
+"    Solicitamos o seu consentimento expreso para enviar por correo electrónico información comercial relativa aos nosos produtos e servizos □  SI  □  NON"
 
-#. module: custom_documents
+#. module: stock_picking_report_valued
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_currency_id
+msgid "Sale Currency"
+msgstr "Divisa"
+
+#. module: stock_picking_report_valued
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_tax_id
+msgid "Sale Tax"
+msgstr "Imposto"
+
+#. module: stock_picking_report_valued
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_discount
+msgid "Sale discount (%)"
+msgstr "Desconto (%)"
+
+#. modules: custom_documents, stock_picking_report_valued
 #: model:ir.model.fields,field_description:custom_documents.field_stock_move_line_sale_price_unit_net
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_price_unit
 msgid "Sale price unit"
-msgstr "Precio venta"
+msgstr "Prezo unitario"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Línea pedido de venta"
+msgstr "Liña de pedido de venda"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_sale_order_baseline_data
 msgid "Starting data indicated by the client"
-msgstr "Datos de partida indicados por el cliente"
+msgstr "Datos de partida indicados polo cliente"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_stock_move
 msgid "Stock Move"
-msgstr "Movimiento de existencias"
+msgstr "Movemento de stock"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_move_service_price_subtotal
 msgid "Subtotal"
 msgstr "Subtotal"
 
-#. module: custom_documents
+#. module: stock_picking_report_valued
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_tax_description
+msgid "Tax Description"
+msgstr "Descripción do imposto"
+
+#. modules: custom_documents, stock_picking_report_valued
 #: model:ir.model.fields,field_description:custom_documents.field_stock_picking_amount_tax
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_price_tax
 msgid "Taxes"
-msgstr "Impuestos"
+msgstr "Impostos"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_purchase_order_notes_confirmed
 msgid "Terms and Conditions"
-msgstr "Términos y condiciones"
+msgstr "Termos e condicións"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.purchase_order_add_notes_confirmed
 msgid "Terms and conditions..."
-msgstr "Términos y condiciones..."
+msgstr "Termos e condicións..."
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_sale_order_title
 msgid "Title"
 msgstr "Título"
 
-#. module: custom_documents
+#. modules: custom_documents, stock_picking_report_valued
 #: model:ir.model.fields,field_description:custom_documents.field_stock_picking_amount_total
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_price_total
 msgid "Total"
 msgstr "Total"
 
-#. module: custom_documents
+#. modules: custom_documents, stock_picking_report_valued
 #: model:ir.model,name:custom_documents.model_stock_picking
+#: model:ir.model,name:stock_picking_report_valued.model_stock_picking
 msgid "Transfer"
 msgstr "Albarán"
 
@@ -284,12 +372,26 @@ msgstr "Albarán"
 #: model:ir.model.fields,field_description:custom_documents.field_account_invoice_line_price_unit_net
 #: model:ir.model.fields,field_description:custom_documents.field_sale_order_line_price_unit_net
 msgid "Unit Price"
-msgstr "Precio unidad"
+msgstr "Precio Unidade"
 
 #. module: custom_documents
 #: model:ir.model.fields,field_description:custom_documents.field_stock_picking_amount_untaxed
 msgid "Untaxed Amount"
-msgstr "Base imponible"
+msgstr "Importe Base"
+
+#. module: stock_picking_report_valued
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_res_partner_valued_picking
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_res_users_valued_picking
+#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_picking_valued
+msgid "Valued Picking"
+msgstr "Albarán valorado"
+
+#. module: stock_picking_report_valued
+#: model:ir.model.fields,help:stock_picking_report_valued.field_res_partner_valued_picking
+#: model:ir.model.fields,help:stock_picking_report_valued.field_res_users_valued_picking
+#: model:ir.model.fields,help:stock_picking_report_valued.field_stock_picking_valued
+msgid "You can select which partners have valued pickings"
+msgstr "Pode seleccionar que empresas teñen albaráns valorados"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_report_custom_documents_report_net_invoice
@@ -319,139 +421,9 @@ msgstr "report.custom_documents.report_res_partner"
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.sale_order_add_title
 msgid "starting data indicated by the client"
-msgstr "Datos de partida indicados por el cliente:"
+msgstr "Datos de partida indicados polo cliente"
 
 #. module: custom_documents
 #: model:ir.model,name:custom_documents.model_stock_move_service
 msgid "stock.move.service"
 msgstr "stock.move.service"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "<span>Returns are not accepted without our written consent, after 15 days of delivery of goods or merchandise that is manipulated.<br/><br/></span>"
-msgstr "<span>No se aceptarán devoluciones sin nuestro consentimiento por escrito, pasados 15 días de la entrega de la mercancía o de mercancía que esté manipulada.<br/><br/></span>"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "<strong>Ship</strong>"
-msgstr "<strong>Buque</strong>"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "<strong>Discount</strong>"
-msgstr "<strong>Dto</strong>"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "<strong>Qty Reserved</strong>"
-msgstr "<strong>Cant. reservada</strong>"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "<strong>Subtotal</strong>"
-msgstr "<strong>Subtotal</strong>"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "<strong>Taxes</strong>"
-msgstr "<strong>Impuestos</strong>"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "<strong>Total</strong>"
-msgstr "<strong>Total</strong>"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "<strong>Unit Price</strong>"
-msgstr "<strong>Precio Unidad</strong>"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "<strong>Untaxed Amount</strong>"
-msgstr "<strong>Base imponible</strong>"
-
-#. module: stock_picking_report_valued
-#: model:ir.model,name:stock_picking_report_valued.model_res_partner
-msgid "Contact"
-msgstr "Contacto"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_picking_currency_id
-msgid "Currency"
-msgstr "Moneda"
-
-#. module: stock_picking_report_valued
-#: model:ir.model,name:stock_picking_report_valued.model_stock_move_line
-msgid "Packing Operation"
-msgstr "Operación de empaquetado"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_price_subtotal
-msgid "Price subtotal"
-msgstr "Subtotal"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_line
-msgid "Related order line"
-msgstr "Línea de pedido relacionada"
-
-#. module: stock_picking_report_valued
-#: model:ir.ui.view,arch_db:stock_picking_report_valued.valued_report_picking
-msgid "SANDE Y DÍAZ SL, as responsible for the treatment, and in compliance with the Spanish LOPD, we inform you that your personal data is only processed in order to provide a correct provision of our service or for order management, and that the legal basis of this Treatment is the existing contractual relationship. Your data will be retained while maintaining the business relationship or the time necessary to comply with legal obligations. They will never be transferred to third parties, except by legal obligation. You can exercise your rights in the LOPD by sending an email to sandeydiaz@sandeydiaz.com attaching a copy of your ID. For more information see our Privacy Policy at www.sandeydiaz.com."
-msgstr "Desde SANDE Y DÍAZ SL, como responsable del tratamiento, y en cumplimiento de la LOPD, le informamos que sus datos personales solo se procesan para poder proporcionar una prestación correcta de nuestro servicio o para la gestión de pedidos, y que la base legal de este tratamiento es la relación contractual existente. Sus datos serán retenidos mientras se mantenga la relación comercial o el tiempo necesario para cumplir con las obligaciones legales. Nunca serán transferidos a terceros, excepto por obligación legal. Puede ejercer sus derechos recogidos en la LOPD enviando un correo electrónico a sandeydiaz@sandeydiaz.com adjuntando una copia de su DNI. Para obtener más información consulte nuestra Política de privacidad en www.sandeydiaz.com."
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_currency_id
-msgid "Sale Currency"
-msgstr "Divisa venta"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_tax_id
-msgid "Sale Tax"
-msgstr "Impuesto venta"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_discount
-msgid "Sale discount (%)"
-msgstr "Descuento venta (%)"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_price_unit
-msgid "Sale price unit"
-msgstr "Precio venta"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_tax_description
-msgid "Tax Description"
-msgstr "Descripción de impuesto"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_price_tax
-msgid "Taxes"
-msgstr "Impuestos"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_move_line_sale_price_total
-msgid "Total"
-msgstr "Total"
-
-#. module: stock_picking_report_valued
-#: model:ir.model,name:stock_picking_report_valued.model_stock_picking
-msgid "Transfer"
-msgstr "Albarán"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_res_partner_valued_picking
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_res_users_valued_picking
-#: model:ir.model.fields,field_description:stock_picking_report_valued.field_stock_picking_valued
-msgid "Valued Picking"
-msgstr "Albarán valorado"
-
-#. module: stock_picking_report_valued
-#: model:ir.model.fields,help:stock_picking_report_valued.field_res_partner_valued_picking
-#: model:ir.model.fields,help:stock_picking_report_valued.field_res_users_valued_picking
-#: model:ir.model.fields,help:stock_picking_report_valued.field_stock_picking_valued
-msgid "You can select which partners have valued pickings"
-msgstr "Puede seleccionar qué empresas tienen albarán valorado"
-

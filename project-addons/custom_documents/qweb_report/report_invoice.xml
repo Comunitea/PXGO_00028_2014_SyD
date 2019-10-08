@@ -30,7 +30,7 @@
             <xpath expr="//span[contains(@t-esc, 'l.invoice_line_tax_ids')]/.." position="replace"/>
             <xpath expr="//p[@t-if='o.comment']" position="before">
                 <p>
-                    <span >No se admiten devoluciones pasados 15 días</span>
+                    <span >Returns not accepted after 15 days</span>
                 </p>
             </xpath>
             <xpath expr="//tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']/td[last()-1]" position="replace"/>
@@ -51,6 +51,14 @@
             <xpath expr="//t[@name='lines_layouted']//span[@t-field='l.uom_id']" position="replace"/>
             <xpath expr="//t[@name='lines_layouted']//th[last()-1]" position="replace"/>
             <xpath expr="//t[@name='lines_layouted']//span[contains(@t-esc, 'l.invoice_line_tax_ids')]/.." position="replace"/>
+            <xpath expr="//div[@class='page']" position="after">
+                <div style="font-size: 9px; width: 100%; page-break-inside: avoid;">
+                    <p>SANDE Y DÍAZ SL, as responsible for the treatment, and in compliance with the Spanish LOPD, we inform you that your personal data is only processed in order to provide a correct provision of our service or for order management, and that the legal basis of this Treatment is the existing contractual relationship. Your data will be retained while maintaining the business relationship or the time necessary to comply with legal obligations. They will never be transferred to third parties, except by legal obligation. You can exercise your rights in the LOPD by sending an email to sandeydiaz@sandeydiaz.com attaching a copy of your ID. For more information see our Privacy Policy at www.sandeydiaz.com.</p>
+                </div>
+            </xpath>
+            <xpath expr="//span[@t-field='o.payment_term_id.note']" position="before">
+                <strong>Payment Term: </strong>
+            </xpath>
         </template>
 
         <template id="report_invoice_document_net_price" inherit_id="sale.report_invoice_layouted" primary="True">
