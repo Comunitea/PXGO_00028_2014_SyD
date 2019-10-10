@@ -25,7 +25,7 @@ class SaleAddReplacementLine(models.TransientModel):
     _name = 'sale.add.replacement.line'
 
     wizard_id = fields.Many2one('sale.add.replacement', 'wizard')
-    product_id = fields.Many2one('product.product', 'Product')
+    product_id = fields.Many2one('product.product', 'Product', required=True)
     disassembly_ref = fields.Char('Disassembly reference')
     qty = fields.Float('Quantity')
     qty_in = fields.Float('Quantity')
@@ -34,7 +34,7 @@ class SaleAddReplacementLine(models.TransientModel):
 class SaleAddReplacement(models.TransientModel):
 
     _name = 'sale.add.replacement'
-    product_id = fields.Many2one('product.product', 'Product')
+    product_id = fields.Many2one('product.product', 'Product', required=True)
     line_ids = fields.One2many('sale.add.replacement.line', 'wizard_id',
                                'Lines')
 
@@ -44,6 +44,7 @@ class SaleAddReplacement(models.TransientModel):
             if line.qty_in > 0:
                 self.env['sale.order.line'].create({
                     'product_id': line.product_id.id,
+                    'product_uom': line.product_id.uom_id.id,
                     'product_uom_qty': line.qty_in,
                     'order_id': self.env.context.get('active_id')
                 })
@@ -53,8 +54,8 @@ class SaleAddReplacement(models.TransientModel):
     def onchange_product_id(self):
         lines = []
         for replacement in self.product_id.replacement_ids:
-            lines.append(
-                (0, 0, {'product_id': replacement.product_id.id,
-                        'disassembly_ref': replacement.disassembly_ref,
-                        'qty': replacement.qty}))
-        self.line_ids = lines
+            lines.append(self.env['sale.add.replacement.line'].create(
+                         {'product_id': replacement.product_id.id,
+                          'disassembly_ref': replacement.disassembly_ref,
+                          'qty': replacement.qty}).id)
+        self.line_ids = [(6, 0, lines)]

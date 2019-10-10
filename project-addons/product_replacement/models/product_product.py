@@ -39,7 +39,8 @@ class ProductReplacement(models.Model):
 
     _name = 'product.replacement'
 
-    product_id = fields.Many2one('product.product', 'Replacement')
+    product_id = fields.Many2one('product.product', 'Replacement',
+                                 required=True)
     replacement_for_ids = fields.Many2many(
         'product.product',
         'product_replacement_rel',

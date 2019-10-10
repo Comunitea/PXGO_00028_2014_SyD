@@ -34,7 +34,8 @@ class res_partner(models.Model):
     @api.constrains('phone', 'name', 'parent_id')
     def _check_phone_set(self):
         for partner in self:
-            if not partner.parent_id and not partner.phone:
+            if not partner.parent_id and not partner.phone and \
+                    not partner.user_ids:
                 raise exceptions.\
                     ValidationError(_("Please set the phone field"))
 
@@ -115,3 +116,13 @@ class res_partner(models.Model):
             default['ref'] = self.env['ir.sequence'].\
                 next_by_code('res.partner')
         return super().copy(default)
+
+
+class ResUsers(models.Model):
+
+    _inherit = "res.users"
+
+    @api.model
+    def create(self, vals):
+        vals['phone'] = '-'
+        return super().create(vals)
