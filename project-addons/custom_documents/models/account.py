@@ -33,3 +33,13 @@ class AccountInvoiceLine(models.Model):
     def _get_price_unit_net(self):
         for line in self:
             line.price_unit_net = line.price_unit * (1 - (line.discount / 100))
+
+
+class AccountInvoice(models.Model):
+
+    _inherit = "account.invoice"
+
+    @api.depends('payment_term_id')
+    def _compute_multi_due(self):
+        for invoice in self:
+            invoice.multi_due = invoice.payment_term_id is not False

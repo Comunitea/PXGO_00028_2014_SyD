@@ -28,8 +28,18 @@ msgstr "&amp;bull;"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
-msgid "<span style=\"font-size: 11px;\">Remitter:</span>"
-msgstr "<span style=\"font-size: 11px;\">Remite:</span>"
+msgid "<span>Remitter:</span>"
+msgstr "<span>Remite:</span>"
+
+#. module: sale_stock
+#: model:ir.ui.view,arch_db:sale_stock.report_delivery_document_inherit_sale_stock
+msgid "<strong>Reference</strong>"
+msgstr "<strong>Referencia</strong>"
+
+#. module: custom_documents
+#: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
+msgid "<span>Output picking: </span>"
+msgstr "<span>Albarán de saída: </span>"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom

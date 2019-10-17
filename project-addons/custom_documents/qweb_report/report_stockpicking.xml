@@ -20,13 +20,12 @@
                 <t t-if="valued and o.sale_id and o.move_line_ids">
                     <t t-if="move_line.picking_id.state != 'done'">
                         <td class="text-right">
-                            <span t-field="move_line.product_uom_qty"/>
-                            <span t-if="not valued" t-field="move_line.product_uom_id"/></td>
+                            <span t-field="move_line.product_uom_qty"/></td>
                     </t>
                     <td class="text-right" t-if="not net"><span
-                            t-field="move_line.sale_price_unit" /></td>
+                            t-field="move_line.sale_price_unit" t-options="{'precision': 2}"/></td>
                     <td class="text-right" t-if="net"><span
-                            t-field="move_line.sale_price_unit_net" /></td>
+                            t-field="move_line.sale_price_unit_net" t-options="{'precision': 2}"/></td>
                     <td class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
                         <span t-field="move_line.sale_discount" />
                     </td>
@@ -71,10 +70,10 @@
                 </td>
             </xpath>
             <xpath expr="//span[@t-field='move.product_uom']" position="attributes">
-                <attribute name="t-if">not valued</attribute>
+                <attribute name="t-if">False</attribute>
             </xpath>
             <xpath expr="//span[@t-field='move_line.product_uom_id']" position="attributes">
-                <attribute name="t-if">not valued</attribute>
+                <attribute name="t-if">False</attribute>
             </xpath>
             <xpath expr="//tr[@t-foreach='o.move_line_ids']" position="after">
                 <tr t-foreach="o.service_ids" t-as="service">
@@ -83,10 +82,10 @@
                     <td class="text-center"><span t-field="service.quantity"/> <span t-field="service.product_uom"/></td>
                     <t t-if="valued and o.sale_id and o.service_ids">
                         <td class="text-right" t-if="not net">
-                            <span t-field="service.order_price_unit" />
+                            <span t-field="service.order_price_unit" t-options="{'precision': 2}"/>
                         </td>
                         <td class="text-right" t-if="net">
-                            <span t-field="service.order_price_unit_net" />
+                            <span t-field="service.order_price_unit_net" t-options="{'precision': 2}"/>
                         </td>
                         <td class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
                             <span t-field="service.discount" />
@@ -121,12 +120,12 @@
         <template id="report_delivery_document_custom" inherit_id="stock.report_delivery_document">
             <xpath expr="//div[@name='customer_address']" position="replace">
                 <div class="row" name="customer_address">
-                    <div class="col-xs-3 pull-left">
+                    <div class="col-xs-4 pull-left">
                         <div>
-                            <span style="font-size: 11px;">Remitter:</span>
+                            <span>Remitter:</span>
                         </div>
                         <div>
-                            <span t-esc="o.company_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True}' style="font-size: 11px;"/>
+                            <span t-esc="o.company_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True}' style="font-size: 16px;"/>
                         </div>
                     </div>
                     <div class="col-xs-6 pull-right">
@@ -139,6 +138,9 @@
                         </div>
                     </div>
                 </div>
+            </xpath>
+            <xpath expr="//span[@t-field='o.name']" position="before">
+                <span>Output picking: </span>
             </xpath>
             <xpath expr="//tr/td/span[@t-field='move.product_id']" position="attributes">
                 <attribute name="t-field">move.name</attribute>
@@ -178,6 +180,28 @@
             </xpath>
             <xpath expr="//span[@t-field='o.scheduled_date']" position="attributes">
                 <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
+            </xpath>
+            <xpath expr="//tr[@t-foreach='move.move_line_ids.sorted(key=lambda ml: ml.location_id.id)']" position="replace">
+                <tr t-foreach="move.move_line_ids.sorted(key=lambda ml: ml.location_id.id)" t-as="ml">
+                    <t t-if="has_serial_number and ml.product_id.tracking != 'none'">
+                        <div>
+                            <span t-field="ml.lot_id"/>
+                            <span t-if="not ml.lot_id" t-field="ml.lot_name"/>
+                        </div>
+                    </t>
+                </tr>
+            </xpath>
+            <xpath expr="//table[@t-if='o.move_line_ids']//t[@align='left']/.." position="replace"/>
+        </template>
+
+        <template id="sale_stock.report_delivery_document_inherit_sale_stock" inherit_id="stock.report_delivery_document">
+            <xpath expr="//th[@name='td_sched_date_h']" position="after">
+                <th t-if="o.sudo().sale_id.client_order_ref"><strong>Reference</strong></th>
+            </xpath>
+            <xpath expr="//td[@name='td_sched_date']" position="after">
+                <td t-if="o.sudo().sale_id.client_order_ref">
+                    <span t-field="o.sudo().sale_id.client_order_ref"/>
+                </td>
             </xpath>
         </template>
 
