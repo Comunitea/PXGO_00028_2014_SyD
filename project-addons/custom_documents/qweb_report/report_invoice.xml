@@ -42,11 +42,11 @@
                 <attribute name="t-if">is_layouted</attribute>
             </xpath>
             <xpath expr="//table[@name='invoice_line_table']//span[@t-field='l.price_unit']" position="attributes">
-                <attribute name="t-options">{'precision': 2}</attribute>
+                <attribute name="t-options">{'precision': 2, "widget": "monetary", "display_currency": o.currency_id}</attribute>
             </xpath>
             <xpath expr="//table[@name='invoice_line_table']//span[@t-field='l.uom_id']" position="replace"/>
             <xpath expr="//t[@name='lines_layouted']//span[@t-field='l.price_unit']" position="attributes">
-                <attribute name="t-options">{'precision': 2}</attribute>
+                <attribute name="t-options">{'precision': 2, "widget": "monetary", "display_currency": o.currency_id}</attribute>
             </xpath>
             <xpath expr="//t[@name='lines_layouted']//span[@t-field='l.uom_id']" position="replace"/>
             <xpath expr="//t[@name='lines_layouted']//th[last()-1]" position="replace"/>

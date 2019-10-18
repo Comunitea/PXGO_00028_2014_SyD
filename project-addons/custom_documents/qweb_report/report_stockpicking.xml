@@ -23,9 +23,9 @@
                             <span t-field="move_line.product_uom_qty"/></td>
                     </t>
                     <td class="text-right" t-if="not net"><span
-                            t-field="move_line.sale_price_unit" t-options="{'precision': 2}"/></td>
+                            t-field="move_line.sale_price_unit" t-options="{'precision': 2, 'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
                     <td class="text-right" t-if="net"><span
-                            t-field="move_line.sale_price_unit_net" t-options="{'precision': 2}"/></td>
+                            t-field="move_line.sale_price_unit_net" t-options="{'precision': 2, 'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
                     <td class="text-right" groups="sale.group_discount_per_so_line" t-if="not net">
                         <span t-field="move_line.sale_discount" />
                     </td>

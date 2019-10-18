@@ -12,6 +12,9 @@
             <xpath expr="//p[@t-field='o.notes']" position="attributes">
                 <attribute name="t-field">o.notes_confirmed</attribute>
             </xpath>
+            <xpath expr="//span[@t-field='line.price_unit']" position="attributes">
+                <attribute name="t-options">{'precision': 2, "widget": "monetary", "display_currency": o.currency_id}</attribute>
+            </xpath>
             <xpath expr="//p[@t-field='o.date_order']" position="attributes">
                 <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
             </xpath>
