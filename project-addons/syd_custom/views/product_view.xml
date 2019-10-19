@@ -38,4 +38,15 @@
             <field name="context">{"search_default_filter_to_sell":1}</field>
         </record>
 
+        <record id="product_product_tree_view_add_categ_id" model="ir.ui.view">
+            <field name="name">product.product.tree.add_categ_id</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view"/>
+            <field name="arch" type="xml">
+                <field name="barcode" position="before">
+                    <field name="categ_id"/>
+                </field>
+            </field>
+        </record>
+
 </odoo>

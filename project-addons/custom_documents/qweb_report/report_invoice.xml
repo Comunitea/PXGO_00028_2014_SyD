@@ -3,7 +3,10 @@
 
         <template id="report_invoice_document_inherit_sale_custom" inherit_id="sale.report_invoice_document_inherit_sale">
             <xpath expr="//div[@t-field='o.partner_id']" position="attributes">
-                <attribute name="t-field">o.partner_id.commercial_partner_id</attribute>
+                <attribute name="t-field">o.with_context(no_display_commercial=True).partner_id.commercial_partner_id</attribute>
+            </xpath>
+            <xpath expr="//div[@class='row']" position="attributes">
+                <attribute name="style">min-height: 220px;</attribute>
             </xpath>
         </template>
 
@@ -14,8 +17,11 @@
                     <p t-field="o.partner_id.commercial_partner_id.supplier_ref"/>
                 </div>
             </xpath>
+            <xpath expr="//div[@class='row']" position="attributes">
+                <attribute name="style">min-height: 220px;</attribute>
+            </xpath>
             <xpath expr="//address[@t-field='o.partner_id']" position="attributes">
-                <attribute name="t-field">o.partner_id.commercial_partner_id</attribute>
+                <attribute name="t-field">o.with_context(no_display_commercial=True).partner_id.commercial_partner_id</attribute>
             </xpath>
             <xpath expr="//div[@t-if='o.partner_id.ref']/p" position="replace">
                 <p t-field="o.partner_id.commercial_partner_id.ref"/>
@@ -95,6 +101,12 @@
                     <t t-call="account.report_invoice_document" t-lang="o.partner_id.lang"/>
                 </t>
             </t>
+        </template>
+
+        <template id="report_invoice_payment_mode_custom" inherit_id="account_payment_partner.report_invoice_payment_mode">
+            <xpath expr="//span[@t-field='o.payment_mode_id.note']" position="after">
+                <span t-if="o.mandate_required"> <span t-field="o.mandate_id.partner_bank_id.acc_number"/></span>
+            </xpath>
         </template>
 
 </odoo>

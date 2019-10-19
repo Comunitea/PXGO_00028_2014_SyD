@@ -54,6 +54,24 @@ class StockPicking(models.Model):
         return tax_grouped
 
     @api.multi
+    def _compute_amount_all(self):
+        super()._compute_amount_all()
+        for pick in self.filtered(lambda x: x.service_ids):
+            round_curr = pick.sale_id.currency_id.round
+            amount_tax = 0.0
+            for tax_id, tax_group in pick.get_taxes_values().items():
+                amount_tax += round_curr(tax_group['amount'])
+            amount_untaxed = sum(
+                l.sale_price_subtotal for l in pick.move_line_ids)
+            amount_untaxed += sum(
+                l.price_subtotal for l in pick.service_ids)
+            pick.update({
+                'amount_untaxed': amount_untaxed,
+                'amount_tax': amount_tax,
+                'amount_total': amount_untaxed + amount_tax,
+            })
+
+    @api.multi
     def _amount_all(self):
         for picking in self:
             if not picking.sale_id:

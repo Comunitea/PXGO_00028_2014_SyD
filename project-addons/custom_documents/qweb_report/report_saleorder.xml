@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <template id="report_saleorder_document" inherit_id="sale_stock.report_saleorder_document_inherit_sale_stock">
             <xpath expr="//div[@t-if='doc.client_order_ref']" position="before">
                 <div class="col-xs-3" t-if="doc.partner_id.supplier_ref">
                     <strong>Ref. proveedor:</strong>
                     <p t-field="doc.partner_id.supplier_ref"/>
                 </div>
+            </xpath>
+            <xpath expr="//div[@class='row']" position="attributes">
+                <attribute name="style">min-height: 220px;</attribute>
             </xpath>
             <xpath expr="//div[@t-if='doc.client_order_ref']" position="replace">
                 <div t-if="doc.client_order_ref" class="col-xs-3">
@@ -28,7 +31,7 @@
                 <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>
             </xpath>
             <xpath expr="//div[@t-field='doc.partner_id']" position="attributes">
-                <attribute name="t-field">doc.partner_id.commercial_partner_id</attribute>
+                <attribute name="t-field">doc.with_context(no_display_commercial=True).partner_id.commercial_partner_id</attribute>
             </xpath>
             <xpath expr="//p[@t-field='doc.date_order']" position="attributes">
                 <attribute name="t-field-options">{"format": "dd/MM/y"}</attribute>

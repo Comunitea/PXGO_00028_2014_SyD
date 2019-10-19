@@ -37,8 +37,18 @@ msgstr "<strong>Referencia</strong>"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
-msgid "<span>Output picking: </span>"
-msgstr "<span>Albarán de salida: </span>"
+msgid "Output picking"
+msgstr "Albarán de salida "
+
+#. module: custom_documents
+#: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
+msgid "Input picking"
+msgstr "Albarán de entrada "
+
+#. module: custom_documents
+#: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
+msgid "Picking"
+msgstr "Albarán"
 
 #. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
