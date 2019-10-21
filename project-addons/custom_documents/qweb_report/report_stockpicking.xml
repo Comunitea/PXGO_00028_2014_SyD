@@ -17,7 +17,7 @@
                 </t>
             </xpath>
             <xpath expr="//t[@t-set='partner']" position="attributes">
-                <attribute name="t-value">o.partner_id or (o.move_lines and o.move_lines[0].with_context(no_display_commercial=True).partner_id) or False</attribute>
+                <attribute name="t-value">o.with_context(no_display_commercial=True).partner_id or (o.move_lines and o.move_lines[0].with_context(no_display_commercial=True).partner_id) or False</attribute>
             </xpath>
             <xpath expr="//span[@t-field='move_line.qty_done']/.." position="after">
                 <t t-if="valued and o.sale_id and o.move_line_ids">
@@ -124,7 +124,7 @@
         <template id="report_delivery_document_custom" inherit_id="stock.report_delivery_document">
             <xpath expr="//div[@name='customer_address']" position="replace">
                 <div class="row" name="customer_address" style="min-height: 250px;">
-                    <t t-set="partner" t-value="o.partner_id or (o.move_lines and o.move_lines[0].partner_id) or False"/>
+                    <t t-set="partner" t-value="o.with_context(no_display_commercial=True).partner_id or (o.move_lines and o.move_lines[0].with_context(no_display_commercial=True).partner_id) or False"/>
                     <div class="col-xs-4 pull-left">
                         <div>
                             <span>Remitter:</span>
