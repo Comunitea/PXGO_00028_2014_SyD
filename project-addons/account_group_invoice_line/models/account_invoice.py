@@ -18,5 +18,5 @@ class AccountInvoice(models.Model):
         if line.get('invoice_id') and line.get('product_id'):
             jrl = self.browse(line['invoice_id']).journal_id
             if jrl.group_invoice_lines and jrl.group_method == 'account':
-                res.update({'product_id': False})
+                res.update({'name': '/', 'product_id': False})
         return res
