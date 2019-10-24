@@ -31,6 +31,12 @@ class ProductTemplate(models.Model):
     def change_categ_id(self):
         self.sale_delay = self.categ_id.sale_delay
 
+    def action_view_stock_moves(self):
+        self.ensure_one()
+        action = self.env.ref('stock.stock_move_action').read()[0]
+        action['domain'] = [('product_id.product_tmpl_id', 'in', self.ids)]
+        return action
+
 
 class ProductProduct(models.Model):
     _inherit = 'product.product'
@@ -38,6 +44,12 @@ class ProductProduct(models.Model):
     @api.onchange('categ_id')
     def change_categ_id(self):
         self.sale_delay = self.categ_id.sale_delay
+
+    def action_view_stock_moves(self):
+        self.ensure_one()
+        action = self.env.ref('stock.stock_move_action').read()[0]
+        action['domain'] = [('product_id', '=', self.id)]
+        return action
 
 
 class ProductCategory(models.Model):

@@ -115,7 +115,7 @@
             </xpath>
             <xpath expr="//div[@class='page']" position="after">
                 <div style="font-size: 9px; width: 100%; page-break-inside: avoid;">
-                    <p>SANDE Y DÍAZ SL, as responsible for the treatment, and in compliance with the Spanish LOPD, we inform you that your personal data is only processed in order to provide a correct provision of our service or for order management, and that the legal basis of this Treatment is the existing contractual relationship. Your data will be retained while maintaining the business relationship or the time necessary to comply with legal obligations. They will never be transferred to third parties, except by legal obligation. You can exercise your rights in the LOPD by sending an email to sandeydiaz@sandeydiaz.com attaching a copy of your ID. For more information see our Privacy Policy at www.sandeydiaz.com.</p>
+                    <p style="text-align:justify">SANDE Y DÍAZ SL, as responsible for the treatment, and in compliance with the Spanish LOPD, we inform you that your personal data is only processed in order to provide a correct provision of our service or for order management, and that the legal basis of this Treatment is the existing contractual relationship. Your data will be retained while maintaining the business relationship or the time necessary to comply with legal obligations. They will never be transferred to third parties, except by legal obligation. You can exercise your rights in the LOPD by sending an email to sandeydiaz@sandeydiaz.com attaching a copy of your ID. For more information see our Privacy Policy at www.sandeydiaz.com.</p>
                 </div>
             </xpath>
             <xpath expr="//td[@name='lot_qty']" position="replace"/>
@@ -146,7 +146,7 @@
                 </div>
             </xpath>
             <xpath expr="//span[@t-field='o.name']" position="after">
-                <span t-if="o.picking_type_code == 'incoming' and o.supplier_ref"> (<span t-field="o.supplier_ref"/>)</span>
+                <span t-if="o.supplier_ref"> (<span t-field="o.supplier_ref"/>)</span>
             </xpath>
             <xpath expr="//span[@t-field='o.name']" position="before">
                 <span t-if="o.picking_type_code == 'outgoing'">Output picking </span>
