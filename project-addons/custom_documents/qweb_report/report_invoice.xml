@@ -8,6 +8,9 @@
             <xpath expr="//div[@class='row']" position="attributes">
                 <attribute name="style">min-height: 220px;</attribute>
             </xpath>
+            <xpath expr="//div[@t-if='o.partner_shipping_id and (o.partner_shipping_id != o.partner_id)']" position="attributes">
+                <attribute name="t-if">False</attribute>
+            </xpath>
         </template>
 
         <template id="report_invoice_document_custom" inherit_id="sale.report_invoice_layouted">
@@ -66,6 +69,7 @@
             <xpath expr="//span[@t-field='o.payment_term_id.note']" position="before">
                 <strong>Payment Term: </strong>
             </xpath>
+            <xpath expr="//tr[@t-foreach='range(max(5-len(o.invoice_line_ids),0))']" position="replace"/>
         </template>
 
         <template id="report_invoice_document_net_price" inherit_id="sale.report_invoice_layouted" primary="True">
