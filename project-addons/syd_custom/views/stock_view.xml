@@ -42,6 +42,9 @@
             <field name="model">stock.move</field>
             <field name="inherit_id" ref="stock.view_move_tree"/>
             <field name="arch" type="xml">
+                <field name="date" position="after">
+                    <field name="date_expected"/>
+                </field>
                 <field name="reference" position="replace">
                     <field name="origin"/>
                     <field name="picking_partner_id"/>
