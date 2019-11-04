@@ -144,10 +144,17 @@
                         </div>
                     </div>
                 </div>
+            </xpath>>
+            <xpath expr="//th[@t-if='o.origin']" position="after">
+                <th t-if="o.supplier_ref"><strong>Supp. Ref.</strong></th>
             </xpath>
-            <xpath expr="//span[@t-field='o.name']" position="after">
-                <span t-if="o.supplier_ref"> (<span t-field="o.supplier_ref"/>)</span>
+            <xpath expr="//td[@t-if='o.origin']" position="after">
+                <td t-if="o.supplier_ref">
+                    <span t-field="o.supplier_ref"/>
+                </td>
             </xpath>
+            <xpath expr="//p[@t-if='o.backorder_id']" position="replace"/>
+            <xpath expr="//t[contains(@t-if, 'backorder_id')]/.." position="replace"/>
             <xpath expr="//span[@t-field='o.name']" position="before">
                 <span t-if="o.picking_type_code == 'outgoing'">Output picking </span>
                 <span t-if="o.picking_type_code == 'incoming'">Input picking </span>

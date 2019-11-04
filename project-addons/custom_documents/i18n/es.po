@@ -94,6 +94,11 @@ msgid "<strong>Starting data indicated by the client:</strong>"
 msgstr "<strong>Datos de partida indicados por el cliente:</strong>"
 
 #. module: custom_documents
+#: model:ir.ui.view,arch_db:custom_documents.report_delivery_document_custom
+msgid "<strong>Supp. Ref.</strong>"
+msgstr "<strong>Ref. prov.</strong>"
+
+#. module: custom_documents
 #: model:ir.ui.view,arch_db:custom_documents.report_saleorder_document
 msgid "Aceptance quotation Nº"
 msgstr "Aceptación presupuesto Nº"

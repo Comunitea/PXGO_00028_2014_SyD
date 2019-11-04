@@ -25,18 +25,14 @@ class SaleOrder(models.Model):
 
     _inherit = "sale.order"
 
-    @api.depends('order_line.margin')
+    @api.depends('margin')
     @api.multi
     def _product_margin_perc(self):
         for sale in self:
-            margin = 0.0
-            if sale.amount_untaxed:
-                for line in sale.order_line:
-                    margin += line.margin or 0.0
-                sale.margin_perc = round((margin * 100) /
-                                         sale.amount_untaxed, 2)
+            sale.margin_perc = round((sale.margin * 100) /
+                                     sale.amount_untaxed, 2)
 
-    @api.depends('order_line.margin')
+    @api.depends('order_line')
     @api.multi
     def _get_total_price_purchase(self):
         for sale in self:
@@ -64,7 +60,7 @@ class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
     @api.one
-    @api.depends('margin')
+    @api.depends('margin', 'purchase_price', 'product_id')
     def _product_margin_perc(self):
         if self.purchase_price:
             cost_price = self.purchase_price
