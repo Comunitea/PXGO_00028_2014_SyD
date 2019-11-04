@@ -29,8 +29,9 @@ class SaleOrder(models.Model):
     @api.multi
     def _product_margin_perc(self):
         for sale in self:
-            sale.margin_perc = round((sale.margin * 100) /
-                                     sale.amount_untaxed, 2)
+            if sale.amount_untaxed:
+                sale.margin_perc = round((sale.margin * 100) /
+                                         sale.amount_untaxed, 2)
 
     @api.depends('order_line')
     @api.multi
