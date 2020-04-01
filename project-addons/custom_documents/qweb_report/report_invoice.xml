@@ -114,7 +114,7 @@
         </template>
 
         <template id="account_invoice_report_due_list_report_custom" inherit_id="account_invoice_report_due_list.report_invoice_document">
-             <xpath expr="//tr[@t-foreach='o.get_multi_due_list()']/../.." position="attributes">
+             <xpath expr="//tr[@t-foreach='due_list']/../.." position="attributes">
                  <attribute name="style">page-break-inside: avoid;</attribute>
              </xpath>
         </template>
