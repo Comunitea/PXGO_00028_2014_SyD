@@ -1,0 +1,17 @@
+diff --git a/product_sequence/models/product_product.py b/product_sequence/models/product_product.py
+index c5ef21e..0e742de 100644
+--- a/product_sequence/models/product_product.py
++++ b/product_sequence/models/product_product.py
+@@ -63,8 +63,8 @@ class ProductProduct(models.Model):
+     def copy(self, default=None):
+         if default is None:
+             default = {}
+-        if self.default_code:
+-            default.update({
+-                'default_code': self.default_code + _('-copy'),
+-            })
++        default.update({
++            'name': self.name + _('-copy'),
++            'default_code': '/'
++        })
+         return super(ProductProduct, self).copy(default)
