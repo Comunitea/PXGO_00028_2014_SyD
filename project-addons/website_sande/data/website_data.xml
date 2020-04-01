@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+        <data>
+
+            <!--Update Default Website-->
+            <record id="website.default_website" model="website">
+                <field name="name">Sande y Díaz</field>
+                <field name="domain">sandeydiaz.livingodoo.com</field>
+                <field name="canonical_domain">http://sandeydiaz.livingodoo.com</field>
+                <field name="favicon" type="base64" file="website_sande/static/img/favicon.png"/>
+                <field name="company_id" ref="base.main_company"/>
+                <field name="base_url">http://sandeydiaz.livingodoo.com</field>
+            </record>
+
+        </data>
+</odoo>
