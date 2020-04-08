@@ -42,6 +42,7 @@
         'data/website_data.xml',
         'data/page_data.xml',
         'data/menu_data.xml',
+        'templates/footer.xml',
         'templates/ours_products.xml',
         'templates/ours_services.xml',
         'templates/quality_policy.xml',
