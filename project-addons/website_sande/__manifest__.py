@@ -33,9 +33,19 @@
     "demo_images": [],
     "external_dependencies": {"python": [], "bin": []},
     'depends': [
+        'website',
+        'website_crm',
+        'website_sale',
+        'website_slides',
     ],
     'data': [
         'data/website_data.xml',
+        'data/page_data.xml',
+        'data/menu_data.xml',
+        'templates/ours_products.xml',
+        'templates/ours_services.xml',
+        'templates/quality_policy.xml',
+        'templates/pages.xml',
     ],
     'images': [
         '/static/description/icon.png',

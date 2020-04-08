@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Slides for catalogs -->
+        <record id="website_slides.slide_template_shared" model="mail.template">
+            <field name="name">Catalog Shared</field>
+        </record>
+
+        <record model="slide.channel" id="website_slides.channel_public">
+            <field name="name">Ours Catalogs</field>
+            <field name="promote_strategy">custom</field>
+            <field name="visibility">partial</field>
+            <field name="upload_group_ids" eval="[(6, 0, [ref('website.group_website_designer')])]"/>
+            <field name="group_ids" eval="[(6, 0, [ref('website.group_website_designer'), ref('base.group_portal')])]"/>
+            <field name="description">Channel for catalogs, all public users can view content of this channel but only logged users can be download them.</field>
+            <field name="access_error_msg"><![CDATA[
+                <p>To download our catalogs you need to be logged. It's to easy, just a few seconds.</p>
+                <p>If you have already an account just do it login&nbsp;
+                <a href="http://syd.livingodoo.com/web/login?redirect=/slides" class="btn btn-info" data-original-title="Sing In" title="Sing In" alt="Sing In" style="line-height: 1.42857;">Sing In</a></p>
+                <p>If you don't have an account and you wish get it, just do it&nbsp;
+                <a href="http://syd.livingodoo.com/web/signup?redirect=/slides" class="btn btn-success" data-original-title="Sign Up" title="Sign Up" alt="Sign Up" style="line-height: 1.42857;">Sign Up</a>
+                </p>
+            ]]>
+            </field>
+        </record>
+
+        <record model="slide.channel" id="website_slides.channel_partial">
+            <field name="website_published" eval="False"/>
+        </record>
+
+        <record model="slide.channel" id="website_slides.channel_private">
+            <field name="website_published" eval="False"/>
+        </record>
+
+        <!-- Contact -->
+        <record id="website_crm.contactus_thanks" model="website.page">
+            <field name="name">Thanks</field>
+            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
+        </record>
+
+        <!-- Legal -->
+        <record id="website_legal_page.terms_page" model="website.page">
+            <field name="name">Terms of use</field>
+            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
+        </record>
+
+        <record id="website_legal_page.privacy_page" model="website.page">
+            <field name="name">Privacy Policy</field>
+            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
+        </record>
+
+        <record id="website_legal_page.advise_page" model="website.page">
+            <field name="name">Legal Advice</field>
+            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
+        </record>
+
+        <!-- About Us -->
+        <record id="website.aboutus" model="ir.ui.view">
+            <field name="name">Company</field>
+            <field name="type">qweb</field>
+            <field name="key">website.aboutus</field>
+            <field name="arch" type="xml">
+                <t name="Company" t-name="website.aboutus">
+                    <t t-call="website.layout">
+                        <t t-set="pageName" t-value="'Company'"/>
+                        <div id="wrap" t-att-class="'o_editable note-air-editor note-editable' if env['ir.ui.view'].user_has_groups('website.group_website_designer') else None"
+                             t-att-contenteditable="'True' if env['ir.ui.view'].user_has_groups('website.group_website_designer') else None">
+                            <div class="oe_structure"/>
+                            <div class="container text-center o_homepage_editor_welcome_message">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mt32" groups="base.group_portal, base.group_public">
+                                            <!-- <img class="mt16" t-att-src="request.httprequest.url_root+'logo.png'"/>-->
+                                            <h2>Welcome to our <b><span t-esc="pageName"/></b> page!</h2>
+                                            <p class="lead">Coming soon!</p>
+                                            <!-- <p class="lead">Sorry. We are working on it.</p>-->
+                                            <center><img class="img img-responsive mt16" src="/website_sande/static/img/under_construction_icon.png" width="400px" height="200px"/></center>
+                                        </div>
+                                        <div class="hidden-xs" groups="website.group_website_designer">
+                                            <h2>Welcome to your <b><span t-esc="pageName"/></b> page!</h2>
+                                            <p class="lead">Let's start designing.</p>
+                                            <p><strong>Remember:</strong> This is a message only for website designer users</p>
+                                            <p class="hidden-xs">You can edit this page clicking the
+                                                <strong><span class="fa fa-pencil"/> Edit</strong>
+                                                option at right top on the main menu bar
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_structure"/>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <record id="website.aboutus_page" model="website.page">
+            <field name="name">Company</field>
+            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
+            <field name="menu_ids" eval="[(6, 0, [ref('website_sande.menu_aboutus')])]"/>
+            <field name="website_published">True</field>
+            <field name="url">/aboutus</field>
+            <field name="view_id" ref="website.aboutus"/>
+        </record>
+
+        <!-- Home -->
+        <record id="website.homepage" model="ir.ui.view">
+            <field name="name">Home</field>
+            <field name="type">qweb</field>
+            <field name="key">website.homepage</field>
+            <field name="arch" type="xml">
+                <t name="Home" priority="29" t-name="website.homepage">
+                    <t t-call="website.layout">
+                        <t t-set="pageName" t-value="'homepage'"/>
+                        <div id="wrap">
+                            <div class="oe_structure"/>
+                            <div class="container text-center o_homepage_editor_welcome_message">
+                                <div class="row">
+                                    <div class="col-md-12" groups="website.group_website_designer">
+                                        <h2>Welcome to your <b>Homepage</b>!</h2>
+                                        <p class="lead hidden-xs">Let's start designing.</p>
+                                        <div class="o_tooltip_container hidden-xs">Follow all the <div class="o_tooltip bottom"/> signs to get your website ready in no time.</div>
+                                    </div>
+                                    <div class="col-md-12 mt32" groups="base.group_portal, base.group_public">
+                                        <!-- <img class="mt16" t-att-src="request.httprequest.url_root+'logo.png'"/>-->
+                                        <h2>Welcome to our <b><span t-esc="pageName"/></b> page!</h2>
+                                        <p class="lead">Coming soon!</p>
+                                        <!-- <p class="lead">Sorry. We are working on it.</p>-->
+                                        <center><img class="img img-responsive mt16" src="/website_sande/static/img/under_construction_icon.png" width="400px" height="200px"/></center>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_structure"/>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+
+        <record id="website.homepage_page" model="website.page">
+            <field name="name">Home</field>
+            <field name="website_published">True</field>
+            <field name="url">/</field>
+            <field name="view_id" ref="website.homepage"/>
+            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
+            <field name="menu_ids" eval="[(6, 0, [ref('website.menu_homepage')])]"/>
+        </record>
+
+    </data>
+</odoo>

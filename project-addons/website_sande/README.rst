@@ -11,18 +11,18 @@ Website Sande y Díaz
 .. |badge3| image:: https://img.shields.io/badge/github-Comunitea-gray.png?logo=github
     :target: https://github.com/Comunitea/
     :alt: Comunitea
-.. |badge4| image:: https://img.shields.io/badge/github-Comunitea%2FEcommerce-lightgray.png?logo=github
+.. |badge4| image:: https://img.shields.io/badge/github-Comunitea%2FSandeyDiaz-lightgray.png?logo=github
     :target: https://github.com/Comunitea/PXGO_00028_2014_SyD/tree/11.0/project-addons/website_sande
-    :alt: Comunitea / Ecommerce
+    :alt: Comunitea / Sande Y Díaz
 .. |badge5| image:: https://img.shields.io/badge/Spanish-Translated-F47D42.png
     :target: https://github.com/Comunitea/PXGO_00028_2014_SyD/tree/11.0/project-addons/website_sande/i18n
     :alt: Spanish Translated
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-Website customization for Sande y Díaz.
+Website customization for Sande y Díaz website.
 
-Also include some custom features than can see below.
+Also include some configuration and custom features than can see below.
 
 **Table of contents**
 
@@ -31,21 +31,42 @@ Also include some custom features than can see below.
 
 Content
 -------
-Website customization for Sande y Díaz.
+Website customization for Sande y Díaz website.
 
-Also include some custom features than can see below.
+Also include some configuration and custom features than can see below.
 
 Features
 --------
 All features that this module include are listed below
 
-Website Data
+Records Data
 ~~~~~~~~~~~~
-Set basic data to default website to adapt for Sande y Díaz website.
+Set basic data to default records and their sequence for adapt them to Sande y Díaz website:
+
+#. Default menus
+#. Default pages
+
+Add new data specific for Sande y Díaz website:
+
+#. New Menus with their corresponding new pages
+    * Products (Not real products. Just simulated by categories)
+    * Services
+#. New Pages
+    * Quality Policy
 
 Templates
 ~~~~~~~~~
-Coming soon!
+Created new pages.
+
+#. Services
+#. Products (Not real products. Just simulated by categories)
+#. Quality Policy
+
+Images
+~~~~~~
+Include website logo and favicon.
+
+Also include some images for a initial page structure.
 
 Styles
 ~~~~~~
@@ -57,7 +78,10 @@ All scripts are placed on theme_sande module.
 
 Modules dependencies
 --------------------
-Coming soon!
+#. website
+#. website_crm'
+#. website_sale'
+#. website_slides'
 
 Author
 ------
@@ -91,6 +115,10 @@ If you spotted it first, help us smashing it by providing a detailed and welcome
 `Feedback <https://github.com/Comunitea/PXGO_00028_2014_SyD/issues/new>`_.
 
 Please, do not contact contributors directly about support or help with technical issues.
+
+Known Issues
+------------
+None is known yet. If you discover some, please, read Bug Tracker section and report it.
 
 Disclaimer of Warranties
 ------------------------

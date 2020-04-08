@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Home -->
+        <record id="website.menu_homepage" model="website.menu">
+            <field name="user_logged">False</field>
+            <field name="user_not_logged">False</field>
+        </record>
+
+        <!-- About us - Company -->
+        <record id="menu_aboutus" model="website.menu">
+            <field name="name">Company</field>
+            <field name="url">/aboutus</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">10</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="user_logged">True</field>
+            <field name="user_not_logged">True</field>
+        </record>
+
+        <!-- Shop -->
+        <record id="website_sale.menu_shop" model="website.menu">
+            <field name="name">Shop</field>
+            <field name="url">/shop</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="user_logged">False</field>
+            <field name="user_not_logged">False</field>
+        </record>
+
+        <!-- Products -->
+        <record id="menu_products" model="website.menu">
+            <field name="name">Products</field>
+            <field name="url">/ours_products</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">30</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="user_logged">True</field>
+            <field name="user_not_logged">True</field>
+        </record>
+
+        <!-- Services-->
+        <record id="menu_services" model="website.menu">
+            <field name="name">Services</field>
+            <field name="url">/ours-services</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">40</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="user_logged">True</field>
+            <field name="user_not_logged">True</field>
+        </record>
+
+        <!-- Slides -->
+        <record id="website_slides.website_menu_slides" model="website.menu">
+            <field name="name">Catalogs</field>
+            <field name="url">/slides</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="user_logged">True</field>
+            <field name="user_not_logged">True</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">50</field>
+        </record>
+
+        <!-- Blog - News -->
+        <record id="website_blog.menu_news" model="website.menu">
+            <field name="name">News</field>
+            <field name="url" eval="'/blog/'+str(ref('website_blog.blog_blog_1'))"/>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence" type="int">60</field>
+            <field name="user_logged">True</field>
+            <field name="user_not_logged">True</field>
+        </record>
+
+        <!-- Contact Us -->
+        <record id="website.menu_contactus" model="website.menu">
+            <field name="page_id" ref="website.contactus_page" />
+            <field name="name">Contact us</field>
+            <field name="url">/contactus</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="sequence" type="int">70</field>
+        </record>
+    </data>
+</odoo>
