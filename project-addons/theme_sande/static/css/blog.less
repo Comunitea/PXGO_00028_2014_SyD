@@ -1,0 +1,15 @@
+// Cover Next post
+.website_blog .o_blog_cover_container.cover_footer {
+    height: @blog-cover-height;
+    background-color: @blog-cover-bg-color;
+    & .blog_title {
+        color: @blog-cover-color;
+        & p {
+            color: @color-secondary;
+            &:hover, &:focus, &.active {
+                color: @color-secondary;
+                font-size: 1.2em;
+            }
+        }
+    }
+}

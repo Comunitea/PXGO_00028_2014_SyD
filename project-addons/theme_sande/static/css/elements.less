@@ -1,0 +1,180 @@
+/* Body */
+body {
+    font-family: @main-font-family;
+}
+
+/* badge */
+.badge, .badge-secondary {
+    background-color: @color-secondary;
+}
+
+/* Links */
+a {
+    color: @color-secondary;
+    &:hover, &:focus {
+        color: @color-secondary;
+    }
+}
+
+/********** Buttons ***********/
+.btn, .btn-primary, .btn-secondary, .btn-link, .btn .btn-secondary, bg-light, .nav-pills > li.active > a {
+    color: @color-white;
+    border-color: @color-secondary;
+    background-color: @color-secondary;
+    &:hover, &:focus, &.active {
+        color: @color-secondary;
+        background-color: @color-white;
+        border-color: @color-secondary;
+        box-shadow: 0 0 0 0.5px @color-secondary;
+    }
+}
+
+/* Sign up login */
+.btn.btn-link.btn-sm {
+    color: @color-secondary;
+    border-color: @color-white;
+    background-color: @color-white;
+}
+
+/* Ribbon Buttons */
+// Secondary Style
+.ribbon.btn.btn-danger, .ribbon-product-detail.btn.btn-danger {
+    &:hover, &:focus, &.active {
+        background-color: @color-secondary;
+        border-color: @color-secondary;
+        color: #fff;
+        box-shadow: 0 0 0 0.5px @color-secondary;
+    }
+}
+// Danger Style
+.btn-danger:not(:disabled):not(.disabled):active, .btn-danger:not(:disabled):not(.disabled):active:focus {
+    background-color: @color-secondary;
+    border-color: @color-secondary;
+    color: #fff;
+    box-shadow: 0 0 0 0.5px @color-secondary;
+}
+// .ribbon.btn.btn-danger {
+//     background-color: #dc3545;
+//     border-color: #dc3545;
+//     color: #fff;
+//     &:hover {
+//         background-color: #dc3545;
+//         border-color: #dc3545;
+//         color: #fff;
+//         box-shadow: None;
+//     }
+// }
+
+/* Disabled buttons */
+.btn-link.disabled {
+    color: @color-white;
+}
+
+.btn-secondary:disabled, .btn-secondary.disabled {
+    background-color: @color-secondary;
+    border-color: @color-secondary;
+    &:hover, &:focus, &.active {
+        color: @color-white;
+    }
+}
+
+/* Dropdown buttons */
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+    color: @color-secondary;
+    background-color: @color-white;
+    border-color: @color-secondary;
+    box-shadow: 0 0 0 0.5px @color-secondary;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.5px @color-secondary;
+}
+.dropdown-item {
+    color: @color-secondary;
+    &:hover:not(:active):not(.active) {
+        color: @color-secondary;
+        background-color: @color-white;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    &:active, &.active {
+        color: @color-white;
+        background-color: @color-secondary;
+    }
+}
+/********** End Buttons ***********/
+
+/* Pagination */
+.page-item.active .page-link {
+    background-color: @color-secondary;
+    border-color: @color-secondary;
+}
+.pagination > li > a, .pagination > li > span {
+    color: @color-main;
+    padding: 6px 10px;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+    color: @color-secondary;
+}
+.pagination.m-0.ml-2 {
+    margin-bottom: 8px !important;
+}
+
+/* ECommerce categories and Collapse category */
+#o_shop_collapse_category_custom li {
+    width: 100%;
+
+    a {
+        display: inline-block;
+        width: 80%;
+        padding-left: 3px;
+    }
+
+    i.fa {
+        cursor: pointer;
+    }
+}
+
+#o_shop_collapse_category li i.fa, #o_shop_collapse_category_custom li i.fa {
+    color: @color-secondary;
+}
+
+img.float-left {
+    margin-right: 10px;
+}
+
+/*Labels */
+.label-primary, .badge-primary {
+    background-color: @color-secondary;
+    color: @color-white;
+}
+
+/* fa icons */
+a {
+    & .fa-trash, .fa-trash-o {
+        color: @color-red;
+    }
+}
+
+.text-primary {
+    color: @color-secondary !important;
+}
+
+/* Carousel */
+.carousel-control-prev, .carousel-control-next {
+    color: @color-secondary;
+    opacity: .5;
+    &:hover, &:focus {
+         color: @color-secondary;
+         font-weight: bold;
+         font-size: large;
+         opacity: 1;
+    }
+}
+
+#o-carousel-product .carousel-indicators li img {
+    &:hover {
+        padding: 0.3rem;
+    }
+}
+

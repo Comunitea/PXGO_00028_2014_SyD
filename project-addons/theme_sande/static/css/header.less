@@ -1,0 +1,77 @@
+header {
+    // Logo
+    & a.navbar-brand img {
+        max-height: 40px;
+        margin-top: 4px;
+    }
+    // Menus
+    & .nav {
+        & li {
+            & a {
+                padding-left:10px;
+                padding-right: 10px;
+            }
+        }
+    }
+    & .navbar.navbar-static-top ul.nav > li.divider {
+        border-right: 1px solid @color-header-border;
+    }
+    & .navbar-default {
+        background-color: @color-bg-header;
+        border-color: @color-header-border;
+        & .navbar-nav > li.active {
+            font-weight: bold;
+        }
+        & .navbar-nav > li > a,
+        .navbar-nav > .active > a,
+        .navbar-nav > .open > a,
+        .navbar-nav > li > .dropdown-menu,
+        .dropdown-menu > li > a {
+            color: @color-secondary;
+            background-color: @color-bg-header;
+            &:hover, &:focus, &:active {
+                font-size: 1.2em;
+                font-weight: bold;
+                color: @color-btn;
+                background-color: @color-bg-header !important;
+            }
+        }
+    }
+}
+
+// Affix Header
+body {
+    #wrapwrap.o_affix_wrap {
+        // General. All pages without wrap
+        & main > div:first-child {
+            margin-top: 70px !important;
+        }
+        // All pages with wrap
+        & main > div#wrap:first-child {
+            margin-top: 50px !important;
+        }
+        // Just login page
+        & main > div.oe_website_login_container {
+            margin-top: 100px !important;
+        }
+        // With editor bar
+        & header {
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            top: 34px;
+            // Without editor bar
+            &.o_affix_header {
+                top: 0 !important;
+            }
+        }
+    }
+}
+
+// Cookies message
+#website_cookie_notice {
+    & div.row{
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}

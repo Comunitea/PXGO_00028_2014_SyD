@@ -1,0 +1,50 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&subset=latin-ext');
+@main-font-family: 'Roboto', sans-serif;
+
+/* Main colors */
+@color-main: #9ad4df;
+@color-text-main: #666;
+@color-secondary: #0099cc;
+@color-white: #fff;
+@color-red: red;
+
+// Buttons
+@color-btn: #fff;
+@color-bg-btn: #424242;
+@color-readonly-btn: #adafae;
+
+// Header
+@color-bg-header: @color-main;
+@color-text-header: @color-white;
+@color-header-border: @color-secondary;
+
+// Footer
+@color-bg-footer: @color-main;
+@color-footer-link: @color-secondary;
+@color-footer-link-hover: @color-secondary;
+@color-footer-content-border-top: none;
+@color-footer-content-border-bottom: none;
+@color-text-footer: @color-secondary;
+@padding-top-footer: 150px;
+@blog-cover-height: 35vh;
+
+// Blog
+@blog-cover-bg-color: @color-main;
+@blog-cover-color: @color-secondary;
+
+/* Override styles */
+:root {
+    // footer
+    --color-bg-footer: url("/theme_sande/static/img/vague.png") no-repeat center center / cover;
+    // Breadcrumbs colors
+    --color-bg: @color-white;
+    --color-href: @color-secondary;
+    --color-current: @color-text-main;
+    // muk_website_scroll_up
+    --scroll-bg-color: @color-secondary;
+//     --scroll-font-size: you_size or 2.5em;
+//     --scroll-bottom: you_bottom or 20px;
+//     --scroll-right: you_right 20px;
+//     --scroll-padding: you_padding or 10px 20px;
+}

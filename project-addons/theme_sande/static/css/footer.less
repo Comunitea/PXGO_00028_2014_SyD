@@ -1,0 +1,40 @@
+footer {
+    background: var(--color-bg-footer, @color-bg-footer);
+    color: @color-text-footer;
+    // Heads
+    & h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+    }
+    // links
+    & a {
+        color: @color-footer-link;
+        &:hover, &:focus, &:active {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: @color-footer-link-hover;
+            text-decoration: none;
+        }
+    }
+    // Block content
+    & #footer {
+        border-top: 1px solid @color-footer-content-border-top;
+        border-bottom: 1px solid @color-footer-content-border-bottom;
+        padding-top: @padding-top-footer;
+        padding-bottom: 15px;
+    }
+    // Contact
+    & ul.list-unstyled {
+        & li {
+            margin-bottom: 3px;
+        }
+        & .fa-phone {
+            padding: 0 2px 0 1px;
+        }
+        & .fa-envelope {
+            padding: 0;
+        }
+        & .fa-map-marker {
+            padding: 0 2px 0 3px;
+        }
+    }
+}
