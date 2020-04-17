@@ -19,6 +19,7 @@ a {
 /********** Buttons ***********/
 .btn, .btn-primary, .btn-secondary, .btn-link, .btn .btn-secondary, bg-light, .nav-pills > li.active > a {
     color: @color-white;
+    border-radius: 4px;
     border-color: @color-secondary;
     background-color: @color-secondary;
     &:hover, &:focus, &.active {
@@ -103,6 +104,20 @@ a {
     }
 }
 /********** End Buttons ***********/
+
+// Navs
+.nav {
+    & li {
+        & a {
+            padding-left:10px;
+            padding-right: 10px;
+            &:hover, &:focus, &:active {
+                color: @color-white;
+                background-color: @color-secondary;
+            }
+        }
+    }
+}
 
 /* Pagination */
 .page-item.active .page-link {
