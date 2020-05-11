@@ -23,8 +23,12 @@ header {
     & .navbar-default {
         background-color: @color-bg-header;
         border-color: @color-header-border;
+        padding: @padding-header;
         & .navbar-nav > li.active {
             font-weight: bold;
+        }
+        & .navbar-nav > li > .dropdown-menu.js_usermenu {
+            border: 1px solid @color-secondary;
         }
         & .navbar-nav > li > a,
         .navbar-nav > .active > a,
@@ -34,7 +38,7 @@ header {
             color: @color-secondary;
             background-color: @color-bg-header;
             &:hover, &:focus, &:active {
-                font-size: 1.2em;
+                font-size: 1.5rem;
                 font-weight: bold;
                 color: @color-btn;
                 background-color: @color-bg-header !important;
