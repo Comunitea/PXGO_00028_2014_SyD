@@ -46,7 +46,8 @@ header {
 // Affix Header
 body {
     #wrapwrap.o_affix_wrap {
-        // General. All pages without wrap
+        // We need margin content for a breadcrumbs bar own margin
+        // General. All pages.
         & main > div:first-child, main > div#wrap:first-child {
             margin-top: 90px !important;
         }
@@ -64,6 +65,21 @@ body {
             &.o_affix_header {
                 top: 0 !important;
             }
+        }
+    }
+    // Do not exit breadcrumbs on homepage. Normal is put an image or slider then we want it just along the header
+//     :not(.wp_breadcrumbs_base) {
+//         #wrapwrap.o_affix_wrap {
+//             & main > div:first-child, main > div#wrap:first-child {
+//                 margin-top: 50px;
+//             }
+//         }
+//     }
+}
+:not(.wp_breadcrumbs_base) {
+    #wrapwrap.o_affix_wrap {
+        & main > div:first-child, main > div#wrap:first-child {
+            margin-top: 50px;
         }
     }
 }

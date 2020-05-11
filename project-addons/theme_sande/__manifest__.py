@@ -33,12 +33,13 @@
     "demo_images": [],
     "external_dependencies": {"python": [], "bin": []},
     'depends': [
-        # 'website_sande',
+        'website_sande',
         'muk_website_scroll_up',
         'breadcrumbs_base_tmp',
     ],
     'data': [
         'templates/footer.xml',
+        'templates/header.xml',
         'views/assets.xml',
     ],
     'images': [
