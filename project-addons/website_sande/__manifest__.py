@@ -33,7 +33,6 @@
     "demo_images": [],
     "external_dependencies": {"python": [], "bin": []},
     'depends': [
-        'website',
         'website_blog',
         'website_crm',
         'website_legal_page',
@@ -46,6 +45,7 @@
         'data/menu_data.xml',
         'data/page_data.xml',
         'templates/footer.xml',
+        'templates/header.xml',
         'templates/ours_products.xml',
         'templates/ours_services.xml',
         'templates/quality_policy.xml',

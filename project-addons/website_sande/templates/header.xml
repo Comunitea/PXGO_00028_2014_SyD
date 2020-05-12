@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Language Selector for new line over default menus -->
+    <template id="website_language_selector" inherit_id="website.language_selector" name="Language Selector Sande">
+        <xpath expr="//ul" position="attributes">
+            <attribute name="class">list-inline js_language_selector nav navbar-nav navbar-right</attribute>
+        </xpath>
+        <xpath expr="//ul" position="after">
+            <ul class="list-inline nav navbar-nav navbar-right">
+                <li>
+                    <a t-att-href="'tel:%s' %res_company.phone" rel="noindex,nofollow" alt="phone" title="Call to SyD">
+                        <span class="hidden-xs hidden-sm visible-md visible-lg"><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
+                        <span class="visible-xs visible-sm hidden-md hidden-lg"><i class="fa fa-phone" /></span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="mailto:${res_company.email}" rel="noindex,nofollow" alt="email" title="Send mail to Syd">
+                            <span class="hidden-xs hidden-sm visible-md visible-lg"><i class="fa fa-envelope"/> <font t-field="res_company.email"/></span>
+                            <span class="visible-xs visible-sm hidden-md hidden-lg"><i class="fa fa-envelope"/></span>
+                        </a>
+                    </li>
+                </ul>
+        </xpath>
+    </template>
+
+    <!-- Override ecommerce_base responsive logo for New line over default menus -->
+    <template id="ecommerce_base_website_logo_layout_logo_show" inherit_id="ecommerce_base.website_logo_layout_logo_show" name="Show Logo (Hide) Sande">
+        <xpath expr="//header//a[hasclass('navbar-brand', 'logo')][2]" position="attributes">
+            <attribute name="class" add="hide" separator=" "/>
+        </xpath>
+    </template>
+
+    <!-- New line over default menus header integrated width responsive logo -->
+    <template id="portal_frontend_layout" inherit_id="portal.frontend_layout" name="Main Frontend Layout Sande">
+        <xpath expr="//div[@id='wrapwrap']//div[hasclass('navbar-header')]" position="before">
+            <div class="navbar-logo">
+                <a href="/" class="navbar-brand logo">
+                    <img class="img img-responsive" t-attf-src="/web/image/website/{{website.id}}/logo" alt="website.name"/>
+                </a>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='wrapwrap']//ul[@id='top_menu']" position="before">
+                <t t-call="website.language_selector"/>
+        </xpath>
+    </template>
+    
+</odoo>

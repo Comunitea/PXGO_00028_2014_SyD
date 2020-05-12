@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <template id="website_user_navbar" inherit_id="website.user_navbar" name="Affix Top Menu Header">
-        <!-- Affix is different by o_main_navbar for web editors -->
-        <xpath expr="//header" position="attributes">
-            <attribute name="t-att-class">'o_affix_header' if website and not menu_data and request.env['ir.ui.view'].search([('key', '=', 'website_sande.affix_top_menu')]).active else ''</attribute>
-        </xpath>
-        <xpath expr="//div[@id='wrapwrap']" position="attributes">
-            <attribute name="t-att-class">'not_accepted_cookies' if request and not request.session.get('accepted_cookies') else 'o_affix_wrap' if request.env['ir.ui.view'].search([('key', '=', 'website_sande.affix_top_menu')]).active else ''</attribute>
-        </xpath>
-    </template>
-
-    <template id="affix_top_menu" inherit_id="website.layout" active="True" customize_show="True" name="Affix Top Menu">
+    <template id="affix_top_menu" inherit_id="portal.frontend_layout" active="True" customize_show="True" name="Affix Top Menu">
         <!-- Make it real customize but taking care about cookies message-->
-        <xpath expr="//div[@id='wrapwrap']" position="attributes">
-            <attribute name="t-att-class">'not_accepted_cookies' if request and not request.session.get('accepted_cookies') else 'o_affix_wrap ' + pageName if pageName else 'o_affix_wrap'</attribute>
+        <xpath expr="//div[@id='wrapwrap']/header" position="attributes">
+            <attribute name="t-att-class">'not_accepted_cookies' if request and not request.session.get('accepted_cookies') else 'o_affix_header ' + pageName if pageName else 'o_affix_header'</attribute>
         </xpath>
     </template>
 

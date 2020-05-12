@@ -1,8 +1,27 @@
+/*************** Scroll events  *******************/
+html:not([data-scroll='0']) {
+    // Shadow Header without breadcrumbs bar
+    :not(.wp_breadcrumbs_base) {
+        header {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            transition: box-shadow 1s ease-in-out;
+        }
+    }
+    // Affix Header
+    header.o_affix_header {
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        bottom: auto;
+        right: 0;
+    }
+}
+
+/*************** General Header *******************/
 header {
     // Logo
-    & a.navbar-brand img {
-        max-height: 40px;
-        margin-top: 4px;
+    & a.navbar-brand img, a.navbar-brand.logo img {
+        margin-top: 14px;
     }
     // Menus
     & .nav {
@@ -47,51 +66,29 @@ header {
     }
 }
 
-// Affix Header
-body {
-    #wrapwrap.o_affix_wrap {
-        // We need margin content for a breadcrumbs bar own margin
-        // General. All pages.
-        & main > div:first-child, main > div#wrap:first-child {
-            margin-top: 90px !important;
-        }
-        // Just login page
-        & main > div.oe_website_login_container {
-            margin-top: 120px !important;
-        }
-        // With editor bar
-        & header {
-            position: fixed;
-            z-index: 999;
-            width: 100%;
-            top: 34px;
-            // Without editor bar
-            &.o_affix_header {
-                top: 0 !important;
-            }
-        }
-    }
-    // Do not exit breadcrumbs on homepage. Normal is put an image or slider then we want it just along the header
-//     :not(.wp_breadcrumbs_base) {
-//         #wrapwrap.o_affix_wrap {
-//             & main > div:first-child, main > div#wrap:first-child {
-//                 margin-top: 50px;
-//             }
-//         }
-//     }
-}
-:not(.wp_breadcrumbs_base) {
-    #wrapwrap.o_affix_wrap {
-        & main > div:first-child, main > div#wrap:first-child {
-            margin-top: 50px;
-        }
-    }
-}
 
-// Cookies message
+/*************** Header with Cookies message *******************/
 #website_cookie_notice {
     & div.row{
         padding-top: 8px;
         padding-bottom: 8px;
+    }
+}
+
+/*************** Header medias *******************/
+@media screen and (min-width: 768px) {
+    header {
+        // Logo
+        & a.navbar-brand img, a.navbar-brand.logo img {
+            width:190px;
+            height:70px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    // Logo
+    header a.navbar-brand.logo {
+        margin-bottom: 8px;
     }
 }
