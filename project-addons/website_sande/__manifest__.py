@@ -39,6 +39,8 @@
         'website_menu_by_user_status',
         'website_sale',
         'website_slides',
+        # Comunitea
+        'ecommerce_base',
     ],
     'data': [
         'data/website_data.xml',
