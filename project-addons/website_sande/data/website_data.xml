@@ -9,6 +9,7 @@
                 <field name="favicon" type="base64" file="website_sande/static/img/favicon.png"/>
                 <field name="company_id" ref="base.main_company"/>
                 <field name="base_url">http://sande</field>
+                <field name="social_linkedin">https://es.linkedin.com/company/sande-y-d-az</field>
             </record>
 
         </data>

@@ -1,3 +1,9 @@
+`11.0.2.0.0`
+------------
+- **[UDP]** Header and Footer reconfiguration
+- **[UDP]** Styles for Header and Footer
+- **[ADD]** Work with us page
+
 `11.0.1.0.0`
 ------------
 - **[ADD]** Module dependencies by menus and pages
