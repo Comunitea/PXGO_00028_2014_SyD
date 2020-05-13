@@ -2,34 +2,76 @@
 <odoo>
     <template id="quality_policy" name="Quality Policy Sande">
         <t t-call="website.layout">
-            <t t-set="pageName" t-value="'Quality Policy'"/>
-            <div id="wrap" t-att-class="'o_editable note-air-editor note-editable' if env['ir.ui.view'].user_has_groups('website.group_website_designer') else None"
-                 t-att-contenteditable="'True' if env['ir.ui.view'].user_has_groups('website.group_website_designer') else None">
-                <div class="oe_structure"/>
-                <div class="container text-center o_homepage_editor_welcome_message">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="mt32" groups="base.group_portal, base.group_public">
-<!--                                <img class="mt16" t-att-src="request.httprequest.url_root+'logo.png'"/>-->
-                                <h2>Welcome to our <b><span t-esc="pageName"/></b> page!</h2>
-                                <p class="lead">Coming soon!</p>
-<!--                                <p class="lead">Sorry. We are working on it.</p>-->
-                                <center><img class="img img-responsive mt16" src="/website_sande/static/img/under_construction_icon.png" width="400px" height="200px"/></center>
+            <t t-set="pageName" t-value="'Política de Calidad'"/>
+            <div id="wrap">
+                <div class="container mb48">
+                    <div class="oe_structure">
+                        <section data-snippet-id="title">
+                            <h1 class="text-center">Política de Calidad</h1>
+                        </section>
+                    </div>
+                    <div class="oe_structure">
+                        <section class="s_text_block">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 mb16 mt16">
+                                        <h2>Política de calidad y medio ambiente de Sande y Díaz, S.L.</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 mb16 mt16">
+                                        <p>
+                                            Desde SANDE Y DÍAZ, S. L, empresa dedicada a la comercialización, mantenimiento e instalación de equipos industriales
+                                            relacionados con las tecnologías del agua, en nuestro afán de seguir mejorando día a día, siempre desde el máximo
+                                            respeto al medio ambiente, hemos implantado un Sistema de gestión Integrado de Calidad y Medio Ambiente basado en
+                                            las Normas <strong>ISO 9001:2008</strong> e <strong>ISO 14001:2004</strong>.
+                                            Como muestra de nuestro compromiso, redactamos y publicamos nuestra
+                                            Política de Calidad y Medio Ambiente, declarando los principios y objetivos que rigen nuestra actividad:
+                                        </p>
+                                        <ul class="mt16 mb16">
+                                            <li class="mt8 mb8">
+                                                Conocer, analizar y satisfacer las necesidades y expectativas de nuestros clientes.
+                                            </li>
+                                            <li class="mt8 mb8">
+                                                Prevenir las causas que puedan dar origen a posibles no conformidades.
+                                            </li>
+                                            <li class="mt8 mb8">
+                                                Potenciar la eficacia de los recursos humanos y tecnológicos para asegurar la calidad de nuestros trabajos.
+                                            </li>
+                                            <li class="mt8 mb8">
+                                                Mejorar de forma continua la calidad de nuestros servicios, así como nuestra actitud frente a los impactos medioambientales que genera nuestra actividad.
+                                            </li>
+                                            <li class="mt8 mb8">
+                                                Prevenir la contaminación que pudiera generar la actividad de nuestra empresa
+                                            </li>
+                                            <li class="mt8 mb8">
+                                                Optimización de los recursos naturales agotables, haciendo especial hincapié en la reutilización de residuos inertes, así como en la adecuada gestión de otros residuos.
+                                            </li>
+                                            <li class="mt8 mb8">
+                                                Cumplir con la legislación vigente que sea de aplicación, así como respetar acuerdos voluntarios adoptados o requisitos provenientes de nuestros clientes
+                                            </li>
+                                            <li class="mt8 mb8">
+                                                Promover la Gestión de Calidad y la Mejora Continua a todo el personal, en todos los niveles y en todos los procesos de la Empresa.
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            Esta Política afecta y es responsabilidad de todos y cada uno de los integrantes de la organización y sirve como marco de
+                                            referencia para el establecimiento de objetivos de calidad. Por lo que la Dirección requiere a todo el personal que cumpla
+                                            con este compromiso, participando todos y cada uno con la responsabilidad que le corresponda según su puesto en la
+                                            organización de la empresa.
+                                        </p>
+                                        <p>
+                                            Para ello, es comunicada a toda la empresa para su conocimiento, comprensión y cumplimiento y está a disposición de
+                                            toda persona o entidad que lo solicite. Además, se revisa, analizándola y actualizándola para su continua adecuación.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="hidden-xs" groups="website.group_website_designer">
-                                <h2>Welcome to your <b><span t-esc="pageName"/></b> page!</h2>
-                                <p class="lead">Let's start designing.</p>
-                                <p><strong>Remember:</strong> This is a message only for website designer users</p>
-                                <p class="hidden-xs">You can edit this page clicking the
-                                    <strong><span class="fa fa-pencil"/> Edit</strong>
-                                    option at right top on the main menu bar
-                                </p>
-                            </div>
-                        </div>
+                        </section>
                     </div>
                 </div>
-                <div class="oe_structure"/>
             </div>
+            <div class="oe_structure"/>
         </t>
     </template>
 </odoo>
