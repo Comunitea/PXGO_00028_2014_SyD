@@ -9,13 +9,13 @@
         <xpath expr="//ul" position="after">
             <ul class="list-inline nav navbar-nav navbar-right">
                 <li>
-                    <a t-att-href="'tel:%s' %res_company.phone" rel="noindex,nofollow" alt="phone" title="Call to SyD">
+                    <a t-att-href="'tel:%s' %res_company.phone" rel="noindex,nofollow" title="Call to SANDE Y DIAZ, S.L.">
                         <span class="hidden-xs hidden-sm visible-md visible-lg"><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
                         <span class="visible-xs visible-sm hidden-md hidden-lg"><i class="fa fa-phone" /></span>
                     </a>
                 </li>
                     <li>
-                        <a href="mailto:${res_company.email}" rel="noindex,nofollow" alt="email" title="Send mail to Syd">
+                        <a href="mailto:${res_company.email}" rel="noindex,nofollow" title="Send mail to SANDE Y DIAZ, S.L.">
                             <span class="hidden-xs hidden-sm visible-md visible-lg"><i class="fa fa-envelope"/> <font t-field="res_company.email"/></span>
                             <span class="visible-xs visible-sm hidden-md hidden-lg"><i class="fa fa-envelope"/></span>
                         </a>

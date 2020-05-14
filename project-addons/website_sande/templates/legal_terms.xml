@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="legal_terms" name="Legal Terms of use Sande">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'Terms of use'"/>
+            <div id="wrap">
+                <div class="container mb48">
+                    <div class="oe_structure">
+                        <section data-snippet-id="title">
+                            <h1 class="text-center">Terms of use</h1>
+                        </section>
+                    </div>
+                    <div class="oe_structure">
+                        <section class="s_text_block">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 mb8 mt16">
+                                        <h2>Legal Safeguard</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            Please read these Terms of Use ("Terms", "Terms of Use") carefully before using the
+                                            <a t-att-href="res_company.website" target="_blank" rel="nofollow,noindex" title="Sitio web de SANDE Y DÍAZ, S.L."><span t-field="res_company.website"/></a>
+                                            website (the "Service") operated by ​<strong><span class="text-uppercase" t-field="res_company.name"/></strong>
+                                            ("us", "we", or "our").
+                                        </p>
+                                        <p>
+                                            Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms.
+                                            These Terms apply to all visitors, users and others who access or use the Service.
+                                        </p>
+                                        <p>
+                                            By accessing or using the Service you agree to be bound by these Terms.
+                                            If you disagree with any part of the terms then you may not access the Service.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb8">
+                                        <h2>Use of Services</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4 class="ml32"><strong>Obligation to make correct use of the service</strong></h4>
+                                        <p class="ml32">
+                                            The conditions of access and use of this website are subject to current legislation and the principles of
+                                            good faith and lawful use by the user of the same being prohibited, in general, any action in
+                                            to the detriment of <strong><span class="text-uppercase" t-field="res_company.name"/></strong> and contrary to this legal notice.
+                                            The user agrees to use this service without engaging in activities that may be considered unlawful or illegal, in violation of
+                                            <strong><span class="text-uppercase" t-field="res_company.name"/></strong> rights
+                                            or third parties, or that could damage, disable, overload or deteriorate the Service or prevent its normal use by other users.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4 class="ml32"><strong>Content Request</strong></h4>
+                                        <p class="ml32">
+                                            The user will not be able to demand any type of content available through this website, using
+                                            means or procedures other than those made available to them or other than those used usually over the Internet.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4 class="ml32"><strong>Prohibitions</strong></h4>
+                                        <p class="ml32">
+                                            Use of this website for illegal or unauthorized purposes is prohibited and, specifically, but not limited to:
+                                        </p>
+                                        <ul>
+                                            <li class="ml32 mt8 mb8">
+                                                Any form of violation of the rights of third parties (right to privacy, self-image, intellectual property rights, etc.).
+                                            </li>
+                                            <li class="ml32 mt8 mb8">
+                                                Perform, using the content of this website, all advertising and sending unsolicited emails (spam) or similar communications.
+                                            </li>
+                                            <li class="ml32 mt8 mb8">
+                                                Introduce viruses, damaged files, any other similar software or programs that may
+                                                unauthorized damage or alteration of the contents or systems accessible through this website.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                 <div class="row">
+                                    <div class="col-md-12 mb8">
+                                        <h2>Termination</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            We may terminate or suspend access to our Service immediately, without prior notice or liability,
+                                            for any reason whatsoever, including without limitation if you breach the Terms.
+                                        </p>
+                                        <p>
+                                            All provisions of the Terms which by their nature should survive termination shall survive
+                                            termination, including, without limitation, ownership provisions,
+                                            warranty disclaimers, indemnity and limitations of liability.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb8">
+                                        <h2>Links To Other Web Sites</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            From links from this site to other third party sites, ​<strong><span class="text-uppercase" t-field="res_company.name"/></strong> does not
+                                            responsible for the contents of any site or to which the user may link or the consequences that this entail.
+                                            Users make use of hyperlinks at their own risk. The links that may appear on the site
+                                            web to other websites have been established for purely informative purposes and do not involve any association
+                                            with the linked sites, nor recommendation of the goods or services offered by these sites.
+                                            ​<strong> <span class="text-uppercase" t-field="res_company.name"/></strong> no guarantees neither the conditions
+                                            nor the legality of the contents or the adequate provision of the services offered to the
+                                            users by third parties, which can be accessed through links. Nor is he responsible for the
+                                            hyperlinks that your customers can create through their websites.
+                                        </p>
+                                        <p>
+                                            We strongly advise you to read the terms and conditions and privacy policies of any third­party web sites or services that you visit.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb8">
+                                        <h2>Governing Law</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            The terms and conditions that govern this website, as well as the relationships that may arise from it
+                                            same, they are protected and are subject to <span t-field="res_company.country_id.name"/> law.
+                                            For the resolution of any type of controversy, litigation or discrepancy that may arise between the user and
+                                            ​<strong> <span class="text-uppercase" t-field="res_company.name"/></strong> for the use of this website,
+                                            shall be subject, for the resolution thereof, to the jurisdiction and jurisdiction of the courts of the
+                                            <t t-if="res_company.city"><span t-field="res_company.city"/></t><t t-else="">Coruña</t>
+                                            , with express resignation by the user of any other forum that may correspond to him.
+                                        </p>
+                                        <p>
+                                            Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
+                                            These Terms constitute the entire agreement between us regarding our Service, and supersede and replace
+                                            any prior agreements we might have between us regarding the Service.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb8">
+                                        <h2>Changes</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>
+                                            ​<strong><span class="text-uppercase" t-field="res_company.name"/></strong>
+                                            reserves the right to give access to its website, without prior notice, at its discretion and
+                                            temporary, and the right to modify, update, modify unilaterally, at any time and without notice,
+                                            the submission, legal notice, terms of service, or use of the Website and its contents, and in any
+                                            case, with respect to the applicable rules.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure"/>
+        </t>
+    </template>
+</odoo>

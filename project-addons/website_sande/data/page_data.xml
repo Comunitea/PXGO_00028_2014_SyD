@@ -38,22 +38,6 @@
             <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
         </record>
 
-        <!-- Legal -->
-        <record id="website_legal_page.terms_page" model="website.page">
-            <field name="name">Terms of use</field>
-            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-        </record>
-
-        <record id="website_legal_page.privacy_page" model="website.page">
-            <field name="name">Privacy Policy</field>
-            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-        </record>
-
-        <record id="website_legal_page.advise_page" model="website.page">
-            <field name="name">Legal Advice</field>
-            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-        </record>
-
         <!-- About Us -->
         <record id="website.aboutus" model="ir.ui.view">
             <field name="name">Company</field>

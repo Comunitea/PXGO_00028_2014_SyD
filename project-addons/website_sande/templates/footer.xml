@@ -42,22 +42,47 @@
                                         <li t-ignore="true">
                                             <u><span t-field="res_company.name" class="text-uppercase"/></u>
                                         </li>
-                                        <li t-ignore="true">
-                                            <span t-field="res_company.partner_id" t-options='{"widget": "contact", "fields": ["address"]}'/>
-                                        </li>
+                                        <t t-if="res_company.street">
+                                            <li t-ignore="true">
+                                                <span t-field="res_company.street"/>
+                                            </li>
+                                            <t t-if="res_company.zip">
+                                                <li t-ignore="true">
+                                                    <span t-field="res_company.zip"/>
+                                                    <t t-if="res_company.state_id">
+                                                        - <span t-field="res_company.state_id.name"/>
+                                                    </t>
+                                                </li>
+                                            </t>
+                                            <t t-if="res_company.city">
+                                                <li t-ignore="true">
+                                                    <span t-field="res_company.city"/>
+                                                </li>
+                                            </t>
+                                            <t t-if="res_company.country_id">
+                                                <li t-ignore="true">
+                                                    <span t-field="res_company.country_id.name"/>
+                                                </li>
+                                            </t>
+                                        </t>
+                                        <t t-else="">
+                                            <li t-ignore="true">
+                                                <span t-field="res_company.partner_id" t-options='{"widget": "contact", "fields": ["address"]}'/>
+                                            </li>
+                                        </t>
                                         <li t-ignore="true" t-if="not res_company.google_map_img()">
                                             <span>
                                                 <i class="fa fa-map-marker fa-fw" />
-                                                <a t-att-href="res_company.google_map_link()" target="_blank" title="See on Google Maps">Google Maps</a>
+                                                <a t-att-href="res_company.google_map_link()" target="_blank" title="See SANDE Y DIAZ, S.L. location on Google Maps">Google Maps</a>
                                             </span>
                                         </li>
                                         <li t-ignore="true">
-                                            <a t-att-href="'tel:%s' %res_company.phone" rel="noindex,nofollow" title="Sande y Díaz Phone">
+                                            <a t-att-href="'tel:%s' %res_company.phone" rel="noindex,nofollow" title="Call to SANDE Y DIAZ, S.L.">
                                                 <span><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
                                             </a>
                                         </li>
                                         <li t-ignore="true">
-                                            <a href="mailto:${res_company.email}" rel="noindex,nofollow" title="Send mail to Sande y Díaz">
+                                            <a href="mailto:${res_company.email}" rel="noindex,nofollow" title="Send mail to SANDE Y DIAZ, S.L.">
                                                 <span><i class="fa fa-envelope"/> <font t-field="res_company.email"/></span>
                                             </a>
                                         </li>

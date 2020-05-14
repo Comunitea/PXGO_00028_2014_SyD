@@ -2,26 +2,26 @@
 <odoo>
     <template id="quality_policy" name="Quality Policy Sande">
         <t t-call="website.layout">
-            <t t-set="pageName" t-value="'Política de Calidad'"/>
+            <t t-set="pageName" t-value="'Quality Policy'"/>
             <div id="wrap">
                 <div class="container mb48">
                     <div class="oe_structure">
                         <section data-snippet-id="title">
-                            <h1 class="text-center">Política de Calidad</h1>
+                            <h1 class="text-center">Quality Policy</h1>
                         </section>
                     </div>
                     <div class="oe_structure">
                         <section class="s_text_block">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-12 mb16 mt16">
-                                        <h2>Política de calidad y medio ambiente de Sande y Díaz, S.L.</h2>
+                                    <div class="col-md-12 mb8 mt16">
+                                        <h2>Política de calidad y medio ambiente de <strong><span class="text-uppercase" t-field="res_company.name"/></strong></h2>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12 mb16 mt16">
+                                    <div class="col-md-12 mb8">
                                         <p>
-                                            Desde SANDE Y DÍAZ, S. L, empresa dedicada a la comercialización, mantenimiento e instalación de equipos industriales
+                                            Desde <strong><span class="text-uppercase" t-field="res_company.name"/></strong>, empresa dedicada a la comercialización, mantenimiento e instalación de equipos industriales
                                             relacionados con las tecnologías del agua, en nuestro afán de seguir mejorando día a día, siempre desde el máximo
                                             respeto al medio ambiente, hemos implantado un Sistema de gestión Integrado de Calidad y Medio Ambiente basado en
                                             las Normas <strong>ISO 9001:2008</strong> e <strong>ISO 14001:2004</strong>.

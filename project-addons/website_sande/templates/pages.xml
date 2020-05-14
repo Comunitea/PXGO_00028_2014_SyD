@@ -39,5 +39,26 @@
             <field name="url">/legal/quality-policy</field>
             <field name="view_id" ref="quality_policy"/>
         </record>
+
+        <!-- Terms of use -->
+        <record id="website_legal_page.terms_page" model="website.page">
+            <field name="name">Terms of use</field>
+            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
+            <field name="view_id" ref="legal_terms"/>
+        </record>
+
+        <!-- Privacy Policy -->
+        <record id="website_legal_page.privacy_page" model="website.page">
+            <field name="name">Privacy Policy</field>
+            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
+            <field name="view_id" ref="legal_privacy"/>
+        </record>
+
+        <!-- Legal Advice -->
+        <record id="website_legal_page.advise_page" model="website.page">
+            <field name="name">Legal Advice</field>
+            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
+            <field name="view_id" ref="legal_advice"/>
+        </record>
     </data>
 </odoo>

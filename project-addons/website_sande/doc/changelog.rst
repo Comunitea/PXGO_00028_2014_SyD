@@ -1,3 +1,11 @@
+`11.0.3.0.0`
+------------
+- **[UDP]** All Legal pages
+- **[UDP]** Change res_company name, mail and phone by variables
+- **[UDP]** Address with itemscope
+- **[ADD]** Address controlled by fields, otherwise by widget
+- **[DEL]** No usable alt attribute on links
+
 `11.0.2.0.0`
 ------------
 - **[UDP]** Header and Footer reconfiguration
