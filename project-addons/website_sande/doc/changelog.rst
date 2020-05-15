@@ -1,3 +1,11 @@
+`11.0.4.0.0`
+------------
+- **[ADD]** Homapage
+- **[ADD]** Latest posts on homepage thus website_blog_base module dependency included as well
+- **[ADD]** Newsletter (follow_us_base module)
+- **[ADD]** Newsletter link on footer
+- **[UDP]** o_sharing_links styles on body. TODO: Change on blog lateral menu too
+
 `11.0.3.0.0`
 ------------
 - **[UDP]** All Legal pages

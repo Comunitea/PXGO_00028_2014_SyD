@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="homepage" name="Home Sande">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'homepage'"/>
+            <div id="wrap">
+                <!-- Carousel -->
+                <div class="oe_structure">
+                    <div id="home_carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#home_carousel" data-slide-to="0" class="active"/>
+                            <li data-target="#home_carousel" data-slide-to="1"/>
+                            <li data-target="#home_carousel" data-slide-to="2"/>
+                            <li data-target="#home_carousel" data-slide-to="3"/>
+                            <li data-target="#home_carousel" data-slide-to="4"/>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img class="img img-responsive" src="/website_sande/static/img/ultraqua.jpg" alt="Ultraqua" title="Ultraqua" style="width: 100%; height: 100%;"/>
+                            </div>
+                            <div class="item">
+                                <img class="img img-responsive" src="/website_sande/static/img/naval.jpg" alt="Naval" title="Naval" style="width: 100%; height: 100%;"/>
+                            </div>
+                            <div class="item">
+                                <img class="img img-responsive" src="/website_sande/static/img/industria.jpg" alt="Industria" title="Industria" style="width: 100%; height: 100%;"/>
+                            </div>
+                            <div class="item">
+                                <img class="img img-responsive" src="/website_sande/static/img/depuracion.jpg" alt="Depuración" title="Depuración" style="width: 100%; height: 100%;"/>
+                            </div>
+                            <div class="item">
+                                <img class="img img-responsive" src="/website_sande/static/img/filtracion.jpg" alt="Filtración" title="Filtración" style="width: 100%; height: 100%;"/>
+                            </div>
+                        </div>
+                        <!-- Slider Controls -->
+                        <a class="left carousel-control" href="#home_carousel" role="button" data-slide="prev" title="Previous">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"/>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#home_carousel" role="button" data-slide="next" title="Next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"/>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="oe_structure">
+                    <section class="s_big_message jumbotron bg-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="mb32 col-md-offset-1 col-md-8">
+                                    <h1 class="text-primary">Talk to an expert. Easily.</h1>
+                                    <p class="text-secondary">Contact our Technical Service to request an appointment.</p>
+                                    <a class="btn btn-primary btn-lg o_default_snippet_text" href="/contactus" rel="nofollow,noindex" title="Go to contact form">Contact us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Main Features -->
+                <div class="oe_structure">
+                    <section class="s_features jumbotron bg-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="text-center text-primary"><strong>Main Features</strong></h2>
+                                </div>
+                            </div>
+                            <div class="row mt16 mb16">
+                                <div class="col-md-4 text-center">
+                                    <span class="fa fa-phone-square fa-5x text-primary"/>
+                                    <div>
+                                        <h3 class="mt8 mb8 o_default_snippet_text text-primary">Technical Assistance</h3>
+                                        <p class="text-secondary o_default_snippet_text">We have a great experience<br/>more than 35 years giving support.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <span class="fa fa-shopping-cart fa-5x text-primary"/>
+                                    <div>
+                                        <h3 class="mt8 mb8 o_default_snippet_text text-primary">Original Replacement Parts</h3>
+                                        <p class="text-secondary o_default_snippet_text">Large stock available<br/>with immediate service.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <span class="fa fa-heartbeat fa-5x text-primary"/>
+                                    <div>
+                                        <h3 class="mt8 mb8 o_default_snippet_text text-primary">Maintenance</h3>
+                                        <p class="text-secondary o_default_snippet_text">Keep your installation<br/>always in perfect condition.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Action Sectors -->
+                <div class="oe_structure">
+                    <section class="s_features jumbotron bg-white">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="text-center text-primary"><strong>Our Action Sectors</strong></h2>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-sm-6 col-md-3">
+                                    <h2 class="mb8 o_default_snippet_text text-primary"><u><strong>General industry</strong></u></h2>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Aquaculture</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Paper and textile</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Waste managers</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Irrigation systems</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Mines and quarries</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Canneries and refrigeration</p>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <h2 class="mb8 o_default_snippet_text text-primary"><u><strong>Naval industry</strong></u></h2>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Off-shore</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Fishing sector</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Oil and chemical tankers</p>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <h2 class="mb8 o_default_snippet_text text-primary"><u><strong>Sates</strong></u></h2>
+                                    <p class="mb0 o_default_snippet_text text-secondary">EDAR</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">ETAP</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Supplies</p>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <h2 class="mb8 o_default_snippet_text text-primary"><u><strong>Energy</strong></u></h2>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Cogeneration</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Biomass plants</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Combined cycles</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Geothermal plants</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Solar thermal plants</p>
+                                    <p class="mb0 o_default_snippet_text text-secondary">Thermal power stations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ISO9001 -->
+                <div class="oe_structure">
+                    <section class="s_image_text">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 mt32 mb32">
+                                    <img class="img img-responsive center-block mb16" src="/website_sande/static/img/ISO9001.jpg" alt="ISO9001" title="ISO9001"/>
+                                </div>
+                                <div class="col-md-6 mt64 mb32">
+                                    <h3 class="o_default_snippet_text text-primary"><strong>ISO9001 Certification</strong></h3>
+                                    <p class="o_default_snippet_text text-secondary">
+                                        ISO 9001 is an international standard that takes into account the activities of an organization, without distinction of activity sector.
+                                    </p>
+                                    <p class="o_default_snippet_text text-secondary">
+                                        This standard focuses on customer satisfaction and the ability to provide products and services that meet the organization's internal and external demands.
+                                    </p>
+                                    <p class="o_default_snippet_text text-secondary">
+                                        Today, the ISO 9001 standard is the most renowned and widely used standard around the world.
+                                    </p>
+                                    <p class="o_default_snippet_text text-secondary">
+                                        This certification was accredited by The United Kingdom Accreditation Service <a href="https://www.ukas.com" target="_blank" title="The United Kingdom Accreditation Service (UKAS)">(UKAS)</a>.
+                                    </p>
+                                    <p class="o_default_snippet_text text-secondary">
+                                        <a href="https://www.ukas.com" target="_blank" title="The United Kingdom Accreditation Service (UKAS)">UKAS</a>
+                                        is the sole national accreditation body for the United Kingdom and is recognised by government,
+                                        to assess against internationally agreed standards,
+                                        organisations that provide certification, testing, inspection and calibration services.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ISO14001 -->
+                <div class="oe_structure">
+                    <section class="s_image_text">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 mt64 mb32">
+                                    <h3 class="o_default_snippet_text text-primary"><strong>ISO14001 Certification</strong></h3>
+                                    <p class="o_default_snippet_text text-secondary">
+                                        ISO 14001 sets out the criteria for an environmental management system and can be certified to.
+                                        It maps out a framework that a company or organization can follow to set up an effective environmental management system.
+                                    </p>
+                                    <p class="o_default_snippet_text text-secondary">
+                                        Designed for any type of organization, regardless of its activity or sector,
+                                        it can provide assurance to company management and employees as well as external stakeholders that environmental impact is being measured and improved.
+                                    </p>
+                                    <p class="o_default_snippet_text text-secondary">
+                                        This certification was accredited by The United Kingdom Accreditation Service <a href="https://www.ukas.com" target="_blank" title="The United Kingdom Accreditation Service (UKAS)">(UKAS)</a>.
+                                    </p>
+                                    <p class="o_default_snippet_text text-secondary">
+                                        <a href="https://www.ukas.com" target="_blank" title="The United Kingdom Accreditation Service (UKAS)">UKAS</a>
+                                        is the sole national accreditation body for the United Kingdom and is recognised by government,
+                                        to assess against internationally agreed standards,
+                                        organisations that provide certification, testing, inspection and calibration services.
+                                    </p>
+                                </div>
+                                <div class="col-md-6 mt32 mb32">
+                                    <img class="img img-responsive center-block mb16" src="/website_sande/static/img/ISO14001.jpg" alt="ISO14001" title="ISO14001"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Latest Blog Posts -->
+                <div class="oe_structure">
+                    <t t-set="blogs" t-value="website.blogs()"/>
+                    <t t-set="access" t-value="website.access_to_blogs(blogs)"/>
+                    <t t-set="latest_posts" t-value="website.latest_posts(3, 3, 'Latest News', '')"/>
+                    <t t-set="col_md" t-value="latest_posts['col_md']"/>
+                    <section class="s_three_columns jumbotron bg-white" t-if="access and len(latest_posts['posts']) > 2">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="text-center text-primary"><strong><span t-esc="latest_posts['title']"/></strong></h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <t t-foreach="latest_posts['posts']" t-as="post">
+                                    <div t-attf-class="col-md-#{col_md} mt32" name="latest_posts">
+                                        <a t-attf-href="/blog/#{slug(post.blog_id)}/post/#{slug(post)}" title="Read more" alt="Read more" rel="noindex,nofollow">
+                                            <img class="img img-responsive" t-attf-src="/web/image/blog.post/#{post.id}/image" alt="Ultraqua" title="Ultraqua" style="width: auto; min-height: 200px;"/>
+                                        </a>
+                                        <h4 class="mt16 o_default_snippet_text text-primary" t-esc="post.name"/>
+                                        <h6 class="o_default_snippet_text text-secondary" t-esc="post.subtitle"/>
+                                        <p class="o_default_snippet_text text-secondary" t-esc="post.introduction"/>
+                                        <p>
+                                            <a class="btn btn-primary" t-attf-href="/blog/#{slug(post.blog_id)}/post/#{slug(post)}" title="Read more ..." rel="noindex,nofollow">Read more ...</a>
+                                            <a href="/blog" class="btn btn-default" title="Read all" rel="noindex,nofollow">Read all news</a>
+                                        </p>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Newsletter banner subscription -->
+                <div class="oe_structure" t-if="request.env['ir.ui.view'].search([('key', '=', 'follow_us_base.newsletter_banner')]).active">
+                    <t t-set="channel" t-value="channel if channel else website.default_channel()"/>
+                    <section t-if="channel" class="wp-subscription-banner jumbotron bg-white">
+                        <div class="container" id="follow_us_newsletter_banner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="text-center text-primary"><strong>Subscribe to our newsletter</strong></h2>
+                                </div>
+                            </div>
+                            <div class="row subscription-banner mt32 mb48" t-att-data-channel="channel">
+                                <div class="col-md-4 col-sm-12 ">
+                                    <h2 class="mt0 mb0 join-title text-primary">Join to <t t-esc="website.name"/></h2>
+<!--                                    <div class="mt4 ml4 subscribe-title text-secondary">Subscribe to our newsletter</div>-->
+                                </div>
+                                <div class="col-md-4 col-sm-12 text-center">
+                                    <t t-set="is_follower" t-value="website.check_follower(channel)"/>
+                                    <div class="subscription_form">
+                                        <t t-if="not is_follower" >
+                                            <div class="input-group mb8">
+                                                <input type="email" name="email" class="form-control" placeholder="your email..."
+                                                       t-att-value="user_id.partner_id.email if website.user_id != user_id else None"/>
+                                                <span class="input-group-btn">
+                                                    <a href="#" class="btn btn-primary js_subscribe_banner_btn">Subscribe</a>
+                                                </span>
+                                            </div>
+                                            <div class="small mb8 legal-terms text-secondary">
+                                                With subscribe I accept the <a href="/legal/advice">legal advice</a>, the <a href="/legal/privacy-policy">privacy policy</a> and the <a href="/legal/terms-of-use">terms of use</a> of this website.
+                                            </div>
+                                        </t>
+                                        <t t-else="">
+                                            <div class="input-group mb8">
+                                                <input type="email" name="email" class="form-control" readonly="readonly"
+                                                       t-att-value="is_follower.email"/>
+                                                <span class="input-group-btn">
+                                                    <a href="#" class="btn btn-warning js_un_subscribe_banner_btn">Unsubscribe</a>
+                                                </span>
+                                            </div>
+                                        </t>
+                                    </div>
+                                    <div class="alert alert-danger hidden fub_invalid">Invalid e-mail address.</div>
+                                    <div class="alert alert-success hidden fub_thanks">Thanks for your subscription!</div>
+                                    <div class="alert alert-warning hidden fub_unsubscribed">You have been successfully unsubscribed!</div>
+                                </div>
+                                <div class="col-md-4 col-sm-12 o_sharing_links">
+                                    <a t-att-href="website.social_facebook" t-if="website.social_facebook" target="_blank" title="Facebook"><i class="fa fa-facebook-square o_facebook"/></a>
+                                    <a t-att-href="website.social_twitter" t-if="website.social_twitter" target="_blank" title="Twitter"><i class="fa fa-twitter-square o_twitter"/></a>
+                                    <a t-att-href="website.social_linkedin" t-if="website.social_linkedin" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square o_linkedin"/></a>
+                                    <a t-att-href="website.social_youtube" t-if="website.social_youtube" target="_blank" title="Youtube"><i class="fa fa-youtube-square o_youtube"/></a>
+                                    <a t-att-href="website.social_googleplus" t-if="website.social_googleplus" rel="publisher" target="_blank" title="Google Plus"><i class="fa fa-google-plus-square o_google"/></a>
+                                    <a t-att-href="website.social_github" t-if="website.social_github" target="_blank" title="GitHub"><i class="fa fa-github-square o_github"/></a>
+                                    <span t-if="hash_tag" t-esc="hash_tag" class="ml4 text-uppercase"/>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

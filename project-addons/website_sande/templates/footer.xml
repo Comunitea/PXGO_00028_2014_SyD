@@ -88,21 +88,20 @@
                                         </li>
                                     </address>
                                 </ul>
-                                <div class="website_blog o_sharing_links">
-<!--                                    <h2>-->
-                                        <a t-att-href="website.social_facebook" t-if="website.social_facebook" target="_blank" title="Facebook"><i class="fa fa-facebook-square o_facebook"/></a>
-                                        <a t-att-href="website.social_twitter" t-if="website.social_twitter" target="_blank" title="Twitter"><i class="fa fa-twitter-square o_twitter"/></a>
-                                        <a t-att-href="website.social_linkedin" t-if="website.social_linkedin" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square o_linkedin"/></a>
-                                        <a t-att-href="website.social_youtube" t-if="website.social_youtube" target="_blank" title="Youtube"><i class="fa fa-youtube-square o_youtube"/></a>
-                                        <a t-att-href="website.social_googleplus" t-if="website.social_googleplus" rel="publisher" target="_blank" title="Google Plus"><i class="fa fa-google-plus-square o_google"/></a>
-                                        <a t-att-href="website.social_github" t-if="website.social_github" target="_blank" title="GitHub"><i class="fa fa-github-square o_github"/></a>
-<!--                                    </h2>-->
+                                <div class="o_sharing_links">
+                                    <a t-att-href="website.social_facebook" t-if="website.social_facebook" target="_blank" title="Facebook"><i class="fa fa-facebook-square o_facebook"/></a>
+                                    <a t-att-href="website.social_twitter" t-if="website.social_twitter" target="_blank" title="Twitter"><i class="fa fa-twitter-square o_twitter"/></a>
+                                    <a t-att-href="website.social_linkedin" t-if="website.social_linkedin" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square o_linkedin"/></a>
+                                    <a t-att-href="website.social_youtube" t-if="website.social_youtube" target="_blank" title="Youtube"><i class="fa fa-youtube-square o_youtube"/></a>
+                                    <a t-att-href="website.social_googleplus" t-if="website.social_googleplus" rel="publisher" target="_blank" title="Google Plus"><i class="fa fa-google-plus-square o_google"/></a>
+                                    <a t-att-href="website.social_github" t-if="website.social_github" target="_blank" title="GitHub"><i class="fa fa-github-square o_github"/></a>
                                 </div>
                             </div>
                             <div class="col-md-4 col-lg-3">
                                 <h4>Products &amp; Services</h4>
                                 <ul class="list-unstyled" id="products">
                                     <li><a href="/blog" target="_blank" rel="nofollow,noindex" title="News">News</a></li>
+                                    <li><a href="/page/newsletter" target="_blank" rel="nofollow,noindex" title="Newsletter">Newsletter</a></li>
                                     <li><a href="/slides" target="_blank" rel="nofollow,noindex" title="Catalogs">Catalogs</a></li>
                                     <li><a href="/ours-products" target="_blank" rel="nofollow,noindex" title="Products">Products</a></li>
                                     <li><a href="/ours-services" target="_blank" rel="nofollow,noindex" title="Services">Services</a></li>
