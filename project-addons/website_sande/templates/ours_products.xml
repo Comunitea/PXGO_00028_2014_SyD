@@ -3,8 +3,7 @@
     <template id="ours_products" name="Products Sande">
         <t t-call="website.layout">
             <t t-set="pageName" t-value="'Products'"/>
-            <div id="wrap" t-att-class="'o_editable note-air-editor note-editable' if env['ir.ui.view'].user_has_groups('website.group_website_designer') else None"
-                 t-att-contenteditable="'True' if env['ir.ui.view'].user_has_groups('website.group_website_designer') else None">
+            <div id="wrap">
                 <div class="oe_structure"/>
                 <div class="container text-center o_homepage_editor_welcome_message">
                     <div class="row">

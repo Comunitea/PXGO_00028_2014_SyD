@@ -1,3 +1,7 @@
+`11.0.5.0.1`
+------------
+- **[FIX]** Custom pages wrap class for editor
+
 `11.0.5.0.0`
 ------------
 - **[ADD]** Company page (About us)
