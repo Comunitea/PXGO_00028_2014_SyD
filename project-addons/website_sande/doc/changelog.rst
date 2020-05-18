@@ -1,3 +1,7 @@
+`11.0.5.1.1`
+------------
+- **[UDP]**  Work with us page content with callable form
+
 `11.0.5.0.1`
 ------------
 - **[FIX]** Custom pages wrap class for editor
