@@ -1,0 +1,30 @@
+/* Pagination */
+// Numbers
+.pagination > li > a, .pagination > li > span {
+    color: @color-secondary;
+    padding: 6px 10px;
+    border-color: @color-secondary;
+    font-size: unset;
+}
+// Number active
+.pagination > .active > a,
+.pagination > .active > a:hover {
+    color: @color-white;
+    background-color: @color-secondary;
+    font-size: unset;
+}
+// Number disabled
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover {
+    color: @color-secondary-opacity-medium;
+    border-color: @color-secondary;
+    font-size: unset;
+}
+// Number hover
+.pagination > li > a:hover, .pagination > li > span:hover,
+.pagination > li > a:focus, .pagination > li > span:focus {
+    color: @color-white;
+    background-color: @color-main;
+    border-color: @color-secondary;
+    font-size: unset;
+}

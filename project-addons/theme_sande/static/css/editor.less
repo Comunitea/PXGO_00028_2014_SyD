@@ -1,10 +1,11 @@
 .o_main_navbar {
+    border-bottom: 1px solid #7c7bad;
     & .dropdown-menu {
-        border: 1px solid @color-secondary;
+        border: 1px solid @color-btn-dropdown;
     }
     & .dropdown-header {
-        color: @color-secondary;
-        font-weight: bold;
+        color: @color-btn-dropdown;
+        font-weight: @font-weight-btn;
     }
     & .dropdown-menu .divider {
         background-color: rgb(0, 102, 204, 0.15);
@@ -12,8 +13,8 @@
     & .dropdown-menu > li > a {
         color: @color-main;
         &:hover, &:focus, &:active {
-            background-color: @color-secondary;
-            color: @color-white;
+            background-color: @color-bg-hover-btn-dropdown-editor;
+            color: @color-hover-btn-dropdown-editor;
             font-size: 1.5rem;
             font-weight: bold;
         }

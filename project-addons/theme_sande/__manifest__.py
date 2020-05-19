@@ -2,7 +2,7 @@
 
 {
     'name': 'Theme Sande y Díaz',
-    'version': '11.0.0.0.1',
+    'version': '11.0.0.0.2',
     'summary': 'Theme customization for Sande y Díaz website',
     'description': '',
     'category': 'Theme',

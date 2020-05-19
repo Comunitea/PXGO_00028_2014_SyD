@@ -4,12 +4,17 @@
 
 /* Main colors */
 @color-main: #0099cc;
+@color-main-opacity-small: rgba(0, 173, 181, 0.3);
+@color-main-opacity-medium: rgba(0, 173, 181, 0.6);
 @color-text-main: #666;
 @color-secondary: #0066cc;
+@color-secondary-opacity-small: rgba(0, 110, 199, 0.3);
+@color-secondary-opacity-medium: rgba(0, 110, 199, 0.6);
 @color-white: #fff;
-@color-red: red;
+@color-danger: #dc3545;
 @color-transparent: transparent;
 @color-readonly: #adafae;
+@color-disabled: @color-white;
 
 // Header
 @color-bg-header: @color-white;
@@ -35,10 +40,63 @@
 @padding-top-content-footer: 0px;
 @padding-bottom-content-footer: 0px;
 
-// Buttons
-@color-btn: @color-secondary;
-@color-bg-btn: @color-main;
+// Cookies
+@color-cookies: @color-secondary;
+@color-bg-cookies: @color-main-opacity-medium;
+
+/********** Start Buttons ***********/
+// General
+@border-radius-btn: 4px;
+@font-weight-btn: bold;
+@font-size-btn: 1.5rem;
+// General colors
+@color-btn: @color-white;
+@color-bg-btn: @color-secondary;
+@color-border-btn: @color-secondary;
+@color-hover-btn: @color-secondary;
+@color-bg-hover-btn: @color-white;
+@color-border-hover-btn: @color-secondary;
 @color-readonly-btn: @color-readonly;
+@color-box-shadow-btn: 0 0 0 0.5px @color-secondary;
+// Header
+@color-hover-btn-header: @color-secondary;
+@color-bg-hover-btn-header: @color-white;
+@color-btn-dropdown-header: @color-secondary;
+@color-bg-btn-dropdown-header: @color-white;
+@color-hover-btn-dropdown-header: @color-secondary;
+@color-bg-hover-btn-dropdown-header: @color-white;
+// Login
+@color-btn-login: @color-secondary;
+@color-bg-btn-login: @color-white;
+@color-border-btn-login: @color-white;
+// Ribbons
+@color-hover-btn-ribbons: @color-white;
+@color-bg-hover-btn-ribbons: @color-secondary;
+@color-border-hover-btn-ribbons: @color-secondary;
+@color-box-shadow-btn-ribbons: @color-box-shadow-btn;
+// Danger
+@color-btn-danger: @color-white;
+@color-bg-btn-danger: @color-secondary;
+@color-border-btn-danger: @color-secondary;
+@color-box-shadow-btn-danger: @color-box-shadow-btn;
+// Disabled
+@color-btn-disabled: @color-disabled;
+@color-bg-btn-disabled: @color-secondary;
+@color-border-btn-disabled: @color-secondary;
+// Dropdown
+@color-btn-dropdown: @color-secondary;
+@color-bg-btn-dropdown: @color-white;
+@color-hover-btn-dropdown: @color-secondary;
+@color-bg-hover-btn-dropdown: @color-white;
+@color-border-btn-dropdown: @color-secondary;
+@color-box-shadow-btn-dropdown: @color-box-shadow-btn;
+// Dropdown Active
+@color-btn-dropdown-active: @color-white;
+@color-bg-btn-dropdown-active: @color-secondary;
+// Dropdown Editor
+@color-hover-btn-dropdown-editor: @color-secondary;
+@color-bg-hover-btn-dropdown-editor: @color-white;
+/********** End Buttons ***********/
 
 // Forms
 @color-address-form: @color-main;
@@ -85,3 +143,7 @@
 //     --scroll-right: you_right 20px;
 //     --scroll-padding: you_padding or 10px 20px;
 }
+
+// TODO
+// Pagination
+// portal

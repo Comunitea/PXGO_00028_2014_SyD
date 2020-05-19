@@ -31,8 +31,8 @@ header {
                 padding-left:10px;
                 padding-right: 10px;
                 &:hover, &:focus, &:active {
-                    color: @color-btn;
-                    background-color: @color-bg-header !important;
+                    color: @color-hover-btn-header;
+                    background-color: @color-bg-hover-btn-header !important;
                 }
             }
         }
@@ -45,7 +45,7 @@ header {
         border-color: @color-border-header;
         padding: @padding-header;
         & .navbar-nav > li.active {
-            font-weight: bold;
+            font-weight: @font-weight-btn;
         }
         & .navbar-nav > li > .dropdown-menu.js_usermenu {
             border: 1px solid @color-secondary;
@@ -55,13 +55,13 @@ header {
         .navbar-nav > .open > a,
         .navbar-nav > li > .dropdown-menu,
         .dropdown-menu > li > a {
-            color: @color-secondary;
-            background-color: @color-bg-header;
+            color: @color-btn-dropdown-header;
+            background-color: @color-bg-btn-dropdown-header;
             &:hover, &:focus, &:active {
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: @color-btn;
-                background-color: @color-bg-header !important;
+                font-size: @font-size-btn;
+                font-weight: @font-weight-btn;
+                color: @color-hover-btn-dropdown-header;
+                background-color: @color-bg-hover-btn-dropdown-header !important;
             }
         }
     }

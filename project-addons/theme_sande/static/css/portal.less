@@ -1,12 +1,88 @@
-.o_portal_docs {
-    // Change your details
-    .btn-xs {
-        &:hover, &:focus, &:active {
-            font-size: 0.6em !important;
+.o_portal_wrap {
+    // Page Headers
+    & h3 {
+        color: @color-secondary;
+        // Only for Documents Table
+        margin-bottom: 20px;
+    }
+    & h3.page-header {
+        border-bottom: none;
+    }
+    & li.list-group-item {
+        border: 1px solid @color-secondary;
+        // Your Documents links
+        & a {
+            color: @color-main;
+            &:hover, &:focus, &.active {
+                font-size: @font-size-btn;
+                font-weight: @font-weight-btn;
+                text-decoration: none;
+            }
         }
     }
-    // Your Documents links
-    & a:hover, a:focus, a:active {
-        font-size: 1.5rem !important;
+    // Your Documents Qty
+    & .badge {
+        background-color: @color-main;
+    }
+    // Change details button
+    & a.btn-xs {
+        &:hover, &:focus, &:active {
+            font-size: 1.2rem;
+        }
+    }
+    // Documents Table
+    & .panel-default {
+        //
+        margin-top: 20px;
+        // Border table
+        border-color: @color-secondary;
+        // Head
+        & .table > thead > tr.active > th {
+            color: @color-white;
+            background-color: @color-secondary;
+            border-bottom: 1px solid @color-secondary;
+        }
+        // tr
+        & .table > tbody > tr {
+            color: @color-main;
+            &:hover, &:focus, &.active {
+                background-color: @color-main;
+                & a, span, strong {
+                    color: @color-white;
+                    font-weight: @font-weight-btn;
+                }
+            }
+            // td
+            & > td {
+                border-top: 1px solid @color-secondary;
+                // Cancelled documents
+                & .label-default {
+                    background-color: @color-danger;
+                }
+                // Waiting for Payment documents
+                .label-info {
+                    background-color: @color-secondary;
+                }
+            }
+        }
+        // Document Page
+        & .panel-heading {
+            background-color: @color-secondary;
+            & h4, a {
+                color: @color-white;
+            }
+            & a {
+                margin-top: 6px;
+            }
+        }
+        & .panel-body {
+            & strong, div.mt16, th, p {
+                color: @color-secondary;
+                font-weight: @font-weight-btn;
+            }
+            & th {
+                border-bottom: 1px solid @color-secondary;
+            }
+        }
     }
 }

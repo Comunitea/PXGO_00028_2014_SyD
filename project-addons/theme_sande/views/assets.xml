@@ -7,12 +7,15 @@
         <xpath expr="link[last()]" position="after">
             <link href="/theme_sande/static/css/_general.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/blog.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/body.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/contact.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/cookies.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/editor.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/elements.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/footer.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/header.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/login.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/pagination.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/portal.less" rel="stylesheet" type="text/less"/>
         </xpath>
         <!-- Scripts. This must be on Footer template for lazy load -->

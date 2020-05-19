@@ -1,0 +1,20 @@
+#website_cookie_notice {
+    // Best padding
+    & .container {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    // Colors
+    &.bg-warning {
+        color: @color-cookies;
+        background-color: @color-bg-cookies;
+    }
+    // Privacy link
+    & a {
+        font-weight: @font-weight-btn;
+        &:hover, &:focus, &:active {
+            text-decoration: underline;
+            font-size: @font-size-btn;
+        }
+    }
+}
