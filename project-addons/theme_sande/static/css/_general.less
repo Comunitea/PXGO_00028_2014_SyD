@@ -9,17 +9,20 @@
 @color-white: #fff;
 @color-red: red;
 @color-transparent: transparent;
-
-// Buttons
-@color-btn: @color-secondary;
-@color-bg-btn: @color-main;
-@color-readonly-btn: #adafae;
+@color-readonly: #adafae;
 
 // Header
 @color-bg-header: @color-white;
 @color-text-header: @color-white;
-@color-header-border: @color-transparent;
+@color-border-header: @color-transparent;
 @padding-header: 0px;
+
+// Body
+@color-title-body: @color-secondary;
+@color-title-body-strong: @color-secondary;
+@color-subtitle-body: @color-main;
+@color-content-body: @color-main;
+@color-content-body-strong: @color-secondary;
 
 // Footer
 @color-bg-footer: @color-main;
@@ -31,11 +34,41 @@
 @margin-top-content-footer: 300px;
 @padding-top-content-footer: 0px;
 @padding-bottom-content-footer: 0px;
-@blog-cover-height: 35vh;
 
-// Blog
+// Buttons
+@color-btn: @color-secondary;
+@color-bg-btn: @color-main;
+@color-readonly-btn: @color-readonly;
+
+// Forms
+@color-address-form: @color-main;
+@color-control-label-form: @color-secondary;
+@color-control-label-checkbox-form: @color-main;
+@color-control-label-checkbox-link-form: @color-secondary;
+@color-control-label-checkbox-link-decoration-form: underline;
+
+// Social links
+@color-fa-sharing-links: @color-secondary;
+@font-size-fa-sharing-links: xx-large;
+
+/******* Start Blog *****/
+// Blog title
+@blog-title-color: @color-secondary;
+@blog-subtitle-color: @color-main;
+// blog_right_column
+@blog-text-muted-color: @color-main;
+@blog-list-color: @color-main;
+@blog-section-title-font-weight: bold;
+@blog-social-link-color: @color-secondary;
+@blog-social-link-rss-color: @color-main;
+// Blog post cover
 @blog-cover-bg-color: @color-main;
-@blog-cover-color: @color-secondary;
+@blog-cover-title-color: @color-white;
+@blog-cover-title-font-weight: bold;
+@blog-cover-link-font-size: 1.5rem;
+@blog-cover-hover-color: @color-secondary;
+@blog-cover-height: 35vh;
+/******* End Blog *****/
 
 /* Override styles */
 :root {
@@ -44,7 +77,7 @@
     // Breadcrumbs colors
     --color-bg: @color-white;
     --color-href: @color-secondary;
-    --color-current: @color-text-main;
+    --color-current: @color-main;
     // muk_website_scroll_up
     --scroll-bg-color: @color-secondary;
 //     --scroll-font-size: you_size or 2.5em;

@@ -1,11 +1,65 @@
 /* Body */
 body {
+    // General font
     font-family: @main-font-family;
+
+    // General text colors
+    .text-primary {
+        color: @color-secondary !important;
+    }
+    .text-secondary {
+        color: @color-main !important;
+    }
+
+    /***** Start Body colors *****/
+    // Titles Content
+    & h1 {
+        color: @color-title-body;
+    }
+    & h3 {
+        color: @color-subtitle-body;
+        & strong {
+            color: @color-title-body-strong;
+        }
+    }
+    // Content
+    p {
+        color: @color-content-body;
+        strong {
+            color: @color-content-body-strong;
+        }
+    }
+    /***** End Body colors *****/
+
+    /***** Start Forms colors *****/
+    // Form address
+    & address {
+        color: @color-address-form;
+    }
+    // Form labels
+    & .control-label {
+        color: @color-control-label-form;
+    }
+    // Form legal checkbox
+    & .checkbox {
+        & .control-label {
+            color: @color-control-label-checkbox-form;
+            & a {
+                color: @color-control-label-checkbox-link-form;
+                text-decoration: @color-control-label-checkbox-link-decoration-form;
+            }
+        }
+    }
+    /***** Start Forms colors *****/
+
+    // Blog. See blog.less
+    /***** End Body colors *****/
+
     // Social links
     & .o_sharing_links {
         & .fa {
-            color: @color-footer-link;
-            font-size: xx-large;
+            color: @color-fa-sharing-links;
+            font-size: @font-size-fa-sharing-links;
             &.o_twitter:hover {
                 color: #4099FF;
             }
@@ -191,13 +245,6 @@ a {
     & .fa-trash, .fa-trash-o {
         color: @color-red;
     }
-}
-
-.text-primary {
-    color: @color-secondary !important;
-}
-.text-secondary {
-    color: @color-main !important;
 }
 
 /* Carousel */

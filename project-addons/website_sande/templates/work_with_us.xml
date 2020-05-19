@@ -116,7 +116,7 @@
 
                     <!-- Legal Acceptance -->
                     <div class="form-group form-field o_website_form_required">
-                        <p>
+                        <p class="checkbox">
                             <input type="checkbox"
                                    value="accepted"
                                    id="privacy_policy"

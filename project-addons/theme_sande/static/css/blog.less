@@ -1,20 +1,85 @@
+/********** Blog *********/
+// General colors
+body {
+    & .website_blog {
+        h2, h3.text-muted {
+            color: @blog-subtitle-color;
+            & strong {
+                color: @blog-title-color;
+            }
+        }
+        & h4 {
+            color: @blog-title-color;
+        }
+    }
+}
+
 // Cover Next post
 .website_blog .o_blog_cover_container.cover_footer {
+    margin-bottom: 48px;
     height: @blog-cover-height;
     background-color: @blog-cover-bg-color;
     & .blog_title {
-        color: @blog-cover-color;
-        & p {
-            color: @color-secondary;
+        & h1, h2, p {
+            color: @blog-cover-title-color;
+            font-weight: @blog-cover-title-font-weight;
             &:hover, &:focus, &.active {
-                color: @color-secondary;
-                font-size: 1.5rem;
+                color: @blog-cover-hover-color;
+            }
+        }
+        & p {
+            &:hover, &:focus, &.active {
+                font-size: @blog-cover-link-font-size;
             }
         }
     }
 }
 
-// Social links
-.website_blog .o_sharing_links > a {
-    color: @color-secondary;
+// blog_right_column
+#blog_right_column {
+    // social stream
+    & p.text-muted {
+        color: @blog-text-muted-color;
+    }
+    // Archives years
+    & ul.nav-stacked {
+        & li {
+            color: @blog-list-color;
+        }
+    }
+    // section titles
+    & h4 {
+        font-weight: @blog-section-title-font-weight;
+    }
+    // Social links
+    & h2 {
+        & a {
+            color: @blog-social-link-color;
+            font-size: xx-large;
+            & .fa-facebook-square:hover {
+                color: #3b5998;
+            }
+            & .fa-twitter:hover {
+                color: #4099FF;
+            }
+            & .fa-linkedin:hover {
+                color: #0E76A8;
+            }
+            & .fa-google-plus-square:hover, & .fa-youtube-play:hover {
+                color: #DD4B39;
+            }
+            & .fa-github:hover {
+                color: #24292E;
+            }
+            & .fa-rss-square:hover {
+                color: @blog-social-link-rss-color;
+            }
+        }
+    }
 }
+
+
+
+
+
+

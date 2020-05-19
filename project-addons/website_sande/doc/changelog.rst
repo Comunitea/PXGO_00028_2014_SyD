@@ -1,3 +1,7 @@
+`11.0.5.1.2`
+------------
+- **[FIX]**  Body content colors by variables
+
 `11.0.5.1.1`
 ------------
 - **[UDP]**  Work with us page content with callable form

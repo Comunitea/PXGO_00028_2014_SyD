@@ -11,8 +11,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1 class="text-center o_default_snippet_text text-primary"><strong><span class="text-uppercase">Sande y Díaz S.L.</span></strong></h1>
-                                    <h3 class="text-center text-muted o_default_snippet_text text-secondary">
+                                    <h1 class="text-center o_default_snippet_text"><strong class="text-uppercase">Sande y Díaz S.L.</strong></h1>
+                                    <h3 class="text-center o_default_snippet_text">
                                         We are distributors specialized in pumping and filtration equipment for the naval and terrestrial sector.
                                     </h3>
                                 </div>
@@ -30,22 +30,22 @@
                                     <img class="img img-responsive center-block mb16" src="/website_sande/static/img/empresa.jpeg" alt="Us" title="Us"/>
                                 </div>
                                 <div class="col-md-6 mt32 mb32">
-                                    <h3 class="o_default_snippet_text text-primary"><strong>Who we are</strong></h3>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        <strong><span class="text-uppercase">Sande y Díaz S.L.</span></strong>
+                                    <h3 class="o_default_snippet_text"><strong>Who we are</strong></h3>
+                                    <p class="o_default_snippet_text">
+                                        <strong class="text-uppercase">Sande y Díaz S.L.</strong>
                                         , based in Galicia, is a company dedicated to the commercialization, installation and manufacture of industrial machinery,
                                         specializing in pumping equipment, the treatment of process water for all types of industries and the purification of wastewater for small towns.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        At <strong><span class="text-uppercase">Sande y Díaz S.L.</span></strong> we are known for being specialists in pumping.
+                                    <p class="o_default_snippet_text">
+                                        At <strong class="text-uppercase">Sande y Díaz S.L.</strong> we are known for being specialists in pumping.
                                         Our 40 years of experience working with pumps, advising our clients and solving multiple practical problems, endorse our professionalism.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
+                                    <p class="o_default_snippet_text">
                                         The company is distinguished by applying equipment and technologies of the water, based on the highest quality standards,
                                         certificates and approvals, for the most demanding industrial environments.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        The great accumulated experience allows <strong><span class="text-uppercase">Sande y Díaz S.L.</span></strong>
+                                    <p class="o_default_snippet_text">
+                                        The great accumulated experience allows <strong class="text-uppercase">Sande y Díaz S.L.</strong>
                                         to offer technical advice and provide the most appropriate solution for each case.
                                         There is a tradition in the company of commitment to quality and to the customer that is reflected in their loyalty.
                                     </p>
@@ -61,34 +61,34 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-6 mt32 mb32">
-                                    <h3 class="o_default_snippet_text text-primary"><strong>Our history</strong></h3>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        <strong class="text-uppercase text-primary">1975</strong>
+                                    <h3 class="o_default_snippet_text"><strong>Our history</strong></h3>
+                                    <p class="o_default_snippet_text">
+                                        <strong class="text-uppercase">1975</strong>
                                         - <strong class="text-uppercase">Sande y Díaz S.L.</strong>
                                         is founded dedicating itself to the commercialization of machinery industrial for the naval and land sector.
                                         Representation Agreement is signed with AZCUE PUMPS.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        <strong class="text-uppercase text-primary">1985</strong>
+                                    <p class="o_default_snippet_text">
+                                        <strong class="text-uppercase">1985</strong>
                                         - The specialization in water treatment begins. Expansion of the range of installation products and services.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        <strong class="text-uppercase text-primary">1995</strong>
-                                        - Own manufacture of biological treatment plants <strong class="text-uppercase text-primary">DEPURSAN</strong>.
+                                    <p class="o_default_snippet_text">
+                                        <strong class="text-uppercase">1995</strong>
+                                        - Own manufacture of biological treatment plants <strong class="text-uppercase">DEPURSAN</strong>.
                                         Save 80% of energy consumed by a conventional treatment plant.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        <strong class="text-uppercase text-primary">2008</strong>
+                                    <p class="o_default_snippet_text">
+                                        <strong class="text-uppercase">2008</strong>
                                         - Generational relief. Extension to Sectors related to the Environment Environment.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        <strong class="text-uppercase text-primary">2010</strong>
+                                    <p class="o_default_snippet_text">
+                                        <strong class="text-uppercase">2010</strong>
                                         - Execution of comprehensive projects turnkey treatment process waters and purification of sewage water.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        <strong class="text-uppercase text-primary">2012</strong>
-                                        - Obtaining the Certificates of <strong class="text-uppercase text-primary">ISO9001</strong>
-                                        and Medium quality <strong class="text-uppercase text-primary">ISO14001</strong> environment awarded by Lloyd's Register.
+                                    <p class="o_default_snippet_text">
+                                        <strong class="text-uppercase">2012</strong>
+                                        - Obtaining the Certificates of <strong class="text-uppercase">ISO9001</strong>
+                                        and Medium quality <strong class="text-uppercase">ISO14001</strong> environment awarded by Lloyd's Register.
                                     </p>
                                 </div>
                                 <div class="col-md-6 mt32 mb32">
@@ -108,25 +108,25 @@
                                     <img class="img img-responsive center-block mb16" src="/website_sande/static/img/agua_sin.png" alt="Us" title="Us"/>
                                 </div>
                                 <div class="col-md-6 mt48 mb32">
-                                    <h3 class="o_default_snippet_text text-primary"><strong>Our skills</strong></h3>
-                                    <p class="o_default_snippet_text text-secondary">
+                                    <h3 class="o_default_snippet_text"><strong>Our skills</strong></h3>
+                                    <p class="o_default_snippet_text">
                                         The great accumulated experience allows <strong class="text-uppercase">Sande y Díaz S.L.</strong>
                                         to offer professional technical advice and provide the most suitable for each case.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
+                                    <p class="o_default_snippet_text">
                                         There is a tradition in the company of commitment to the customer that is reflected in their loyalty.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
+                                    <p class="o_default_snippet_text">
                                         All the elements that we commercialize have their corresponding certification and
                                         all are checked before being delivered to our customers.
                                         This is how we ensure that our customers will continue to trust us in the future.
                                     </p>
-                                     <p class="o_default_snippet_text text-secondary">
+                                     <p class="o_default_snippet_text">
                                         <strong class="text-uppercase">Sande y Díaz S.L.</strong>
                                          clients are located in different types of industry and communities,
                                          so we work to always adapt to the characteristics of each one of them.
                                     </p>
-                                    <p class="o_default_snippet_text text-secondary">
+                                    <p class="o_default_snippet_text">
                                         <strong class="text-uppercase">Sande y Díaz S.L.</strong>
                                         is willing to serve, we are organized to continue attending our clients once the project is finished,
                                         offering a product guarantee and a highly esteemed after-sales service.
