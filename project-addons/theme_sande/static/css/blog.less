@@ -11,6 +11,13 @@ body {
         & h4 {
             color: @blog-title-color;
         }
+        .o_sharing_links {
+            & .fa {
+                &:hover, &:focus, &.active {
+                    font-size: @font-size-fa-sharing-links;
+                }
+            }
+        }
     }
 }
 
@@ -41,6 +48,16 @@ body {
     & p.text-muted {
         color: @blog-text-muted-color;
     }
+    // Tags
+    li > a {
+        background-color: @color-bg-btn;
+        &:hover, &:focus, &.active {
+            color: @color-hover-btn;
+            background-color: @color-bg-hover-btn;
+            border: 1px solid @color-border-hover-btn;
+        }
+    }
+
     // Archives years
     & ul.nav-stacked {
         & li {

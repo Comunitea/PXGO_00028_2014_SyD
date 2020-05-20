@@ -1,4 +1,6 @@
-/* Body */
+/***************** General Body ***************/
+// To see specific styles go that less file
+// Ex: To see blog styles go to blog.less
 body {
     // General font
     font-family: @main-font-family;
@@ -11,15 +13,26 @@ body {
         color: @color-main !important;
     }
 
-    /***** Start Body colors *****/
+    /***** Start Body content *****/
     // Titles Content
-    & h1 {
+    & h1, h2 {
         color: @color-title-body;
+        font-weight: @font-weight-bold;
     }
-    & h3 {
+    & h3, h3.text-muted, h2.text-muted {
+        color: @color-subtitle-body;
+        font-weight: @font-weight-bold;
+        & strong {
+            color: @color-title-body-strong;
+        }
+    }
+    & h4 {
         color: @color-subtitle-body;
         & strong {
             color: @color-title-body-strong;
+        }
+        & a {
+            font-weight: @font-weight-bold;
         }
     }
     // Content
@@ -29,31 +42,7 @@ body {
             color: @color-content-body-strong;
         }
     }
-    /***** End Body colors *****/
-
-    /***** Start Forms colors *****/
-    // Form address
-    & address {
-        color: @color-address-form;
-    }
-    // Form labels
-    & .control-label {
-        color: @color-control-label-form;
-    }
-    // Form legal checkbox
-    & .checkbox {
-        & .control-label {
-            color: @color-control-label-checkbox-form;
-            & a {
-                color: @color-control-label-checkbox-link-form;
-                text-decoration: @color-control-label-checkbox-link-decoration-form;
-            }
-        }
-    }
-    /***** Start Forms colors *****/
-
-    // Blog. See blog.less
-    /***** End Body colors *****/
+    /***** End Body content *****/
 
     // Social links
     & .o_sharing_links {

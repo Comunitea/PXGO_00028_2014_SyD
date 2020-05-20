@@ -14,8 +14,8 @@
         & a {
             color: @color-main;
             &:hover, &:focus, &.active {
-                font-size: @font-size-btn;
-                font-weight: @font-weight-btn;
+                font-size: @font-size-large;
+                font-weight: @font-weight-bold;
                 text-decoration: none;
             }
         }
@@ -45,11 +45,14 @@
         // tr
         & .table > tbody > tr {
             color: @color-main;
+            & a:not(.label) {
+                color: @color-secondary;
+            }
             &:hover, &:focus, &.active {
                 background-color: @color-main;
                 & a, span, strong {
                     color: @color-white;
-                    font-weight: @font-weight-btn;
+                    font-weight: @font-weight-bold;
                 }
             }
             // td
@@ -78,7 +81,7 @@
         & .panel-body {
             & strong, div.mt16, th, p {
                 color: @color-secondary;
-                font-weight: @font-weight-btn;
+                font-weight: @font-weight-bold;
             }
             & th {
                 border-bottom: 1px solid @color-secondary;

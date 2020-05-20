@@ -13,10 +13,12 @@
             <link href="/theme_sande/static/css/editor.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/elements.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/footer.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/forms.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/header.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/login.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/pagination.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/portal.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/recruitment.less" rel="stylesheet" type="text/less"/>
         </xpath>
         <!-- Scripts. This must be on Footer template for lazy load -->
 <!--        <xpath expr="//script[last()]" position="after">-->

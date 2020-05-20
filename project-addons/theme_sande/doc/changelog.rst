@@ -1,3 +1,10 @@
+`11.0.0.0.3`
+------------
+- **[ADD]**  Recruitment Styles
+- **[UDP]**  Separated Styles forms from body.less to onw forms.less
+- **[UPD]**  Font sizes using bootstrap default and including some more custom
+- **[FIX]**  All anchor links styles missed until now
+
 `11.0.0.0.2`
 ------------
 - **[FIX]**  Btn and links colors by variables

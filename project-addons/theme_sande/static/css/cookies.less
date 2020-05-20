@@ -10,11 +10,8 @@
         background-color: @color-bg-cookies;
     }
     // Privacy link
-    & a {
-        font-weight: @font-weight-btn;
-        &:hover, &:focus, &:active {
-            text-decoration: underline;
-            font-size: @font-size-btn;
-        }
+    & a:not(.btn) {
+        color: @color-secondary;
+        font-weight: @font-weight-bold;
     }
 }

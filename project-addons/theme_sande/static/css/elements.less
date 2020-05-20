@@ -3,20 +3,65 @@
     background-color: @color-secondary;
 }
 
-/*Labels */
-.label-primary, .badge-primary {
+/* Labels */
+.label-primary, .label-primary[href], .badge-primary {
     background-color: @color-secondary;
     color: @color-white;
+    &:hover, &:focus &.active {
+        background-color: @color-main;
+        font-size: @font-size-small;
+    }
+}
+
+.label-optional {
+    font-weight: @font-weight-bold;
+}
+
+/* Jumbotron */
+.jumbotron, .jumbotron h1 {
+    color: @color-secondary;
+    background-color: @color-white;
 }
 
 /* Links */
-a {
-    color: @color-secondary;
+a:not(.label) {
+    color: @color-btn;
     &:hover, &:focus &.active {
         color: @color-secondary;
-        font-size: @font-size-btn;
-        font-weight: @font-weight-btn;
+        font-size: @font-size-medium;
+        font-weight: @font-weight-bold;
         text-decoration: none;
+    }
+}
+/* Big links */
+a:not(.label).btn.btn-lg {
+    &:hover, &:focus, &.active {
+        font-size: @font-size-x-large;
+    }
+}
+
+/* Small links */
+.small {
+    & a {
+        color: @color-secondary;
+        &:hover, &:focus &.active {
+            font-size: @font-size-base;
+        }
+    }
+}
+
+/* Inputs groups */
+.input-group, .input-group-btn {
+    & a {
+        color: @color-btn;
+        border: 2px solid @color-border-btn;
+        font-size: small;
+        &:hover, &:focus, &.active {
+            border: 1px solid @color-border-hover-btn;
+        }
+    }
+    & .btn:hover, .btn-primary:hover, .btn:focus, .btn-primary:focus, .btn:active, .btn-primary:active {
+        font-size: small;
     }
 }
 
@@ -30,7 +75,14 @@ a {
         color: @color-hover-btn;
         background-color: @color-bg-hover-btn;
         border-color: @color-border-hover-btn;
-        box-shadow: @color-box-shadow-btn;
+//         box-shadow: @color-box-shadow-btn;
+        font-size: @font-size-medium;
+    }
+}
+
+.btn-lg {
+    &:hover, &:focus, &.active {
+        font-size: @font-size-x-large;
     }
 }
 
@@ -101,8 +153,8 @@ a {
     &:hover:not(:active):not(.active) {
         color: @color-btn-dropdown;
         background-color: @color-bg-btn-dropdown;
-        font-weight: @font-weight-btn;
-        font-size: @font-size-btn;
+        font-weight: @font-weight-bold;
+        font-size: @font-size-medium;
     }
     &:active, &.active {
         color: @color-btn-dropdown-active;

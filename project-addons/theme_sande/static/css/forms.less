@@ -1,0 +1,24 @@
+/***** Forms *****/
+body {
+    // Form address
+    & address {
+        color: @color-address-form;
+        & a:not(.label) {
+            color: @color-secondary;
+        }
+    }
+    // Form labels
+    & .control-label {
+        color: @color-control-label-form;
+    }
+    // Form legal checkbox
+    & .checkbox {
+        & .control-label {
+            color: @color-control-label-checkbox-form;
+            & a {
+                color: @color-control-label-checkbox-link-form;
+                text-decoration: @color-control-label-checkbox-link-decoration-form;
+            }
+        }
+    }
+}
