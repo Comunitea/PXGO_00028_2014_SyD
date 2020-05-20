@@ -2,7 +2,7 @@
 
 {
     'name': 'Website Sande y Díaz',
-    'version': '11.0.5.1.2',
+    'version': '11.0.5.2.2',
     'summary': 'Website Customization',
     'description': '',
     'category': 'Website',
@@ -35,6 +35,7 @@
     'depends': [
         'website_crm',
         'website_legal_page',
+        'website_hr_recruitment_legal',
         'website_menu_by_user_status',
         'website_sale',
         'website_slides',
@@ -57,6 +58,7 @@
         'templates/legal_privacy.xml',
         'templates/work_with_us.xml',
         'templates/homepage.xml',
+        'templates/recruitment.xml',
         'templates/pages.xml',
     ],
     'images': [

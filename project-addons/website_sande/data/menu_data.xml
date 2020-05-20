@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
+    <data noupdate="1">
         <!-- Home -->
         <record id="website.menu_homepage" model="website.menu">
             <field name="user_logged">False</field>
@@ -59,8 +59,18 @@
 <!--            <field name="user_logged">True</field>-->
 <!--            <field name="user_not_logged">True</field>-->
 <!--            <field name="parent_id" ref="website.main_menu"/>-->
-<!--            <field name="sequence" type="int">50</field>-->
+<!--            <field name="sequence" type="int">45</field>-->
 <!--        </record>-->
+
+        <record id="website_hr_recruitment.menu_jobs" model="website.menu">
+            <field name="name">Jobs</field>
+            <field name="url">/jobs</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">50</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="user_logged">False</field>
+            <field name="user_not_logged">False</field>
+        </record>
 
         <!-- Blog - News -->
         <record id="website_blog.menu_news" model="website.menu">

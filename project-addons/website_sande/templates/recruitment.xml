@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="website_hr_recruitment_index" inherit_id="website_hr_recruitment.index" name="Jobs Sande">
+        <!-- Include custom work with us form when website_hr_recruitment module is not used -->
+        <xpath expr="//div[@id='jobs_grid']/div" position="replace">
+            <div t-if="not jobs">
+                <div class="text-center text-muted">
+                    <h4 class="css_editable_hidden"><a t-attf-href="/contactus">Contact us</a> for job opportunities or fill directly our</h4>
+                    <h4 class="css_editable_hidden"><a t-attf-href="/work-with-us">Job Application Form</a>.</h4>
+                    <h4 groups="hr_recruitment.group_hr_recruitment_manager" class="mt32 mb16 text-muted">
+                        Create new job pages from the <strong><i>+New</i></strong> top-right button.
+                    </h4>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="website_hr_recruitment_detail" inherit_id="website_hr_recruitment.detail" name="Job Detail Sande">
+        <!-- Hide job detail container because include an unnecessary breadcrumbs -->
+        <xpath expr="//div[hasclass('container')]" position="attributes">
+            <attribute name="class" add="hidden" separator=" "/>
+        </xpath>
+        <!-- Change job detail container because include an unnecessary slash impossible to hide -->
+        <xpath expr="//div[hasclass('container')]" position="after">
+            <div class="container mt32">
+                <div class="pull-right">
+                    <a t-attf-href="/jobs/apply/#{job.id}" class="btn btn-primary btn-lg pull-right mt32 mb4">Apply Now!</a>
+                </div>
+                <h1 class="mb0 mt0" t-field="job.name"/>
+                <h4 class="mt16" t-field="job.address_id" t-field-options='{
+                        "widget": "contact",
+                        "fields": ["city"],
+                        "no_tag_br": True
+                    }'/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,3 +1,7 @@
+`11.0.5.2.2`
+------------
+- **[UDP]**  Recruitment module to work with custom job form if module not used
+
 `11.0.5.1.2`
 ------------
 - **[FIX]**  Body content colors by variables
