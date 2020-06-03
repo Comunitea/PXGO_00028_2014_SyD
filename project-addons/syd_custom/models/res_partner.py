@@ -112,6 +112,7 @@ class res_partner(models.Model):
     @api.multi
     def copy(self, default=None):
         self.ensure_one()
+        default = dict(default or {})
         if not default.get('ref'):
             default['ref'] = self.env['ir.sequence'].\
                 next_by_code('res.partner')
