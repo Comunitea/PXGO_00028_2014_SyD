@@ -34,12 +34,12 @@
     "external_dependencies": {"python": [], "bin": []},
     'depends': [
         'website_sande',
+        'breadcrumbs_base',
         'muk_website_scroll_up',
-        'breadcrumbs_base_tmp',
+        'website_sale_affix_header',
     ],
     'data': [
         'templates/footer.xml',
-        'templates/header.xml',
         'views/assets.xml',
     ],
     'images': [
