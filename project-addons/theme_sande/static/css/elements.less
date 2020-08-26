@@ -33,6 +33,15 @@ a:not(.label) {
         text-decoration: none;
     }
 }
+a:not(.label).btn {
+    color: @color-btn;
+    &:hover, &:focus &.active {
+        color: @color-secondary;
+        font-size: @font-size-medium;
+        font-weight: @font-weight-bold;
+        text-decoration: none;
+    }
+}
 /* Big links */
 a:not(.label).btn.btn-lg {
     &:hover, &:focus, &.active {
