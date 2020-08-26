@@ -2,33 +2,22 @@
 <odoo>
     <data>
         <!-- Products -->
-        <record id="products_page" model="website.page">
-            <field name="name">Products</field>
+        <record id="products_and_services_page" model="website.page">
+            <field name="name">Products and Services</field>
             <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-            <field name="menu_ids" eval="[(6, 0, [ref('website_sande.menu_products')])]"/>
+            <field name="menu_ids" eval="[(6, 0, [ref('website_sande.menu_products_and_services')])]"/>
             <field name="website_published">True</field>
-            <field name="url">/ours-products</field>
-            <field name="view_id" ref="ours_products"/>
-        </record>
-
-        <!-- Services -->
-        <record id="services_page" model="website.page">
-            <field name="name">Services</field>
-            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-            <field name="menu_ids" eval="[(6, 0, [ref('website_sande.menu_services')])]"/>
-            <field name="website_published">True</field>
-            <field name="url">/ours-services</field>
-            <field name="view_id" ref="ours_services"/>
+            <field name="url">/ours-products-and-services</field>
+            <field name="view_id" ref="website_sande.ours_products_and_services"/>
         </record>
 
         <!-- Work with us -->
         <record id="work_with_us_page" model="website.page">
             <field name="name">Work with us</field>
             <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-<!--            <field name="menu_ids" eval="[(6, 0, [ref('website_sande.menu_services')])]"/>-->
             <field name="website_published">True</field>
             <field name="url">/work-with-us</field>
-            <field name="view_id" ref="work_with_us"/>
+            <field name="view_id" ref="website_sande.work_with_us"/>
         </record>
 
         <!-- Quality Policy -->
@@ -37,28 +26,28 @@
             <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
             <field name="website_published">True</field>
             <field name="url">/legal/quality-policy</field>
-            <field name="view_id" ref="quality_policy"/>
+            <field name="view_id" ref="website_sande.quality_policy"/>
         </record>
 
         <!-- Terms of use -->
         <record id="website_legal_page.terms_page" model="website.page">
             <field name="name">Terms of use</field>
             <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-            <field name="view_id" ref="legal_terms"/>
+            <field name="view_id" ref="website_sande.legal_terms"/>
         </record>
 
         <!-- Privacy Policy -->
         <record id="website_legal_page.privacy_page" model="website.page">
             <field name="name">Privacy Policy</field>
             <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-            <field name="view_id" ref="legal_privacy"/>
+            <field name="view_id" ref="website_sande.legal_privacy"/>
         </record>
 
         <!-- Legal Advice -->
         <record id="website_legal_page.advise_page" model="website.page">
             <field name="name">Legal Advice</field>
             <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-            <field name="view_id" ref="legal_advice"/>
+            <field name="view_id" ref="website_sande.legal_advice"/>
         </record>
 
         <!-- Home -->
@@ -78,7 +67,7 @@
             <field name="menu_ids" eval="[(6, 0, [ref('website_sande.menu_aboutus')])]"/>
             <field name="website_published">True</field>
             <field name="url">/company</field>
-            <field name="view_id" ref="our_company"/>
+            <field name="view_id" ref="website_sande.our_company"/>
         </record>
     </data>
 </odoo>

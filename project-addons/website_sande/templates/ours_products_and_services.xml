@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <template id="ours_products" name="Products Sande">
+    <template id="ours_products_and_services" name="Products and Services Sande">
         <t t-call="website.layout">
-            <t t-set="pageName" t-value="'Products'"/>
+            <t t-set="pageName" t-value="'Products and Services'"/>
             <div id="wrap">
                 <div class="oe_structure"/>
                 <div class="container text-center o_homepage_editor_welcome_message">
