@@ -1,3 +1,9 @@
+`11.0.5.3.0`
+------------
+- **[FIX]** Legal advice page
+- **[UDP]** Enable Home Menu
+- **[UDP]** Products and Services in same page
+
 `11.0.5.2.2`
 ------------
 - **[UDP]**  Recruitment module to work with custom job form if module not used
@@ -20,7 +26,7 @@
 
 `11.0.4.0.0`
 ------------
-- **[ADD]** Homapage
+- **[ADD]** Homepage
 - **[ADD]** Latest posts on homepage thus website_blog_base module dependency included as well
 - **[ADD]** Newsletter (follow_us_base module)
 - **[ADD]** Newsletter link on footer
@@ -30,7 +36,7 @@
 ------------
 - **[UDP]** All Legal pages
 - **[UDP]** Change res_company name, mail and phone by variables
-- **[UDP]** Address with itemscope
+- **[UDP]** Address with item scope
 - **[ADD]** Address controlled by fields, otherwise by widget
 - **[DEL]** No usable alt attribute on links
 

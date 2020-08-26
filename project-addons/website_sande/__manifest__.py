@@ -2,7 +2,7 @@
 
 {
     'name': 'Website Sande y Díaz',
-    'version': '11.0.5.2.2',
+    'version': '11.0.5.3.0',
     'summary': 'Website Customization',
     'description': '',
     'category': 'Website',
@@ -50,8 +50,7 @@
         'templates/footer.xml',
         'templates/header.xml',
         'templates/our_company.xml',
-        'templates/ours_products.xml',
-        'templates/ours_services.xml',
+        'templates/ours_products_and_services.xml',
         'templates/quality_policy.xml',
         'templates/legal_advice.xml',
         'templates/legal_terms.xml',
