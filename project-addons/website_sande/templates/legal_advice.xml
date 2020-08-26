@@ -15,88 +15,81 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12 mb8 mt16">
-                                        <h2>Aplicación e propiedade de <strong><span class="text-uppercase" t-field="res_company.name"/></strong></h2>
+                                        <h2>1. Aplication and property of <strong><span class="text-uppercase">SANDE Y DIAZ S.L.</span></strong></h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p>
-                                            O titular do presente sitio web <a t-att-href="res_company.website" target="_blank" rel="nofollow,noindex" title="Sitio web de SANDE Y DÍAZ, S.L."><span t-field="res_company.website"/></a> é <strong><span class="text-uppercase" t-field="res_company.name"/></strong>
-                                            (en diante <strong>SANDE Y DÍAZ</strong>) con enderezo social en Rúa Nóvoa Santos, 11 baixo, 15006 A Coruña (España) e
-                                            enderezo de correo electrónico
-                                            <a href="mailto:${res_company.email}" rel="noindex,nofollow" title="Correo electrónico de SANDE Y DÍAZ, S.L.">
-                                                <span><font t-field="res_company.email"/></span>
-                                            </a>
-                                            inscrita no Rexistro Mercantil da Coruña, Folio
-                                            188, Libro 241, Inscrición 1ª, Folla 849 e con Número de Identificación Fiscal B- 15.033.558.
+                                            The owner of this website <a class="text-primary" href="https://www.sandeydiaz.com" target="_blank" rel="nofollow,noindex" title="SANDE Y DÍAZ, S.L. Website">
+                                            <span>(www.sandeydiaz.com)</span></a> is <strong><span class="text-uppercase">SANDE Y DIAZ S.L.</span></strong>
+                                            (hereinafter <strong>SANDE Y DÍAZ</strong>) established in St/ Nóvoa Santos, 11 baixo, 15006 A Coruña (Spain)
+                                            and <a href="mailto:sandeydiaz@sandeydiaz.com" rel="noindex,nofollow" title="SANDE Y DÍAZ, S.L. email"><span class="text-primary">sandeydiaz@sandeydiaz.com</span></a>
+                                            email address entered in the Register of A Coruña, Galicia, Spain ,Page 188, Book 241, Register 1, Page 849 and with Tax Identification Number B - 15033558.
                                         </p>
                                         <p>
-                                            Este sitio web foi creado co fin de proporcionar ós usuarios información detallada de <strong>SANDE Y DÍAZ</strong>, e, a
-                                            traveso de distintos medios, para contactar e comunicarse coa empresa. Asimesmo, ofrece a posibilidade de
-                                            acceder á información relevante sobre produtos e servizos ofrecidos por <strong>SANDE Y DÍAZ</strong>. Pode poñerse en
-                                            contacto con SANDE Y DÍAZ no seguinte correo electrónico:
-                                            <a href="mailto:${res_company.email}" rel="noindex,nofollow" title="Enviar correo a SANDE Y DÍAZ, S.L.">
-                                                <span><font t-field="res_company.email"/></span>
-                                            </a>.
+                                            This website has been created to provide users with detailed information about <strong>SANDE Y DÍAZ</strong>
+                                            , and, through various means, to contact and communicate with the company.
+                                            It also provides the ability to access relevant information about products and services offered by <strong>SANDE Y DÍAZ</strong>.
+                                            You can contact <strong>SANDE Y DÍAZ</strong> at the following email:
+                                            <a href="mailto:sandeydiaz@sandeydiaz.com" rel="noindex,nofollow" title="SANDE Y DÍAZ, S.L. email"><span class="text-primary">sandeydiaz@sandeydiaz.com</span></a>.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12 mb8">
-                                        <h2>Salvagarda Legal</h2>
+                                        <h2>2. Legal Safeguard the following provisions govern the use of this site</h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p>As seguintes cláusulas regulan o uso deste sitio. Se vostede non está dacordo con elas, por favor, abandoe o sitio inmediatamente.</p>
+                                        <p>If you do not agree with them, please leave the site immediately.</p>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12 mb8">
-                                        <h2>Temas de Uso e Utilización de Servizos</h2>
+                                        <h2>3. Topics of use and utilization of services </h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h4 class="ml32"><strong>Obriga de facer un uso correcto do servizo</strong></h4>
+                                        <h4 class="ml32"><strong>A. Obligation to make proper use of the service</strong></h4>
                                         <p class="ml32">
-                                            As condicións de acceso e uso deste sitio web están suxeitos á lexislación vixente e ós principios de
-                                            boa fe e uso lícito por parte do usuario da mesma quedando prohibido, en xeral, calquera acción en
-                                            detrimento de <strong>SANDE Y DÍAZ</strong> e contraria ó presente aviso legal. O usuario comprométese a utilizar
-                                            iste servizo sen incurrir en actividades que poidan ser consideradas ilícitas ou ilegais, violando os
-                                            dereitos de <strong>SANDE Y DÍAZ</strong> ou de tercerios, ou que poideran danar, deshabilitar, sobrecargar ou
-                                            deteriorar o Servizo ou impedir a normal utilización do mesmo por outros usuarios.
+                                            The conditions of access to and use of this website is subject to applicable law
+                                            and the principles of good faith and lawful use by the user of it being prohibited, in general, any action detrimental to
+                                            <strong>SANDE Y DÍAZ</strong> and contrary to this disclaimer.
+                                            The user agrees to use this service without engaging in activities that might be considered illicit or illegal,
+                                            violating the rights of  <strong>SANDE Y DÍAZ</strong> or third parties,
+                                            or which could damage, disable, overburden, or impair the service or prevent the normal use thereof by users.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h4 class="ml32"><strong>Solicitude de Contido</strong></h4>
+                                        <h4 class="ml32"><strong>B. Content request</strong></h4>
                                         <p class="ml32">
-                                            O usuario non poderá esixir ningún tipo de contenido dispoñible a traveso deste sitio web, utilizando
-                                            medios ou procedementos distintos dos que foron postos ó seu dispor ou distintos dos utilizados
-                                            normalmente por Internet.
+                                            The user may not require any content available through this website, using means or procedures other
+                                            than those that have been made available to or different from those normally used by Internet.
                                         </p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <h4 class="ml32"><strong>Prohibicións</strong></h4>
+                                        <h4 class="ml32"><strong>C. Prohibitions</strong></h4>
                                         <p class="ml32">
-                                            Prohíbese o uso deste sitio web con fins ilegais ou non autorizados e, específicamente, pero non limitado a:
+                                            Is prohibited t he use of this website for illegal or unauthorized purposes, and specifically, but not limited to:
                                         </p>
                                         <ul>
                                             <li class="ml32 mt8 mb8">
-                                                Calquera xeito de violación dos dereitos de terceiros (dereito á intimidade, propia imaxe, dereitos de propiedade intelectual, etc.).
+                                                <p>Any form of violation of third party rights (right to privacy, image rights, intellectual property, etc..).</p>
                                             </li>
                                             <li class="ml32 mt8 mb8">
-                                                Realizar, utilizando o contido deste sitio web, toda a publicidade e o envío de correos electrónicos non solicitados (spam) ou comunicacións semellantes.
+                                                <p>Making, using the contents of this website, all adverti sing and sending unsolicited emails (spam) or similar communication.</p>
                                             </li>
                                             <li class="ml32 mt8 mb8">
-                                                Introducir virus, arquivos danados, calquera outro software semellante ou programas que poidan
-                                                danar ou alterar de xeito non autorizado os contidos ou sistemas accesibles a traveso deste sitio web.
+                                                <p>Introduce viruses, corrupted files, or any other similar software or programs that may damage the content or systems accessible through this website.</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -104,189 +97,156 @@
 
                                 <div class="row">
                                     <div class="col-md-12 mb8">
-                                        <h2>Propiedade Intelectual</h2>
+                                        <h2>4. Intellectual property</h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 mb8">
                                         <p>
-                                            Os dereitos de reproducción, distribución e comunicación pública da páxina web son propiedade de SANDE Y
-                                            DIAZ. Tódolos textos, deseños, contidos, estrutura, bases de datos, logos, fontes e outros elementos da
-                                            páxina web están protexidos pola lei e os tratados internacionais vixentes sobre a materia. <strong>SANDE Y DÍAZ</strong>
-                                            posúe tódolos dereitos de propiedade intelectual precisos para opera-lo sitio web e tódolo seus elementos compoñentes.
+                                            The reproduction, distribution and public communication of the website are the property of <strong>SANDE Y DÍAZ</strong>.
+                                            All text, designs, content, structure, databases, logos, fonts and other elements of the website are protected by law
+                                            and international treaties on the matter.
+                                            <strong>SANDE Y DÍAZ</strong> owns all intellectual property rights needed to operate the website and all of its components.
                                         </p>
                                         <p>
-                                            Calquera reproducción, distribución, comunicación pública, transformación ou calquera outra forma de
-                                            explotación da totalidade ou parte do contido da páxina web, feita de calquera xeito ou por calquera medio,
-                                            sexa electrónico, mecánico ou doutro modo, está estrictamente prohibida. A violación destes dereitos dará
-                                            como resultado un fin nos procedementos xudiciais pertinentes, civís e /ou penais.
+                                            Any reproduction, distribution, public communication, transformation or any other exploitation of all or part of web page content,
+                                            made in any form or by any means, electronic, mechanical or otherwise is strictly prohibited.
+                                            The violation of these rights will result in legal proceedings so relevant, civil and / or criminal penalties.
                                         </p>
                                         <p>
-                                            <strong>SANDE Y DÍAZ</strong> é o propietario das marcas, logotipos e nomes de dominio relacionados cos servizos a
-                                            traveso da súa páxina web, e está estrictamente prohibida a reproducción ou uso non autorizado polo titular do dereito de autor.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12 mb8">
-                                        <h2>Protección de Datos</h2>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 mb8">
-                                        <p>
-                                            Dacordo coa Lei Orgánica 15/1999, do 13 de decembro, de Protección de Datos de Carácter Persoal,
-                                            informámoslle de que, no caso de que os houber, os seus datos serán utilizados por <strong>SANDE Y DÍAZ</strong> para
-                                            cursa-la súa solicitude e serán tratados de xeito confidencial e informatizado. Entenderemos que presta o seu
-                                            consentimento para a cesión dos datos con finalidades comerciais e estatísticas a <strong>SANDE Y DÍAZ</strong>. No caso
-                                            contrario, rogamos nolo indique. O usuario ten dereito en calquera intre a oporse, cancelar e rectifica-los
-                                            datos referentes á súa persoa incluidos nas nosas bases de datos dirixíndose a <strong>SANDE Y DÍAZ</strong> a traveso do
-                                            enderozo de correo electrónico
-                                            <a href="mailto:${res_company.email}" rel="noindex,nofollow" title="Correo electrónico de SANDE Y DÍAZ, S.L.">
-                                                <span><font t-field="res_company.email"/></span>
-                                            </a>
-                                            , ou no seguinte enderezo postal, acreditando debidamente a súa personalidade:
-                                            <address class="ml32 mb0" itemscope="itemscope" itemtype="http://schema.org/Organization">
-                                                <u><span t-field="res_company.name" class="text-uppercase"/></u>
-                                                <t t-if="res_company.street">
-                                                    <br/>
-                                                    <span t-field="res_company.street"/>
-                                                    <t t-if="res_company.zip">
-                                                        <br/>
-                                                        <span t-field="res_company.zip"/>
-                                                        <t t-if="res_company.state_id">
-                                                            - <span t-field="res_company.state_id.name"/>
-                                                        </t>
-                                                    </t>
-                                                    <t t-if="res_company.city">
-                                                        <br/>
-                                                        <span t-field="res_company.city"/>
-                                                    </t>
-                                                    <t t-if="res_company.country_id">
-                                                        <br/>
-                                                        <span t-field="res_company.country_id.name"/>
-                                                    </t>
-                                                </t>
-                                                <t t-else="">
-                                                    <span t-field="res_company.partner_id" t-options='{"widget": "contact", "fields": ["address"]}'/>
-                                                </t>
-                                            </address>
+                                            <strong>SANDE Y DÍAZ</strong> owns the trademarks, logos and domain names related to services through its website,
+                                            is strictly forbidden to reproduce or use authorized by the copyright owner.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12 mb8">
-                                        <h2>Limitación de Responsabilidade</h2>
+                                        <h2>5. Data protection</h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 mb8">
                                         <p>
-                                            O usuario é o único responsable das infraccións en que poida incorrer ou de calquera dano que poidan
-                                            causar a terceiros polo mal uso ou uso ilegal da páxina web.
-                                        </p>
-                                        <p>
-                                            <strong>SANDE Y DÍAZ</strong> non será responsable por calquera perda ou danos derivados de interferencias, omisións,
-                                            interrupcións, virus informáticos, avarías telefónicas ou desconexións no funcionamento do equipo ou sistema
-                                            electrónico, motivadas por causas alleas á empresa, os retrasos ou bloqueos no uso destes sistemas
-                                            causados por deficiencias ou sobrecargas de liñas telefónicas, sobrecargas no sistema de Internet ou doutros
-                                            sistemas electrónicos.
-                                        </p>
-                                        <p>
-                                            Das ligazóns dende iste sitio cara a outros sitios controlados por terceiros, <strong>SANDE Y DÍAZ</strong> non se fai
-                                            responsable dos contidos de ningún sitio ou ó que o usuario poida ligar ou das consecuencias que isto
-                                            conleve. Os usuarios fan uso de hipervínculos ó seu propio risco. As ligazóns que poideran figurar no sitio
-                                            web a outros sitios web establecéronse con fins puramente informativos e non implican ningunha asociación
-                                            cos sitios ligados, nin recomendación dos bens ou servizos ofrecidos por estes sitios. <strong>SANDE Y DÍAZ</strong> non
-                                            garante nin as condicións nin a legalidade dos contidos ou a prestación axeitada dos servizos ofrecidos ós
-                                            usuarios por terceiros, ós que se poida acceder mediante as ligazóns. Tampouco é responsable dos
-                                            hipervínculos que os seus clientes poidan crear a travesó dos seus sitios web.
-                                        </p>
-                                        <p>
-                                            <strong>SANDE Y DÍAZ</strong> renuncia á responsabilidade das cookies de terceiros externos que poidan instalar no disco duro do ordenador do usuario.
-                                        </p>
-                                        <p>
-                                            Tampouco dará lugar á responsabilidade de <strong>SANDE Y DÍAZ</strong> por erros tipográficos ou imprecisións que se poidan ver no contido do sitio.
+                                            According to the spanish Organic Law 15/1999, of December 13 th,
+                                            Protection of Personal Data, we inform you that, your personal data will be used by <strong>SANDE Y DÍAZ</strong>
+                                            to process your application and will be treated confidential computerized so.
+                                            We understand that you consent to the transfer of data for commercial purposes and statistics to <strong>SANDE Y DÍAZ</strong>.
+                                            If not, please inform us. You have the right at any time to refuse, cancel and rectify the data concerning to you,
+                                            contained in our databases, addressing <strong>SANDE Y DÍAZ</strong> through
+                                            <a href="mailto:sandeydiaz@sandeydiaz.com" rel="noindex,nofollow" title="SANDE Y DÍAZ, S.L. email"><span class="text-primary">sandeydiaz@sandeydiaz.com</span></a>
+                                            email address, or at the following address: <strong>SANDE Y DÍAZ</strong> - St / Nóvoa Santos, 11 baixo, 15006 A Coruña (Spain), duly crediting your personality.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12 mb8">
-                                        <h2>Servizos</h2>
+                                        <h2>6. Limitation of liability</h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 mb8">
                                         <p>
-                                            <strong>SANDE Y DÍAZ</strong> resérvase o dereito de dar acceso ó seu sitio web, sen previo aviso, á súa discreción e
-                                            temporal, e o dereito de modificar, actualizar, modificar unilateralmente, en calquera intre e sen previo aviso,
-                                            a presentación, aviso legal, condicións de servizo, ou utiliza-lo sitio web e o contido do mesmo e, en calquera
-                                            caso, con respecto ás normas aplicables.
+                                            The user is solely responsible for any infringements which may be incurred or any damage they may cause to others by the misuse or illegal use of the website.
+                                        </p>
+                                        <p>
+                                            <strong>SANDE Y DÍAZ</strong> not be liable for any loss or damage resulting from interference, omissions, interruptions, computer viruses,
+                                            telephone breakdowns or disconnections in the operation of the computer or electronic system, caused by reasons beyond the Company,
+                                            delays or blockages in the use of these systems caused by deficiencies or overloads of telephone lines,
+                                            overloads on the Internet system or other electronic systems.
+                                        </p>
+                                        <p>
+                                            The links from this site to other sites controlled by other parties, <strong>SANDE Y DÍAZ</strong>
+                                            is not responsible for the contents of any site or at you can link or the consequences that this entails.
+                                            Users make use of hyperlinks at their own risk. Links that may appear on the website to other websites are provided
+                                            for information purposes only and do not imply any associati on with the linked sites, nor a recommendation of goods or services offered by these sites.
+                                        </p>
+                                        <p>
+                                            <strong>SANDE Y DÍAZ</strong> does not guarantee the condition or legality of content or adequate provision of services offered to users by third parties,
+                                            which can be accessed thro ugh the links. Nor is it responsible for the hyperlinks that customers can create through their websites.
+                                            <strong>SANDE Y DÍAZ</strong> disclaims liability for external third - party cookies that they can install on the hard drive of the user's computer.
+                                        </p>
+                                        <p>
+                                            Nor will result <strong>SANDE Y DÍAZ</strong> responsibility for inaccuracies or typographical errors that can be seen in the content of its site.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12 mb8">
-                                        <h2>Política de privacidade</h2>
+                                        <h2>7. Services</h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 mb8">
-                                        <h4 class="ml32"><strong>¿Que son as cookies?</strong></h4>
+                                        <p>
+                                            <strong>SANDE Y DÍAZ</strong> reserves the right to grant access to its website, without notice, at its discretion and temporal,
+                                            and the right to modify, update, at any time and without notice, presentation, legal notice, conditions, or using the website and the contents thereof,
+                                            and in any case, with respect to the applicable standards.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 mb8">
+                                        <h2>8. Privacy policy</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 mb8">
+                                        <h4 class="ml32"><strong>What are cookies?</strong></h4>
                                         <p class="ml32">
-                                            Unha cookie é un ficheiro que se descarga no seu dispositivo ao acceder a determinadas páxinas web. Estas
-                                            cookies permiten á nosa páxina web, entre outras cousas, gardar e recuperar información sobre os hábitos de navegación dun usuario ou do seu equipo e, dependendo da información que conteña e do xeito en que
-                                            utilice o seu equipo, poden utilizarse para recoñecer ao usuario.
+                                            A cookie is a file that is downloaded to your computer / smartphone / tablet or device to access certain web pages.
+                                            These cookies allow our website, among other things , store and retrieve information about browsing habits of a user or your computer,
+                                            depending on the information it contains and the way you use your computer, can be used to recognize an user.
                                         </p>
-                                        <h4 class="ml32 mt16"><strong>¿Que tipos de cookies utiliza esta páxina web?</strong></h4>
+                                        <h4 class="ml32 mt16"><strong>What types of cookies used this site?</strong></h4>
                                         <ul class="list-unstyled ml32">
                                             <li class="ml32 mt16">
-                                                <h5><strong>Cookies técnicas:</strong></h5>
+                                                <p><strong>Technical Cookies:</strong></p>
                                             </li>
                                             <ul class="list-unstyled">
                                                 <li class="ml32 mt8 mb8">
-                                                    Son aquelas creadas e xestionadas unicamente por nós, e permiten ao usuario a
-                                                    navegación a traveso da nosa páxina web e a utilización das diferentes opcións como, por exemplo,
-                                                    identificar a sesión, personalizar información ou acceder a zonas de acceso restrinxido.
+                                                    <p>
+                                                        These are created and managed solely by us, and allow the user to navigate through our website and use of the various options,
+                                                        for example, identify the session, personalize information, or access restricted areas.
+                                                    </p>
                                                 </li>
                                             </ul>
                                             <li class="ml32 mt16">
-                                                <h5><strong>Cookies de análise:</strong></h5>
+                                                <p><strong>Analysis Cookies:</strong></p>
                                             </li>
                                             <ul class="list-unstyled">
                                                 <li class="ml32 mt8 mb8">
-                                                    Son aquelas que, ben sexa pola nosa banda ou da de terceiros, permiten cuantifica-lo
-                                                    número de usuarios e así realizar una medición e análise estatístico do uso que os usuarios fan do servizo
-                                                    ofertado. Así analízase a navegación na nosa páxina web, co fin de mellora-la oferta de produtos ou servizos
-                                                    que lle ofrecemos.
+                                                    <p>
+                                                        Those which, either by us or by third parties, quantify the number of users,
+                                                        and make a measurement and statistical analysis of ho w users use the service offered.
+                                                        Thus navigation is discussed on our website, in order to improve the supply of products or services that we offer.
+                                                    </p>
                                                 </li>
                                             </ul>
                                         </ul>
-                                        <h4 class="ml32 mt16"><strong>¿Como desactivar cookies?</strong></h4>
+                                        <h4 class="ml32 mt16"><strong>How do you disable cookies?</strong></h4>
                                         <p class="ml32">
-                                            Pode permitir, bloquear ou eliminar as cookies instaladas no seu equipo mediante a configuración das
-                                            opcións do navegador instalado na súa computadora.
+                                            You can allow, block or delete cookies installed on your computer by configuring your browser settings installed on your computer.
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-12 mb8">
-                                        <h2>Lexislación aplicable e xurisdicción</h2>
+                                        <h2>9. Governing law and jurisdiction</h2>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 mb8">
                                         <p>
-                                            Os termos e condicións que rixen esta páxina web, así como as relacionóns que poideran derivarse da
-                                            mesma, están protexidas e quedan suxeitas á lexislación española. Para a resolución de calquera tipo de
-                                            controversia, litixio ou discrepancia que poidera suscitarse entre o usuario e SANDE Y DÍAZ polo uso deste
-                                            sitio web, someteranse, para a resolución dos mesmos, á xurisdicción e competencia dos tribunais da
-                                            Coruña, con renuncia expresa por parte do usuario de calquera outro foro que poidera corresponderlle.
+                                            The terms and conditions governing this site, and the relations arising from the same,
+                                            are protected and are subject to Spanish law. For the resolution of any controversy,
+                                            dispute or disagreement that may arise between you and <strong>SANDE Y DÍAZ</strong> from the use of this website,
+                                            user is subject to the jurisdiction of the courts of A Coruña (Galicia, Spain),
+                                            with express waiver by user of any other jurisdiction that may correspond.
                                         </p>
                                     </div>
                                 </div>
