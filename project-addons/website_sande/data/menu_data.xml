@@ -3,8 +3,8 @@
     <data noupdate="1">
         <!-- Home -->
         <record id="website.menu_homepage" model="website.menu">
-            <field name="user_logged">False</field>
-            <field name="user_not_logged">False</field>
+            <field name="user_logged">True</field>
+            <field name="user_not_logged">True</field>
         </record>
 
         <!-- About us - Company -->
