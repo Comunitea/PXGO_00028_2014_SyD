@@ -40,6 +40,8 @@
         'website_sale',
         'website_slides',
         # Comunitea
+        'seo_base',
+        'follow_us_base',
         'ecommerce_base',
         'website_blog_base',
     ],

@@ -6,38 +6,28 @@
             <div id="wrap">
                 <!-- Carousel -->
                 <div class="oe_structure">
-                    <div id="home_carousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#home_carousel" data-slide-to="0" class="active"/>
-                            <li data-target="#home_carousel" data-slide-to="1"/>
-                            <li data-target="#home_carousel" data-slide-to="2"/>
-                            <li data-target="#home_carousel" data-slide-to="3"/>
-                            <li data-target="#home_carousel" data-slide-to="4"/>
+                    <div id="home_carousel" class="carousel slide mt16" data-ride="carousel">
+                        <ol class="carousel-indicators hidden">
+
+                        </ol>
+                        <ol class="carousel-indicators hidden">
+                            <li data-target="#home_carousel" data-slide-to="0" class="active">
+                                <br/>
+                            </li>
                         </ol>
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img class="img img-responsive" src="/website_sande/static/img/ultraqua.jpg" alt="Ultraqua" title="Ultraqua" style="width: 100%; height: 100%;"/>
-                            </div>
-                            <div class="item">
-                                <img class="img img-responsive" src="/website_sande/static/img/naval.jpg" alt="Naval" title="Naval" style="width: 100%; height: 100%;"/>
-                            </div>
-                            <div class="item">
-                                <img class="img img-responsive" src="/website_sande/static/img/industria.jpg" alt="Industria" title="Industria" style="width: 100%; height: 100%;"/>
-                            </div>
-                            <div class="item">
-                                <img class="img img-responsive" src="/website_sande/static/img/depuracion.jpg" alt="Depuración" title="Depuración" style="width: 100%; height: 100%;"/>
-                            </div>
-                            <div class="item">
-                                <img class="img img-responsive" src="/website_sande/static/img/filtracion.jpg" alt="Filtración" title="Filtración" style="width: 100%; height: 100%;"/>
+                            <div class="item oe_img_bg oe_custom_bg active" style="background-image: url(&quot;/web/image/17006/naval.jpg&quot;);">
+                                <a href="#">
+                                    <img class="img img-responsive" src="/website_sande/static/img/bernoulli-filtros-autolimpiantes.jpg" alt="Filtros Autolimpiantes Bernoulli" style="width: 100%; height: 100%;"/>
+                                </a>
                             </div>
                         </div>
-                        <!-- Slider Controls -->
-                        <a class="left carousel-control" href="#home_carousel" role="button" data-slide="prev" title="Previous">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"/>
+                        <a class="left carousel-control hidden" href="#home_carousel" role="button" data-slide="prev" title="Previous">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" data-original-title="" title=""/>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="right carousel-control" href="#home_carousel" role="button" data-slide="next" title="Next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"/>
+                        <a class="right carousel-control hidden" href="#home_carousel" role="button" data-slide="next" title="Next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" data-original-title="" title=""/>
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
@@ -45,13 +35,190 @@
 
                 <!-- Contact -->
                 <div class="oe_structure">
-                    <section class="s_big_message jumbotron bg-white">
+                    <section class="s_big_message jumbotron bg-white mt0 mb0">
                         <div class="container">
                             <div class="row">
-                                <div class="mb32 col-md-offset-1 col-md-8">
+                                <div class="col-md-offset-1 mb0 col-md-9">
                                     <h1 class="text-primary">Talk to an expert. Easily.</h1>
-                                    <p class="text-secondary">Contact our Technical Service to request an appointment.</p>
+                                    <p class="text-secondary">We are specialized in <b>pumping equipment</b>, <b>water treatment</b> and <b>sewage purification</b></p>
                                     <a class="btn btn-primary btn-lg o_default_snippet_text" href="/contactus" rel="nofollow,noindex" title="Go to contact form">Contact us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Business divisions -->
+                <div class="oe_structure">
+                    <section class="s_company_team">
+                        <div class="container">
+                            <h1 class="mb32 text-center">Business divisions<br/></h1>
+                            <div class="row">
+                                <div class="col-md-6 mb0">
+                                    <div class="row s_no_resize_cols">
+                                        <div class="col-md-4">
+                                            <img src="/website_sande/static/img/bombas-centrifugas-azcue.jpg" class="img-responsive img-circle center-block shadow" title="Pumping Systems"/>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4>
+                                                <font style="font-size: 24px;">Pumping Systems</font>
+                                                <br/>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Centrifugal pumps</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Vortex and grinding vertical pumps<br/></font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;"> Multistage side channel pumps</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Submesible pumps and pressure sets</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Selfpriming screw pumps<br/></font>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <p style="text-align: right;">
+                                                <a href="/pumping-systems" class="btn btn-primary" alt="Pumping Systems" title="Go to Pumping Systems">
+                                                    <font style="font-size: 18px;">More</font>
+                                                </a>
+                                                <br/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb32">
+                                    <div class="row s_no_resize_cols">
+                                        <div class="col-md-4">
+                                            <img src="/website_sande/static/img/industrial-machinery.jpg" class="img-responsive img-circle center-block shadow" data-original-title="" title="Industrial Machinery"/>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4>
+                                                <font style="font-size: 24px;">Industrial Machinery</font>
+                                                <br/>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">ABC Compressors</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Heat exchangers</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Blowers and valves</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Electric engines</font>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <p style="text-align: right;">
+                                                <a href="#" class="btn btn-primary" title="Go to Industrial Machinery" alt="Industrial Machinery">
+                                                    <font style="font-size: 18px;">More</font>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb32">
+                                    <div class="row s_no_resize_cols">
+                                        <div class="col-md-4">
+                                            <img src="/website_sande/static/img/water-treatment.jpg" class="img-responsive img-circle center-block shadow" data-original-title="" title="Water Treatment"/>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4>
+                                                <font style="font-size: 24px;">Water Treatment</font>
+                                                <br/>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Manual and selfcleaning filters</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Bed, cartridge multilayer filters</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Ultrafiltration, softeners and desmineralizers</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Industrial reverse osmosis</font>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <p style="text-align: right;">
+                                                <a href="#" class="btn btn-primary" data-original-title="" title="Water Treatment" alt="Water Treatment">
+                                                    <font style="font-size: 18px;">More</font>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb32">
+                                    <div class="row s_no_resize_cols">
+                                        <div class="col-md-4">
+                                            <img src="/website_sande/static/img/sewage-purification.jpg" class="img-responsive img-circle center-block shadow" title="Sewage Purification"/>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h4>
+                                                <font style="font-size: 24px;">Sewage Purification</font>
+                                                <br/>
+                                            </h4>
+                                            <ul>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Fat and sand separators</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Treatment plants</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Prefabricated pumping stations</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Wastewater treatment</font>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <p style="text-align: right;">
+                                                <a href="#" class="btn btn-primary" title="Sewage Purification" alt="Sewage Purification">
+                                                    <font style="font-size: 18px;">More</font>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -60,33 +227,140 @@
 
                 <!-- Main Features -->
                 <div class="oe_structure">
-                    <section class="s_features jumbotron bg-white">
+                    <section class="s_three_columns mt0 bg-gray-lighter" style="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 mt48 mb32">
+                                    <img class="img img-responsive" src="/website_sande/static/img/azcue-pumps.jpg" alt="Odoo - Sample 1 for three columns" title="Azcue Pumps"/>
+                                    <h3 class="mt16">
+                                        <span style="font-weight: normal;">Azcue <b>Pumps</b></span>
+                                        <br/>
+                                    </h3>
+                                    <p>
+                                        <font style="font-size: 18px;">Azcue Pumps has a variety of <b>high quality pumps</b> to match your individual use case, with a wide range of pump types to choose from including variations in orientation, priming capabilities, motor configuration or suction method among other things</font>
+                                        <br/>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 mb32 mt48">
+                                    <img class="img img-responsive" src="/website_sande/static/img/bernoulli-filters.jpg" alt="Odoo - Sample 2 for three columns" title="Bernoulli Filters"/>
+                                    <h3 class="mt16">
+                                        <span style="font-weight: normal;">Bernoulli <b>Filters</b></span>
+                                        <br/>
+                                    </h3>
+                                    <p>
+                                        <font style="font-size: 18px;">A reliable filter with an ingeniously simple design that ensures continuous, safe operation year after year. With a wide range of multi-basket, single basket and manual Bernoulli filters and centrifugal separators. <b>All Swedish quality at your fingertips</b></font>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 mb48 mt48">
+                                    <img class="img img-responsive" src="/website_sande/static/img/ultraviolet-disinfection.jpg" alt="Odoo - Sample 3 for three columns" title="Ultraviolet Disinfection"/>
+                                    <h3 class="mt16">
+                                        <span style="font-weight: normal;">Ultraviolet <b>Disinfection</b></span>
+                                    </h3>
+                                    <p>
+                                        <font style="font-size: 18px;">At Sande y Díaz we offer you a wide range of <b>ultraviolet disinfection systems</b> that provide a fast and reliable way to disinfect, by ultraviolet radiation that kills unwanted bacteria and viruses </font>
+                                        <font style="font-size: 18px;">in seconds</font>
+                                        <br/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Quality -->
+                <div class="oe_estructure">
+                    <section class="s_features jumbotron bg-gray-light">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2 class="text-center text-primary"><strong>Main Features</strong></h2>
+                                    <h2 class="text-center text-primary">
+                                        <strong>Commitment to quality and customer</strong>
+                                    </h2>
                                 </div>
                             </div>
                             <div class="row mt16 mb16">
                                 <div class="col-md-4 text-center">
-                                    <span class="fa fa-phone-square fa-5x text-primary"/>
                                     <div>
-                                        <h3 class="mt8 mb8 o_default_snippet_text text-primary">Technical Assistance</h3>
-                                        <p class="text-secondary o_default_snippet_text">We have a great experience<br/>more than 35 years giving support.</p>
+                                        <h3 class="mb8 mt8 text-primary">
+                                            <span style="font-weight: normal;">Experience</span>
+                                        </h3>
+                                        <p class="text-secondary">We have a great experience<br/>more than 40 years<br/></p>
                                     </div>
                                 </div>
                                 <div class="col-md-4 text-center">
-                                    <span class="fa fa-shopping-cart fa-5x text-primary"/>
                                     <div>
-                                        <h3 class="mt8 mb8 o_default_snippet_text text-primary">Original Replacement Parts</h3>
-                                        <p class="text-secondary o_default_snippet_text">Large stock available<br/>with immediate service.</p>
+                                        <h3 class="mb8 mt8 text-primary">
+                                            <span style="font-weight: normal;">Professionalism</span>
+                                        </h3>
+                                        <p class="text-secondary">We offer technical advice and provide the most adequate solution for each case<br/></p>
                                     </div>
                                 </div>
                                 <div class="col-md-4 text-center">
-                                    <span class="fa fa-heartbeat fa-5x text-primary"/>
                                     <div>
-                                        <h3 class="mt8 mb8 o_default_snippet_text text-primary">Maintenance</h3>
-                                        <p class="text-secondary o_default_snippet_text">Keep your installation<br/>always in perfect condition.</p>
+                                        <h3 class="mt8 mb8 text-primary">
+                                            <span style="font-weight: normal;">Quality</span>
+                                        </h3>
+                                        <p class="text-secondary">We apply the high quality standards recognized by our Ukas ISO certifications<br/></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ISO9001 -->
+                <div class="oe_structure">
+                    <section class="s_feature_grid">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="mb0 col-md-5">
+                                            <div style="text-align: left;">
+                                                <img src="/website_sande/static/img/ISO9001.jpg" style="width: 100%;" class="pull-left" title="ISO 9001"/>
+                                            </div>
+                                            <h4 class="mb0 mt0">
+                                                <br/>
+                                            </h4>
+                                        </div>
+                                        <div class="mb0 col-md-7 mt16">
+                                            <p class="mb0">
+                                                <b>
+                                                    <font style="font-size: 24px;" class="text-primary">ISO 9001</font>
+                                                </b>
+                                                <span style="font-weight: normal;">
+                                                    <font style="font-size: 18px;">certification </font>
+                                                </span>
+                                                <br/>
+                                            </p>
+                                        </div>
+                                        <div class="mb0 mt4 col-md-7">
+                                            <p class="text-secondary"> ISO 9001 is an international standard that takes into account the activities of an organization, without distinction of activity sector. </p>
+                                            <p class="text-secondary" style="text-align: right;"><a href="/legal/quality-policy" class="btn btn-primary" title="Go to Quality Policy" alt="Quality Policy">Learn more</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-5" align="center">
+                                            <img src="/website_sande/static/img/ISO14001.jpg" style="width: 100%;" class="pull-left" title="ISO 14001"/>
+                                            <h4 class="mb0 mt0">
+                                                <br/>
+                                            </h4>
+                                        </div>
+                                        <div class="mb0 col-md-6 mt16" align="center">
+                                            <p class="mb0" style="text-align: left;">
+                                                <b>
+                                                    <font style="font-size: 24px;" class="text-primary">ISO 14001</font>
+                                                </b>
+                                                <font style="font-size: 18px;"> certification</font>
+                                                <br/>
+                                            </p>
+                                        </div>
+                                        <div class="mb48 mt4 col-md-7">
+                                            <p class="text-secondary" style="text-align: left;"> ISO 14001 sets out the criteria for an environmental management system and can be certified to.</p>
+                                            <p class="text-secondary" style="text-align: right;"><a href="/legal/quality-policy" class="btn btn-primary" title="Go to Quality Policy" alt="Quality Policy">Learn more</a></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -96,110 +370,119 @@
 
                 <!-- Action Sectors -->
                 <div class="oe_structure">
-                    <section class="s_features jumbotron bg-white">
+                    <section class="s_features mb0 mt0 bg-gray-lighter">
                         <div class="container">
-                            <div class="row">
+                            <div class="row mt16 mb16">
                                 <div class="col-md-12">
-                                    <h2 class="text-center text-primary"><strong>Our Action Sectors</strong></h2>
+                                    <h2 class="text-center text-primary">
+                                        <strong>Our Action Sectors</strong>
+                                    </h2>
                                 </div>
-                            </div>
-                            <div class="row text-center">
-                                <div class="col-sm-6 col-md-3">
-                                    <h2 class="mb8 o_default_snippet_text text-primary"><u><strong>General industry</strong></u></h2>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Aquaculture</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Paper and textile</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Waste managers</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Irrigation systems</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Mines and quarries</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Canneries and refrigeration</p>
+                                <div class="text-center col-md-3">
+                                    <div>
+                                        <h3 class="mb0 mt8">
+                                            <span style="font-weight: normal;">General industry</span>
+                                        </h3>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">
+                                                <br/>
+                                            </font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Aquaculture</font>
+                                        </p>
+                                        <p class="mb0 o_default_snippet_text text-secondary">
+                                            <font style="font-size: 18px;">Paper and textile</font>
+                                        </p>
+                                        <p class="mb0 o_default_snippet_text text-secondary">
+                                            <font style="font-size: 18px;">Waste managers</font>
+                                        </p>
+                                        <p class="mb0 o_default_snippet_text text-secondary">
+                                            <font style="font-size: 18px;">Irrigation systems</font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Mines and quarries</font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Canneries and refrigeration</font>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <h2 class="mb8 o_default_snippet_text text-primary"><u><strong>Naval industry</strong></u></h2>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Off-shore</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Fishing sector</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Oil and chemical tankers</p>
+                                <div class="text-center col-md-3">
+                                    <div style="text-align: center;">
+                                        <h3 class="mb0 mt8">
+                                            <span style="font-weight: normal;">Naval industry</span>
+                                        </h3>
+                                        <p class="text-muted"/>
+                                        <p class="mb0 text-secondary">
+                                            <br/>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Off-shore</font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Fishing sector</font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Oil and chemical tankers<br/></font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">&amp;nbsp;</font>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <h2 class="mb8 o_default_snippet_text text-primary"><u><strong>Sates</strong></u></h2>
-                                    <p class="mb0 o_default_snippet_text text-secondary">EDAR</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">ETAP</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Supplies</p>
+                                <div class="text-center col-md-3">
+                                    <div>
+                                        <h3 class="mb0 mt8">
+                                            <span style="font-weight: normal;">Sates</span>
+                                        </h3>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">
+                                                <br/>
+                                            </font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">EDAR</font>
+                                        </p>
+                                        <p class="mb0 o_default_snippet_text text-secondary">
+                                            <font style="font-size: 18px;">ETAP</font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Supplies</font>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <h2 class="mb8 o_default_snippet_text text-primary"><u><strong>Energy</strong></u></h2>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Cogeneration</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Biomass plants</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Combined cycles</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Geothermal plants</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Solar thermal plants</p>
-                                    <p class="mb0 o_default_snippet_text text-secondary">Thermal power stations</p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <!-- ISO9001 -->
-                <div class="oe_structure">
-                    <section class="s_image_text">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 mt32 mb32">
-                                    <img class="img img-responsive center-block mb16" src="/website_sande/static/img/ISO9001.jpg" alt="ISO9001" title="ISO9001"/>
-                                </div>
-                                <div class="col-md-6 mt64 mb32">
-                                    <h3 class="o_default_snippet_text text-primary"><strong>ISO9001 Certification</strong></h3>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        ISO 9001 is an international standard that takes into account the activities of an organization, without distinction of activity sector.
-                                    </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        This standard focuses on customer satisfaction and the ability to provide products and services that meet the organization's internal and external demands.
-                                    </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        Today, the ISO 9001 standard is the most renowned and widely used standard around the world.
-                                    </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        This certification was accredited by The United Kingdom Accreditation Service <a href="https://www.ukas.com" target="_blank" title="The United Kingdom Accreditation Service (UKAS)">(UKAS)</a>.
-                                    </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        <a href="https://www.ukas.com" target="_blank" title="The United Kingdom Accreditation Service (UKAS)">UKAS</a>
-                                        is the sole national accreditation body for the United Kingdom and is recognised by government,
-                                        to assess against internationally agreed standards,
-                                        organisations that provide certification, testing, inspection and calibration services.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <!-- ISO14001 -->
-                <div class="oe_structure">
-                    <section class="s_image_text">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 mt64 mb32">
-                                    <h3 class="o_default_snippet_text text-primary"><strong>ISO14001 Certification</strong></h3>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        ISO 14001 sets out the criteria for an environmental management system and can be certified to.
-                                        It maps out a framework that a company or organization can follow to set up an effective environmental management system.
-                                    </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        Designed for any type of organization, regardless of its activity or sector,
-                                        it can provide assurance to company management and employees as well as external stakeholders that environmental impact is being measured and improved.
-                                    </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        This certification was accredited by The United Kingdom Accreditation Service <a href="https://www.ukas.com" target="_blank" title="The United Kingdom Accreditation Service (UKAS)">(UKAS)</a>.
-                                    </p>
-                                    <p class="o_default_snippet_text text-secondary">
-                                        <a href="https://www.ukas.com" target="_blank" title="The United Kingdom Accreditation Service (UKAS)">UKAS</a>
-                                        is the sole national accreditation body for the United Kingdom and is recognised by government,
-                                        to assess against internationally agreed standards,
-                                        organisations that provide certification, testing, inspection and calibration services.
-                                    </p>
-                                </div>
-                                <div class="col-md-6 mt32 mb32">
-                                    <img class="img img-responsive center-block mb16" src="/website_sande/static/img/ISO14001.jpg" alt="ISO14001" title="ISO14001"/>
+                                <div class="text-center col-md-3">
+                                    <div>
+                                        <h3 class="mb0 mt8">
+                                            <span style="font-weight: normal;">Energy</span>
+                                        </h3>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">
+                                                <br/>
+                                            </font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Cogeneration</font>
+                                        </p>
+                                        <p class="mb0 o_default_snippet_text text-secondary">
+                                            <font style="font-size: 18px;">Biomass plants</font>
+                                        </p>
+                                        <p class="mb0 o_default_snippet_text text-secondary">
+                                            <font style="font-size: 18px;">Combined cycles</font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Geothermal plants</font>
+                                        </p>
+                                        <p class="mb0 o_default_snippet_text text-secondary">
+                                            <font style="font-size: 18px;">Solar thermal plants</font>
+                                        </p>
+                                        <p class="mb0 text-secondary">
+                                            <font style="font-size: 18px;">Thermal power stations</font>
+                                            <br/>
+                                            <br/>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +506,7 @@
                                 <t t-foreach="latest_posts['posts']" t-as="post">
                                     <div t-attf-class="col-md-#{col_md} mt32" name="latest_posts">
                                         <a t-attf-href="/blog/#{slug(post.blog_id)}/post/#{slug(post)}" title="Read more" alt="Read more" rel="noindex,nofollow">
-                                            <img class="img img-responsive" t-attf-src="/web/image/blog.post/#{post.id}/image" alt="Ultraqua" title="Ultraqua" style="width: auto; min-height: 200px;"/>
+                                            <img class="img img-responsive" t-attf-src="/web/image/blog.post/#{post.id}/image" alt="Blog Post" title="Blog Post" style="width: auto; min-height: 200px;"/>
                                         </a>
                                         <h4 class="mt16 o_default_snippet_text text-primary" t-esc="post.name"/>
                                         <h6 class="o_default_snippet_text text-secondary" t-esc="post.subtitle"/>
