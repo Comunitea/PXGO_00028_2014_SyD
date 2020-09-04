@@ -490,7 +490,7 @@
                 </div>
 
                 <!-- Latest Blog Posts -->
-                <div class="oe_structure">
+                <div class="oe_structure" t-if="request.env['ir.ui.view'].search([('key', '=', 'website_blog_base.wbb_website_blog_latest_blogs')]).active">
                     <t t-set="blogs" t-value="website.blogs()"/>
                     <t t-set="access" t-value="website.access_to_blogs(blogs)"/>
                     <t t-set="latest_posts" t-value="website.latest_posts(3, 3, 'Latest News', '')"/>

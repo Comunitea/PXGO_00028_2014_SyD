@@ -14,7 +14,8 @@
                 <section>
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4 col-lg-5">
+                            <!-- First column -->
+                            <div class="col-md-4 col-lg-5" id="about">
                                 <h4>
                                     <span t-field="res_company.name" />
                                     <small> - <a href="/company" target="_blank" rel="nofollow,noindex" title="About us">About us</a></small>
@@ -34,8 +35,9 @@
                                     </center>
                                 </div>
                             </div>
-                            <!--                            <t t-call="website.company_description"/>-->
-                            <div class="col-md-4 col-lg-3 col-lg-offset-1" id="info">
+
+                            <!-- Second column -->
+                            <div class="col-md-4 col-lg-3 col-lg-offset-1">
                                 <h4>Contact</h4>
                                 <ul class="list-unstyled">
                                     <address itemscope="itemscope" itemtype="http://schema.org/Organization">
@@ -97,14 +99,15 @@
                                     <a t-att-href="website.social_github" t-if="website.social_github" target="_blank" title="GitHub"><i class="fa fa-github-square o_github"/></a>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-lg-3">
-                                <h4>Products &amp; Services</h4>
+
+                            <!-- Third column -->
+                            <div class="col-md-4 col-lg-3" id="info">
+                                <h4>Products and Services</h4>
                                 <ul class="list-unstyled" id="products">
-                                    <li><a href="/blog" target="_blank" rel="nofollow,noindex" title="News">News</a></li>
-                                    <li><a href="/page/newsletter" target="_blank" rel="nofollow,noindex" title="Newsletter">Newsletter</a></li>
                                     <li><a href="/slides" target="_blank" rel="nofollow,noindex" title="Catalogs">Catalogs</a></li>
-                                    <li><a href="/ours-products" target="_blank" rel="nofollow,noindex" title="Products">Products</a></li>
-                                    <li><a href="/ours-services" target="_blank" rel="nofollow,noindex" title="Services">Services</a></li>
+                                    <li><a href="/ours-products-and-services" target="_blank" rel="nofollow,noindex" title="Products">Products and Services</a></li>
+                                    <li t-if="request.env['ir.ui.view'].search([('key', '=', 'website_blog_base.wbb_website_blog_latest_blogs')]).active"><a href="/blog" target="_blank" rel="nofollow,noindex" title="News">News</a></li>
+                                    <li t-if="request.env['ir.ui.view'].search([('key', '=', 'follow_us_base.newsletter_banner')]).active"><a href="/page/newsletter" target="_blank" rel="nofollow,noindex" title="Newsletter">Newsletter</a></li>
                                     <li><a href="/jobs" target="_blank" rel="nofollow,noindex" title="Work with us">Work with us</a></li>
                                 </ul>
                             </div>
