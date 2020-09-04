@@ -117,7 +117,7 @@
                                     <li t-if="request.env['ir.ui.view'].search([('key', '=', 'follow_us_base.newsletter_banner')]).active">
                                         <a href="/page/newsletter" target="_blank" rel="nofollow,noindex" title="Newsletter" alt="Newsletter">Newsletter</a>
                                     </li>
-                                    <li><a href="/jobs" target="_blank" rel="nofollow,noindex" title="Work with us" alt="Work with us">Work with us</a></li>
+                                    <li><a href="/work-with-us" target="_blank" rel="nofollow,noindex" title="Work with us" alt="Work with us">Work with us</a></li>
                                 </ul>
                             </div>
                         </div>
