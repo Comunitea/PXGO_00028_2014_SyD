@@ -98,7 +98,7 @@
                                                 </li>
                                             </ul>
                                             <p style="text-align: right;">
-                                                <a href="/pumping-systems" class="btn btn-primary" alt="Pumping Systems" title="Go to Pumping Systems">
+                                                <a href="/pumping-systems" class="btn btn-primary" alt="Pumping Systems" title="Go to Pumping Systems" taget="_blank" rel="nofollow,noindex">
                                                     <font style="font-size: 18px;">More</font>
                                                 </a>
                                                 <br/>
@@ -140,7 +140,7 @@
                                                 </li>
                                             </ul>
                                             <p style="text-align: right;">
-                                                <a href="#" class="btn btn-primary" title="Go to Industrial Machinery" alt="Industrial Machinery">
+                                                <a href="/industrial-machinery" class="btn btn-primary" title="Go to Industrial Machinery" alt="Industrial Machinery" taget="_blank" rel="nofollow,noindex">
                                                     <font style="font-size: 18px;">More</font>
                                                 </a>
                                             </p>
@@ -181,7 +181,7 @@
                                                 </li>
                                             </ul>
                                             <p style="text-align: right;">
-                                                <a href="#" class="btn btn-primary" title="Water Treatment" alt="Water Treatment">
+                                                <a href="/water-treatment" class="btn btn-primary" title="Water Treatment" alt="Water Treatment" taget="_blank" rel="nofollow,noindex">
                                                     <font style="font-size: 18px;">More</font>
                                                 </a>
                                             </p>
