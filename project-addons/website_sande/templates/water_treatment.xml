@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="water_treatment" name="Water Treatment Sande">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'Water Treatment'"/>
+            <div id="wrap">
+                <div class="oe_structure">
+                    <section class="s_company_team">
+                        <div class="container">
+                            <h1 class="text-center mb32">Water Treatment</h1>
+                            <p class="text-center mb64">Coming soon!</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

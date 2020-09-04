@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="pumping_systems" name="Pumping Systems Sande">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'Pumping Systems'"/>
+            <div id="wrap">
+                <div class="oe_structure">
+
+                    <!-- Image -->
+                    <section class="s_text_block_image_fw oe_img_bg oe_custom_bg" style="background-image: url('/website_sande/static/img/pumping-systems-1600x1067.jpg'); background-position: 49.08% 67.46%;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 mt64 mb64 bg-black-25">
+                                    <h2 style="font-size:62px">
+                                        <font class="text-white">Pumping Systems</font>
+                                        <br/>
+                                    </h2>
+                                    <h4 class="o_default_snippet_text">
+                                        <font class="text-white">With a great subtitle</font>
+                                    </h4>
+                                    <p>
+                                        <font class="text-white">Write one or two paragraphs describing your product, services or a specific feature. To be successful your content needs to be useful to your readers.</font>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Pumps -->
+                    <section class="s_company_team mt32">
+                        <div class="container">
+                            <h1 class="mb32 text-center">Pumps</h1>
+
+                            <!-- Centrifugal Pumps -->
+                            <div class="row">
+                                <div class="col-md-6 mb32">
+                                    <div class="row s_no_resize_cols">
+                                        <div class="col-md-4 mt32">
+                                            <img src="/website_sande/static/img/bombas-centrifugas-azcue.jpg" class="img-responsive img-circle center-block shadow"/>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h3>
+                                                <a href="/centrifugal-pumps" title="Centrifugal Pumps" alt="Centrifugal Pumps" rel="nofollow,noindex">Centrifugal pumps</a>
+                                            </h3>
+                                            <ul>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <a href="/centrifugal-pumps#horizontal_centrifugal_pumps" title="Horizontal centrifugal pumps" alt="Horizontal centrifugal pumps" rel="nofollow,noindex" taget="_blank">
+                                                            <font style="font-size: 18px;">Horizontal centrifugal pumps</font>
+                                                        </a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <a href="/centrifugal-pumps#vertical_centrifugal_pumps" title="Vertical centrifugal pumps" alt="Vertical centrifugal pumps" rel="nofollow,noindex" taget="_blank">
+                                                            <font style="font-size: 18px;">Vertical centrifugal pumps</font>
+                                                        </a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <a href="/centrifugal-pumps#selfpriming_centrifugal_pumps" title="Selfpriming centrifugal pumps" alt="Selfpriming centrifugal pumps" rel="nofollow,noindex" taget="_blank">
+                                                            <font style="font-size: 18px;">Selfpriming centrifugal pumps</font>
+                                                        </a>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <a href="/centrifugal-pumps#multistage_centrifugal_pumps" title="Multistage centrifugal pumps" alt="Multistage centrifugal pumps" rel="nofollow,noindex" taget="_blank">
+                                                            <font style="font-size: 18px;">Multistage centrifugal pumps</font>
+                                                        </a>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pumping Systems -->
+                                <div class="col-md-6 mb32">
+                                    <div class="row s_no_resize_cols">
+                                        <div class="col-md-4 mt32">
+                                            <img src="/website_sande/static/img/bombas-centrifugas-azcue.jpg" class="img-responsive img-circle center-block shadow"/>
+                                        </div>
+                                        <div class="col-md-8">
+                                             <h3>
+                                                <a href="/pumping-systems" title="Pumping Systems" alt="Pumping Systems" rel="nofollow,noindex">Pumping Systems</a>
+                                            </h3>
+                                            <ul>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Selfpriming screw pumps&amp;nbsp;</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Vortex and grinding vertical pumps</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Selfpriming multistage side channel ps.</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Submesible pumps and pressure sets</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Pneumatic and lobe pumps</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">Flexible impeller and magnetic drive ps.</font>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p class="text-muted">
+                                                        <font style="font-size: 18px;">High pressure and eccentric screw ps.</font>
+                                                        <br/>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact -->
+                    <section class="jumbotron s_button bg-gray-lighter mb64">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <p class="mb0">
+                                        <strong>
+                                            <font class="text-primary" style="">We are specialized in pumping equipment, water treatment and sewage purification</font>
+                                        </strong>
+                                    </p>
+                                    <p class="mb0">Feel free to contact and let us know what we can do for you </p>
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="/contactus" class="btn btn-primary btn-lg pull-right mt8" title="Contact Us" alt="Contact Us" rel="nofollow,noindex">
+                                        <span class="o_default_snippet_text">Contact Us Now</span>
+                                        <i class="fa fa-chevron-right"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

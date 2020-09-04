@@ -4,7 +4,7 @@
     <!-- Add Quality Policy after copyright and company name -->
     <template id="quality_policy_link" inherit_id="website.layout_footer_copyright" name="Quality Policy Link Sande">
         <xpath expr="//footer//div/span[@t-field='res_company.name']" position="after">
-            <span><a href="/legal/quality-policy" target="_blank" rel="nofollow,noindex" title="Quality Policy">Quality Policy</a></span>
+            <span><a href="/legal/quality-policy" target="_blank" rel="nofollow,noindex" title="Quality Policy" alt="Quality Policy">Quality Policy</a></span>
         </xpath>
     </template>
 
@@ -88,6 +88,11 @@
                                                 <span><i class="fa fa-envelope"/> <font t-field="res_company.email"/></span>
                                             </a>
                                         </li>
+                                        <li t-ignore="true">
+                                            <a href="/contactus" title="Contact Us" alt="Contact Us" rel="nofollow,noindex">
+                                                <span><i class="fa fa-wpforms" aria-hidden="true"/> Form Contact</span>
+                                    </a>
+                                        </li>
                                     </address>
                                 </ul>
                                 <div class="o_sharing_links">
@@ -104,11 +109,15 @@
                             <div class="col-md-4 col-lg-3" id="info">
                                 <h4>Products and Services</h4>
                                 <ul class="list-unstyled" id="products">
-                                    <li><a href="/slides" target="_blank" rel="nofollow,noindex" title="Catalogs">Catalogs</a></li>
-                                    <li><a href="/ours-products-and-services" target="_blank" rel="nofollow,noindex" title="Products">Products and Services</a></li>
-                                    <li t-if="request.env['ir.ui.view'].search([('key', '=', 'website_blog_base.wbb_website_blog_latest_blogs')]).active"><a href="/blog" target="_blank" rel="nofollow,noindex" title="News">News</a></li>
-                                    <li t-if="request.env['ir.ui.view'].search([('key', '=', 'follow_us_base.newsletter_banner')]).active"><a href="/page/newsletter" target="_blank" rel="nofollow,noindex" title="Newsletter">Newsletter</a></li>
-                                    <li><a href="/jobs" target="_blank" rel="nofollow,noindex" title="Work with us">Work with us</a></li>
+                                    <li><a href="/slides" target="_blank" rel="nofollow,noindex" title="Catalogs" alt="Catalogs">Catalogs</a></li>
+                                    <li><a href="/business-divisions" target="_blank" rel="nofollow,noindex" title="Products and Services" alt="Products and Services">Products and Services</a></li>
+                                    <li t-if="request.env['ir.ui.view'].search([('key', '=', 'website_blog_base.wbb_website_blog_latest_blogs')]).active">
+                                        <a href="/blog" target="_blank" rel="nofollow,noindex" title="News" alt="News">News</a>
+                                    </li>
+                                    <li t-if="request.env['ir.ui.view'].search([('key', '=', 'follow_us_base.newsletter_banner')]).active">
+                                        <a href="/page/newsletter" target="_blank" rel="nofollow,noindex" title="Newsletter" alt="Newsletter">Newsletter</a>
+                                    </li>
+                                    <li><a href="/jobs" target="_blank" rel="nofollow,noindex" title="Work with us" alt="Work with us">Work with us</a></li>
                                 </ul>
                             </div>
                         </div>

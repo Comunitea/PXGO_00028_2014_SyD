@@ -4,6 +4,7 @@
         <t t-call="website.layout">
             <t t-set="pageName" t-value="'homepage'"/>
             <div id="wrap">
+
                 <!-- Carousel -->
                 <div class="oe_structure">
                     <div id="home_carousel" class="carousel slide mt16" data-ride="carousel">
@@ -17,17 +18,17 @@
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <div class="item oe_img_bg oe_custom_bg active" style="background-image: url(&quot;/web/image/17006/naval.jpg&quot;);">
-                                <a href="#">
+                                <a href="/business-divisions" title="Business Divisions" alt="Business Divisions" taget="_blank" rel="nofollow, noindex">
                                     <img class="img img-responsive" src="/website_sande/static/img/bernoulli-filtros-autolimpiantes.jpg" alt="Filtros Autolimpiantes Bernoulli" style="width: 100%; height: 100%;"/>
                                 </a>
                             </div>
                         </div>
-                        <a class="left carousel-control hidden" href="#home_carousel" role="button" data-slide="prev" title="Previous">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" data-original-title="" title=""/>
+                        <a class="left carousel-control hidden" href="#home_carousel" role="button" data-slide="prev" title="Previous" alt="Previous" rel="nofollow,noindex">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" title="Previous"/>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="right carousel-control hidden" href="#home_carousel" role="button" data-slide="next" title="Next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" data-original-title="" title=""/>
+                        <a class="right carousel-control hidden" href="#home_carousel" role="button" data-slide="next" title="Next" alt="Next" rel="nofollow,noindex">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" title="Next"/>
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
@@ -50,44 +51,49 @@
 
                 <!-- Business divisions -->
                 <div class="oe_structure">
-                    <section class="s_company_team">
+                    <section class="s_company_team mb48">
                         <div class="container">
-                            <h1 class="mb32 text-center">Business divisions<br/></h1>
+                            <!-- Business divisions -->
+                            <h1 class="mb32 text-center">Business divisions</h1>
                             <div class="row">
+
+                                <!-- Pumping Systems -->
                                 <div class="col-md-6 mb0">
                                     <div class="row s_no_resize_cols">
                                         <div class="col-md-4">
                                             <img src="/website_sande/static/img/bombas-centrifugas-azcue.jpg" class="img-responsive img-circle center-block shadow" title="Pumping Systems"/>
                                         </div>
                                         <div class="col-md-8">
-                                            <h4>
-                                                <font style="font-size: 24px;">Pumping Systems</font>
-                                                <br/>
-                                            </h4>
+                                            <h3>
+                                                <a href="/pumping-systems" title="Pumping Systems" alt="Pumping Systems" rel="nofollow,noindex">Pumping Systems</a>
+                                            </h3>
                                             <ul>
                                                 <li>
                                                     <p class="text-muted">
-                                                        <font style="font-size: 18px;">Centrifugal pumps</font>
+                                                        <a href="/centrifugal-pumps#horizontal_centrifugal_pumps" title="Horizontal centrifugal pumps" alt="Horizontal centrifugal pumps" rel="nofollow,noindex" taget="_blank">
+                                                            <font style="font-size: 18px;">Horizontal centrifugal pumps</font>
+                                                        </a>
                                                     </p>
                                                 </li>
                                                 <li>
                                                     <p class="text-muted">
-                                                        <font style="font-size: 18px;">Vortex and grinding vertical pumps<br/></font>
+                                                        <a href="/centrifugal-pumps#vertical_centrifugal_pumps" title="Vertical centrifugal pumps" alt="Vertical centrifugal pumps" rel="nofollow,noindex" taget="_blank">
+                                                            <font style="font-size: 18px;">Vertical centrifugal pumps</font>
+                                                        </a>
                                                     </p>
                                                 </li>
                                                 <li>
                                                     <p class="text-muted">
-                                                        <font style="font-size: 18px;"> Multistage side channel pumps</font>
+                                                        <a href="/centrifugal-pumps#selfpriming_centrifugal_pumps" title="Selfpriming centrifugal pumps" alt="Selfpriming centrifugal pumps" rel="nofollow,noindex" taget="_blank">
+                                                            <font style="font-size: 18px;">Selfpriming centrifugal pumps</font>
+                                                        </a>
                                                     </p>
                                                 </li>
                                                 <li>
                                                     <p class="text-muted">
-                                                        <font style="font-size: 18px;">Submesible pumps and pressure sets</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Selfpriming screw pumps<br/></font>
+                                                        <a href="/centrifugal-pumps#multistage_centrifugal_pumps" title="Multistage centrifugal pumps" alt="Multistage centrifugal pumps" rel="nofollow,noindex" taget="_blank">
+                                                            <font style="font-size: 18px;">Multistage centrifugal pumps</font>
+                                                        </a>
                                                     </p>
                                                 </li>
                                             </ul>
@@ -100,16 +106,17 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Industrial Machinery -->
                                 <div class="col-md-6 mb32">
                                     <div class="row s_no_resize_cols">
                                         <div class="col-md-4">
-                                            <img src="/website_sande/static/img/industrial-machinery.jpg" class="img-responsive img-circle center-block shadow" data-original-title="" title="Industrial Machinery"/>
+                                            <img src="/website_sande/static/img/industrial-machinery.jpg" class="img-responsive img-circle center-block shadow" title="Industrial Machinery"/>
                                         </div>
                                         <div class="col-md-8">
-                                            <h4>
-                                                <font style="font-size: 24px;">Industrial Machinery</font>
-                                                <br/>
-                                            </h4>
+                                            <h3>
+                                                <a href="/industrial-machinery" title="Industrial Machinery" alt="Industrial Machinery" rel="nofollow,noindex">Industrial Machinery</a>
+                                            </h3>
                                             <ul>
                                                 <li>
                                                     <p class="text-muted">
@@ -140,16 +147,17 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Water Treatment -->
                                 <div class="col-md-6 mb32">
                                     <div class="row s_no_resize_cols">
                                         <div class="col-md-4">
-                                            <img src="/website_sande/static/img/water-treatment.jpg" class="img-responsive img-circle center-block shadow" data-original-title="" title="Water Treatment"/>
+                                            <img src="/website_sande/static/img/water-treatment.jpg" class="img-responsive img-circle center-block shadow" title="Water Treatment"/>
                                         </div>
                                         <div class="col-md-8">
-                                            <h4>
-                                                <font style="font-size: 24px;">Water Treatment</font>
-                                                <br/>
-                                            </h4>
+                                            <h3>
+                                                <a href="/water-treatment" title="Water Treatment" alt="Water Treatment" rel="nofollow,noindex">Water Treatment</a>
+                                            </h3>
                                             <ul>
                                                 <li>
                                                     <p class="text-muted">
@@ -173,23 +181,24 @@
                                                 </li>
                                             </ul>
                                             <p style="text-align: right;">
-                                                <a href="#" class="btn btn-primary" data-original-title="" title="Water Treatment" alt="Water Treatment">
+                                                <a href="#" class="btn btn-primary" title="Water Treatment" alt="Water Treatment">
                                                     <font style="font-size: 18px;">More</font>
                                                 </a>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Sewage Purification -->
                                 <div class="col-md-6 mb32">
                                     <div class="row s_no_resize_cols">
                                         <div class="col-md-4">
                                             <img src="/website_sande/static/img/sewage-purification.jpg" class="img-responsive img-circle center-block shadow" title="Sewage Purification"/>
                                         </div>
                                         <div class="col-md-8">
-                                            <h4>
-                                                <font style="font-size: 24px;">Sewage Purification</font>
-                                                <br/>
-                                            </h4>
+                                            <h3>
+                                                <a href="/sewage-purification" title="Sewage Purification" alt="Sewage Purification" rel="nofollow,noindex">Sewage Purification</a>
+                                            </h3>
                                             <ul>
                                                 <li>
                                                     <p class="text-muted">
@@ -208,12 +217,14 @@
                                                 </li>
                                                 <li>
                                                     <p class="text-muted">
-                                                        <font style="font-size: 18px;">Wastewater treatment</font>
+                                                        <a href="/water-treatment" title="Water Treatment" alt="Water Treatment" rel="nofollow,noindex" taget="_blank">
+                                                            <font style="font-size: 18px;">Horizontal centrifugal pumps</font>
+                                                        </a>
                                                     </p>
                                                 </li>
                                             </ul>
                                             <p style="text-align: right;">
-                                                <a href="#" class="btn btn-primary" title="Sewage Purification" alt="Sewage Purification">
+                                                <a href="/sewage-purification" class="btn btn-primary" title="Sewage Purification" alt="Sewage Purification" taget="_blank" rel="nofollow, noindex">
                                                     <font style="font-size: 18px;">More</font>
                                                 </a>
                                             </p>
@@ -227,7 +238,7 @@
 
                 <!-- Main Features -->
                 <div class="oe_structure">
-                    <section class="s_three_columns mt0 bg-gray-lighter" style="">
+                    <section class="s_three_columns mt0 bg-gray-lighter">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-4 mt48 mb32">
@@ -336,7 +347,9 @@
                                         </div>
                                         <div class="mb0 mt4 col-md-7">
                                             <p class="text-secondary"> ISO 9001 is an international standard that takes into account the activities of an organization, without distinction of activity sector. </p>
-                                            <p class="text-secondary" style="text-align: right;"><a href="/legal/quality-policy" class="btn btn-primary" title="Go to Quality Policy" alt="Quality Policy">Learn more</a></p>
+                                            <p class="text-secondary" style="text-align: right;">
+                                                <a href="/legal/quality-policy" class="btn btn-primary" title="Go to Quality Policy" alt="Quality Policy" taget="_blank" rel="nofollow, noindex">Learn more</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -359,7 +372,9 @@
                                         </div>
                                         <div class="mb48 mt4 col-md-7">
                                             <p class="text-secondary" style="text-align: left;"> ISO 14001 sets out the criteria for an environmental management system and can be certified to.</p>
-                                            <p class="text-secondary" style="text-align: right;"><a href="/legal/quality-policy" class="btn btn-primary" title="Go to Quality Policy" alt="Quality Policy">Learn more</a></p>
+                                            <p class="text-secondary" style="text-align: right;">
+                                                <a href="/legal/quality-policy" class="btn btn-primary" title="Go to Quality Policy" alt="Quality Policy" taget="_blank" rel="nofollow, noindex">Learn more</a>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -513,7 +528,7 @@
                                         <p class="o_default_snippet_text text-secondary" t-esc="post.introduction"/>
                                         <p>
                                             <a class="btn btn-primary" t-attf-href="/blog/#{slug(post.blog_id)}/post/#{slug(post)}" title="Read more ..." rel="noindex,nofollow">Read more ...</a>
-                                            <a href="/blog" class="btn btn-default" title="Read all" rel="noindex,nofollow">Read all news</a>
+                                            <a href="/blog" class="btn btn-default" title="Read all" taget="_blank" rel="nofollow, noindex">Read all news</a>
                                         </p>
                                     </div>
                                 </t>
@@ -545,7 +560,7 @@
                                                 <input type="email" name="email" class="form-control" placeholder="your email..."
                                                        t-att-value="user_id.partner_id.email if website.user_id != user_id else None"/>
                                                 <span class="input-group-btn">
-                                                    <a href="#" class="btn btn-primary js_subscribe_banner_btn">Subscribe</a>
+                                                    <a href="#" class="btn btn-primary js_subscribe_banner_btn" rel="nofollow, noindex">Subscribe</a>
                                                 </span>
                                             </div>
                                             <div class="small mb8 legal-terms text-secondary">
@@ -557,7 +572,7 @@
                                                 <input type="email" name="email" class="form-control" readonly="readonly"
                                                        t-att-value="is_follower.email"/>
                                                 <span class="input-group-btn">
-                                                    <a href="#" class="btn btn-warning js_un_subscribe_banner_btn">Unsubscribe</a>
+                                                    <a href="#" class="btn btn-warning js_un_subscribe_banner_btn" rel="nofollow, noindex">Unsubscribe</a>
                                                 </span>
                                             </div>
                                         </t>
