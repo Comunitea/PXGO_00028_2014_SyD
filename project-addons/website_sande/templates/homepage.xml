@@ -50,191 +50,172 @@
                 </div>
 
                 <!-- Business divisions -->
-                <div class="oe_structure">
-                    <section class="s_company_team mb48">
-                        <div class="container">
-                            <!-- Business divisions -->
-                            <h1 class="mb32 text-center">Business divisions</h1>
-                            <div class="row">
-
-                                <!-- Pumping Systems -->
-                                <div class="col-md-6 mb0">
-                                    <div class="row s_no_resize_cols">
-                                        <div class="col-md-4">
-                                            <img src="/website_sande/static/img/bombas-centrifugas-azcue.jpg" class="img-responsive img-circle center-block shadow" title="Pumping Systems"/>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <h3>
-                                                <a href="/pumping-systems" title="Pumping Systems" alt="Pumping Systems" rel="nofollow,noindex">Pumping Systems</a>
-                                            </h3>
-                                            <ul>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <a href="/centrifugal-pumps#horizontal_centrifugal_pumps" title="Horizontal centrifugal pumps" alt="Horizontal centrifugal pumps" rel="nofollow,noindex" taget="_blank">
-                                                            <font style="font-size: 18px;">Horizontal centrifugal pumps</font>
-                                                        </a>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <a href="/centrifugal-pumps#vertical_centrifugal_pumps" title="Vertical centrifugal pumps" alt="Vertical centrifugal pumps" rel="nofollow,noindex" taget="_blank">
-                                                            <font style="font-size: 18px;">Vertical centrifugal pumps</font>
-                                                        </a>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <a href="/centrifugal-pumps#selfpriming_centrifugal_pumps" title="Selfpriming centrifugal pumps" alt="Selfpriming centrifugal pumps" rel="nofollow,noindex" taget="_blank">
-                                                            <font style="font-size: 18px;">Selfpriming centrifugal pumps</font>
-                                                        </a>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <a href="/centrifugal-pumps#multistage_centrifugal_pumps" title="Multistage centrifugal pumps" alt="Multistage centrifugal pumps" rel="nofollow,noindex" taget="_blank">
-                                                            <font style="font-size: 18px;">Multistage centrifugal pumps</font>
-                                                        </a>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                            <p style="text-align: right;">
-                                                <a href="/pumping-systems" class="btn btn-primary" alt="Pumping Systems" title="Go to Pumping Systems" taget="_blank" rel="nofollow,noindex">
-                                                    <font style="font-size: 18px;">More</font>
-                                                </a>
-                                                <br/>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Industrial Machinery -->
-                                <div class="col-md-6 mb32">
-                                    <div class="row s_no_resize_cols">
-                                        <div class="col-md-4">
-                                            <img src="/website_sande/static/img/industrial-machinery.jpg" class="img-responsive img-circle center-block shadow" title="Industrial Machinery"/>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <h3>
-                                                <a href="/industrial-machinery" title="Industrial Machinery" alt="Industrial Machinery" rel="nofollow,noindex">Industrial Machinery</a>
-                                            </h3>
-                                            <ul>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">ABC Compressors</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Heat exchangers</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Blowers and valves</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Electric engines</font>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                            <p style="text-align: right;">
-                                                <a href="/industrial-machinery" class="btn btn-primary" title="Go to Industrial Machinery" alt="Industrial Machinery" taget="_blank" rel="nofollow,noindex">
-                                                    <font style="font-size: 18px;">More</font>
-                                                </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Water Treatment -->
-                                <div class="col-md-6 mb32">
-                                    <div class="row s_no_resize_cols">
-                                        <div class="col-md-4">
-                                            <img src="/website_sande/static/img/water-treatment.jpg" class="img-responsive img-circle center-block shadow" title="Water Treatment"/>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <h3>
-                                                <a href="/water-treatment" title="Water Treatment" alt="Water Treatment" rel="nofollow,noindex">Water Treatment</a>
-                                            </h3>
-                                            <ul>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Manual and selfcleaning filters</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Bed, cartridge multilayer filters</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Ultrafiltration, softeners and desmineralizers</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Industrial reverse osmosis</font>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                            <p style="text-align: right;">
-                                                <a href="/water-treatment" class="btn btn-primary" title="Water Treatment" alt="Water Treatment" taget="_blank" rel="nofollow,noindex">
-                                                    <font style="font-size: 18px;">More</font>
-                                                </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Sewage Purification -->
-                                <div class="col-md-6 mb32">
-                                    <div class="row s_no_resize_cols">
-                                        <div class="col-md-4">
-                                            <img src="/website_sande/static/img/sewage-purification.jpg" class="img-responsive img-circle center-block shadow" title="Sewage Purification"/>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <h3>
-                                                <a href="/sewage-purification" title="Sewage Purification" alt="Sewage Purification" rel="nofollow,noindex">Sewage Purification</a>
-                                            </h3>
-                                            <ul>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Fat and sand separators</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Treatment plants</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <font style="font-size: 18px;">Prefabricated pumping stations</font>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="text-muted">
-                                                        <a href="/water-treatment" title="Water Treatment" alt="Water Treatment" rel="nofollow,noindex" taget="_blank">
-                                                            <font style="font-size: 18px;">Horizontal centrifugal pumps</font>
-                                                        </a>
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                            <p style="text-align: right;">
-                                                <a href="/sewage-purification" class="btn btn-primary" title="Sewage Purification" alt="Sewage Purification" taget="_blank" rel="nofollow, noindex">
-                                                    <font style="font-size: 18px;">More</font>
-                                                </a>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                 <div class="oe_structure">
+        <section class="s_company_team mb48">
+          <div class="container">
+            <h1 class="mb32 text-center">Business divisions</h1>
+            <div class="row">
+              <div class="col-md-6 mb0">
+                <div class="row s_no_resize_cols">
+                  <div class="col-md-4">
+                    <img src="/website_sande/static/img/bombas-centrifugas-azcue.jpg" class="img-responsive img-circle center-block shadow" title="Pumping Systems"/>
+                  </div>
+                  <div class="col-md-8">
+                    <h3>
+                      <span style="font-weight: normal;">Pumping Systems</span>
+                    </h3>
+                    <ul>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Horizontal centrifugal pumps</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Vertical centrifugal pumps</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Selfpriming centrifugal pumps</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Multistage centrifugal pumps</font>
+                        </p>
+                      </li>
+                    </ul>
+                    <p style="text-align: right;">
+                      <a href="/pumping-systems" class="btn btn-primary" alt="Pumping Systems" title="Go to Pumping Systems" taget="_blank" rel="nofollow,noindex">
+                        <font style="font-size: 18px;">More</font>
+                      </a>
+                      <br/>
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="col-md-6 mb32">
+                <div class="row s_no_resize_cols">
+                  <div class="col-md-4">
+                    <img src="/website_sande/static/img/industrial-machinery.jpg" class="img-responsive img-circle center-block shadow" title="Industrial Machinery"/>
+                  </div>
+                  <div class="col-md-8">
+                    <h3>
+                      <span style="font-weight: normal;">Industrial Machinery</span>
+                    </h3>
+                    <ul>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">ABC Compressors</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Heat exchangers</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Blowers and valves</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Electric engines</font>
+                        </p>
+                      </li>
+                    </ul>
+                    <p style="text-align: right;">
+                      <a href="/industrial-machinery" class="btn btn-primary" title="Go to Industrial Machinery" alt="Industrial Machinery" taget="_blank" rel="nofollow,noindex">
+                        <font style="font-size: 18px;">More</font>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb32">
+                <div class="row s_no_resize_cols">
+                  <div class="col-md-4">
+                    <img src="/website_sande/static/img/water-treatment.jpg" class="img-responsive img-circle center-block shadow" title="Water Treatment"/>
+                  </div>
+                  <div class="col-md-8">
+                    <h3>
+                      <span style="font-weight: normal;">Water Treatment</span>
+                    </h3>
+                    <ul>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Manual and selfcleaning filters</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Bed, cartridge multilayer filters</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Ultrafiltration, softeners and desmineralizers</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Industrial reverse osmosis</font>
+                        </p>
+                      </li>
+                    </ul>
+                    <p style="text-align: right;">
+                      <a href="/water-treatment" class="btn btn-primary" title="Water Treatment" alt="Water Treatment" taget="_blank" rel="nofollow,noindex">
+                        <font style="font-size: 18px;">More</font>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb32">
+                <div class="row s_no_resize_cols">
+                  <div class="col-md-4">
+                    <img src="/website_sande/static/img/sewage-purification.jpg" class="img-responsive img-circle center-block shadow" title="Sewage Purification"/>
+                  </div>
+                  <div class="col-md-8">
+                    <h3>
+                      <span style="font-weight: normal;">Sewage Purification</span>
+                    </h3>
+                    <ul>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Fat and sand separators</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Treatment plants</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Prefabricated pumping stations</font>
+                        </p>
+                      </li>
+                      <li>
+                        <p class="text-muted">
+                          <font style="font-size: 18px;">Horizontal centrifugal pumps</font>
+                        </p>
+                      </li>
+                    </ul>
+                    <p style="text-align: right;">
+                      <a href="/sewage-purification" class="btn btn-primary" title="Sewage Purification" alt="Sewage Purification" taget="_blank" rel="nofollow, noindex">
+                        <font style="font-size: 18px;">More</font>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
                 <!-- Main Features -->
                 <div class="oe_structure">
@@ -280,44 +261,47 @@
 
                 <!-- Quality -->
                 <div class="oe_estructure">
-                    <section class="s_features jumbotron bg-gray-light">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h2 class="text-center text-primary">
-                                        <strong>Commitment to quality and customer</strong>
-                                    </h2>
-                                </div>
-                            </div>
-                            <div class="row mt16 mb16">
-                                <div class="col-md-4 text-center">
-                                    <div>
-                                        <h3 class="mb8 mt8 text-primary">
-                                            <span style="font-weight: normal;">Experience</span>
-                                        </h3>
-                                        <p class="text-secondary">We have a great experience<br/>more than 40 years<br/></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <div>
-                                        <h3 class="mb8 mt8 text-primary">
-                                            <span style="font-weight: normal;">Professionalism</span>
-                                        </h3>
-                                        <p class="text-secondary">We offer technical advice and provide the most adequate solution for each case<br/></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <div>
-                                        <h3 class="mt8 mb8 text-primary">
-                                            <span style="font-weight: normal;">Quality</span>
-                                        </h3>
-                                        <p class="text-secondary">We apply the high quality standards recognized by our Ukas ISO certifications<br/></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+        <section class="s_features jumbotron bg-gray-light mb0">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 mb32">
+                <h2 class="text-center text-primary">
+                  <strong>Commitment to quality and customer</strong>
+                </h2>
+              </div>
+              <div class="text-center col-md-4">
+                <span class="fa fa-group fa-5x" style="" data-original-title="" title=""/>
+                <br/>
+                <br/>
+                <h3 class="mb8 mt8 text-primary">
+                  <span style="font-weight: normal;">Experience</span>
+                </h3>
+                <p>We have a great experience<br/>more than 40 years</p>
+              </div>
+              <div class="col-md-4 text-center">
+                <span class="fa fa-handshake-o fa-5x" style=""/>
+                <br/>
+                <br/>
+                <h3 class="mb8 mt8 text-primary">
+                  <span style="font-weight: normal;">Professionalism</span>
+                </h3>
+                <p>We offer technical advice and provide the most adequate solution for each case
+             &amp;nbsp;</p>
+              </div>
+              <div class="col-md-4 text-center">
+                <span class="fa fa-check fa-5x" style=""/>
+                <br/>
+                <br/>
+                <h3 class="mt8 mb8 text-primary">
+                  <span style="font-weight: normal;">Quality</span>
+                </h3>
+                <p>We apply the high quality standards recognized by our Ukas ISO certifications
+             &amp;nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
                 <!-- ISO9001 -->
                 <div class="oe_structure">

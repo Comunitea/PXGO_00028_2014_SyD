@@ -7,20 +7,14 @@
                 <div class="oe_structure">
 
                     <!-- Image -->
-                    <section class="s_text_block_image_fw oe_img_bg oe_custom_bg" style="background-image: url('/website_sande/static/img/pumping-systems-1600x1067.jpg'); background-position: 49.08% 67.46%;">
+                    <section class="s_text_block_image_fw oe_img_bg oe_custom_bg mt48 mb0"
+                             style="background-image: url('/website_sande/static/img/pumping-systems-1600x1067.jpg'); background-position: 49.08% 67.46%;">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-6 mt64 mb64 bg-black-25">
-                                    <h2 style="font-size:62px">
-                                        <font class="text-white">Pumping Systems</font>
-                                        <br/>
-                                    </h2>
-                                    <h4 class="o_default_snippet_text">
-                                        <font class="text-white">With a great subtitle</font>
-                                    </h4>
-                                    <p>
-                                        <font class="text-white">Write one or two paragraphs describing your product, services or a specific feature. To be successful your content needs to be useful to your readers.</font>
-                                    </p>
+                                <div class="col-md-6 mt128">
+                                    <h3 style="text-align: left;">
+                                        <font style="font-size: 62px;" class="text-white">Pumping Systems<br/></font>
+                                    </h3>
                                 </div>
                             </div>
                         </div>

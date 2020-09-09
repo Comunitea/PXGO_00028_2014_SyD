@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
+    <data noupdate="1">
         <!-- Home -->
         <record id="website.menu_homepage" model="website.menu">
-            <field name="user_logged">True</field>
-            <field name="user_not_logged">True</field>
-        </record>
-
-        <!-- About us - Company -->
-        <record id="menu_aboutus" model="website.menu">
-            <field name="name">Company</field>
-            <field name="url">/aboutus</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">20</field>
-            <field name="website_id" ref="website.default_website"/>
             <field name="user_logged">True</field>
             <field name="user_not_logged">True</field>
         </record>
@@ -23,30 +12,18 @@
             <field name="name">Shop</field>
             <field name="url">/shop</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">30</field>
+            <field name="sequence" type="int">20</field>
             <field name="website_id" ref="website.default_website"/>
             <field name="user_logged">False</field>
             <field name="user_not_logged">False</field>
         </record>
 
-        <!-- =========================== Start Products and Services ====================================== -->
-        <!-- Products and Services Main Menu -->
+        <!-- Products and Services -->
         <record id="menu_products_and_services" model="website.menu">
             <field name="name">Products and Services</field>
-            <field name="url">/ours-products-and-services</field>
+            <field name="url">/products-and-services</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">40</field>
-            <field name="website_id" ref="website.default_website"/>
-            <field name="user_logged">True</field>
-            <field name="user_not_logged">True</field>
-        </record>
-
-        <!-- ************** Start Products and Services Submenus ***************** -->
-        <record id="menu_business_divisions" model="website.menu">
-            <field name="name">Business Divisions</field>
-            <field name="url">/business-divisions</field>
-            <field name="parent_id" ref="website_sande.menu_products_and_services"/>
-            <field name="sequence" type="int">50</field>
+            <field name="sequence" type="int">30</field>
             <field name="website_id" ref="website.default_website"/>
             <field name="user_logged">True</field>
             <field name="user_not_logged">True</field>
@@ -56,73 +33,39 @@
             <field name="name">Pumping Systems</field>
             <field name="url">/pumping-systems</field>
             <field name="parent_id" ref="website_sande.menu_products_and_services"/>
-            <field name="sequence" type="int">60</field>
+            <field name="sequence" type="int">31</field>
             <field name="website_id" ref="website.default_website"/>
             <field name="user_logged">True</field>
             <field name="user_not_logged">True</field>
         </record>
 
-        <!-- Start Pumping Systems Submenus -->
-        <record id="menu_centrifugal_pumps" model="website.menu">
-            <field name="name">Centrifugal Pumps</field>
-            <field name="url">/centrifugal-pumps</field>
-            <field name="parent_id" ref="website_sande.menu_products_and_services"/>
-            <field name="sequence" type="int">61</field>
+        <!-- About us - Company -->
+        <record id="menu_aboutus" model="website.menu">
+            <field name="name">Company</field>
+            <field name="url">/aboutus</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">40</field>
             <field name="website_id" ref="website.default_website"/>
             <field name="user_logged">True</field>
             <field name="user_not_logged">True</field>
         </record>
-        <!-- End Pumping Systems Submenus -->
-
-        <record id="menu_industrial_machinery" model="website.menu">
-            <field name="name">Industrial Machinery</field>
-            <field name="url">/industrial-machinery</field>
-            <field name="parent_id" ref="website_sande.menu_products_and_services"/>
-            <field name="sequence" type="int">70</field>
-            <field name="website_id" ref="website.default_website"/>
-            <field name="user_logged">True</field>
-            <field name="user_not_logged">True</field>
-        </record>
-
-        <record id="menu_water_treatment" model="website.menu">
-            <field name="name">Water Treatment</field>
-            <field name="url">/water-treatment</field>
-            <field name="parent_id" ref="website_sande.menu_products_and_services"/>
-            <field name="sequence" type="int">80</field>
-            <field name="website_id" ref="website.default_website"/>
-            <field name="user_logged">True</field>
-            <field name="user_not_logged">True</field>
-        </record>
-
-        <record id="menu_sewage_purification" model="website.menu">
-            <field name="name">Sewage Purification</field>
-            <field name="url">/sewage-purification</field>
-            <field name="parent_id" ref="website_sande.menu_products_and_services"/>
-            <field name="sequence" type="int">90</field>
-            <field name="website_id" ref="website.default_website"/>
-            <field name="user_logged">True</field>
-            <field name="user_not_logged">True</field>
-        </record>
-
-        <!-- ************** End Products and Services Submenus ***************** -->
-        <!-- =========================== End Products and Services ====================================== -->
 
         <!-- Slides -->
-<!--        <record id="website_slides.website_menu_slides" model="website.menu">-->
-<!--            <field name="name">Catalogs</field>-->
-<!--            <field name="url">/slides</field>-->
-<!--            <field name="website_id" ref="website.default_website"/>-->
-<!--            <field name="user_logged">True</field>-->
-<!--            <field name="user_not_logged">True</field>-->
-<!--            <field name="parent_id" ref="website.main_menu"/>-->
-<!--            <field name="sequence" type="int">100</field>-->
-<!--        </record>-->
+        <record id="website_slides.website_menu_slides" model="website.menu">
+            <field name="name">Catalogs</field>
+            <field name="url">/slides</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">50</field>
+            <field name="website_id" ref="website.default_website"/>
+            <field name="user_logged">False</field>
+            <field name="user_not_logged">False</field>
+        </record>
 
         <record id="website_hr_recruitment.menu_jobs" model="website.menu">
             <field name="name">Jobs</field>
             <field name="url">/jobs</field>
             <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence" type="int">110</field>
+            <field name="sequence" type="int">60</field>
             <field name="website_id" ref="website.default_website"/>
             <field name="user_logged">False</field>
             <field name="user_not_logged">False</field>
@@ -134,7 +77,7 @@
             <field name="url" eval="'/blog/'+str(ref('website_blog.blog_blog_1'))"/>
             <field name="parent_id" ref="website.main_menu"/>
             <field name="website_id" ref="website.default_website"/>
-            <field name="sequence" type="int">120</field>
+            <field name="sequence" type="int">70</field>
             <field name="user_logged">True</field>
             <field name="user_not_logged">True</field>
         </record>
@@ -146,7 +89,7 @@
             <field name="url">/contactus</field>
             <field name="parent_id" ref="website.main_menu"/>
             <field name="website_id" ref="website.default_website"/>
-            <field name="sequence" type="int">130</field>
+            <field name="sequence" type="int">80</field>
         </record>
     </data>
 </odoo>
