@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Show maps only if API KEy exist -->
+    <template id="website_company_description" inherit_id="website.company_description" name="Company Description Sande">
+        <xpath expr="//address/t/span" position="attributes">
+            <attribute name="class" add="hidden" separator=" "/>
+        </xpath>
+        <xpath expr="//address/t/a" position="attributes">
+            <attribute name="class" add="hidden" separator=" "/>
+        </xpath>
+    </template>
+</odoo>

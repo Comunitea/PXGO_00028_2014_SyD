@@ -1,3 +1,7 @@
+`11.0.5.4.0`
+------------
+- **[FIX]** Google Maps on footer and contactus form just if google map api key exist
+
 `11.0.5.3.0`
 ------------
 - **[FIX]** Legal advice page
