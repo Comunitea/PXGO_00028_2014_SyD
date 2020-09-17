@@ -1,5 +1,9 @@
 /*************** General Header *******************/
 header {
+    // Header lang, phone and mail
+    & .js_language_selector {
+        display: inline-flex;
+    }
     // Logo
     & a.navbar-brand img, a.navbar-brand.logo img {
         margin-top: 14px;
@@ -44,6 +48,10 @@ header {
                 background-color: @color-bg-hover-btn-dropdown-header !important;
             }
         }
+        // Login
+        & .navbar-nav > li > a.dropdown-toggle > b {
+            font-size: 14px;
+        }
     }
 }
 
@@ -71,5 +79,38 @@ header {
     // Logo
     header a.navbar-brand.logo {
         margin-bottom: 8px;
+    }
+    // Menus
+    header .navbar-default #top_menu.navbar-nav > li > a {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    // Logo
+    .navbar-logo {
+        min-height: 35px;
+    }
+    // Menus
+    header .navbar-default #top_menu.navbar-nav > li > a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    // Logo
+    .navbar-logo {
+        min-height: 25px;
+    }
+    // Menus
+    header .navbar-default #top_menu.navbar-nav > li > a {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    // Menus
+    header .navbar-default #top_menu.navbar-nav > li > a {
+        font-size: 24px;
     }
 }
