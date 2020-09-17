@@ -34,7 +34,7 @@
                 <div class="o_website_form_fields">
                     <div class="form-group form-field form-field-char" data-model-field="true" data-optional="false">
                         <label class="control-label" for="name">Subject</label>
-                        <input class="form-control o_website_form_input" type="text" name="name" value="New Job Opportunity requested"
+                        <input class="form-control o_website_form_input" type="text" name="name" t-att-value="request.params.get('subject') or 'New Job Opportunity requested'"
                                placeholder="New Job Opportunity requested" readonly="True"/>
                     </div>
                     <div class="form-group form-field o_website_form_required_custom form-field-char" data-model-field="true" data-optional="false">

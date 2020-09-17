@@ -2,7 +2,7 @@
 
 {
     'name': 'Website Sande y Díaz',
-    'version': '11.0.5.5.0',
+    'version': '11.0.5.6.0',
     'summary': 'Website Customization',
     'description': '',
     'category': 'Website',
