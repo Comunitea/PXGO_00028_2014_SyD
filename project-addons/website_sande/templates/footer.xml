@@ -1,130 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Add Quality Policy after copyright and company name -->
-    <template id="quality_policy_link" inherit_id="website.layout_footer_copyright" name="Quality Policy Link Sande">
-        <xpath expr="//footer//div/span[@t-field='res_company.name']" position="after">
-            <span><a href="/legal/quality-policy" target="_blank" rel="nofollow,noindex" title="Quality Policy" alt="Quality Policy">Quality Policy</a></span>
-        </xpath>
-    </template>
+    <data noupdate="1">
+        <!-- Add Quality Policy after copyright and company name -->
+        <template id="quality_policy_link" inherit_id="website.layout_footer_copyright" name="Quality Policy Link Sande">
+            <xpath expr="//footer//div/span[@t-field='res_company.name']" position="after">
+                <span><a href="/legal/quality-policy" target="_blank" rel="nofollow,noindex" title="Quality Policy" alt="Quality Policy">Quality Policy</a></span>
+            </xpath>
+        </template>
 
-    <template id="website_footer_default" inherit_id="website.footer_default" name="Automatic Footer Sande">
-        <xpath expr="//div[@id='footer']" position="replace">
-            <div id="footer" class="oe_structure hidden-print" t-if='not no_footer'>
-                <section>
-                    <div class="container">
-                        <div class="row">
-                            <!-- First column -->
-                            <div class="col-md-4 col-lg-5" id="about">
-                                <h4>
-                                    <span t-field="res_company.name" />
-                                    <small> - <a href="/company" target="_blank" rel="nofollow,noindex" title="About us">About us</a></small>
-                                </h4>
-                                <div>
-                                    <p>
-                                        WATER TECHNOLOGIES: we offer solutions in pumping equipment, water treatment and control systems, such as filtration or disinfection, for water and other fluids.
-                                    </p>
-                                    <p>
-                                        We work only with top quality equipments and technologies, homologated and certified. So we can ensure the best quality for the most challenges industrial environments.
-                                    </p>
+        <template id="website_footer_default" inherit_id="website.footer_default" name="Automatic Footer Sande">
+            <xpath expr="//div[@id='footer']" position="replace">
+                <div id="footer" class="oe_structure hidden-print" t-if='not no_footer'>
+                    <section>
+                        <div class="container">
+                            <div class="row">
+                                <!-- First column -->
+                                <div class="col-md-4 col-lg-5" id="about">
+                                    <h4>
+                                        <span t-field="res_company.name" />
+                                        <small> - <a href="/company" target="_blank" rel="nofollow,noindex" title="About us">About us</a></small>
+                                    </h4>
+                                    <div>
+                                        <p>
+                                            WATER TECHNOLOGIES: we offer solutions in pumping equipment, water treatment and control systems, such as filtration or disinfection, for water and other fluids.
+                                        </p>
+                                        <p>
+                                            We work only with top quality equipments and technologies, homologated and certified. So we can ensure the best quality for the most challenges industrial environments.
+                                        </p>
+                                    </div>
+                                    <div class="o_certificate mt16">
+                                        <center>
+                                            <img class="img" src="/website_sande/static/img/ISO9001.jpg" title="ISO9001 Certification" alt="ISO9001 Certification" width="150px" height="105px"/>
+                                            <img class="img" src="/website_sande/static/img/ISO14001.jpg" title="ISO14001 Certification" alt="ISO14001 Certification" width="150px" height="105px"/>
+                                        </center>
+                                    </div>
                                 </div>
-                                <div class="o_certificate mt16">
-                                    <center>
-                                        <img class="img" src="/website_sande/static/img/ISO9001.jpg" title="ISO9001 Certification" alt="ISO9001 Certification" width="150px" height="105px"/>
-                                        <img class="img" src="/website_sande/static/img/ISO14001.jpg" title="ISO14001 Certification" alt="ISO14001 Certification" width="150px" height="105px"/>
-                                    </center>
-                                </div>
-                            </div>
 
-                            <!-- Second column -->
-                            <div class="col-md-4 col-lg-3 col-lg-offset-1">
-                                <h4>Contact</h4>
-                                <ul class="list-unstyled">
-                                    <address itemscope="itemscope" itemtype="http://schema.org/Organization">
-                                        <li t-ignore="true">
-                                            <u><span t-field="res_company.name" class="text-uppercase"/></u>
-                                        </li>
-                                        <t t-if="res_company.street">
+                                <!-- Second column -->
+                                <div class="col-md-4 col-lg-3 col-lg-offset-1">
+                                    <h4>Contact</h4>
+                                    <ul class="list-unstyled">
+                                        <address itemscope="itemscope" itemtype="http://schema.org/Organization">
                                             <li t-ignore="true">
-                                                <span t-field="res_company.street"/>
+                                                <u><span t-field="res_company.name" class="text-uppercase"/></u>
                                             </li>
-                                            <t t-if="res_company.zip">
+                                            <t t-if="res_company.street">
                                                 <li t-ignore="true">
-                                                    <span t-field="res_company.zip"/>
-                                                    <t t-if="res_company.state_id">
-                                                        - <span t-field="res_company.state_id.name"/>
-                                                    </t>
+                                                    <span t-field="res_company.street"/>
+                                                </li>
+                                                <t t-if="res_company.zip">
+                                                    <li t-ignore="true">
+                                                        <span t-field="res_company.zip"/>
+                                                        <t t-if="res_company.state_id">
+                                                            - <span t-field="res_company.state_id.name"/>
+                                                        </t>
+                                                    </li>
+                                                </t>
+                                                <t t-if="res_company.city">
+                                                    <li t-ignore="true">
+                                                        <span t-field="res_company.city"/>
+                                                    </li>
+                                                </t>
+                                                <t t-if="res_company.country_id">
+                                                    <li t-ignore="true">
+                                                        <span t-field="res_company.country_id.name"/>
+                                                    </li>
+                                                </t>
+                                            </t>
+                                            <t t-else="">
+                                                <li t-ignore="true">
+                                                    <span t-field="res_company.partner_id" t-options='{"widget": "contact", "fields": ["address"]}'/>
                                                 </li>
                                             </t>
-                                            <t t-if="res_company.city">
-                                                <li t-ignore="true">
-                                                    <span t-field="res_company.city"/>
-                                                </li>
-                                            </t>
-                                            <t t-if="res_company.country_id">
-                                                <li t-ignore="true">
-                                                    <span t-field="res_company.country_id.name"/>
-                                                </li>
-                                            </t>
-                                        </t>
-                                        <t t-else="">
+                                            <li t-ignore="true" t-if="res_company.google_map_img()">
+                                                <span>
+                                                    <i class="fa fa-map-marker fa-fw" />
+                                                    <a t-att-href="res_company.google_map_link()" target="_blank" title="See SANDE Y DIAZ, S.L. location on Google Maps">Google Maps</a>
+                                                </span>
+                                            </li>
                                             <li t-ignore="true">
-                                                <span t-field="res_company.partner_id" t-options='{"widget": "contact", "fields": ["address"]}'/>
+                                                <a t-att-href="'tel:%s' %res_company.phone" rel="noindex,nofollow" title="Call to SANDE Y DIAZ, S.L.">
+                                                    <span><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
+                                                </a>
                                             </li>
-                                        </t>
-                                        <li t-ignore="true" t-if="res_company.google_map_img()">
-                                            <span>
-                                                <i class="fa fa-map-marker fa-fw" />
-                                                <a t-att-href="res_company.google_map_link()" target="_blank" title="See SANDE Y DIAZ, S.L. location on Google Maps">Google Maps</a>
-                                            </span>
-                                        </li>
-                                        <li t-ignore="true">
-                                            <a t-att-href="'tel:%s' %res_company.phone" rel="noindex,nofollow" title="Call to SANDE Y DIAZ, S.L.">
-                                                <span><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
-                                            </a>
-                                        </li>
-                                        <li t-ignore="true">
-                                            <a href="mailto:${res_company.email}" rel="noindex,nofollow" title="Send mail to SANDE Y DIAZ, S.L.">
-                                                <span><i class="fa fa-envelope"/> <font t-field="res_company.email"/></span>
-                                            </a>
-                                        </li>
-                                        <li t-ignore="true">
-                                            <a href="/contactus" title="Contact Us" alt="Contact Us" rel="nofollow,noindex">
-                                                <span><i class="fa fa-wpforms" aria-hidden="true"/> Form Contact</span>
-                                    </a>
-                                        </li>
-                                    </address>
-                                </ul>
-                                <div class="o_sharing_links">
-                                    <a t-att-href="website.social_facebook" t-if="website.social_facebook" target="_blank" title="Facebook"><i class="fa fa-facebook-square o_facebook"/></a>
-                                    <a t-att-href="website.social_twitter" t-if="website.social_twitter" target="_blank" title="Twitter"><i class="fa fa-twitter-square o_twitter"/></a>
-                                    <a t-att-href="website.social_linkedin" t-if="website.social_linkedin" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square o_linkedin"/></a>
-                                    <a t-att-href="website.social_youtube" t-if="website.social_youtube" target="_blank" title="Youtube"><i class="fa fa-youtube-square o_youtube"/></a>
-                                    <a t-att-href="website.social_googleplus" t-if="website.social_googleplus" rel="publisher" target="_blank" title="Google Plus"><i class="fa fa-google-plus-square o_google"/></a>
-                                    <a t-att-href="website.social_github" t-if="website.social_github" target="_blank" title="GitHub"><i class="fa fa-github-square o_github"/></a>
+                                            <li t-ignore="true">
+                                                <a href="mailto:${res_company.email}" rel="noindex,nofollow" title="Send mail to SANDE Y DIAZ, S.L.">
+                                                    <span><i class="fa fa-envelope"/> <font t-field="res_company.email"/></span>
+                                                </a>
+                                            </li>
+                                            <li t-ignore="true">
+                                                <a href="/contactus" title="Contact Us" alt="Contact Us" rel="nofollow,noindex">
+                                                    <span><i class="fa fa-wpforms" aria-hidden="true"/> Form Contact</span>
+                                        </a>
+                                            </li>
+                                        </address>
+                                    </ul>
+                                    <div class="o_sharing_links">
+                                        <a t-att-href="website.social_facebook" t-if="website.social_facebook" target="_blank" title="Facebook"><i class="fa fa-facebook-square o_facebook"/></a>
+                                        <a t-att-href="website.social_twitter" t-if="website.social_twitter" target="_blank" title="Twitter"><i class="fa fa-twitter-square o_twitter"/></a>
+                                        <a t-att-href="website.social_linkedin" t-if="website.social_linkedin" target="_blank" title="LinkedIn"><i class="fa fa-linkedin-square o_linkedin"/></a>
+                                        <a t-att-href="website.social_youtube" t-if="website.social_youtube" target="_blank" title="Youtube"><i class="fa fa-youtube-square o_youtube"/></a>
+                                        <a t-att-href="website.social_googleplus" t-if="website.social_googleplus" rel="publisher" target="_blank" title="Google Plus"><i class="fa fa-google-plus-square o_google"/></a>
+                                        <a t-att-href="website.social_github" t-if="website.social_github" target="_blank" title="GitHub"><i class="fa fa-github-square o_github"/></a>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Third column -->
-                            <div class="col-md-4 col-lg-3" id="info">
-                                <h4>Products and Services</h4>
-                                <ul class="list-unstyled" id="products">
-                                    <li><a href="/slides" target="_blank" rel="nofollow,noindex" title="Catalogs" alt="Catalogs">Catalogs</a></li>
-                                    <!--<li><a href="/products-and-services" target="_blank" rel="nofollow,noindex" title="Products and Services" alt="Products and Services">Products and Services</a></li>-->
-                                    <li t-if="request.env['ir.ui.view'].search([('key', '=', 'website_blog_base.wbb_website_blog_latest_blogs')]).active">
-                                        <a href="/blog" target="_blank" rel="nofollow,noindex" title="News" alt="News">News</a>
-                                    </li>
-                                    <li t-if="request.env['ir.ui.view'].search([('key', '=', 'follow_us_base.newsletter_banner')]).active">
-                                        <a href="/page/newsletter" target="_blank" rel="nofollow,noindex" title="Newsletter" alt="Newsletter">Newsletter</a>
-                                    </li>
-                                    <li><a href="/work-with-us" target="_blank" rel="nofollow,noindex" title="Work with us" alt="Work with us">Work with us</a></li>
-                                </ul>
+                                <!-- Third column -->
+                                <div class="col-md-4 col-lg-3" id="info">
+                                    <h4>Products and Services</h4>
+                                    <ul class="list-unstyled" id="products">
+                                        <li><a href="/slides" target="_blank" rel="nofollow,noindex" title="Catalogs" alt="Catalogs">Catalogs</a></li>
+                                        <!--<li><a href="/products-and-services" target="_blank" rel="nofollow,noindex" title="Products and Services" alt="Products and Services">Products and Services</a></li>-->
+                                        <li t-if="request.env['ir.ui.view'].search([('key', '=', 'website_blog_base.wbb_website_blog_latest_blogs')]).active">
+                                            <a href="/blog" target="_blank" rel="nofollow,noindex" title="News" alt="News">News</a>
+                                        </li>
+                                        <li t-if="request.env['ir.ui.view'].search([('key', '=', 'follow_us_base.newsletter_banner')]).active">
+                                            <a href="/page/newsletter" target="_blank" rel="nofollow,noindex" title="Newsletter" alt="Newsletter">Newsletter</a>
+                                        </li>
+                                        <li><a href="/work-with-us" target="_blank" rel="nofollow,noindex" title="Work with us" alt="Work with us">Work with us</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-        </xpath>
-    </template>
+                    </section>
+                </div>
+            </xpath>
+        </template>
+    </data>
 
 </odoo>

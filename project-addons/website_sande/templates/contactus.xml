@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Show maps only if API KEy exist -->
-    <template id="website_company_description" inherit_id="website.company_description" name="Company Description Sande">
-        <xpath expr="//address/t/span" position="attributes">
-            <attribute name="class" add="hidden" separator=" "/>
-        </xpath>
-        <xpath expr="//address/t/a" position="attributes">
-            <attribute name="class" add="hidden" separator=" "/>
-        </xpath>
-    </template>
+    <data noupdate="1">
+        <!-- Show maps only if API KEy exist -->
+        <template id="website_company_description" inherit_id="website.company_description" name="Company Description Sande">
+            <xpath expr="//address/t/span" position="attributes">
+                <attribute name="class" add="hidden" separator=" " t-if="res_company.google_map_img()"/>
+            </xpath>
+            <xpath expr="//address/t/a" position="attributes">
+                <attribute name="class" add="hidden" separator=" " t-if="res_company.google_map_img()"/>
+            </xpath>
+        </template>
 
-    <!-- Add legal check for commercial information -->
-    <template id="website_crm_privacy_policy_contactus_form" name="Add privacy policy checkbox Ecommerce Base" inherit_id="website_crm_privacy_policy.contactus_form">
-        <xpath expr="//div[hasclass('col-md-7', 'col-md-offset-3', 'col-sm-8', 'col-sm-offset-4')]" position="after">
-            <div class="col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-4">
-                <div class="checkbox">
-                    <input type="checkbox" value="accepted" id="commercial_consent" name="commercial_consent" class="o_website_form_input"/>
-                    <label class="control-label" for="commercial_consent">
-                         I consent to the sending of commercial information by SANDE y DÍAZ of their products and services
-                    </label>
+        <!-- Add legal check for commercial information -->
+        <template id="website_crm_privacy_policy_contactus_form" name="Add privacy policy checkbox Ecommerce Base" inherit_id="website_crm_privacy_policy.contactus_form">
+            <xpath expr="//div[hasclass('col-md-7', 'col-md-offset-3', 'col-sm-8', 'col-sm-offset-4')]" position="after">
+                <div class="col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-4">
+                    <div class="checkbox">
+                        <input type="checkbox" value="accepted" id="commercial_consent" name="commercial_consent" class="o_website_form_input"/>
+                        <label class="control-label" for="commercial_consent">
+                             I consent to the sending of commercial information by SANDE y DÍAZ of their products and services
+                        </label>
+                    </div>
                 </div>
-            </div>
-        </xpath>
-    </template>
+            </xpath>
+        </template>
+    </data>
 </odoo>

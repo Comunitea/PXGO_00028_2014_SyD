@@ -1,3 +1,7 @@
+`11.0.5.7.0`
+------------
+- **[FIX]** Change contact us and footer to no update because are not views
+
 `11.0.5.6.0`
 ------------
 - **[UDP]** Work with us Form with subject by parameter
