@@ -12,7 +12,7 @@
         </template>
 
         <!-- Add legal check for commercial information -->
-        <template id="website_crm_privacy_policy_contactus_form" name="Add privacy policy checkbox Ecommerce Base" inherit_id="website_crm_privacy_policy.contactus_form">
+        <template id="website_crm_privacy_policy_contactus_form" inherit_id="website_crm_privacy_policy.contactus_form" name="Add privacy policy checkbox Sande">
             <xpath expr="//div[hasclass('col-md-7', 'col-md-offset-3', 'col-sm-8', 'col-sm-offset-4')]" position="after">
                 <div class="col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-4">
                     <div class="checkbox">

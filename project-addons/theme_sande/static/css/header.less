@@ -48,9 +48,11 @@ header {
                 background-color: @color-bg-hover-btn-dropdown-header !important;
             }
         }
-        // Login
-        & .navbar-nav > li > a.dropdown-toggle > b {
+        // Menu Login (public and logged)
+        & .navbar-nav > li > a.dropdown-toggle > b,
+         .navbar-nav > li > a.menu_public_login > b {
             font-size: 14px;
+            font-weight: normal;
         }
     }
 }

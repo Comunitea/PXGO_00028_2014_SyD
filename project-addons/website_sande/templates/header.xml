@@ -34,12 +34,19 @@
         <xpath expr="//div[@id='wrapwrap']//div[hasclass('navbar-header')]" position="before">
             <div class="navbar-logo">
                 <a href="/" class="navbar-brand logo">
-                    <img class="img img-responsive" t-attf-src="/web/image/website/{{website.id}}/logo" alt="website.name"/>
+                    <img class="img img-responsive" t-attf-src="/web/image/website/{{website.id}}/logo" t-attf-alt="{{website.name}}"/>
                 </a>
             </div>
         </xpath>
         <xpath expr="//div[@id='wrapwrap']//ul[@id='top_menu']" position="before">
                 <t t-call="website.language_selector"/>
+        </xpath>
+    </template>
+
+    <!-- Add public login class for apply styles -->
+    <template id="portal_portal_show_sign_in" inherit_id="portal.portal_show_sign_in" name="Show Sign In Sande">
+        <xpath expr="//li[@groups='base.group_public']/a" position="attributes">
+            <attribute name="class" add="menu_public_login"/>
         </xpath>
     </template>
     
