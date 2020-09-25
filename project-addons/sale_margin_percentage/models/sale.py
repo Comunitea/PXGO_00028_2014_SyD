@@ -60,16 +60,17 @@ class SaleOrderLine(models.Model):
 
     _inherit = "sale.order.line"
 
-    @api.one
     @api.depends('margin', 'purchase_price', 'product_id')
     def _product_margin_perc(self):
-        if self.purchase_price:
-            cost_price = self.purchase_price
-        else:
-            cost_price = self.product_id.standard_price
-        if cost_price:
-            self.margin_perc = round((self.margin * 100) /
-                                     (cost_price * self.product_uom_qty), 2)
+        for line in self:
+            if line.purchase_price:
+                cost_price = line.purchase_price
+            else:
+                cost_price = line.product_id.standard_price
+            if cost_price and line.product_uom_qty:
+                line.margin_perc = round((line.margin * 100) /
+                                         (cost_price * line.product_uom_qty),
+                                         2)
 
     margin_perc = fields.Float('Margin', compute='_product_margin_perc',
                                store=True)
