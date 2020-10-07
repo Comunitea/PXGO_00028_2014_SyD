@@ -2,17 +2,7 @@
 <odoo>
     <template id="website_hr_recruitment_index" inherit_id="website_hr_recruitment.index" name="Jobs Sande">
         <!-- Include custom work with us form when website_hr_recruitment module is not used -->
-        <xpath expr="//div[@id='jobs_grid']/div" position="replace">
-            <div t-if="not jobs">
-                <div class="text-center text-muted">
-                    <h4 class="css_editable_hidden"><a t-attf-href="/contactus">Contact us</a> for job opportunities or fill directly our</h4>
-                    <h4 class="css_editable_hidden"><a t-attf-href="/work-with-us">Job Application Form</a>.</h4>
-                    <h4 groups="hr_recruitment.group_hr_recruitment_manager" class="mt32 mb16 text-muted">
-                        Create new job pages from the <strong><i>+New</i></strong> top-right button.
-                    </h4>
-                </div>
-            </div>
-        </xpath>
+        <xpath expr="//div[@id='jobs_grid']/div" position="replace"/>
     </template>
 
     <template id="website_hr_recruitment_detail" inherit_id="website_hr_recruitment.detail" name="Job Detail Sande">
