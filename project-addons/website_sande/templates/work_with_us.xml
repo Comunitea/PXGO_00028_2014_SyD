@@ -121,8 +121,9 @@
                                    name="privacy_policy"
                                    class="o_website_form_input"
                                    required="required"/>
-                            <label class="control-label">
-                                <t t-call="website_legal_page.acceptance_full"/>
+                            <label class="control-label" for="privacy_policy">
+                                I accept the <a href="/legal/privacy-policy">privacy policy</a> and the
+                                <a href="/legal/terms-of-use">terms of use</a> of this website.
                             </label>
                         </p>
                     </div>

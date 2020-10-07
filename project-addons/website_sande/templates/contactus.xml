@@ -11,8 +11,16 @@
             </xpath>
         </template>
 
-        <!-- Add legal check for commercial information -->
+        <!-- Legal checks in contact form -->
         <template id="website_crm_privacy_policy_contactus_form" inherit_id="website_crm_privacy_policy.contactus_form" name="Add privacy policy checkbox Sande">
+            <!-- Replace default legal checks -->
+            <xpath expr="//div[hasclass('col-md-7', 'col-md-offset-3', 'col-sm-8', 'col-sm-offset-4')]//label" position="replace">
+                <label class="control-label" for="privacy_policy">
+                    I accept the <a href="/legal/privacy-policy">privacy policy</a> and the
+                    <a href="/legal/terms-of-use">terms of use</a> of this website.
+                </label>
+            </xpath>
+            <!-- Add legal check for commercial information -->
             <xpath expr="//div[hasclass('col-md-7', 'col-md-offset-3', 'col-sm-8', 'col-sm-offset-4')]" position="after">
                 <div class="col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-4">
                     <div class="checkbox">

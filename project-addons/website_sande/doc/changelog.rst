@@ -1,3 +1,7 @@
+`11.0.6.0.1`
+------------
+- **[UDP]** Legal links on contact and work with us forms
+
 `11.0.6.0.0`
 ------------
 - **[UDP]** Update and adapt for new Theme Sande integrated with Bootswatch Theme and Bootstrap variables
