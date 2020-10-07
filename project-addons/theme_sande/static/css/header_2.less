@@ -1,0 +1,57 @@
+// HEADER NAV BAR
+.navbar.navbar-static-top {
+    // User login divider
+    ul.nav > li {
+        &.divider {
+            border-right: 1px solid @brand-primary;
+        }
+    }
+}
+
+
+// == Medias
+//
+//##
+
+@media screen and (max-width: 768px) {
+    // Logo
+    header a.navbar-brand.logo img {
+        margin-bottom: 8px;
+        height:40px !important;
+    }
+    // Menus
+    header .navbar-default #top_menu.navbar-nav > li > a {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .navbar-logo {
+        min-height: 35px;
+    }
+    // Menus
+    header .navbar-default #top_menu.navbar-nav > li > a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    // Logo
+    header a.navbar-brand.logo img {
+        height:50px !important;
+    }
+    .navbar-logo {
+        min-height: 25px;
+    }
+    // Menus
+    header .navbar-default #top_menu.navbar-nav > li > a {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    // Menus
+    header .navbar-default #top_menu.navbar-nav > li > a {
+        font-size: 24px;
+    }
+}

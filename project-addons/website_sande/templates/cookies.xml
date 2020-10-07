@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Cookies message styles -->
+    <template id="website_cookie_notice_message" inherit_id="website_cookie_notice.message" name="Cookies notice Sande">
+        <xpath expr="//div[@id='website_cookie_notice']" position="attributes">
+            <attribute name="class">container-fluid bg-info cc-cookies</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('row')]/div[1]" position="attributes">
+            <attribute name="style">padding-top: 16px; padding-bottom: 16px;</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('row')]/div[2]" position="attributes">
+            <attribute name="style">padding-top: 16px; padding-bottom: 16px;</attribute>
+        </xpath>
+    </template>
+</odoo>

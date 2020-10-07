@@ -1,0 +1,69 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+
+h1, h2, h1, .h2 {
+    font-weight: @headings-font-weight;
+    color: @headings-color;
+}
+
+h3, h4, h5, h6, .h3, .h4, .h5, .h6 {
+    font-weight: @font-weight-normal;
+    color: @headings-color;
+}
+
+// Form address
+// -------------------------
+
+address > div {
+    color: @brand-secondary;
+    & span[itemprop="name"] {
+        font-weight: @font-weight-bold;
+        color: @brand-primary;
+        font-size: @font-size-h3;
+    }
+    & a {
+        color: @brand-primary;
+    }
+}
+
+// Social links
+// -------------------------
+
+& .o_sharing_links {
+    & .fa {
+        color: @color-fa-sharing-links;
+        font-size: @font-size-fa-sharing-links;
+        &.o_twitter:hover {
+            color: #4099FF;
+        }
+        &.o_google:hover, &.o_youtube:hover {
+            color: #DD4B39;
+        }
+        &.o_facebook:hover {
+            color: #3b5998;
+        }
+         &.o_linkedin:hover {
+            color: #0E76A8;
+        }
+        &.o_github:hover {
+            color: #24292E;
+        }
+    }
+}
+
+// Emphasis & misc
+// -------------------------
+
+// Contextual backgrounds
+// For now we'll leave these alongside the text classes until v4 when we can
+// safely shift things around (per SemVer rules).
+.bg-primary {
+    // Given the contrast here, this is the only class to have its color inverted automatically.
+    color: @body-bg;
+    .bg-variant(@brand-primary);
+}

@@ -1,3 +1,7 @@
+`11.0.0.1.0`
+------------
+- **[UDP]** Update and adapt for theme integrated with Bootswatch Theme and Bootstrap variables
+
 `11.0.0.0.4`
 ------------
 - **[UDP]** Some colors

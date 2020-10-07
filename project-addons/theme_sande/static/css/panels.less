@@ -1,0 +1,39 @@
+//
+// Panels
+// --------------------------------------------------
+
+
+// Tables in panels
+//
+// Place a non-bordered `.table` within a panel (not within a `.panel-body`) and watch it go full width.
+
+// Table title
+.table > thead > tr.active > th {
+    color: @btn-color;
+}
+
+// Table rows
+.table > tbody > tr {
+    color: @brand-primary;
+    &:hover, &:focus, &.active {
+        & a, span, strong {
+            color: @btn-color;
+            font-weight: red;
+        }
+    }
+}
+
+.panel {
+    // Table exterior border
+    > .table-responsive {
+        border: 1px solid @table-border-color;
+    }
+    // Pagination
+    > .o_portal_pager  {
+        border-left: 1px solid @table-border-color;
+        border-right: 1px solid @table-border-color;
+        border-bottom: 1px solid @table-border-color;
+    }
+}
+
+

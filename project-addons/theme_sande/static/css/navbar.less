@@ -1,0 +1,33 @@
+//
+// Navbars
+// --------------------------------------------------
+
+
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+
+// Alternate navbars
+// --------------------------------------------------
+
+// Default navbar
+.navbar-default {
+    .navbar-nav {
+        // Actives menu links on header
+        > .active > a {
+            color: @navbar-default-link-active-color;
+            font-weight: @font-weight-bold;
+            &:focus, &:hover {
+                color: @navbar-default-link-active-hover-color;
+                background-color: @navbar-default-link-active-bg;
+            }
+        }
+    }
+    // Menu Login (public and logged)
+    & .navbar-nav > li > a.dropdown-toggle > b,
+     .navbar-nav > li > a.menu_public_login > b {
+        font-size: 14px;
+        font-weight: normal;
+    }
+}

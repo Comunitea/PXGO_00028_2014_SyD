@@ -1,0 +1,56 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+
+/***** Normal *****/
+.button-variant(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+
+    .badge {
+        color: @background;
+        background-color: @color;
+    }
+
+    &.disabled, &[disabled], fieldset[disabled] & {
+        cursor: @cursor-disabled;
+        .opacity(.65);
+        .box-shadow(none);
+    }
+
+    a& {
+        &.disabled, fieldset[disabled] & {
+            pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+        }
+    }
+}
+
+/***** Hover *****/
+.button-variant-hover(@color; @background; @border) {
+
+    &.disabled, &[disabled], fieldset[disabled] & {
+        cursor: @cursor-disabled;
+        .opacity(.65);
+        .box-shadow(none);
+        &,
+        &:hover, &:focus, &:active, &.active {
+            background-color: @background;
+            border-color: @border;
+        }
+    }
+
+    &:hover, &:focus, &:active, &.active,
+    .open > .dropdown-toggle& {
+        color: @color;
+        background-color: @background;
+        border-color: @border;
+    }
+
+    &:active, &.active,
+    .open > .dropdown-toggle& {
+        background-image: none;
+    }
+}

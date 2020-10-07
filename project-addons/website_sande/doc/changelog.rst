@@ -1,3 +1,7 @@
+`11.0.6.0.0`
+------------
+- **[UDP]** Update and adapt for new Theme Sande integrated with Bootswatch Theme and Bootstrap variables
+
 `11.0.5.7.0`
 ------------
 - **[FIX]** Change contact us and footer to no update because are not views

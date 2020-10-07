@@ -1,24 +1,64 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <template id="theme_bootswatch_theme_customize" inherit_id="theme_bootswatch.theme_customize" name="theme_customize Sande">
+        <!-- Unchecked the default theme first to add new custom theme as active -->
+        <xpath expr="div[@id='theme_customize_modal']//div[hasclass('modal-body')]/table/tr/td" position="attributes">
+            <attribute name="checked"/>
+        </xpath>
+        <!-- Add custom theme in new line -->
+        <xpath expr="div[@id='theme_customize_modal']//div[hasclass('modal-body')]/table" position="before">
+            <div class="modal-title-body">
+                <h5 class="modal-title">Your custom theme</h5>
+                <table>
+                    <tr>
+                        <td>
+                            <label class="checked">
+                                <img style="width: 120px; height: 70px;" src="/theme_sande/static/img/theme_sande.png" alt="Custom Theme Sande"/>
+                                <input name="theme" type="radio" data-xmlid="theme_sande.theme_sande_website_assets_frontend" checked="checked"/>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                <h5 class="modal-title">More themes</h5>
+            </div>
+        </xpath>
+    </template>
+
     <!-- Custom assets -->
-    <template id="website_assets_frontend" name="Website Assets Sande" inherit_id="website.assets_frontend">
+    <template id="theme_sande_website_assets_frontend" name="Website Assets Theme Sande" inherit_id="website.assets_frontend" active="True" customize_show="True">
         <!-- Styles -->
         <xpath expr="link[last()]" position="after">
-            <link href="/theme_sande/static/css/_general.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/blog.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/body.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/contact.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/cookies.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/editor.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/elements.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/footer.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/forms.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/header.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/login.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/pagination.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/portal.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/recruitment.less" rel="stylesheet" type="text/less"/>
+            <!-- Old CSS -->
+<!--            <link href="/theme_sande/static/css/_general.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/blog.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/body.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/contact.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/cookies.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/editor.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/elements.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/footer.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/forms.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/header.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/login.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/pagination.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/portal.less" rel="stylesheet" type="text/less"/>-->
+<!--            <link href="/theme_sande/static/css/recruitment.less" rel="stylesheet" type="text/less"/>-->
+
+
+            <!-- Mixins -->
+            <link rel="stylesheet" href="/theme_sande/static/css/mixins/buttons.less" type="text/less"/>
+            <link rel="stylesheet" href="/theme_sande/static/css/mixins/background-variant.less" type="text/less"/>
+            <!-- CSS -->
+            <link href="/theme_sande/static/css/variables.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/header_2.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/buttons.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/footer_2.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/label.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/navs.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/navbar.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/panels.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/type.less" rel="stylesheet" type="text/less"/>
         </xpath>
         <!-- Scripts. This must be on Footer template for lazy load -->
 <!--        <xpath expr="//script[last()]" position="after">-->

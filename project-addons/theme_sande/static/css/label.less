@@ -1,0 +1,30 @@
+//
+// Labels
+// --------------------------------------------------
+
+
+body {
+    // Mainly for form labels
+    .control-label {
+        color: @label-color;
+    }
+    // Main for legal links
+    & .checkbox {
+        & .control-label {
+            color: @label-legal-color;
+        }
+        & a {
+            color: @label-link-color;
+            text-decoration: none;
+        }
+        & a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.label-primary[href]:hover, .label-primary[href]:focus {
+    color: @label-primary-bg;
+    border: 1px solid @label-primary-bg;
+    background-color: @label-color;
+}
