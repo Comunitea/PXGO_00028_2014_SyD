@@ -38,7 +38,7 @@
 @media screen and (min-width: 993px) and (max-width: 1200px) {
     // Logo
     header a.navbar-brand.logo img {
-        height:50px !important;
+        height: 50px !important;
     }
     .navbar-logo {
         min-height: 25px;
@@ -50,6 +50,13 @@
 }
 
 @media screen and (min-width: 1201px) {
+    // Logo
+    header a.navbar-brand.logo {
+        margin-top: 0px !important;
+        & img {
+            height: 85px !important;
+        }
+    }
     // Menus
     header .navbar-default #top_menu.navbar-nav > li > a {
         font-size: 24px;
