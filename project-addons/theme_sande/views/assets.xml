@@ -29,34 +29,17 @@
     <template id="theme_sande_website_assets_frontend" name="Website Assets Theme Sande" inherit_id="website.assets_frontend" active="True" customize_show="True">
         <!-- Styles -->
         <xpath expr="link[last()]" position="after">
-            <!-- Old CSS -->
-<!--            <link href="/theme_sande/static/css/_general.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/blog.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/body.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/contact.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/cookies.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/editor.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/elements.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/footer.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/forms.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/header.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/login.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/pagination.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/portal.less" rel="stylesheet" type="text/less"/>-->
-<!--            <link href="/theme_sande/static/css/recruitment.less" rel="stylesheet" type="text/less"/>-->
-
-
             <!-- Mixins -->
             <link rel="stylesheet" href="/theme_sande/static/css/mixins/buttons.less" type="text/less"/>
             <link rel="stylesheet" href="/theme_sande/static/css/mixins/background-variant.less" type="text/less"/>
             <!-- CSS -->
             <link href="/theme_sande/static/css/variables.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/header_2.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/buttons.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/footer_2.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/footer.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/header.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/label.less" rel="stylesheet" type="text/less"/>
-            <link href="/theme_sande/static/css/navs.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/navbar.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_sande/static/css/navs.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/panels.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/type.less" rel="stylesheet" type="text/less"/>
         </xpath>

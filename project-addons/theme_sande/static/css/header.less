@@ -1,86 +1,23 @@
-/*************** General Header *******************/
-header {
-    // Header lang, phone and mail
-    & .js_language_selector {
-        display: inline-flex;
-    }
-    // Logo
-    & a.navbar-brand img, a.navbar-brand.logo img {
-        margin-top: 14px;
-    }
-    // Menus
-    & .nav {
-        & li {
-            & a {
-                padding-left:10px;
-                padding-right: 10px;
-                &:hover, &:focus, &:active {
-                    color: @color-hover-btn-header;
-                    background-color: @color-bg-hover-btn-header !important;
-                }
-            }
-        }
-    }
-    & .navbar.navbar-static-top ul.nav > li.divider {
-        border-right: 1px solid @color-border-header;
-    }
-    & .navbar-default {
-        background-color: @color-bg-header;
-        border-color: @color-border-header;
-        padding: @padding-header;
-        & .navbar-nav > li.active {
-            font-weight: @font-weight-bold;
-        }
-        & .navbar-nav > li > .dropdown-menu.js_usermenu {
-            border: 1px solid @color-secondary;
-        }
-        & .navbar-nav > li > a,
-        .navbar-nav > .active > a,
-        .navbar-nav > .open > a,
-        .navbar-nav > li > .dropdown-menu,
-        .dropdown-menu > li > a {
-            color: @color-btn-dropdown-header;
-            background-color: @color-bg-btn-dropdown-header;
-            &:hover, &:focus, &:active {
-//                 font-size: @font-size-medium;
-//                 font-weight: @font-weight-bold;
-                color: @color-hover-btn-dropdown-header;
-                background-color: @color-bg-hover-btn-dropdown-header !important;
-            }
-        }
-        // Menu Login (public and logged)
-        & .navbar-nav > li > a.dropdown-toggle > b,
-         .navbar-nav > li > a.menu_public_login > b {
-            font-size: 14px;
-            font-weight: normal;
+// HEADER NAV BAR
+.navbar.navbar-static-top {
+    // User login divider
+    ul.nav > li {
+        &.divider {
+            border-right: 1px solid @brand-primary;
         }
     }
 }
 
 
-/*************** Header with Cookies message *******************/
-#website_cookie_notice {
-    & div.row{
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
-}
-
-/*************** Header medias *******************/
-@media screen and (min-width: 768px) {
-    header {
-        // Logo
-        & a.navbar-brand img, a.navbar-brand.logo img {
-            width:190px;
-            height:70px;
-        }
-    }
-}
+// == Medias
+//
+//##
 
 @media screen and (max-width: 768px) {
     // Logo
-    header a.navbar-brand.logo {
+    header a.navbar-brand.logo img {
         margin-bottom: 8px;
+        height:40px !important;
     }
     // Menus
     header .navbar-default #top_menu.navbar-nav > li > a {
@@ -89,7 +26,6 @@ header {
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
-    // Logo
     .navbar-logo {
         min-height: 35px;
     }
@@ -101,6 +37,9 @@ header {
 
 @media screen and (min-width: 993px) and (max-width: 1200px) {
     // Logo
+    header a.navbar-brand.logo img {
+        height: 50px !important;
+    }
     .navbar-logo {
         min-height: 25px;
     }

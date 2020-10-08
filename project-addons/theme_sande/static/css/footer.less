@@ -5,41 +5,24 @@ footer {
     & h1, h2, h3, h4, h5, h6 {
         font-weight: bold;
     }
-    // links
-    & a:not(.label) {
-        color: @color-footer-link;
-        &:hover, &:focus, &:active {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: @color-footer-link-hover;
-            text-decoration: none;
-        }
-    }
     // Block content
     & #footer {
         border-top: @border-top-content-footer;
         border-bottom: @border-bottom-content-footer;
-        padding-top: @padding-top-content-footer;
+        padding-top: var(--margin-top-content-footer, 32px);
         padding-bottom: @padding-bottom-content-footer;
-        & .container {
-            margin-top: @margin-top-content-footer;
-        }
     }
-    // Connect with us
-    & ul.list-unstyled {
-        // Margin with under social links
-        & address {
-            margin-bottom: 0;
-        }
-        .fa-fw {
-            width: 1rem;
-            text-align: center;
-        }
-    }
-    // Certificates
-    .o_certificate {
-        & img {
-            margin: 8px;
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    // Logo
+    footer {
+        // Certificates
+        .o_certificate {
+            & img {
+                margin-bottom: 10px;
+                margin-left: 0px !important;
+            }
         }
     }
 }
