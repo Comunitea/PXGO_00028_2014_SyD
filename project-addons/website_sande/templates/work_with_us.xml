@@ -122,8 +122,8 @@
                                    class="o_website_form_input"
                                    required="required"/>
                             <label class="control-label" for="privacy_policy">
-                                I accept the <a href="/legal/privacy-policy">privacy policy</a> and the
-                                <a href="/legal/terms-of-use">terms of use</a> of this website.
+                                I accept the <a href="/legal/advice" target="_blank" rel="nofollow,noindex" title="Open Legal Advise in a new tab">legal advice</a>
+                                and the <a href="/legal/privacy-policy" target="_blank" rel="nofollow,noindex" title="Open Privacy Policy in a new tab">privacy policy</a> of this website.
                             </label>
                         </p>
                     </div>

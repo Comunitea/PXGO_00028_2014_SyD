@@ -1,3 +1,7 @@
+`11.0.6.0.2`
+------------
+- **[FIX]** Legal links on contact and work with us forms
+
 `11.0.6.0.1`
 ------------
 - **[UDP]** Legal links on contact and work with us forms
