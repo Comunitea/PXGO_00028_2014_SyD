@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="account_invoice_production_lot_report" inherit_id="account_invoice_production_lot.account_invoice_production_lot_report">
+        <xpath expr="//t[@t-if=&quot;l[:1].lot_formatted_note&quot;]" position="replace">
+            <t t-set="new_formated_lot" t-value="l.get_new_formated_lot(picking)"/>
+            <div style="margin-left:25px;" t-esc="new_formated_lot"/>
+        </xpath>
+    </template>
+
+    <template id="report_invoice_layouted" inherit_id="account_invoice_production_lot.report_invoice_layouted">
+        <xpath expr="//t[@t-if=&quot;l[:1].lot_formatted_note&quot;]" position="replace">
+            <t t-set="new_formated_lot" t-value="l.get_new_formated_lot(picking)"/>
+            <div style="margin-left:25px;" t-esc="new_formated_lot"/>
+        </xpath>
+    </template>
+
+</odoo>
