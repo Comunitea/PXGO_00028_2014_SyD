@@ -18,7 +18,7 @@
 #
 ##############################################################################
 
-from odoo import api, models
+from odoo import api, models, _
 
 class AccountInvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
@@ -27,6 +27,8 @@ class AccountInvoiceLine(models.Model):
         if not picking or not self.product_id.tracking == 'serial':
             return self.lot_formatted_note
         else:
-            lot_formatted_note = "S/N: {}".format(picking.move_line_ids.filtered(lambda x: x.product_id.id == x.product_id.id).mapped('lot_id').name)
+            lot_formatted_note = '{}: {}'.format(
+                _('S/N'), ', '.join(picking.move_line_ids.filtered(lambda x: x.product_id.id == x.product_id.id).mapped('lot_id.name'))
+            )
             return lot_formatted_note
         
