@@ -13,15 +13,6 @@
             <field name="upload_group_ids" eval="[(6, 0, [ref('website.group_website_designer')])]"/>
             <field name="group_ids" eval="[(6, 0, [ref('website.group_website_designer'), ref('base.group_portal')])]"/>
             <field name="description">Channel for catalogs, all public users can view content of this channel but only logged users can be download them.</field>
-            <field name="access_error_msg"><![CDATA[
-                <p>To download our catalogs you need to be logged. It's to easy, just a few seconds.</p>
-                <p>If you have already an account just do it login&nbsp;
-                <a href="http://syd.livingodoo.com/web/login?redirect=/slides" class="btn btn-info" data-original-title="Sing In" title="Sing In" alt="Sing In" style="line-height: 1.42857;">Sing In</a></p>
-                <p>If you don't have an account and you wish get it, just do it&nbsp;
-                <a href="http://syd.livingodoo.com/web/signup?redirect=/slides" class="btn btn-success" data-original-title="Sign Up" title="Sign Up" alt="Sign Up" style="line-height: 1.42857;">Sign Up</a>
-                </p>
-            ]]>
-            </field>
         </record>
 
         <record model="slide.channel" id="website_slides.channel_partial">

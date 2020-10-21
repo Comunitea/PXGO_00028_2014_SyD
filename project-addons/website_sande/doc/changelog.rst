@@ -1,3 +1,7 @@
+`11.0.6.0.3`
+------------
+- **[DEL]** access_error_msg slide channel field from record to keep editable on erp
+
 `11.0.6.0.2`
 ------------
 - **[FIX]** Legal links on contact and work with us forms
