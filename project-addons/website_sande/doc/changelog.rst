@@ -1,3 +1,7 @@
+`11.0.7.0.0`
+------------
+- **[UDP]** Transform company_description on text to be editable on website editor including itemprop attributes
+
 `11.0.6.0.3`
 ------------
 - **[DEL]** access_error_msg slide channel field from record to keep editable on erp

@@ -3,11 +3,34 @@
     <data noupdate="1">
         <!-- Show maps only if API KEy exist -->
         <template id="website_company_description" inherit_id="website.company_description" name="Company Description Sande">
-            <xpath expr="//address/t/span" position="attributes">
-                <attribute name="class" add="hidden" separator=" " t-if="res_company.google_map_img()"/>
-            </xpath>
-            <xpath expr="//address/t/a" position="attributes">
-                <attribute name="class" add="hidden" separator=" " t-if="res_company.google_map_img()"/>
+            <xpath expr="//address" position="replace">
+                <div class="oe_structure"/>
+                <div class="oe_structure" itemscope="itemscope" itemtype="http://schema.org/Organization">
+                    <h3>
+                        <span itemprop="legalName"><strong>SANDE Y DÍAZ, S.L.</strong></span>
+                    </h3>
+                    <p itemprop="location">
+                        <i class="fa fa-map-marker fa-fw"/>
+                        <span>Rúa Nóvoa Santos 11, baixo</span><br/>
+                        <span>15006 A Coruña</span><br/>
+                        <span>Spain</span><br/>
+                    </p>
+                    <p>
+                        <a t-att-href="'tel:981174209'" rel="noindex,nofollow" title="Call to SANDE Y DIAZ, S.L.">
+                            <span><i class="fa fa-phone" /> 981 174 209</span>
+                        </a>
+                        <br/>
+                        <a t-att-href="'tel:609844461'" rel="noindex,nofollow" title="Call to SANDE Y DIAZ, S.L.">
+                            <span><i class="fa fa-phone" /> 609 844 461</span>
+                        </a>
+                        <br/>
+                        <a href="mailto:sandeydiaz@sandeydiaz.com" rel="noindex,nofollow" title="Send mail to SANDE Y DIAZ, S.L.">
+                            <span><i class="fa fa-envelope"/> sandeydiaz@sandeydiaz.com</span>
+                        </a>
+                        <br/>
+                    </p>
+                </div>
+                <div class="oe_structure"/>
             </xpath>
         </template>
 
@@ -26,7 +49,7 @@
                     <div class="checkbox">
                         <input type="checkbox" value="accepted" id="commercial_consent" name="commercial_consent" class="o_website_form_input"/>
                         <label class="control-label" for="commercial_consent">
-                             I consent to the sending of commercial information by SANDE y DÍAZ of their products and services
+                            I consent to the sending of commercial information by SANDE y DÍAZ of their products and services
                         </label>
                     </div>
                 </div>
