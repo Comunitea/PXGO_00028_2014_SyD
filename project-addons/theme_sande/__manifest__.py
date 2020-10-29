@@ -2,7 +2,7 @@
 
 {
     'name': 'Theme Sande y Díaz',
-    'version': '11.0.0.2.1',
+    'version': '11.0.0.3.0',
     'summary': 'Theme customization for Sande y Díaz website',
     'description': '',
     'category': 'Theme',
@@ -33,13 +33,15 @@
     "demo_images": [],
     "external_dependencies": {"python": [], "bin": []},
     'depends': [
-        'theme_bootswatch',
-        'website_sande',
         'breadcrumbs_base',
         'muk_website_scroll_up',
+        'theme_bootswatch',
+        'web_editor',
+        'website_sande',
         'website_sale_affix_header',
     ],
     'data': [
+        'templates/editor.xml',
         'templates/footer.xml',
         'views/assets.xml',
     ],

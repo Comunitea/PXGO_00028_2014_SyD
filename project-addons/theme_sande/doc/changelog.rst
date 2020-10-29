@@ -1,3 +1,7 @@
+`11.0.0.3.0`
+------------
+- **[ADD]** Add theme colors on web editor colorpicker
+
 `11.0.0.2.1`
 ------------
 - **[ADD]** Labels mixin

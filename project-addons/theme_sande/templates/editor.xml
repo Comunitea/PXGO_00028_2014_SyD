@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="web_editor_colorpicker" inherit_id="web_editor.colorpicker" name="Color-Picker Sande">
+        <!-- Add custom theme colors on web editor colorpicker -->
+        <xpath expr="//div[last()]" position="after">
+            <div class="o_colorpicker_section" data-name="custom" data-icon-class="fa fa-paint-brush">
+                <button data-color="custom_primary">Custom Primary</button>
+                <button data-color="custom_secondary">Custom Secondary</button>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
