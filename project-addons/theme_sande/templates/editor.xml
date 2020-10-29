@@ -7,6 +7,7 @@
             <div class="o_colorpicker_section" data-name="custom" data-icon-class="fa fa-paint-brush">
                 <button data-color="custom_primary">Custom Primary</button>
                 <button data-color="custom_secondary">Custom Secondary</button>
+                <button data-color="custom_light_blue">Custom Light Blue</button>
             </div>
         </xpath>
     </template>
