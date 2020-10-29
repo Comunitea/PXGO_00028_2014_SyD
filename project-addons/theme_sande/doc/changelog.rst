@@ -1,3 +1,8 @@
+`11.0.0.2.1`
+------------
+- **[ADD]** Labels mixin
+- **[FIX]** Labels styles
+
 `11.0.0.2.0`
 ------------
 - **[DEL]** Deleted old theme structure

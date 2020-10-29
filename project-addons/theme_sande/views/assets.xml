@@ -30,8 +30,9 @@
         <!-- Styles -->
         <xpath expr="link[last()]" position="after">
             <!-- Mixins -->
-            <link rel="stylesheet" href="/theme_sande/static/css/mixins/buttons.less" type="text/less"/>
             <link rel="stylesheet" href="/theme_sande/static/css/mixins/background-variant.less" type="text/less"/>
+            <link rel="stylesheet" href="/theme_sande/static/css/mixins/buttons.less" type="text/less"/>
+            <link rel="stylesheet" href="/theme_sande/static/css/mixins/labels.less" type="text/less"/>
             <!-- CSS -->
             <link href="/theme_sande/static/css/variables.less" rel="stylesheet" type="text/less"/>
             <link href="/theme_sande/static/css/buttons.less" rel="stylesheet" type="text/less"/>
