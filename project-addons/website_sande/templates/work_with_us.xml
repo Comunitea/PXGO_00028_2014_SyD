@@ -4,22 +4,69 @@
         <t t-call="website.layout">
             <t t-set="pageName" t-value="'Work with us'"/>
             <div id="wrap">
-                <!-- Job Application Title -->
-                <div class="oe_structure mt16">
-                    <section class="s_title">
+                <!-- New editor section available -->
+                <div class="oe_structure"/>
+                <!-- Job Application -->
+                <div class="oe_structure">
+                    <!-- Image -->
+                    <section class="s_title oe_img_bg oe_custom_bg" style="background-image: url('/website_sande/static/img/work-with-us.jpg'); background-position: 50.18% 78.08%;">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <h1 class="text-center o_default_snippet_text"><strong>Work with us</strong></h1>
-                                    <h3 class="text-center o_default_snippet_text">Job Application Form</h3>
+                                <div class="col-md-12 mt128 mb48">
+                                    <p class="text-center" style="text-align: left;">
+                                        <br/>
+                                    </p>
+                                    <p class="text-center" style="text-align: left;">
+                                        <font style="font-size: 62px;" class="text-white">Work with us</font>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </section>
-                </div>
-                <!-- Job Application Form -->
-                <div class="container mb48">
+                    <!-- Title -->
+                    <section class="s_title">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 mt32 mb0">
+                                    <p class="text-center">
+                                        <font style="font-size: 62px;" class="text-custom_secondary">Apply for </font>
+                                        <font style="font-size: 62px;" class="text-custom_secondary">this&amp;nbsp;</font>
+                                        <font style="color: rgb(107, 173, 222); font-size: 62px;"> </font>
+                                        <font style="font-size: 62px;" class="text-primary">job offer<br/></font>
+                                    </p>
+                                    <p class="text-center">
+                                        <font style="font-size: 24px;">Thank you for yout interest in joining us</font>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- New editor section available -->
+                    <div class="oe_structure"/>
+                    <!-- Form -->
                     <t t-call="website_sande.work_with_us_form"/>
+                    <!-- New editor section available -->
+                    <div class="oe_structure"/>
+                    <!-- Legal -->
+                    <section class="s_image_text">
+                        <div class="container">
+                            <div class="row">
+                                <div class="mb32 col-md-12 mt0">
+                                    <p>
+                                        <span class="fontstyle0">
+                                            <b><font style="color: rgb(57, 132, 198);">SANDE Y DÍAZ S.L.</font>&amp;nbsp;</b>
+                                        </span>
+                                        <span class="fontstyle2">informs you that your personal data will be incorporated into our database and will be used only in possible personnel selection processes that could take place in our company. In order to proceed so, we rely on your consent when sending the form and checking the box accepting the </span>
+                                        <span class="fontstyle2"><span class="fontstyle2" style="color:rgb(0,0,255);"><a href="http://syd.livingodoo.com/legal/privacy-policy" target="_blank" data-original-title="" title="">Privacy Policy</a></span>. In this Policy you have more information about how to revoke your consent or exercise your rights of access, rectification, deletion, limitation of treatment, opposition and portability</span>
+                                        <span class="fontstyle2">.</span>
+                                        <br style=" font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-align: -webkit-auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; "/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- New editor section available -->
+                    <div class="oe_structure"/>
                 </div>
             </div>
         </t>
@@ -28,121 +75,132 @@
     <template id="work_with_us_form" name="Work with us Form Sande">
         <!-- Job Application Form -->
         <!-- Probably should be called inside a container -->
-        <section class="readable o_website_form_builder">
-            <form method="post" action="/website_form/" class="s_website_form col-md-12 mt32" data-model_name="crm.lead"
-                  data-force_action="" data-success_page="/contactus-thank-you" enctype="multipart/form-data" accept-charset="UTF-8" data-editable-form="false">
-                <div class="o_website_form_fields">
-                    <div class="form-group form-field form-field-char" data-model-field="true" data-optional="false">
-                        <label class="control-label" for="name">Subject</label>
-                        <input class="form-control o_website_form_input" type="text" name="name" t-att-value="request.params.get('subject') or 'New Job Opportunity requested'"
-                               placeholder="New Job Opportunity requested" readonly="True"/>
-                    </div>
-                    <div class="form-group form-field o_website_form_required_custom form-field-char" data-model-field="true" data-optional="false">
-                        <label class="control-label" for="contact_name">Contact Name</label>
-                        <input class="form-control o_website_form_input" type="text" name="contact_name" required=""/>
-                    </div>
-                    <div class="form-group form-field o_website_form_required_custom form-field-char" data-model-field="true" data-optional="false">
-                        <label class="control-label" for="phone">Contact Phone</label>
-                        <input class="form-control o_website_form_input" type="text" name="phone" required=""/>
-                    </div>
-                    <div class="form-group form-field form-field-char" data-model-field="true" data-optional="true">
-                        <label class="control-label" for="email_from">Email</label>
-                        <input class="form-control o_website_form_input" type="text" name="email_from"
-                               placeholder="Example: your_name@provider.domain"/>
-                    </div>
-                    <div class="form-group form-field form-field-many2one" data-model-field="true" data-optional="true">
-                        <label class="control-label" for="Actual Company">Actual Company</label>
-                        <input class="form-control o_website_form_input" type="text" name="Actual Company"
-                               placeholder="The name of your actually company if you have"/>
-                    </div>
-                    <div class="form-group form-field form-field-many2one" data-model-field="true" data-optional="true">
-                        <label class="control-label" for="Actual Company">Last Company</label>
-                        <input class="form-control o_website_form_input" type="text" name="Last Company"
-                               placeholder="The name of your last company if you do not have now"/>
-                    </div>
-                    <!-- Require activate function field on crm-lead Model -->
-<!--                    <div class="form-group form-field form-field-char" data-model-field="true" data-optional="true">-->
-<!--                        <label class="control-label" for="function">Requested Job Position</label>-->
-<!--                        <input class="form-control o_website_form_input" type="text" name="function"/>-->
-<!--                    </div>-->
-                    <div class="form-group form-field form-field-char" data-model-field="true" data-optional="true">
-                        <label class="control-label" for="Requested Job Position">Requested Job Position</label>
-                        <input class="form-control o_website_form_input" type="text" name="Requested Job Position"
-                               placeholder="Fill it if you wish apply for a specific position"/>
-                    </div>
-                    <div class="form-group form-field form-field-char" data-model-field="true" data-optional="true">
-                        <label class="control-label" for="referred">Recommended By</label>
-                        <input class="form-control o_website_form_input" type="text" name="referred"
-                               placeholder="The name of the person who recommends you if you have"/>
-                    </div>
-                    <div class="form-group form-field form-field-many2one" data-model-field="true" data-optional="true">
-                        <label class="control-label" for="Job found by">Job found by:</label>
-                        <select class="form-control o_website_form_input" name="Job found by">
-                            <option value="By myself">
-                                By myself
-                            </option>
-                            <option value="By friend">
-                                By friend
-                            </option>
-                            <option value="By a Sande employee">
-                                By a Sande employee
-                            </option>
-                            <option value="Our Newsletter">
-                                Our Newsletter
-                            </option>
-                            <option value="LinkedIn">
-                                LinkedIn
-                            </option>
-                            <option value="Infojobs">
-                                Infojobs
-                            </option>
-                            <option value="Other Website Recruitment Channel">
-                                Other Website Recruitment Channel
-                            </option>
-                        </select>
-                        <p class="help-block"> This is the source where you find this job opportunity </p>
-                    </div>
-                    <div class="form-group form-field o_website_form_required_custom form-field-binary" data-model-field="false" data-optional="true">
-                        <label class="control-label" for="Custom File upload field">CV Attached</label>
-                        <input type="file" class="o_website_form_input" name="Custom File upload field" required=""/>
-                    </div>
-                    <div class="form-group form-field form-field-text" data-model-field="true" data-optional="true">
-                        <label class="control-label" for="description">Notes</label>
-                        <textarea class="form-control o_website_form_input" type="text" name="description"
-                                  placeholder="Write your comments here ..."/>
-                    </div>
+        <section class="readable o_website_form_builder mb48">
+            <div class="container">
+                <div class="row">
+                    <form method="post" action="/website_form/" class="s_website_form col-md-12 mt32" data-model_name="crm.lead"
+                          data-force_action="" data-success_page="/job-thank-you" enctype="multipart/form-data" accept-charset="UTF-8">
+                        <div class="o_website_form_fields">
+                            <div class="o_not_editable hidden o_default_snippet_text">
+                                This placeholder prevents its parent from
+                                disappearing when emptied
+                            </div>
+                            <div class="form-group form-field form-field-char" data-model-field="true" data-optional="false">
+                                <label class="control-label" for="name">Subject</label>
+                                <input class="form-control o_website_form_input" type="text" name="name" t-att-value="request.params.get('subject') or 'New Job Opportunity requested'"
+                                       placeholder="New Job Opportunity requested" readonly="True"/>
+                            </div>
+                            <div class="form-group form-field o_website_form_required_custom form-field-char" data-model-field="true" data-optional="false">
+                                <label class="control-label" for="contact_name">Contact Name</label>
+                                <input class="form-control o_website_form_input" type="text" name="contact_name" required=""/>
+                            </div>
+                            <div class="form-group form-field o_website_form_required_custom form-field-char" data-model-field="true" data-optional="false">
+                                <label class="control-label" for="phone">Contact Phone</label>
+                                <input class="form-control o_website_form_input" type="text" name="phone" required=""/>
+                            </div>
+                            <div class="form-group form-field o_website_form_required_custom form-field-char" data-model-field="true" data-optional="true">
+                                <label class="control-label" for="email_from">Email</label>
+                                <input class="form-control o_website_form_input" type="text" name="email_from" required=""
+                                       placeholder="Example: your_name@provider.domain"/>
+                            </div>
+                            <div class="form-group form-field form-field-many2one" data-model-field="true" data-optional="true">
+                                <label class="control-label" for="Actual Company">Actual Company</label>
+                                <input class="form-control o_website_form_input" type="text" name="Actual Company"
+                                       placeholder="The name of your actually company if you have"/>
+                            </div>
+                            <div class="form-group form-field form-field-many2one" data-model-field="true" data-optional="true">
+                                <label class="control-label" for="Actual Company">Last Company</label>
+                                <input class="form-control o_website_form_input" type="text" name="Last Company"
+                                       placeholder="The name of your last company if you do not have now"/>
+                            </div>
+                            <!-- Require activate function field on crm-lead Model -->
+                            <!--                    <div class="form-group form-field form-field-char" data-model-field="true" data-optional="true">-->
+                            <!--                        <label class="control-label" for="function">Requested Job Position</label>-->
+                            <!--                        <input class="form-control o_website_form_input" type="text" name="function"/>-->
+                            <!--                    </div>-->
+                            <!--                    <div class="form-group form-field form-field-char" data-model-field="true" data-optional="true">-->
+                            <!--                        <label class="control-label" for="Requested Job Position">Requested Job Position</label>-->
+                            <!--                        <input class="form-control o_website_form_input" type="text" name="Requested Job Position"-->
+                            <!--                               placeholder="Fill it if you wish apply for a specific position"/>-->
+                            <!--                    </div>-->
+                            <div class="form-group form-field form-field-char" data-model-field="true" data-optional="true">
+                                <label class="control-label" for="referred">Recommended By</label>
+                                <input class="form-control o_website_form_input" type="text" name="referred"
+                                       placeholder="The name of the person who recommends you if you have"/>
+                            </div>
+                            <!--                    <div class="form-group form-field form-field-many2one" data-model-field="true" data-optional="true">-->
+                            <!--                        <label class="control-label" for="Job found by">Job found by:</label>-->
+                            <!--                        <select class="form-control o_website_form_input" name="Job found by">-->
+                            <!--                            <option value="By myself">-->
+                            <!--                                By myself-->
+                            <!--                            </option>-->
+                            <!--                            <option value="By friend">-->
+                            <!--                                By friend-->
+                            <!--                            </option>-->
+                            <!--                            <option value="By a Sande employee">-->
+                            <!--                                By a Sande employee-->
+                            <!--                            </option>-->
+                            <!--                            <option value="Our Newsletter">-->
+                            <!--                                Our Newsletter-->
+                            <!--                            </option>-->
+                            <!--                            <option value="LinkedIn">-->
+                            <!--                                LinkedIn-->
+                            <!--                            </option>-->
+                            <!--                            <option value="Infojobs">-->
+                            <!--                                Infojobs-->
+                            <!--                            </option>-->
+                            <!--                            <option value="Other Website Recruitment Channel">-->
+                            <!--                                Other Website Recruitment Channel-->
+                            <!--                            </option>-->
+                            <!--                        </select>-->
+                            <!--                        <p class="help-block"> This is the source where you find this job opportunity </p>-->
+                            <!--                    </div>-->
+                            <div class="form-group form-field o_website_form_required_custom form-field-binary" data-model-field="false" data-optional="true">
+                                <label class="control-label" for="upload_file"><span>CV Attached</span></label>
+                                <input type="file" class="o_website_form_input" name="upload_file" required=""/>
+                                <p class="help-block">
+                                    Custom File upload field help block
+                                </p>
+                            </div>
+                            <div class="form-group form-field form-field-text" data-model-field="true" data-optional="true">
+                                <label class="control-label" for="description">Notes</label>
+                                <textarea class="form-control o_website_form_input" type="text" name="description"
+                                          placeholder="Write your comments here ..."/>
+                            </div>
 
-                    <!-- Legal Acceptance -->
-                    <div class="form-group form-field o_website_form_required">
-                        <p class="checkbox">
-                            <input type="checkbox"
-                                   value="accepted"
-                                   id="privacy_policy"
-                                   name="privacy_policy"
-                                   class="o_website_form_input"
-                                   required="required"/>
-                            <label class="control-label" for="privacy_policy">
-                                I accept the <a href="/legal/advice" target="_blank" rel="nofollow,noindex" title="Open Legal Advise in a new tab">legal advice</a>
-                                and the <a href="/legal/privacy-policy" target="_blank" rel="nofollow,noindex" title="Open Privacy Policy in a new tab">privacy policy</a> of this website.
-                            </label>
-                        </p>
-                    </div>
+                            <!-- Legal Acceptance -->
+                            <div class="form-group form-field o_website_form_required">
+                                <p class="checkbox">
+                                    <input type="checkbox"
+                                           value="accepted"
+                                           id="privacy_policy"
+                                           name="privacy_policy"
+                                           class="o_website_form_input"
+                                           required="required"/>
+                                    <label class="control-label" for="privacy_policy">
+                                        I accept the <a href="/legal/advice" target="_blank" rel="nofollow,noindex" title="Open Legal Advise in a new tab">legal advice</a>
+                                        and the <a href="/legal/privacy-policy" target="_blank" rel="nofollow,noindex" title="Open Privacy Policy in a new tab">privacy policy</a> of this website.
+                                    </label>
+                                </p>
+                            </div>
 
-                    <!-- Recaptcha -->
-                    <div class="form-group form-field o_website_form_required_custom">
-                        <label class=" control-label" for="g-recaptcha-response">Human?</label>
-                        <p>
-                            <span class="o_website_form_recaptcha" />
-                        </p>
-                    </div>
+                            <!-- Recaptcha -->
+                            <div class="form-group form-field o_website_form_required_custom">
+                                <label class=" control-label" for="g-recaptcha-response">Human?</label>
+                                <p>
+                                    <span class="o_website_form_recaptcha" />
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Send Form -->
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary btn-lg o_website_form_send o_default_snippet_text" title="Send">Send</button>
+                            <span id="o_website_form_result"/>
+                        </div>
+                    </form>
                 </div>
-
-                <!-- Send Form -->
-                <div class="form-group">
-                    <button type="button" class="btn btn-primary btn-lg o_website_form_send o_default_snippet_text" title="Send">Send</button>
-                    <span id="o_website_form_result"/>
-                </div>
-            </form>
+            </div>
         </section>
     </template>
 </odoo>
