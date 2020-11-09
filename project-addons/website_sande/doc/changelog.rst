@@ -1,3 +1,9 @@
+`11.0.8.0.0`
+------------
+- **[ADD]** Extent Blog Post columns to fill container
+- **[ADD]** Hide Blog Right column
+- **[ADD]** Render Blog Post Short List as latest posts
+
 `11.0.7.0.1`
 ------------
 - **[UDP]** work-with-us template an form
