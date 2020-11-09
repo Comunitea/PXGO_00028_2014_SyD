@@ -1,3 +1,7 @@
+`11.0.8.0.1`
+------------
+- **[FIX]** Hide Blog Right column
+
 `11.0.8.0.0`
 ------------
 - **[ADD]** Extent Blog Post columns to fill container

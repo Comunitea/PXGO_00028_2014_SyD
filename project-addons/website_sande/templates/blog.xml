@@ -10,7 +10,7 @@
 
     <template id="website_blog_index_right" name="Right Column Sande" inherit_id="website_blog.index_right">
         <!-- Hide Blog Right column -->
-        <xpath expr="//div[@id='blog_right_column']" position="after">
+        <xpath expr="//div[@id='blog_right_column']" position="attributes">
             <attribute name="class">hidden</attribute>
         </xpath>
     </template>
