@@ -1,3 +1,7 @@
+`11.0.0.3.1`
+------------
+- **[ADD]** Styles for Cookies Message Notice by root variables through ecommerce_base module
+
 `11.0.0.3.0`
 ------------
 - **[ADD]** Add theme colors on web editor colorpicker

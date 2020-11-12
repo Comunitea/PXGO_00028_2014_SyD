@@ -2,7 +2,7 @@
 
 {
     'name': 'Website Sande y Díaz',
-    'version': '11.0.8.0.1',
+    'version': '11.0.8.0.2',
     'summary': 'Website Customization',
     'description': '',
     'category': 'Website',
@@ -19,9 +19,9 @@
     "pre_init_hook": None,
     "post_init_hook": None,
     "uninstall_hook": None,
-    "auto_install": False,
+    "auto_install": True,
     'installable': True,
-    'application': False,
+    'application': True,
     'qweb': [],
     "live_test_url": "",
     "demo": [],
@@ -56,7 +56,6 @@
         'data/page_data.xml',
         'templates/blog.xml',
         'templates/contactus.xml',
-        'templates/cookies.xml',
         'templates/footer.xml',
         'templates/header.xml',
         'templates/our_company.xml',

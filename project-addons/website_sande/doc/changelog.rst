@@ -1,3 +1,7 @@
+`11.0.8.0.2`
+------------
+- **[DEL]** Unnecessary template for Cookies Message Notice. Now in Theme Sande
+
 `11.0.8.0.1`
 ------------
 - **[FIX]** Hide Blog Right column

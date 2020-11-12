@@ -2,7 +2,7 @@
 
 {
     'name': 'Theme Sande y Díaz',
-    'version': '11.0.0.3.0',
+    'version': '11.0.0.3.1',
     'summary': 'Theme customization for Sande y Díaz website',
     'description': '',
     'category': 'Theme',
@@ -19,9 +19,9 @@
     "pre_init_hook": None,
     "post_init_hook": None,
     "uninstall_hook": None,
-    "auto_install": False,
+    "auto_install": True,
     'installable': True,
-    'application': False,
+    'application': True,
     'qweb': [],
     "live_test_url": "",
     "demo": [],

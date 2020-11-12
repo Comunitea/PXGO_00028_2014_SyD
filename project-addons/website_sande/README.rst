@@ -8,11 +8,11 @@ Website Sande y Díaz
 .. |badge2| image:: https://img.shields.io/badge/licence-LGPL--3-blue.png
     :target: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-Comunitea-gray.png?logo=github
+.. |badge3| image:: https://img.shields.io/badge/github-Comunitea-lightgray.png?logo=github
     :target: https://github.com/Comunitea/
     :alt: Comunitea
-.. |badge4| image:: https://img.shields.io/badge/github-Comunitea%2FSandeyDiaz-lightgray.png?logo=github
-    :target: https://github.com/Comunitea/PXGO_00028_2014_SyD/tree/11.0/project-addons/website_sande
+.. |badge4| image:: https://img.shields.io/badge/github-Comunitea%2FSande%20y%20Diaz-lightgray.png?logo=github
+    :target: https://github.com/Comunitea/PXGO_00028_2014_SyD
     :alt: Comunitea / Sande Y Díaz
 .. |badge5| image:: https://img.shields.io/badge/Spanish-Translated-F47D42.png
     :target: https://github.com/Comunitea/PXGO_00028_2014_SyD/tree/11.0/project-addons/website_sande/i18n
@@ -76,13 +76,6 @@ Javascript
 ~~~~~~~~~~
 All scripts are placed on theme_sande module.
 
-Modules dependencies
---------------------
-#. website
-#. website_crm'
-#. website_sale'
-#. website_slides'
-
 Author
 ------
 .. image:: https://comunitea.com/wp-content/uploads/2016/01/logocomunitea3.png
@@ -123,7 +116,7 @@ None is known yet. If you discover some, please, read Bug Tracker section and re
 Disclaimer of Warranties
 ------------------------
 
-    **Attention!**
+    **Warning!**
 
     We provide this module as is, and we make no promises or guarantees about this correct working.
 
