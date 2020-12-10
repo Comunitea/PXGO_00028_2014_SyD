@@ -4,11 +4,11 @@
             <!--Set Default Website to Sande website-->
             <record id="website.default_website" model="website">
                 <field name="name">Sande y Díaz</field>
-                <field name="domain">sande</field>
-                <field name="canonical_domain">http://sande</field>
+                <field name="domain">erp.sandeydiaz.com</field>
+                <field name="canonical_domain">//https://erp.sandeydiaz.com</field>
                 <field name="favicon" type="base64" file="website_sande/static/img/favicon.png"/>
                 <field name="company_id" ref="base.main_company"/>
-                <field name="base_url">http://sande</field>
+                <field name="base_url">https://erp.sandeydiaz.com</field>
                 <field name="social_linkedin">https://es.linkedin.com/company/sande-y-d-az</field>
             </record>
 

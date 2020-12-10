@@ -1,3 +1,7 @@
+`11.0.9.0.2`
+------------
+- **[UDP]** Little data improves to work on production
+
 `11.0.9.0.1`
 ------------
 - **[UDP]** Show phone and mail top menu texts in mobile versions

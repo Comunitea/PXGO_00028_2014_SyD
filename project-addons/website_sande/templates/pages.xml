@@ -31,7 +31,7 @@
 
         <!-- Terms of use -->
         <record id="website_legal_page.terms_page" model="website.page">
-            <field name="name">Terms of use</field>
+            <field name="name">Terms of Sale</field>
             <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
             <field name="view_id" ref="website_sande.legal_terms"/>
         </record>

@@ -7,12 +7,12 @@
         </record>
 
         <record model="slide.channel" id="website_slides.channel_public">
-            <field name="name">Ours Catalogs</field>
+            <field name="name">Catalogs</field>
             <field name="promote_strategy">custom</field>
             <field name="visibility">partial</field>
             <field name="upload_group_ids" eval="[(6, 0, [ref('website.group_website_designer')])]"/>
             <field name="group_ids" eval="[(6, 0, [ref('website.group_website_designer'), ref('base.group_portal')])]"/>
-            <field name="description">Channel for catalogs, all public users can view content of this channel but only logged users can be download them.</field>
+            <field name="description">Used to publish catalogs in the public network of the company but with private downloads only for registered users.</field>
         </record>
 
         <record model="slide.channel" id="website_slides.channel_partial">
