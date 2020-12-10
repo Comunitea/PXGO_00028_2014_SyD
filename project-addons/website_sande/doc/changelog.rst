@@ -1,3 +1,7 @@
+`11.0.9.0.1`
+------------
+- **[UDP]** Show phone and mail top menu texts in mobile versions
+
 `11.0.9.0.0`
 ------------
 - **[UDP]** Set to disabled my portal details

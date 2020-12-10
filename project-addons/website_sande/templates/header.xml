@@ -9,14 +9,12 @@
         <xpath expr="//ul/li" position="before">
             <li>
                 <a t-att-href="'tel:%s' %res_company.phone" rel="noindex,nofollow" title="Call to SANDE Y DIAZ, S.L.">
-                    <span class="hidden-xs hidden-sm visible-md visible-lg"><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
-                    <span class="visible-xs visible-sm hidden-md hidden-lg"><i class="fa fa-phone" /></span>
+                    <span><i class="fa fa-phone" /> <font t-field="res_company.phone"/></span>
                 </a>
             </li>
             <li>
                 <a href="mailto:${res_company.email}" rel="noindex,nofollow" title="Send mail to SANDE Y DIAZ, S.L.">
-                    <span class="hidden-xs hidden-sm visible-md visible-lg"><i class="fa fa-envelope"/> <font t-field="res_company.email"/></span>
-                    <span class="visible-xs visible-sm hidden-md hidden-lg"><i class="fa fa-envelope"/></span>
+                    <span><i class="fa fa-envelope"/> <font t-field="res_company.email"/></span>
                 </a>
             </li>
         </xpath>
