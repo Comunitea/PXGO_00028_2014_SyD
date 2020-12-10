@@ -17,8 +17,11 @@ Website Sande y Díaz
 .. |badge5| image:: https://img.shields.io/badge/Spanish-Translated-F47D42.png
     :target: https://github.com/Comunitea/PXGO_00028_2014_SyD/tree/11.0/project-addons/website_sande/i18n
     :alt: Spanish Translated
+.. |badge6| image:: https://img.shields.io/badge/Galician-Translated-F47D42.png
+    :target: https://github.com/Comunitea/PXGO_00028_2014_SyD/tree/11.0/project-addons/website_sande/i18n
+    :alt: Galician Translated
 
-|badge1| |badge2| |badge3| |badge4| |badge5|
+|badge1| |badge2| |badge3| |badge4| |badge5| |badge6|
 
 Website customization for Sande y Díaz website.
 
@@ -78,13 +81,7 @@ All scripts are placed on theme_sande module.
 
 Author
 ------
-.. image:: https://comunitea.com/wp-content/uploads/2016/01/logocomunitea3.png
-   :alt: Comunitea
-   :target: https://comunitea.com
-
 Comunitea Servicios Tecnológicos S.L.
-
-For support and more information, please visit `<https://comunitea.com>`_.
 
 Contributors
 ~~~~~~~~~~~~

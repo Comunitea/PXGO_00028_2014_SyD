@@ -2,12 +2,12 @@
 <odoo>
     <template id="legal_terms" name="Legal Terms of use Sande">
         <t t-call="website.layout">
-            <t t-set="pageName" t-value="'Terms of use'"/>
+            <t t-set="pageName" t-value="'Terms of Sale'"/>
             <div id="wrap">
                 <div class="container mb48">
                     <div class="oe_structure">
                         <section data-snippet-id="title">
-                            <h1 class="text-center">Terms of use</h1>
+                            <h1 class="text-center">Terms of Sale</h1>
                         </section>
                     </div>
                     <div class="oe_structure">
@@ -21,7 +21,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p>
-                                            Please read these Terms of Use ("Terms", "Terms of Use") carefully before using the
+                                            Please read these Terms of Sale ("Terms", "Terms of Sale") carefully before using the
                                             <a t-att-href="res_company.website" target="_blank" rel="nofollow,noindex" title="Sitio web de SANDE Y DÍAZ, S.L."><span t-field="res_company.website"/></a>
                                             website (the "Service") operated by ​<strong><span class="text-uppercase" t-field="res_company.name"/></strong>
                                             ("us", "we", or "our").

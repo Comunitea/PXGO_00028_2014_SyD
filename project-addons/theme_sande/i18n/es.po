@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* theme_sande
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-10 16:24+0000\n"
+"PO-Revision-Date: 2020-12-10 16:24+0000\n"
+"Last-Translator: Rubén Seijas <ruben@comunitea.com>\n"
+"Language-Team: Es_es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: theme_sande
+#: model:ir.ui.view,name:theme_sande.web_editor_colorpicker
+msgid "Color-Picker Sande"
+msgstr "Color-Picker Sande"
+
+#. module: theme_sande
+#: model:ir.ui.view,arch_db:theme_sande.web_editor_colorpicker
+msgid "Custom Light Blue"
+msgstr "Azul Claro Personalizado"
+
+#. module: theme_sande
+#: model:ir.ui.view,arch_db:theme_sande.web_editor_colorpicker
+msgid "Custom Primary"
+msgstr "Primario Personalizado"
+
+#. module: theme_sande
+#: model:ir.ui.view,arch_db:theme_sande.web_editor_colorpicker
+msgid "Custom Secondary"
+msgstr "Secundario Personalizado"
+
+#. module: theme_sande
+#: model:ir.ui.view,arch_db:theme_sande.theme_bootswatch_theme_customize
+msgid "Custom Theme Sande"
+msgstr "Tema Sande Personalizado"
+
+#. module: theme_sande
+#: model:ir.ui.view,name:theme_sande.website_layout_footer_copyright
+msgid "Footer Copyright Sande"
+msgstr "Footer Copyright Sande"
+
+#. module: theme_sande
+#: model:ir.ui.view,arch_db:theme_sande.theme_bootswatch_theme_customize
+msgid "More themes"
+msgstr "Más Temas"
+
+#. module: theme_sande
+#: model:ir.ui.view,name:theme_sande.theme_sande_website_assets_frontend
+msgid "Website Assets Theme Sande"
+msgstr "Website Assets Theme Sande"
+
+#. module: theme_sande
+#: model:ir.ui.view,arch_db:theme_sande.theme_bootswatch_theme_customize
+msgid "Your custom theme"
+msgstr "Tema Sande Personalizado"
+
+#. module: theme_sande
+#: model:ir.ui.view,name:theme_sande.theme_bootswatch_theme_customize
+msgid "theme_customize Sande"
+msgstr "theme_customize Sande"
+

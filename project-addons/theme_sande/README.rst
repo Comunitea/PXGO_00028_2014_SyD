@@ -8,12 +8,18 @@ Sande y Díaz Theme
 .. |badge2| image:: https://img.shields.io/badge/licence-LGPL--3-blue.png
     :target: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-Comunitea-gray.png?logo=github
+.. |badge3| image:: https://img.shields.io/badge/github-Comunitea-lightgray.png?logo=github
     :target: https://github.com/Comunitea/
     :alt: Comunitea
-.. |badge4| image:: https://img.shields.io/badge/github-Comunitea%2FEcommerce-lightgray.png?logo=github
+.. |badge4| image:: https://img.shields.io/badge/github-Comunitea%2FSande%20y%20Díaz%20Theme-lightgray.png?logo=github
     :target: https://github.com/Comunitea/PXGO_00028_2014_SyD/tree/11.0/project-addons/theme_sande
-    :alt: Comunitea / Ecommerce
+    :alt: Comunitea / Sande y Díaz Theme
+.. |badge5| image:: https://img.shields.io/badge/Spanish-Translated-F47D42.png
+    :target: https://github.com/Comunitea/PXGO_00028_2014_SyD/tree/11.0/project-addons/website_sande/i18n
+    :alt: Spanish Translated
+.. |badge6| image:: https://img.shields.io/badge/Galician-Translated-F47D42.png
+    :target: https://github.com/Comunitea/PXGO_00028_2014_SyD/tree/11.0/project-addons/website_sande/i18n
+    :alt: Galician Translated
 
 |badge1| |badge2| |badge3| |badge4|
 
@@ -58,13 +64,7 @@ Coming soon!
 
 Author
 ------
-.. image:: https://comunitea.com/wp-content/uploads/2016/01/logocomunitea3.png
-   :alt: Comunitea
-   :target: https://comunitea.com
-
 Comunitea Servicios Tecnológicos S.L.
-
-For support and more information, please visit `<https://comunitea.com>`_.
 
 Contributors
 ~~~~~~~~~~~~
@@ -92,7 +92,7 @@ Please, do not contact contributors directly about support or help with technica
 Disclaimer of Warranties
 ------------------------
 
-    **Attention!**
+    **Warning!**
 
     We provide this module as is, and we make no promises or guarantees about this correct working.
 

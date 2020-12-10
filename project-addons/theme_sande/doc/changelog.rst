@@ -1,3 +1,7 @@
+`11.0.0.3.3`
+------------
+- **[ADD]** Spanish and Galician translations
+
 `11.0.0.3.2`
 ------------
 - **[ADD]** Portal labels optionals same all labels

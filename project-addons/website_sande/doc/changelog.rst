@@ -1,3 +1,7 @@
+`11.0.9.0.3`
+------------
+- **[ADD]** Spanish and Galician translations
+
 `11.0.9.0.2`
 ------------
 - **[UDP]** Little data improves to work on production

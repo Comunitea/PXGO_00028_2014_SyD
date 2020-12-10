@@ -1,0 +1,195 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_sande
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-10 16:40+0000\n"
+"PO-Revision-Date: 2020-12-10 16:40+0000\n"
+"Last-Translator: Rubén Seijas <ruben@comunitea.com>\n"
+"Language-Team: Es_es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sande
+#: model:website.menu,name:website_sande.menu_products_and_services
+msgid "Products"
+msgstr "Productos"
+
+#. module: website_sande
+#: model:website.menu,name:website_sande.menu_pumping_systems
+#: model:website.page,name:website_sande.pumping_systems_page
+msgid "Pumping Systems"
+msgstr "Sistemas de Bombeo"
+
+#. module: website_sande
+#: model:website.menu,name:website_sande.menu_aboutus
+msgid "Company"
+msgstr "Empresa"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.quality_policy_link
+#: model:website.page,name:website_sande.quality_page
+msgid "Quality Policy"
+msgstr "Quality Policy"
+
+#. module: website_sande
+#: model:website.page,arch_db:website_sande.work_with_us_page
+msgid "Privacy Policy"
+msgstr "Política de Privacidad"
+
+#. module: website_sande
+#: model:website.page,name:website_sande.work_with_us_page
+msgid "Work with us"
+msgstr "Trabaja con nosotros"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_company_description
+#: model:ir.ui.view,arch_db:website_sande.website_footer_default
+#: model:ir.ui.view,arch_db:website_sande.website_language_selector
+msgid "Call to SANDE Y DIAZ, S.L."
+msgstr "Llamar a SANDE Y DIAZ, S.L."
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_crm_privacy_policy_contactus_form
+msgid "I consent to the sending of commercial information by SANDE y DÍAZ of their products and services"
+msgstr "Consiento que SANDE y DÍAZ me envie información comercial acerca de sus productos y servicios"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_crm_privacy_policy_contactus_form
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "I accept the"
+msgstr "Acepto el"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_crm_privacy_policy_contactus_form
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Open Legal Advise in a new tab"
+msgstr "Abre los avisos legales en una nueva pestaña"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_crm_privacy_policy_contactus_form
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Open Privacy Policy in a new tab"
+msgstr "Abre la política de privacidad en una nueva pestaña"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_crm_privacy_policy_contactus_form
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "and the"
+msgstr "y la"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_crm_privacy_policy_contactus_form
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "legal advice"
+msgstr "aviso legal"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_crm_privacy_policy_contactus_form
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "of this website."
+msgstr "de este sitio web."
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_crm_privacy_policy_contactus_form
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "privacy policy"
+msgstr "política de privacidad"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "<span>CV Attached</span>"
+msgstr "<span>CV Adjunto</span>"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Actual Company"
+msgstr "Empresa Actual"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Contact Name"
+msgstr "Nombre Contacto"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Contact Phone"
+msgstr "Teléfono Contacto"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Example: your_name@provider.domain"
+msgstr "Ejemplo: su_nombre@proveedor.dominio"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Human?"
+msgstr "¿Es Humano?"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Last Company"
+msgstr "Última Empresa"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "New Job Opportunity requested"
+msgstr "Solicitud de Nueva Oportunidad de Trabajo"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Recommended By"
+msgstr "Recomendado Por"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Send"
+msgstr "Enviar"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Subject"
+msgstr "Asunto"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "The name of the person who recommends you if you have"
+msgstr "Nombre de la persona que lo recomienda si tiene"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "The name of your actually company if you have"
+msgstr "Nombre de su actual empresa si tiene"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "The name of your last company if you do not have now"
+msgstr "Nombre de la última empresa si tuvo"
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.work_with_us_form
+msgid "Write your comments here ..."
+msgstr "Escriba sus comentarios aquí ..."
+
+#. module: website_sande
+#: model:ir.ui.view,arch_db:website_sande.website_company_description
+#: model:ir.ui.view,arch_db:website_sande.website_footer_default
+#: model:ir.ui.view,arch_db:website_sande.website_language_selector
+msgid "Send mail to SANDE Y DIAZ, S.L."
+msgstr "Enviar correo a SANDE Y DIAZ, S.L."
+
