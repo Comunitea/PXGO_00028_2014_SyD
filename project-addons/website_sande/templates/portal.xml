@@ -11,10 +11,13 @@
         <xpath expr="//input[@name='phone']" position="attributes">
             <attribute name="disabled">disabled</attribute>
         </xpath>
-        <xpath expr="//input[@name='street']" position="attributes">
+        <xpath expr="//p[hasclass('form-control')]" position="attributes">
             <attribute name="disabled">disabled</attribute>
         </xpath>
-        <xpath expr="//p[hasclass('form-control')]" position="attributes">
+        <xpath expr="//input[@name='vat']" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//input[@name='street']" position="attributes">
             <attribute name="disabled">disabled</attribute>
         </xpath>
         <xpath expr="//input[@name='city']" position="attributes">
