@@ -1,3 +1,7 @@
+`11.0.9.0.0`
+------------
+- **[UDP]** Set to disabled my portal details
+
 `11.0.8.0.2`
 ------------
 - **[DEL]** Unnecessary template for Cookies Message Notice. Now in Theme Sande

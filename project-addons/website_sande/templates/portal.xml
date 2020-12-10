@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="portal_portal_my_details" name="My Portal Details Sande" inherit_id="portal.portal_my_details">
+        <!-- Remove user editing -->
+        <xpath expr="//input[@name='name']" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//input[@name='email']" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//input[@name='phone']" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//input[@name='street']" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//p[hasclass('form-control')]" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//input[@name='city']" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//input[@name='zipcode']" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//select[@name='country_id']" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//select[@name='state_id']" position="attributes">
+            <attribute name="disabled">disabled</attribute>
+        </xpath>
+        <xpath expr="//button[@type='submit']" position="attributes">
+            <attribute name="class" add="hide" separator=" "/>
+        </xpath>
+
+    </template>
+</odoo>

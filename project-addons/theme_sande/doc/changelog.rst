@@ -1,3 +1,9 @@
+`11.0.0.3.2`
+------------
+- **[ADD]** Portal labels optionals same all labels
+- **[ADD]** include p in form-controls as inputs
+- **[FIX]** disabled inputs background colors
+
 `11.0.0.3.1`
 ------------
 - **[ADD]** Styles for Cookies Message Notice by root variables through ecommerce_base module
