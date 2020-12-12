@@ -2,10 +2,10 @@
 
 {
     'name': 'Theme Sande y Díaz',
-    'version': '11.0.0.3.3',
+    'version': '11.0.0.4.0',
     'summary': 'Theme customization for Sande y Díaz website',
     'description': '',
-    'category': 'Theme',
+    'category': 'Theme/eCommerce',
     'author': 'Comunitea',
     'contributors': [
         'Rubén Seijas <ruben@comunitea.com>',
@@ -19,7 +19,7 @@
     "pre_init_hook": None,
     "post_init_hook": None,
     "uninstall_hook": None,
-    "auto_install": True,
+    "auto_install": False,
     'installable': True,
     'application': True,
     'qweb': [],
@@ -37,12 +37,10 @@
         'muk_website_scroll_up',
         'theme_bootswatch',
         'web_editor',
-        'website_sande',
         'website_sale_affix_header',
     ],
     'data': [
         'templates/editor.xml',
-        'templates/footer.xml',
         'views/assets.xml',
     ],
     'images': [

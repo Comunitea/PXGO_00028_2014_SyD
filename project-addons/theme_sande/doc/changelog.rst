@@ -1,3 +1,9 @@
+`11.0.0.4.0`
+------------
+- **[DEL]** Footer Copyright Template (Have to include in website module not here)
+- **[DEL]** Website module dependence because is no real
+- **[UDP]** Change 'auto_install' flag to 'False' for prevent errors with 'website_theme_install' module
+
 `11.0.0.3.3`
 ------------
 - **[ADD]** Spanish and Galician translations
