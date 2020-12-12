@@ -4,6 +4,9 @@
     <data noupdate="1">
         <!-- Add Quality Policy after copyright and company name -->
         <template id="quality_policy_link" inherit_id="website.layout_footer_copyright" name="Quality Policy Link Sande">
+            <xpath expr="//div[hasclass('container', 'mt16', 'mb8')]" position="attributes">
+                <attribute name="class">container mt32 mb16</attribute>
+            </xpath>
             <xpath expr="//footer//div/span[@t-field='res_company.name']" position="after">
                 <span><a href="/legal/quality-policy" target="_blank" rel="nofollow,noindex" title="Quality Policy" alt="Quality Policy">Quality Policy</a></span>
             </xpath>

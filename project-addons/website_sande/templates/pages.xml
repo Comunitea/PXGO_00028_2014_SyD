@@ -50,16 +50,6 @@
             <field name="view_id" ref="website_sande.legal_advice"/>
         </record>
 
-        <!-- Home -->
-        <record id="website.homepage_page" model="website.page">
-            <field name="name">Home</field>
-            <field name="website_published">True</field>
-            <field name="url">/</field>
-            <field name="view_id" ref="homepage"/>
-            <field name="website_ids" eval="[(6, 0, [ref('website.default_website')])]"/>
-            <field name="menu_ids" eval="[(6, 0, [ref('website.menu_homepage')])]"/>
-        </record>
-
         <!-- About Us -->
         <record id="website.aboutus_page" model="website.page">
             <field name="name">Company</field>

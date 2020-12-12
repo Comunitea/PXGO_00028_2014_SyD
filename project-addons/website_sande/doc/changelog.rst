@@ -1,3 +1,10 @@
+`11.0.10.0.0`
+------------
+- **[ADD]** Menu user logged missing options
+- **[ADD]** Footer copyright xpath template from theme_sande
+- **[DEL]** Custom Homepage
+- **[UDP]** Change 'auto_install' flag to 'False' for prevent errors on installation
+
 `11.0.9.0.3`
 ------------
 - **[ADD]** Spanish and Galician translations
